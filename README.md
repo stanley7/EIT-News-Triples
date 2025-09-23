@@ -28,6 +28,14 @@ This project collects and processes news articles from the European Institute of
    
    pip install -r requirements.txt
 
+# References 
+
+- Jancsary, D., Meyer, R. E., Höllerer, M. A., & Barberio, V. (2017). Toward a Structural Model of Organizational-Level Institutional Pluralism and Logic Interconnectedness. Organization Science, 28(6), 1150–1167. https://doi.org/10.1287/orsc.2017.1160
+
+- Haans, R. F. J., & Mertens, M. J. (2024). The Internet Never Forgets: A Four-Step Scraping Tutorial, Codebase, and Database for Longitudinal Organizational Website Data. Organizational Research Methods, 1–29. https://doi.org/10.1177/10944281241284941
+
+- Grimmer, J., Roberts, M. E., & Stewart, B. M. (2021). Machine Learning for Social Science: An Agnostic Approach. Annual Review of Political Science, 24, 395–419. https://doi.org/10.1146/annurev-polisci-053119-015921
+
 
 
 
