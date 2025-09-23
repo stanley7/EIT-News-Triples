@@ -3,18 +3,18 @@
 This project collects and processes news articles from the European Institute of Innovation & Technology (EIT). The aim is to extract triplets that describe the relationships between organizational actors, their practices and counterroles.
 
 # Features
-Scrapes EIT news articles (2008–2025)
+- Scrapes EIT news articles (2008–2025)
 
-Cleans and combines article texts
+- Cleans and combines article texts
 
-Extracts role–practice–counterrole triplets using LLMs
+- Extracts role–practice–counterrole triplets using LLMs
 
 Builds an actor catalog with roles, founding dates, and locations
 
 # Datasets
-Raw News Articles; Scraped from the official EIT website for the years 2008–2025. Stored year-wise in plain text files.
+- Raw News Articles; Scraped from the official EIT website for the years 2008–2025. Stored year-wise in plain text files.
 
-Synthetic Dataset: Artificially generated dataset used for testing and evaluation of the triplet extraction pipeline.
+- Synthetic Dataset: Artificially generated dataset used for testing and evaluation of the triplet extraction pipeline.
 
 # How to run
 
