@@ -1,1 +1,1 @@
-# EIT_NEWS_TRIPLES
+# EIT News Triples
