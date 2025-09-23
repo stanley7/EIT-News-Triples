@@ -10,3 +10,8 @@ Cleans and combines article texts
 Extracts role–practice–counterrole triplets using LLMs
 
 Builds an actor catalog with roles, founding dates, and locations
+
+# Datasets
+Raw News Articles; Scraped from the official EIT website for the years 2008–2025. Stored year-wise in plain text files.
+
+Synthetic Dataset: Artificially generated dataset used for testing and evaluation of the triplet extraction pipeline.
