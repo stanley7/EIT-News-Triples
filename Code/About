@@ -1,0 +1,6 @@
+This folder contains all scripts used in the project, including:
+LLM based scripts to extract role, practice, counterrole triplets
+Scripts to collect EIT news articles and save them year wise
+Scripts to build the actor catalog
+
+
