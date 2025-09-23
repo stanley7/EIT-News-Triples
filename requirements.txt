@@ -1,0 +1,22 @@
+# Web scraping
+requests
+beautifulsoup4
+urllib3
+
+# Text processing & NLP
+spacy
+regex
+
+# LLM integration
+openai
+transformers
+torch
+
+# Data handling
+pandas
+
+# UI
+gradio
+
+# Utilities
+pathlib
