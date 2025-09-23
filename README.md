@@ -21,9 +21,10 @@ Synthetic Dataset: Artificially generated dataset used for testing and evaluatio
 1. Clone the repository
    
     git clone https://github.com/stanley7/EIT-News-Triples.git
+   
     cd EIT-News-Triples
 
-2. Install dependencies
+3. Install dependencies
    
    pip install -r requirements.txt
 
