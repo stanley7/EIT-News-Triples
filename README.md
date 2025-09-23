@@ -4,6 +4,9 @@ This project collects and processes news articles from the European Institute of
 
 # Features
 Scrapes EIT news articles (2008–2025)
+
 Cleans and combines article texts
+
 Extracts role–practice–counterrole triplets using LLMs
+
 Builds an actor catalog with roles, founding dates, and locations
