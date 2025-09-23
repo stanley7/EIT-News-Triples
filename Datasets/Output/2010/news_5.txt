@@ -1,0 +1,45 @@
+Localised climate disasters are now so frequent that authorities struggle to respond in time. A key reason is the lack of effective climate risk assessments and monitoring, with municipalities still relying on fragmented data, outdated models, and reactive systems. Climate KIC is helping address this challenge.
+The case for stronger local climate services
+In a 2023 survey of 97 European regions,
+70 reported
+a lack of access to climate data and scientific information as one of their main barriers to effective adaptation. In other words, local actors are expected to bear the brunt of climate risks, but without the tools to help prevent and mitigate their impacts.
+That’s where climate services based on
+Earth observation
+– the provision and use of climate and geospatial data, information and knowledge to assist decision-making – can help address multiple climate change risks, from biodiversity loss and land management to social and political issues affecting communities’ resilience.
+Private and public sectors: what role for climate services?
+As these services and digital tools are mostly developed in the private sector, the role of innovation procurement becomes central to ensure innovative solutions are matched to local needs. To guarantee timeliness and relevance, public authorities are increasingly turning to pre-commercial procurement, where public buyers define the problems they need to be solved, and several technology providers work on new ideas in parallel to co-develop the most promising solutions in close collaboration with public authorities.
+This helps define climate services that are not only technically advanced, but grounded in real-world use cases and ready to support adaptation where it matters most. Through projects like
+PROTECT
+and
+PCP WISE
+, Climate KIC has helped establish a community of over 200 public buyers and suppliers across marine and coastal environments, energy and utilities, sustainable urban communities, agriculture and forestry, and civil security.
+Insights from the field
+To understand local challenges and help define more targeted climate service solutions, Climate KIC led a series of workshops in five European regions: Lemvig (Denmark), Helsinki (Finland), Grenspark Kalmthoutse Heide (Belgium/Netherlands), Catalonia (Spain), and Bratislava (Slovakia). The workshops, part of the PCP WISE project, brought together 92 farmers, civil servants, water agencies, meteorological institutes, and emergency responders, surfacing four key barriers:
+Data fragmentation and accessibility
+. Many participants described a landscape of scattered datasets, siloed systems, and limited interoperability. In Bratislava, emergency responders operate within systems that still rely on manual communication, reflecting broader gaps in automated infrastructure. In Helsinki, concerns around data sensitivity limit public access to critical information such as detailed flood maps. In Catalonia, groundwater consumption remains largely untracked, with monitoring systems often underdeveloped or fragmented across institutions.
+Gaps in monitoring and forecasting
+. Regions highlighted missing or insufficient data on soil moisture, groundwater, and evaporation patterns, critical for agriculture and flood prediction. Catalan stakeholders noted that while lagoon monitoring exists, it needs to be expanded region-wide. In Lemvig, participants emphasised the lack of predictive models that integrate rainfall, fjord levels, and electricity prices to manage water pumping during flood events.
+Usability and trust
+. Even when data is available, it’s often not usable. Participants in Catalonia spoke of ‘black boxes’ of information – datasets that are technically open, but practically inaccessible due to poor formatting or lack of metadata. In
+Grenspark Kalmthoutse Heide
+, differences in reference values between Belgium and the Netherlands mean that height data must be manually adjusted, complicating cross-border collaboration.
+Policy disconnects
+. Local actors frequently cited a disconnect between national strategies and local implementation. In Bratislava, overlapping plans and unclear responsibilities hinder action. In Lemvig, Natura 2000 protections limit water management options, even as subsidence and rising groundwater threaten infrastructure. Most regions called for tools to help translate policy into practice.
+Innovations grounded in local needs
+By holding structured dialogues that surface real needs and priorities, Climate KIC is helping guide the innovations catalysed by PCP WISE towards community-led solutions. Rather than starting with technology, the process begins by identifying the issues and priorities. The resulting insights helped the local authorities and groups define a set of ideal prototypes and climate services that reflected their lived experience:
+In
+Grenspark Kalmthoutse Heide
+, a fire risk dashboard that works across borders;
+In
+Catalonia
+, tools that integrate subterranean water flows with coastal monitoring;
+In
+Lemvig
+, a satellite-based app that informs farmers where streams are overflowing;
+In
+Bratislava
+, automated alert systems and clearer data ownership;
+In
+Helsinki
+, tools that quantify the impact of nature-based solutions on urban flooding.
+Learn more
