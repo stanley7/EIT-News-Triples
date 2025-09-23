@@ -24,9 +24,10 @@ This project collects and processes news articles from the European Institute of
    
     cd EIT-News-Triples
 
-3. Install dependencies
+2. Install dependencies
    
    pip install -r requirements.txt
+
 
 # References 
 
