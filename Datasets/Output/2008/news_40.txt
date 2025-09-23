@@ -1,0 +1,29 @@
+At a time when energy scarcity is threatening the pace of innovation,
+Skeleton Technologies
+is doing what most thought was impossible. They’re unleashing energy in a faster, cleaner and smarter way than ever before.
+Founded in Estonia in 2009, Skeleton began with a unique material breakthrough: Curved Graphene. That scientific edge has evolved into one of Europe’s most promising cleantech scaleups. One that is transforming energy-hungry industries, stabilising electrical grids, and powering mission-critical sectors from defence to fusion.
+But what some might find even more inspiring is that behind the breakthrough is an inspiring story rooted in childhood curiosity and long-term ambition.
+Since founding the company, Skeleton has aimed to apply our proprietary ‘curved graphene’ material in energy storage solutions. We started with supercapacitors because of their unique capacities of extreme-high power and fast charging/discharging, which we saw would fit a gap in the market where other energy storage devices, such as batteries, kept failing
+Taavi Madiber, co-founder and CEO
+The goal was clear: meet the demands of high-power, mission-critical applications where traditional batteries fall short. And they did. Skeleton’s technology now powers some of the most demanding industries on the planet, from space to mobility, grid to AI. And yet, the mission hasn’t changed.
+A strategic partnership built to scale
+Skeleton’s evolution from a deep-tech startup to an industrial frontrunner was accelerated by a partnership with InnoEnergy, one of its earliest strategic investors. But InnoEnergy’s support went far beyond capital. The partnership opened doors to new customers, alliances, and funding opportunities.
+InnoEnergy has been instrumental in our business development, not only through close collaboration with their teams across Scandinavia, Germany, and France, but also by actively connecting us with local companies and investors. Being part of InnoEnergy means joining a wide community and network that provides access to leading industrial companies in Europe
+Taavi Madiber, co-founder and CEO
+Today, the company is Europe’s only vertically integrated supercapacitor manufacturer, controlling everything from raw material production to system software.
+More power, less waste
+Skeleton’s current focus is razor-sharp: enabling power grids resilience and electrification in energy-intensive sectors with a fast-growing presence in AI infrastructure. Take data centres, for example, which are among the world’s biggest energy guzzlers. Skeleton’s response? A breakthrough product called GrapheneGPU.
+Our new product, GrapheneGPU, based on supercapacitors-technology, provides 40% more FLOPS while using 45% less energy and decreases heat generation by eliminating the need for GPU dummy loads and de-throttling GPUs and allowing them to operate at full capacity
+Taavi Madiber, co-founder and CEO
+In other words: more power, less waste. AI data centres currently use twice the energy they should need, and this is because they are wasting energy. By adopting peak shaving and intelligent energy management, tens of billions can be saved annually.
+What makes this possible is the unique ability of supercapacitors to handle extreme power peaks and react in microseconds; a capability that no other technology can match. In AI infrastructure, they’re not just a component; they’re becoming a critical part of the solution.
+It’s no surprise, then, that Skeleton was recently invited to join the Sustainable AI Coalition alongside NVIDIA, Schneider Electric, and Mistral AI. At the same time, Skeleton is becoming a valuable asset of Europe’s electricity grid.
+Ready for scale, engineered for impact
+Skeleton sits at the intersection of three explosive trends: the clean energy transition, digitalisation, and reindustrialisation.
+With patented technology and a growing commercial footprint, they’re solving a multi-billion-euro pain point: energy waste. They’ve raised over €108 million in 2023 alone, and more than €300 million since inception. They’ve secured reference customers across various sectors, including space, defence, AI, automotive, and more. And they’re doing it with full European production and materials.
+By turning advanced science into scalable solutions, Skeleton is redefining what’s possible in Europe’s clean tech economy and is proof of what’s possible when deep tech meets long-term vision.
+Recently named one of the
+World’s Top GreenTech Companies of 2025 by TIME and Statista
+, and as the highest-ranked European company in energy storage and distribution, Skeleton has already demonstrated its global potential.
+With momentum building and demand accelerating across AI, grid, and other industrial sectors, the stage is set for Skeleton’s next growth phase: one already drawing close attention from those shaping the energy and technology landscapes across Europe and beyond.
+Discover more here
