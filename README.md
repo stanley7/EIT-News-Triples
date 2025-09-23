@@ -3,7 +3,7 @@
 This project collects and processes news articles from the European Institute of Innovation & Technology (EIT). The aim is to extract triplets that describe the relationships between organizational actors, their practices and counterroles.
 
 # Features
-- Scrapes EIT news articles (2008–2025)
+- Scrapes [EIT News Events](https://www.eit.europa.eu/news-events/news) (2008–2025)
 
 - Cleans and combines article texts
 
