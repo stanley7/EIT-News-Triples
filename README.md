@@ -11,6 +11,8 @@ This project collects and processes news articles from the European Institute of
 
 - Builds an actor catalog with roles, founding dates and locations
 
+- Visualizes actor catalog using Gradio
+
 # Datasets
 - Raw News Articles; Scraped from the official EIT website for the years 2008–2025. Stored year-wise in plain text files.
 
