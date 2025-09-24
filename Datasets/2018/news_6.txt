@@ -1,0 +1,31 @@
+The innovation project will improve communication between elderly patients and healthcare professionals
+EIT Digital
+and its European partners launched a new care innovation to help elderly people prepare for visits to their doctor. Medical consultations have a small time limit, and elderly people in particular can find it difficult to ask the right questions about their conditions, which can make it difficult to get the best treatment.
+The EIT Digital innovation called the Virtual Training Doctor
+lets patients practice conversations beforehand in order to be better prepared for visits to the doctor.
+The first version of this care innovation was unveiled at
+EIT Digital's BeNeLux Innovation Day
+, on 4 December in Eindhoven.
+In this 'serious game'
+the user practices with a virtual medical expert and learns how to ask the right questions and make their goals and wishes clear
+. This improves one to one communication between the health care practitioner and patient, enabling them to decide together on the best treatment.
+'Good communication and shared decision making are vital for wellbeing and health. It increases therapy adherence and reduces re-hospitalisation'
+, says Johan Jeuring, activity lead and professor of Software Technology for Learning and Education at the University of Utrecht.
+The Virtual Training Doctor is one of EIT Digital’s Digital Wellbeing action line innovation activites. It has been developed by the
+University of Utrecht
+together with
+DialogueTrainer
+,
+Vilans
+, the
+University of Edinburgh
+and the
+Politehnica University of Bucharest
+. This international collaboration has huge advantages, said Jeuring.
+'Thanks to the collaboration with European partners who work on natural language processing, we were able to add advanced language technology to the product. Also, we were given the chance to trial it with elderly patients in Scotland for example.'
+Linked in
+Find us on Facebook
+Follow us on Twitter
+Subscribe to our YouTube Channel
+Follow us on Google+
+Follow the EIT on Instagram
