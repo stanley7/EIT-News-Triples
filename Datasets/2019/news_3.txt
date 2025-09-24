@@ -1,0 +1,69 @@
+Awards granted by
+EIT Health
+Belgium-Netherlands and EIT Health Germany
+EIT Health Belgium-Netherlands and EIT Health Germany recently announced their second round of Headstart 2019 funding, which will support 20 healthcare innovations. Start-ups backed with grants of up to EUR 50 000 each include different types of digital assistants, for doctors, nurses or intensive-care patients; ultrasound and medical imaging innovations; a new solution for bedsore prevention; microneedle patches for drug intake; improved tests for Parkinson’s and melanoma; and more.
+EIT Health Headstart programme
+The
+EIT Health Headstart programme
+is designed to help start-ups and SMEs develop their healthcare innovations faster and better. While all EIT Health regional offices awarded Headstart 2019 grants to start-ups by the end of summer, EIT Health Belgium-Netherlands and EIT Health Germany also had a second round of funding. EIT Health Belgium-Netherlands announced the funding of additional 11 start-ups on 09 December 2019, and EIT Health Germany announced the funding of additional nine start-ups after a pitch contest on 13 November 2019.
+EIT Health Headstart funding provides early-stage healthcare companies and SME's with non-dilutive funding to:
+support the next steps towards the market and shorten time-to-market for innovative products and services;
+verify the need of the product or service, and the benefit of the product or service for users, customers, health care providers and also for EIT Health Partners;
+increase the possibility of attracting further private investment.
+Meet funded start-ups
+EIT Health Belgium-Netherlands
+The 11 start-ups receiving funding under the second EIT Health Belgium-Netherlands Headstart call for 2019 were selected from a pool of 38 high-quality applicants. The start-ups chosen for this round are:
+Aspect Analytics (a spin-off company of KU Leuven – Genk, Belgium)
+Aspect Analytics
+builds enterprise-grade software to boost the utility of mass spectrometry imaging (MSI) for key life sciences applications. Their first product integrates MSI data with high-resolution microscopy into a multimodal workflow that dovetails digital pathology and MSI capabilities.
+CardiacBooster (a spin-off company of Radboud University Medical Center – Nijmegen, The Netherlands)
+CardiacBooster
+wants to help physicians to mechanically support patients through hemodynamically critical situations. Therefore, they are developing an effective, minimally invasive cardiac assist device that supports the heart’s pump action inside the left ventricle. This solution is intended to prevent a downward spiral and preserve functionality of the heart and peripheral organs.
+Corporis Medical (Maastricht, The Netherlands)
+Mediclose
+will be the first disposable automatic trocar closure device that is compatible with a multitude of conventional trocar brands. In comparison to other suturing devices, it will be faster (achieving closure within one minute), easier to use, and safer.
+Crescent Tech (a spin-off company of TU Delft, Delft, The Netherlands)
+Crescent Tech
+aims to disrupt the future of medical education by developing the world’s first purpose-designed dual-camera Headcam system for surgeons, so doctors can safely and intuitively capture and communicate knowledge from their unique point of view in the operating room – in 4K Stabilised Stereoscopic 3D or 2D.
+Cue2Walk International (cooperation with experts from universities as the TU Delft and The Hague University of Applied Sciences – The Hague, The Netherlands)
+Cue2Walk
+aims to keep Parkinson's patients active by making the proven principle of 'cueing' usable in a daily life through 'Smart Cueing'. With their technology, they aim to generate unique objective insight into the patient's state over time, allowing doctors, researchers and developers to evaluate treatment and medication, to help them find a cure for Parkinson's.
+I-Med Technology (a spin-off company of the academic hospital Maastricht and Maastricht University, Maastricht, The Netherlands)
+I-Med Technology
+aims to develop a real-time 3D surgical augmented reality system for surgeons by combining tissue visualisation at full HD resolution with overlays of critical tissues. The system results in a full see-through stereoscopic digital imaging chain that combines the visible optical range with invisible contrast from the near infrared range.
+Kaminari Medical (a spin-off company of the Erasmus University Medical Center – Rotterdam, The Netherlands)
+Kaminari
+develops an intravascular catheter to image the coronary arteries by combining ultrasound and optical imaging into an Intra Vascular Photo Acoustic (IVPA) device that will significantly reduce major adverse cardiac events and recatherisations.
+MLA Diagnostics BV (a spin-off company of the academic hospital Maastricht and Maastricht University – Maastricht, The Netherlands)
+MLA Diagnostics
+is developing a prognostic test for the newly identified DNA methylation biomarker, LY75, that will allow dermato-oncologists and pathologists to determine objectively and with high certainty which early stage melanoma patients have a poor five-year prognosis, allowing doctors to prescribe more aggressive treatment in these cases.
+MyLife Technologies (a spin-off from University of Twente, MESA+, Institute for Nanotechnology – Leiden, The Netherlands)
+Severe mental illness
+on the rise since many years. Patients get their medication mostly as oral tablets or as injection. These delivery forms come with severe side-effects, poor therapy adherence or high discomfort. Innovative microneedle patches can be self-administered, strongly reduce side-effects and boost regular drug intake.
+Sentomed (Oegstgeest, The Netherlands)
+Astmakompas
+is an e-health platform that collects real-world data of asthma patients and uses Artificial Intelligence (AI) to predict disease progression for individual patients. This will allow better asthma control with fewer complications and hospital visits, and lower costs of asthma healthcare.
+SkinBreeze (Oirsbeek, The Netherlands)
+SkinBreeze
+is a new multilayer textile platform that is designed to optimise the climate on the skin to prevent decubitus (bedsore wounds). These pressure ulcers are caused by too high pressure on the skin, yet too high moisture and temperature levels (micro climate) accelerate their development. Clothing and support devices made with SkinBreeze keep the skin cool, dry and healthy.
+EIT Health Germany
+EIT Health Germany initially envisioned that the second round of the Headstart programme would include awards valued at EUR 50 000 each for seven start-ups. However, the jury was so impressed with this year’s start-ups that EIT Health Germany made a decision to give out one more EUR 50 000 award, which was then split between two start-ups, Mindable Health and Vicron.
+Cliniserve
+A nursing task management and communication system that helps reduce workload on nurses in stationary care settings like hospitals and nursing homes. It simplifies and automates processes and helps solve the global personnel shortage in nursing.
+Clinomic GmbH
+Developing Mona, the smart bedside device for the Intensive Care Unit that uses AI to assist doctors in choosing the best treatment for their patients.
+CogniScent
+Developing a novel, non invasive, software-based test for early detection of Alzheimer's and Parkinson's. It uses machine learning to predict a personal risk score based on early risk factors and symptoms, where smell disorders play a key role.
+EpiQMAx
+It offers a service for the detection and quantification of histones and their epigenetic modifications using mass spectrometry. Their kit can measure epigenetic marks, indicating inheritable traits, in a fast, sensitive and easy manner.
+Living Brain
+It uses virtual reality to accelerate cognitive rehabilitation in neurological patients.
+Menutech
+Developing AI-powered meal-planning software to automate meal planning and menu creation, with the vision of ending malnutrition in healthcare.
+reFit Systems GmbH
+A video game platform for individualised therapy, for use by clinics, rehabilitation centres and doctors’ offices.
+Mindable Health
+A phone app that provides digital therapy for panic and agoraphobia. Users go through a treatment plan that is based on cognitive-behavioural therapy.
+Vicron
+A decision support system designed to empower doctors with expedient and fast data analytics to make better treatment decisions for patients in hospitals.
+Subscribe to our newsletter
