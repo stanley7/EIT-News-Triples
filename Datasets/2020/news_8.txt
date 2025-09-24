@@ -1,0 +1,40 @@
+EIT RawMaterials
+supported
+Recycleye
+is developing a computer vision system to build the world’s first fully automated material recovery facility (MRF).
+Recycleye
+, the intelligent waste management start-up, has secured GBP 1.2 million in seed funding, led by venture capital investors
+MMC Ventures
+,
+Playfair Capital
+and the London Waste and Recycling Board (
+LWARB
+), with participation from leading funds,
+Atypical Ventures
+,
+eolos GmbH
+and
+Creator Fund
+. The company has also received grants from
+InnovateUK
+and the European Union.
+Recycleye is developing a computer vision system and affordable robotics to build the world’s first fully automated material recovery facility. Adopting technology from fields such as autonomous vehicles, Recycleye’s vision system can detect and classify all items in waste streams – broken down by material, object and even brand.
+I was impressed by Recycleye’s expertise, and their incredible ability to federate around them, the best academic, technological and industrial skills, as well as to transpose all this knowledge in very concrete cases. I am delighted to support the growth of Recycleye, convinced that they will be able to provide breakthrough technologies to further the creation of an ever more circular economy.
+Bernard Harambillet, Recycleye’s advisor and former CEO of Veolia Waste Management
+Unlocking the full potential of waste sorting infrastructure
+Until now, Recycleye’s advanced team of world-class research engineers have been working in stealth mode with the company’s partners to build and deploy the vision system in under a year. Their early academic partnerships, comprised of nine computer scientists, with
+Imperial College London
+and the
+Delft University of Technology
+, were pivotal in building Recycleye’s technology. Recycleye has also benefitted from an early partnership with Microsoft, which provided technological capabilities that has scaled the company from research and development to commercialisation. Notably, the company has partnered with leading accelerator programmes such as
+EIT RawMaterials Accelerator
+, that are bolstering Recycleye’s mission to turn rubbish back into resources.
+Discover the EIT RawMaterials Accelerator programme
+Helping societies to become more sustainable is a priority for Imperial College London through its Transition to Zero Pollution programme. I am pleased that Imperial alumnus company Recycleye is building on its founders’ experiences of the College’s entrepreneurship programmes. The company’s founders are also working closely with Imperial academics, especially from the Department of Civil and Environmental Engineering, to contribute to the circular economy by developing AI techniques for Recycleye’s vision system to detect and classify waste stream items.
+Simon Hepworth, Director of Enterprise at Imperial College London
+The company is currently working with two of the three largest waste management players in the UK to provide total waste knowledge. Their initial pilot programmes, which have been deployed in the UK and France, have been installed to optimise waste facility operations. Using Recycleye’s computer vision system has enabled clients, for the first time, to examine their facility and strategic operations using live data of outgoing waste flows.
+At one deployment, Recycleye’s vision system can distinguish outgoing waste flows between food-grade high-density polyethylene (HDPE) plastic and non-food-grade HDPE plastic. Using computer vision to make this distinction, is enabling facilities to provide higher value bales and subsequently leverage this data to charge their clients based on the individual composition of every ton.
+This technology could be a game-changer, not just for the recycling industry but for manufacturing and innovation in this country. Recycleye has the potential to radically improve the quality of materials that come out of a Materials Recycling Facility and refine sorting to such an extent that MRFs could, in future, provide highly specific materials ‘on demand’ to innovators who need recycled feedstock for their products. At LWARB we’re excited to be able to invest in Recycleye through the Greater London Investment Fund and we’ll be watching with interest as the system expands over the next few years.
+Wayne Hubbard, CEO at LWARB, who are a GLIF investor
+Recycleye is innovating automated turnkey solutions that will unlock the full potential of existing waste sorting infrastructure. At the core of the company’s mission is to digitise and decentralise the recycling industry by using 21st century technology that enables autonomous decision making. Recycleye are creating technologies that create total knowledge, total automation and total control for every materials recovery facility.
+More about Recycleye

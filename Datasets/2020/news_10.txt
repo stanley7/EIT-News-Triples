@@ -1,0 +1,23 @@
+In a pilot project coordinated by the
+EIT Digital
+Partner
+Forum Virium Helsinki
+, the
+LMAD
+robot receives gifts for a holiday charity campaign in Finland.
+Christmas Tree, in Finnish ‘
+Joulupuu
+’, is a charity campaign to collect gifts for children who receive child welfare services or special support and who have limited opportunities to celebrate the holidays. Anyone can participate in the gift collection.
+The
+LMAD
+robot Elf, where LMAD stands for Last Mile Autonomous Delivery, will deliver the gifts for the charity campaign to Helsinki social services, who will, in turn, deliver the gifts to the families. The robot allows the gifts to be collected safely outdoors, in keeping with the pandemic instructions.
+At the same time, the robot is also collecting data on the challenges and opportunities of autonomous deliveries. Testing the delivery robot in a real urban environment provides valuable information on the problems and opportunities of autonomous deliveries. Especially interesting is to see how autonomously moving logistics robots can solve last-mile delivery challenges.
+The robot pilot is part of
+EIT Digital
+’s Last Mile Autonomous Delivery innovation activity. It aims to develop and bring to market a software platform for controlling and optimising autonomously moving delivery robots. The practical operations are handled by the
+LMAD
+start-up.
+This test period where the robot delivers real packages from to real customers already proves that delivery robots are a flexible and environmentally-friendly alternative for package deliveries in densely built urban environments, such as Helsinki city centre.
+Gergely Horváth, from LMAD
+Read more about EIT Digital
+Get the best of the EIT’s news once each month
