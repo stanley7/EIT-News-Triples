@@ -1,0 +1,214 @@
+```json
+[
+  {
+    "role_identity": "Dr Martin Schuurmans (EIT Governing Board Chairman)",
+    "practice": "presented latest developments",
+    "counterrole": "Council of Ministers",
+    "sentence": "Dr Martin Schuurmans, Chairman of the EIT's Governing Board, was invited to Brussels on 2 December 2008 in order to present latest developments of the EIT to the Council of Ministers and at the European Parliament."
+  },
+  {
+    "role_identity": "Dr Martin Schuurmans (EIT Governing Board Chairman)",
+    "practice": "presented latest developments",
+    "counterrole": "European Parliament",
+    "sentence": "Dr Martin Schuurmans, Chairman of the EIT's Governing Board, was invited to Brussels on 2 December 2008 in order to present latest developments of the EIT to the Council of Ministers and at the European Parliament."
+  },
+  {
+    "role_identity": "EIT Governing Board",
+    "practice": "started a dialogue with",
+    "counterrole": "interested parties",
+    "sentence": "The Commission welcomes this seminar, which the EIT Governing Board is using to start a dialogue with interested parties to establish a common vision for the KICs."
+  },
+  {
+    "role_identity": "The Board",
+    "practice": "elected",
+    "counterrole": "four members of the Executive Committee",
+    "sentence": "The Board also elected the four members of the Executive Committee (see below), which is presided by the Chairman of the Governing Board, Dr. Schuurmans, and will prepare meetings and facilitate the EIT's strategic decision-making."
+  },
+  {
+    "role_identity": "EU Member States",
+    "practice": "decided",
+    "counterrole": "EIT headquarters in Budapest",
+    "sentence": "On 18th June, EU Member States decided unanimously that the European Institute of Innovation and Technology (EIT) will have its headquarters in Budapest."
+  },
+  {
+    "role_identity": "Members of the EIT Governing Board",
+    "practice": "held a high‑level lunch meeting with",
+    "counterrole": "President José Manuel Barroso",
+    "sentence": "Members of the EIT Governing Board held a high-level lunch meeting with the President of the European Commission, José Manuel Barroso, Vice‑President Günter Verheugen (Enterprise and Industry) and Commissioners Ján Figel' (Education, Training, Culture and Youth) and Janez Potočnik (Science and Research) to discuss the EIT's progress made to date."
+  },
+  {
+    "role_identity": "Members of the EIT Governing Board",
+    "practice": "held a high‑level lunch meeting with",
+    "counterrole": "Vice‑President Günter Verheugen",
+    "sentence": "Members of the EIT Governing Board held a high-level lunch meeting with the President of the European Commission, José Manuel Barroso, Vice‑President Günter Verheugen (Enterprise and Industry) and Commissioners Ján Figel' (Education, Training, Culture and Youth) and Janez Potočnik (Science and Research) to discuss the EIT's progress made to date."
+  },
+  {
+    "role_identity": "Members of the EIT Governing Board",
+    "practice": "held a high‑level lunch meeting with",
+    "counterrole": "Commissioner Ján Figel'",
+    "sentence": "Members of the EIT Governing Board held a high-level lunch meeting with the President of the European Commission, José Manuel Barroso, Vice‑President Günter Verheugen (Enterprise and Industry) and Commissioners Ján Figel' (Education, Training, Culture and Youth) and Janez Potočnik (Science and Research) to discuss the EIT's progress made to date."
+  },
+  {
+    "role_identity": "Members of the EIT Governing Board",
+    "practice": "held a high‑level lunch meeting with",
+    "counterrole": "Commissioner Janez Potočnik",
+    "sentence": "Members of the EIT Governing Board held a high-level lunch meeting with the President of the European Commission, José Manuel Barroso, Vice‑President Günter Verheugen (Enterprise and Industry) and Commissioners Ján Figel' (Education, Training, Culture and Youth) and Janez Potočnik (Science and Research) to discuss the EIT's progress made to date."
+  },
+  {
+    "role_identity": "EIT",
+    "practice": "launched a call for proposals for",
+    "counterrole": "first Knowledge and Innovation Communities (KICs)",
+    "sentence": "The EIT launched the call for proposals for its first Knowledge and Innovation Communities (KICs) on Thursday 2 April 2009."
+  },
+  {
+    "role_identity": "EIT",
+    "practice": "published the selection criteria for",
+    "counterrole": "2014 Call for KICs",
+    "sentence": "The EIT published the Selection Criteria for the EIT’s 2014 Call for KICs."
+  },
+  {
+    "role_identity": "EIT",
+    "practice": "announced the winners of",
+    "counterrole": "strategic partnerships to boost innovation in health and raw materials",
+    "sentence": "Today, the EIT announced the winners of the call for strategic partnerships to boost innovation and tackle health and raw materials challenges in Europe."
+  },
+  {
+    "role_identity": "Climate‑KIC",
+    "practice": "signed a Memorandum of Understanding with",
+    "counterrole": "European Business and Technology Centre (EBTC)",
+    "sentence": "Climate‑KIC has signed a Memorandum of Understanding with the European Business and Technology Centre (EBTC) in Bangalore, India this week."
+  },
+  {
+    "role_identity": "EIT InnoEnergy",
+    "practice": "signed a partnership agreement with",
+    "counterrole": "MOL Group",
+    "sentence": "EIT InnoEnergy has signed a partnership agreement with MOL Group, under which both companies will carry out activities supporting the development of energy innovation."
+  },
+  {
+    "role_identity": "EIT InnoEnergy",
+    "practice": "collaborated with",
+    "counterrole": "Schneider Electric",
+    "sentence": "EIT InnoEnergy and Schneider Electric announced the completion of a two‑year collaboration to industrialise and commercialise PowerTag NSX."
+  },
+  {
+    "role_identity": "EIT Climate‑KIC",
+    "practice": "supports",
+    "counterrole": "European climate entrepreneurs in India",
+    "sentence": "EIT Climate‑KIC supports European climate entrepreneurs in India."
+  },
+  {
+    "role_identity": "EIT Digital",
+    "practice": "launched a care innovation for",
+    "counterrole": "elderly people",
+    "sentence": "EIT Digital and its European partners launched a new care innovation to help elderly people prepare for visits to their doctor."
+  },
+  {
+    "role_identity": "EIT Director José Manuel Leceta",
+    "practice": "collaborates with",
+    "counterrole": "European University Institute (EUI)",
+    "sentence": "The EIT Director, José Manuel Leceta, will be personally and directly collaborating with the EUI in Florence to establish close links between the two institutions."
+  },
+  {
+    "role_identity": "EIT",
+    "practice": "signed a Memorandum of Understanding with",
+    "counterrole": "European Police College (CEPOL)",
+    "sentence": "EIT and the European Police College (CEPOL) signed a Memorandum of Understanding at the EIT Headquarters."
+  },
+  {
+    "role_identity": "EIT",
+    "practice": "appointed",
+    "counterrole": "Dr Ronald de Bruin as acting Director",
+    "sentence": "The EIT appointed Dr. Ronald de Bruin as acting Director."
+  },
+  {
+    "role_identity": "EIT",
+    "practice": "appointed",
+    "counterrole": "Steering Committee to oversee the selection of new Governing Board members",
+    "sentence": "The Governing Board of the European Institute of Innovation and Technology (EIT) appointed a Steering Committee to oversee the selection of four new members of the EIT Governing Board."
+  },
+  {
+    "role_identity": "EIT",
+    "practice": "launched a call for expressions of interest for",
+    "counterrole": "Policy Officer (AD08) profile",
+    "sentence": "The EIT launched a call for expressions of interest with a view to establishing a reserve list for the profile of Policy Officer (AD08)."
+  },
+  {
+    "role_identity": "EIT",
+    "practice": "supported",
+    "counterrole": "start‑up EcoBean (clean energy from coffee waste)",
+    "sentence": "EIT supported start‑up EcoBean, which is producing clean energy from coffee waste."
+  },
+  {
+    "role_identity": "EIT",
+    "practice": "supported",
+    "counterrole": "start‑up Fairphone (ethical smartphone)",
+    "sentence": "EIT supported start‑up Fairphone, which creates positive social and environmental impact from the beginning to the end of a phone’s life cycle."
+  },
+  {
+    "role_identity": "EIT",
+    "practice": "supported",
+    "counterrole": "start‑up Nerdalize (cloud‑based eRadiator)",
+    "sentence": "EIT supported start‑up Nerdalize, a Climate‑KIC alumni start‑up announced their plans for expanding their collaboration with Eneco."
+  },
+  {
+    "role_identity": "EIT",
+    "practice": "supported",
+    "counterrole": "start‑up Recycleye (automated material‑recovery facility)",
+    "sentence": "EIT supported start‑up Recycleye, which is developing a computer vision system to build the world’s first fully automated material recovery facility."
+  },
+  {
+    "role_identity": "EIT",
+    "practice": "supported",
+    "counterrole": "start‑up ThingWave (rock‑bolt monitoring)",
+    "sentence": "EIT supported start‑up ThingWave, which provides solutions for real‑time and online rock bolt monitoring."
+  },
+  {
+    "role_identity": "EIT",
+    "practice": "supported",
+    "counterrole": "start‑up Sentryo (industrial‑control‑systems cybersecurity)",
+    "sentence": "EIT supported start‑up Sentryo, which offers a platform for industrial control systems cybersecurity."
+  },
+  {
+    "role_identity": "EIT",
+    "practice": "supported",
+    "counterrole": "start‑up Entremo (vital‑sign wristband)",
+    "sentence": "EIT supported start‑up Entremo, which is deploying a wristband to remotely monitor vital signs of patients."
+  },
+  {
+    "role_identity": "EIT",
+    "practice": "collaborated with",
+    "counterrole": "Northvolt (battery recycling)",
+    "sentence": "EIT collaborated with Northvolt to develop new battery recycling methods."
+  },
+  {
+    "role_identity": "EIT",
+    "practice": "collaborated with",
+    "counterrole": "JA Europe (entrepreneurship and STEM education)",
+    "sentence": "EIT collaborated with JA Europe to equip young people with entrepreneurship and STEM skills."
+  },
+  {
+    "role_identity": "EIT",
+    "practice": "collaborated with",
+    "counterrole": "European Commission (policy development and stakeholder relations)",
+    "sentence": "EIT collaborated with the European Commission on policy development and stakeholder relations."
+  },
+  {
+    "role_identity": "Commissioner Navracsics",
+    "practice": "visited",
+    "counterrole": "EIT",
+    "sentence": "Commissioner Navracsics visited the EIT, an independent EU body based in Budapest."
+  },
+  {
+    "role_identity": "President José Manuel Barroso",
+    "practice": "visited",
+    "counterrole": "EIT Headquarters in Budapest",
+    "sentence": "European Commission President José Manuel Barroso and his delegation visited the EIT Headquarters in Budapest."
+  },
+  {
+    "role_identity": "EIT Director Martin Kern",
+    "practice": "met with",
+    "counterrole": "Hungarian Government Commissioner Prof. József Pálinkás",
+    "sentence": "EIT Director Martin Kern met with Hungarian Government Commissioner Prof. József Pálinkás to discuss further cooperation opportunities between the EIT and its host country."
+  }
+]
+```
