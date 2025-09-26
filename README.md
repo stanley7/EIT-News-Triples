@@ -11,10 +11,10 @@ This project collects and processes news articles from the European Institute of
 
 - Builds an actor catalog with roles, founding dates and locations
 
-- Visualizes actor catalog using Gradio
+- Visualizes actor catalog using [Gradio](https://www.gradio.app/)
 
 # Datasets
-- Raw News Articles; Scraped from the official EIT website for the years 2008–2025. Stored year-wise in plain text files.
+- Raw News Articles; Scraped from the official [EIT website](https://www.eit.europa.eu/news-events/news) for the years 2008–2025. Stored year-wise in plain text files.
 
 - Synthetic Dataset: Artificially generated dataset used for testing and evaluation of the triplet extraction pipeline.
 
