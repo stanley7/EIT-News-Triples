@@ -1,6 +1,6 @@
 # About
 
-This repository contains a comparison of human-annotated and GPT-4-generated triples extracted from European innovation news and press releases. Each row represents a triple consisting of:
+This repository contains a comparison of human-annotated and GPT-4-generated triples extracted from European innovation news and press releases published between 2019 and 2021. Each row represents a triple consisting of:
 
 - Actor: The main organization or entity performing an action
 
