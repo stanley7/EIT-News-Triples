@@ -1,0 +1,140 @@
+ABOUT SPACY LLMS
+
+================================================================================
+
+WHAT IS SPACY LLMS?
+
+spaCy LLMs is a Python library that connects traditional Natural Language 
+Processing with Large Language Models like GPT-3.5, GPT-4 and local models.
+
+In simple terms: Instead of manually calling AI APIs and parsing messy text 
+responses, spaCy LLMs gives you clean, structured data automatically.
+
+================================================================================
+
+THE PROBLEM IT SOLVES
+
+Without spaCy LLMs (Traditional Approach):
+- You write prompts manually
+- You call the API yourself
+- You get unpredictable string responses
+- You write complex parsing code
+- You handle different response formats
+- You structure the data yourself
+
+Result: 50+ lines of code, inconsistent outputs, maintenance headaches
+
+With spaCy LLMs:
+- You configure what you want (one time)
+- spaCy handles prompts automatically
+- spaCy calls the API
+- spaCy parses responses automatically
+- You get structured data objects
+
+Result: 10 lines of code, consistent outputs, easy maintenance
+
+================================================================================
+
+HOW IT WORKS
+
+Your Text
+    |
+    v
+spaCy LLMs (creates prompt automatically)
+    |
+    v
+LLM API (GPT-3.5, GPT-4 etc)
+    |
+    v
+spaCy LLMs (parses response automatically)
+    |
+    v
+Structured Data (entities, categories, summaries)
+
+================================================================================
+
+WHAT CAN IT DO?
+
+Task                          | What It Does                    | Example
+------------------------------|--------------------------------|---------------------------
+Named Entity Recognition      | Find people, companies, places | "Apple" -> ORG
+Text Classification           | Categorize documents           | "Great!" -> POSITIVE
+Summarization                 | Create short summaries         | 500 words -> 50 words
+Relation Extraction           | Find connections               | founded -> FOUNDED
+Sentiment Analysis            | Detect emotions                | "I love this" -> POSITIVE
+Translation                   | Translate languages            | "Hello" -> "Hola"
+
+================================================================================
+
+WHY USE SPACY LLMS?
+
+- Automatic prompt engineering (no manual prompt writing)
+- Consistent output (same format every time)
+- Structured data (not messy strings)
+- Less code (10 lines vs 50+ lines)
+- Multiple LLM support (OpenAI, Anthropic, Cohere, local models)
+- Production ready (built-in error handling and batching)
+- spaCy integration (works with existing spaCy pipelines)
+
+================================================================================
+
+SIMPLE EXAMPLE
+
+Task: Extract person names and companies from text
+
+    from spacy_llm.util import assemble
+
+    config = """
+    [nlp]
+    lang = "en"
+    pipeline = ["llm"]
+
+    [components.llm.task]
+    @llm_tasks = "spacy.NER.v3"
+    labels = ["PERSON", "ORG"]
+
+    [components.llm.model]
+    @llm_models = "spacy.GPT-3-5.v1"
+    """
+
+    nlp = assemble(config)
+    doc = nlp("Apple CEO Tim Cook announced new products.")
+
+    for ent in doc.ents:
+        print(f"{ent.text} -> {ent.label_}")
+
+    Output:
+    Apple -> ORG
+    Tim Cook -> PERSON
+
+
+================================================================================
+
+KEY DIFFERENCE FROM DIRECT LLM USE
+
+Direct LLM Approach:
+    prompt = "Extract names from: Apple CEO Tim Cook..."
+    response = openai.chat(prompt)
+    Output: "The person is Tim Cook and company is Apple"
+
+spaCy LLMs Approach:
+    doc = nlp("Apple CEO Tim Cook...")
+    Output: [Entity("Apple", "ORG"), Entity("Tim Cook", "PERSON")]
+    Already structured!
+
+================================================================================
+
+INSTALLATION
+
+    pip install spacy spacy-llm spacy-llm[openai]
+    python -m spacy download en_core_web_sm
+    export OPENAI_API_KEY="your-key-here"
+
+================================================================================
+
+REFERENCES
+
+- Documentation: https://spacy.io/usage/large-language-models
+- spaCy: https://spacy.io
+
+================================================================================
