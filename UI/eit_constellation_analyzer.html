@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EIT Logic Constellation Analyzer</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: white;
+            color: #000;
+        }
+
+        /* Header */
+        header {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 16px 32px;
+            background: white;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .header-subtitle {
+            font-size: 13px;
+            color: #525252;
+        }
+
+        /* Navigation Tabs */
+        nav {
+            border-bottom: 1px solid #e0e0e0;
+            background: #f4f4f4;
+            padding: 0 32px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 2px;
+        }
+
+        .tab {
+            padding: 12px 20px;
+            border: none;
+            background: transparent;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            font-size: 14px;
+            font-family: inherit;
+            color: #525252;
+            transition: all 0.2s;
+        }
+
+        .tab.active {
+            background: white;
+            border-bottom: 2px solid black;
+            font-weight: 600;
+            color: black;
+        }
+
+        /* Main Content */
+        main {
+            padding: 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: inherit;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+        }
+
+        .btn-primary {
+            background: black;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: black;
+            border: 1px solid black;
+        }
+
+        .btn-success {
+            background: #2ca02c;
+            color: white;
+        }
+
+        .btn-warning {
+            background: #ff9800;
+            color: white;
+        }
+
+        .btn-danger {
+            background: white;
+            color: #d32f2f;
+            border: 1px solid #d32f2f;
+        }
+
+        /* Cards */
+        .card {
+            border: 1px solid #e0e0e0;
+            padding: 24px;
+            background: white;
+            margin-bottom: 24px;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+        /* Upload Area */
+        .upload-area {
+            padding: 32px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+            background: #fafafa;
+            transition: background 0.2s;
+        }
+
+        .upload-area:hover {
+            background: #f4f4f4;
+            border-color: #000; 
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: black;
+            transition: width 0.3s;
+        }
+
+        /* Network Container */
+        #network-container {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #e0e0e0;
+            background: white;
+        }
+
+        /* Validation Interface */
+        .validation-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .triplet-field {
+            margin-bottom: 16px;
+        }
+
+        .triplet-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #525252;
+        }
+
+        .triplet-value {
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            border: 1px solid;
+        }
+
+        .role-value {
+            background: #e3f2fd;
+            border-color: #90caf9;
+        }
+
+        .practice-value {
+            background: #f3e5f5;
+            border-color: #ce93d8;
+        }
+
+        .counterrole-value {
+            background: #e8f5e9;
+            border-color: #81c784;
+        }
+
+        .triplet-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: inherit;
+        }
+
+        .role-input { border-color: #1976d2; }
+        .practice-input { border-color: #7b1fa2; }
+        .counterrole-input { border-color: #388e3c; }
+
+        /* Stats */
+        .stat-card {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #525252;
+        }
+
+        /* Legend */
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+        }
+
+        .confidence-bar {
+            flex: 1;
+            height: 8px;
+            background: #e0e0e0;
+            position: relative;
+        }
+
+        .confidence-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: #ff9800;
+        }
+
+        /* Hide file input */
+        input[type="file"] {
+            display: none;
+        }
+
+        /* Loading spinner */
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .spinner {
+            animation: spin 1s linear infinite;
+        }
+
+        /* Tooltips for network nodes */
+        .tooltip {
+            position: absolute;
+            padding: 8px 12px;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            font-size: 12px;
+            border-radius: 4px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .validation-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="header-title">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="6"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+                <h1>EIT Logic Constellation Analyzer</h1>
+            </div>
+            <div class="header-subtitle">Institutional Pluralism Research Tool</div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('upload')">📤 Data Upload</button>
+            <button class="tab" onclick="showTab('configure')">⚙️ Configure Analysis</button>
+            <button class="tab" onclick="showTab('extract')">📝 Extract Triplets</button>
+            <button class="tab" onclick="showTab('validate')">✓ Validate & Train</button>
+            <button class="tab" onclick="showTab('analyze')">🔗 Network Analysis</button>
+            <button class="tab" onclick="showTab('results')">📊 Results</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Upload Tab -->
+<div id="upload" class="tab-content active">
+    <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Upload Data Sources</h2>
+    <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">
+        Upload one .txt file for each EIT community to begin analysis
+    </p>
+
+    <div class="grid grid-3">
+        <!-- EIT Health -->
+        <div class="card">
+            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">EIT Health</h3>
+            <a href="https://eithealth.eu" target="_blank" style="font-size: 12px; color: #0066cc; text-decoration: none;">
+                    ↗ Visit website
+                </a>
+            <div class="upload-area" onclick="document.getElementById('file-health').click()">
+                <div style="font-size: 32px; margin-bottom: 12px;">📤</div>
+                <div style="font-size: 14px; color: #525252; margin-bottom: 4px;">Click to upload</div>
+                <div style="font-size: 12px; color: #8d8d8d;">.txt files only</div>
+            </div>
+            <input type="file" id="file-health" accept=".txt" onchange="handleFileUpload('health', this.files)">
+            <div id="health-preview" style="margin-top: 16px; font-size: 13px; min-height: 20px;"></div>
+        </div>
+
+        <!-- EIT Food -->
+        <div class="card">
+            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">EIT Food</h3>
+            <a href="https://www.eitfood.eu" target="_blank" style="font-size: 12px; color: #0066cc; text-decoration: none;">
+                    ↗ Visit website
+                </a>
+            <div class="upload-area" onclick="document.getElementById('file-food').click()">
+                <div style="font-size: 32px; margin-bottom: 12px;">📤</div>
+                <div style="font-size: 14px; color: #525252; margin-bottom: 4px;">Click to upload</div>
+                <div style="font-size: 12px; color: #8d8d8d;">.txt files only</div>
+            </div>
+            <input type="file" id="file-food" accept=".txt" onchange="handleFileUpload('food', this.files)">
+            <div id="food-preview" style="margin-top: 16px; font-size: 13px; min-height: 20px;"></div>
+        </div>
+
+        <!-- EIT InnoEnergy -->
+        <div class="card">
+            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">EIT InnoEnergy</h3>
+            <a href="https://www.innoenergy.com" target="_blank" style="font-size: 12px; color: #0066cc; text-decoration: none;">
+                    ↗ Visit website
+                </a>
+            <div class="upload-area" onclick="document.getElementById('file-energy').click()">
+                <div style="font-size: 32px; margin-bottom: 12px;">📤</div>
+                <div style="font-size: 14px; color: #525252; margin-bottom: 4px;">Click to upload</div>
+                <div style="font-size: 12px; color: #8d8d8d;">.txt files only</div>
+            </div>
+            <input type="file" id="file-energy" accept=".txt" onchange="handleFileUpload('energy', this.files)">
+            <div id="energy-preview" style="margin-top: 16px; font-size: 13px; min-height: 20px;"></div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" style="margin-top: 32px;" onclick="showTab('configure')" id="continue-btn" disabled>
+        Continue to Configuration →
+    </button>
+</div>
+       
+
+        <!-- Configure Tab -->
+        <div id="configure" class="tab-content">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Configure LLM Analysis</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">
+                Set parameters for extracting role identity–practice–counterrole triplets
+            </p>
+
+            <div class="card">
+                <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Extraction Backend</label>
+                <select id="backend-select" style="width: 100%; padding: 10px; border: 1px solid #8d8d8d; font-size: 14px; margin-bottom: 12px;">
+                    <option>SpacyLLM</option>
+                    <option>Mistral 7B</option>
+                    <option>Gemma 7B</option>
+                </select>
+               <!-- <div style="font-size: 12px; color: #525252; padding: 12px; background: #f4f4f4; border: 1px solid #e0e0e0;">
+                    <strong>SpacyLLM</strong> uses spaCy's NLP pipeline with LLM integration for better entity recognition and relation extraction.
+                </div> -->
+            </div>
+
+            <div class="card">
+                <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Extraction Prompt Template</label>
+                <textarea id="prompt-template" style="width: 100%; min-height: 120px; padding: 12px; border: 1px solid #8d8d8d; font-size: 13px; font-family: 'IBM Plex Mono', monospace;">Extract semantic triplets from the text:
+- Role Identity: What organizational role does the EIT enact?
+- Practice: What action or activity is performed?
+- Counterrole: Who is the recipient or target?
+
+Example: [Enabler] → [supports] → [startups]</textarea>
+            </div>
+
+            <div class="card">
+                <label style="display: block; font-weight: 600; margin-bottom: 16px; font-size: 14px;">Analysis Parameters</label>
+                <div style="margin-bottom: 16px;">
+                    <label style="font-size: 13px; color: #525252; display: block; margin-bottom: 8px;">
+                        Minimum triplet frequency threshold
+                    </label>
+                    <input type="number" id="min-frequency" value="2" min="1" style="padding: 8px; border: 1px solid #8d8d8d; width: 100px; font-size: 14px;">
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <label style="font-size: 13px; color: #525252; display: block; margin-bottom: 8px;">
+                        Number of triplets to validate
+                    </label>
+                    <input type="number" id="validate-count" value="50" min="10" style="padding: 8px; border: 1px solid #8d8d8d; width: 100px; font-size: 14px;">
+                    <div style="font-size: 11px; color: #8d8d8d; margin-top: 4px;">
+                        Start with 50-100 for initial model training
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" onclick="showTab('extract')">Start Extraction →</button>
+        </div>
+
+        <!-- Extract Tab -->
+        <div id="extract" class="tab-content">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Extract Triplets</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">
+                LLM is processing documents to identify role identity–practice–counterrole structures
+            </p>
+
+            <div id="extract-start" style="text-align: center; padding: 64px 0;">
+                <button class="btn btn-primary" style="padding: 16px 32px; font-size: 16px;" onclick="startExtraction()">
+                    ▶️ Begin Processing
+                </button>
+            </div>
+
+            <div id="extract-processing" style="display: none; text-align: center; padding: 64px 0;">
+                <svg class="spinner" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+                </svg>
+                <div style="font-size: 16px; font-weight: 500; margin: 24px 0 8px;">Processing documents...</div>
+                <div style="font-size: 14px; color: #525252;">Extracting semantic triplets from files</div>
+            </div>
+        </div>
+
+        <!-- Validate Tab -->
+        <div id="validate" class="tab-content">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Validate & Train Model</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">
+                Review LLM-extracted triplets and provide corrections to improve the model
+            </p>
+
+            <!-- Progress -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                    <span style="font-size: 14px; font-weight: 600;">
+                        Progress: <span id="current-index">1</span> / <span id="total-triplets">5</span>
+                    </span>
+                    <span style="font-size: 14px; color: #525252;">
+                        <span id="progress-percent">20</span>% Complete
+                    </span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 20%"></div>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-4" style="margin-top: 24px;">
+                    <div class="stat-card">
+                        <div class="stat-value" style="color: #2ca02c;" id="stat-accepted">0</div>
+                        <div class="stat-label">Accepted</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" style="color: #ff9800;" id="stat-corrected">0</div>
+                        <div class="stat-label">Corrected</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" style="color: #d62728;" id="stat-rejected">0</div>
+                        <div class="stat-label">Rejected</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-remaining">5</div>
+                        <div class="stat-label">Remaining</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Validation Interface -->
+            <div class="validation-container">
+                <!-- Source Text -->
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <h3 style="font-size: 16px; font-weight: 600; margin: 0;">Source Text</h3>
+                        <div style="padding: 4px 12px; background: #f4f4f4; font-size: 12px; font-weight: 500;" id="current-community">
+                            EIT Health
+                        </div>
+                    </div>
+                    <div style="padding: 16px; background: #f4f4f4; font-size: 14px; line-height: 1.6; border: 1px solid #e0e0e0; min-height: 120px;" id="source-text">
+                        EIT Health supports startups in developing innovative healthcare solutions through mentoring programs and funding opportunities.
+                    </div>
+
+                    <div style="margin-top: 16px; padding: 12px; background: #fff5e6; border: 1px solid #ffe0b2;">
+                        <div style="font-size: 12px; font-weight: 600; margin-bottom: 4px; color: #8d6e00;">Model Confidence</div>
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="confidence-fill" style="width: 87%"></div>
+                            </div>
+                            <span style="font-size: 14px; font-weight: 600; min-width: 50px;" id="confidence-value">87%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Extracted Triplet -->
+                <div class="card">
+                    <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">Extracted Triplet</h3>
+<div id="triplet-view">
+  <div class="triplet-field">
+    <label class="triplet-label">ROLE IDENTITY</label>
+    <div class="triplet-value role-value" id="role-display">—</div>
+  </div>
+  <div class="triplet-field">
+    <label class="triplet-label">PRACTICE</label>
+    <div class="triplet-value practice-value" id="practice-display">—</div>
+  </div>
+  <div class="triplet-field">
+    <label class="triplet-label">COUNTERROLE</label>
+    <div class="triplet-value counterrole-value" id="counterrole-display">—</div>
+  </div>
+</div>
+                    <div id="triplet-edit" style="display: none;">
+    <div class="triplet-field">
+        <label class="triplet-label">ROLE IDENTITY</label>
+        <input type="text" class="triplet-input role-input" id="role-edit" value="supporter">
+    </div>
+    <div class="triplet-field">
+        <label class="triplet-label">PRACTICE</label>
+        <input type="text" class="triplet-input practice-input" id="practice-edit" value="supports">
+    </div>
+    <div class="triplet-field">
+        <label class="triplet-label">COUNTERROLE</label>
+        <input type="text" class="triplet-input counterrole-input" id="counterrole-edit" value="startups">
+    </div>
+    
+ 
+<!-- Confidence Score Below Counterrole -->
+<div class="triplet-field" style="margin-top: 16px;">
+    <label class="triplet-label">MODEL CONFIDENCE</label>
+    <div style="display: flex; align-items: center; gap: 12px;">
+        <div class="confidence-bar" style="flex: 1; height: 8px; background: #e0e0e0; position: relative; overflow: hidden;">
+            <div id="triplet-confidence-fill" style="position: absolute; left: 0; top: 0; height: 100%; background: #2ca02c; transition: width 0.3s; width: 87%;"></div>
+        </div>
+        <span style="font-size: 14px; font-weight: 600; min-width: 50px;" id="triplet-confidence-value">87%</span>
+    </div>
+    <div style="font-size: 11px; color: #666; margin-top: 4px;">
+        How confident Mistral is about this specific triplet
+    </div>
+</div>
+</div>
+
+                    <!-- Action Buttons -->
+                    <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 12px;">
+                        <div id="action-buttons">
+                            <button class="btn btn-success" style="width: 100%; margin-bottom: 12px;" onclick="validateTriplet('accept')">
+                                ✓ Accept Triplet
+                            </button>
+                            <button class="btn btn-warning" style="width: 100%; margin-bottom: 12px;" onclick="startEdit()">
+                                ✏️ Correct Triplet
+                            </button>
+                            <button class="btn btn-danger" style="width: 100%;" onclick="validateTriplet('reject')">
+                                ✕ Reject Triplet
+                            </button>
+                        </div>
+                        <div id="edit-buttons" style="display: none;">
+                            <button class="btn btn-primary" style="width: 100%; margin-bottom: 12px;" onclick="validateTriplet('correct')">
+                                ✓ Save Correction
+                            </button>
+                            <button class="btn btn-secondary" style="width: 100%;" onclick="cancelEdit()">
+                                Cancel Edit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="card" style="display: flex; justify-content: space-between; align-items: center;">
+                <button class="btn btn-secondary" onclick="previousTriplet()" id="prev-btn">← Previous</button>
+                <div style="font-size: 14px; color: #525252;">
+                    Triplet <span id="nav-current">1</span> of <span id="nav-total">5</span>
+                </div>
+                <button class="btn btn-secondary" onclick="nextTriplet()" id="next-btn">Next →</button>
+            </div>
+
+            <!-- Completion Message -->
+            <div id="validation-complete" style="display: none;" class="card" style="border: 1px solid #2ca02c; background: #f1f8f4; text-align: center;">
+                <div style="font-size: 48px; margin-bottom: 16px;">✓</div>
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Validation Complete!</h3>
+                <p style="font-size: 14px; color: #525252; margin-bottom: 24px;">
+                    All triplets have been reviewed. The model will use your feedback to improve future extractions.
+                </p>
+                <button class="btn btn-primary" style="padding: 14px 32px; font-size: 16px;" onclick="generateNetwork()">
+                    Build Network Analysis →
+                </button>
+            </div>
+        </div>
+
+        <!-- Network Analysis Tab -->
+        <div id="analyze" class="tab-content">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Network Analysis</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">
+                Semantic network showing role identity–practice–counterrole relationships
+            </p>
+
+            <div style="display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; align-items: center;">
+    <span style="font-size: 14px; font-weight: 500;">Filter by Logic:</span>
+    <button class="btn btn-secondary" onclick="filterNetwork(null)">All Logics</button>
+    <button class="btn btn-secondary" onclick="filterNetwork(0)" style="border-color: #1f77b4; color: #1f77b4;">Innovation & Support</button>
+    <button class="btn btn-secondary" onclick="filterNetwork(1)" style="border-color: #ff7f0e; color: #ff7f0e;">Funding & Investment</button>
+    <button class="btn btn-secondary" onclick="filterNetwork(2)" style="border-color: #2ca02c; color: #2ca02c;">Education & Training</button>
+    <button class="btn btn-secondary" onclick="filterNetwork(3)" style="border-color: #d62728; color: #d62728;">Research & Development</button>
+    <button class="btn btn-secondary" onclick="filterNetwork(4)" style="border-color: #9467bd; color: #9467bd;">Partnership & Collaboration</button>
+</div>
+
+            <!-- Network Visualization -->
+            <div id="network-container"></div>
+
+            <!-- Legend -->
+            <div class="grid grid-3" style="margin-top: 24px;">
+    <div class="card">
+        <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Node Types</h3>
+        <div class="legend-item">
+            <div style="width: 20px; height: 20px; border-radius: 50%; background: #666; border: 2px solid #fff;"></div>
+            <span>Role Identity (larger)</span>
+        </div>
+        <div class="legend-item">
+            <div style="width: 15px; height: 15px; border-radius: 50%; background: #666; border: 2px solid #fff;"></div>
+            <span>Counterrole (smaller)</span>
+        </div>  
+    </div>  
+
+    <div class="card">
+        <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Institutional Logics</h3>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #1f77b4;"></div>
+            <span>Innovation & Support</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #ff7f0e;"></div>
+            <span>Funding & Investment</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #2ca02c;"></div>
+            <span>Education & Training</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #d62728;"></div>
+            <span>Research & Development</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #9467bd;"></div>
+            <span>Partnership & Collaboration</span>
+        </div>
+    </div>  
+
+    <div class="card">
+        <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Interactions</h3>
+        <div class="legend-item">
+            <div style="width: 30px; height: 2px; background: #999;"></div>
+            <span>Practice (labeled edges)</span>
+        </div>
+        <div style="font-size: 12px; color: #666; margin-top: 8px;">
+            Line thickness indicates relationship strength. Drag nodes to explore.
+        </div>
+    </div>
+</div>
+
+            <!-- Network Metrics -->
+            <div class="card" style="margin-top: 24px;">
+                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 16px;">Network Metrics</h3>
+                <div class="grid grid-4">
+                    <div>
+                        <div style="font-size: 24px; font-weight: 600;">18</div>
+                        <div style="font-size: 13px; color: #525252;">Total Nodes</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 600;">23</div>
+                        <div style="font-size: 13px; color: #525252;">Total Connections</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 600;">0.68</div>
+                        <div style="font-size: 13px; color: #525252;">Network Modularity</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 600;">5</div>
+                        <div style="font-size: 13px; color: #525252;">Identified Clusters</div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" style="margin-top: 32px;" onclick="showTab('results')">
+                View Detailed Results →
+            </button>
+        </div>
+
+        <!-- Results Tab -->
+        <div id="results" class="tab-content">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Analysis Results</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">
+                Constellation of institutional logics across EIT communities
+            </p>
+
+            <!-- Summary Cards -->
+            <div class="grid grid-4">
+                <div class="stat-card">
+                    <div class="stat-value">342</div>
+                    <div class="stat-label">Triplets Extracted</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">24</div>
+                    <div class="stat-label">Role Identities</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">31</div>
+                    <div class="stat-label">Counterroles</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Identified Logics</div>
+                </div>
+            </div>
+
+                    <!-- Logic Clusters -->
+        <div class="card" style="margin-top: 32px;">
+            <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 20px;">Identified Institutional Logics</h3>
+            <div id="logic-cards-container" style="display: flex; flex-direction: column; gap: 16px;">
+                
+                <div style="padding: 32px; text-align: center; color: #999;">
+                    Generate network analysis to see institutional logics
+                </div>
+            </div>
+        </div>
+                        
+                    
+
+            <!-- Export Options -->
+            <div class="card" style="margin-top: 32px;">
+                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 16px;">Export Results</h3>
+                <div style="display: flex; gap: 12px;">
+                    <button class="btn btn-primary" onclick="exportNetworkData()">
+                        📥 Export Network Data (JSON)
+                    </button>
+                    
+                    <button class="btn btn-secondary" onclick="exportValidatedTriplets()">
+                        💾 Export Validated Triplets
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // ============================================================================
+        // STATE MANAGEMENT
+        // ============================================================================
+        
+        const state = {
+            files: {
+                health: [],
+                food: [],
+                energy: []
+            },
+            currentTripletIndex: 0,
+            triplets: [
+                {
+                    id: 1,
+                    text: "EIT Health supports startups in developing innovative healthcare solutions through mentoring programs.",
+                    community: "EIT Health",
+                    extracted: { role: "supporter", practice: "supports", counterrole: "startups" },
+                    confidence: 0.87,
+                    validated: null
+                },
+                {
+                    id: 2,
+                    text: "The organization connects entrepreneurs with investors across Europe.",
+                    community: "EIT Digital",
+                    extracted: { role: "connector", practice: "connects", counterrole: "entrepreneurs" },
+                    confidence: 0.92,
+                    validated: null
+                },
+                {
+                    id: 3,
+                    text: "EIT Food trains professionals in sustainable food systems through specialized courses.",
+                    community: "EIT Food",
+                    extracted: { role: "educator", practice: "trains", counterrole: "professionals" },
+                    confidence: 0.78,
+                    validated: null
+                },
+                {
+                    id: 4,
+                    text: "We fund research projects focused on renewable energy technologies.",
+                    community: "EIT InnoEnergy",
+                    extracted: { role: "funder", practice: "funds", counterrole: "research projects" },
+                    confidence: 0.81,
+                    validated: null
+                },
+                {
+                    id: 5,
+                    text: "The platform enables collaboration between universities and industry partners.",
+                    community: "EIT Manufacturing",
+                    extracted: { role: "enabler", practice: "enables", counterrole: "universities" },
+                    confidence: 0.69,
+                    validated: null
+                }
+            ],
+            stats: {
+                accepted: 0,
+                corrected: 0,
+                rejected: 0
+            },
+            editMode: false,
+            networkData: null,
+            selectedLogic: null
+        };
+
+        // ============================================================================
+        // TAB NAVIGATION
+        // ============================================================================
+        
+        function showTab(tabName, evt = null) {
+    // Hide all tab contents
+    document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+    });
+
+    // Deactivate all tab buttons
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+
+    // Show the selected tab
+    const targetTab = document.getElementById(tabName);
+    if (targetTab) targetTab.classList.add('active');
+
+    // Only highlight clicked tab if evt exists
+    if (evt && evt.target) {
+        evt.target.classList.add('active');
+    }
+    
+    // NEW: Update results page dynamically when user clicks Results tab
+    if (tabName === 'results') {
+        updateResultsPage();
+    }
+}
+
+
+        // ============================================================================
+        // FILE UPLOAD
+        // ============================================================================
+
+
+
+function handleFileUpload(source, files) {
+    const file = files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function () {
+        const text = reader.result || '';
+        
+        // Store in state
+        state.files[source] = [text];
+        
+        // Update UI preview
+        const previewDiv = document.getElementById(`${source}-preview`);
+        if (previewDiv) {
+            const fileSize = (text.length / 1000).toFixed(1);
+            previewDiv.innerHTML = `
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ca02c" stroke-width="3" style="vertical-align: middle; margin-right: 4px;">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <strong>${file.name}</strong> <span style="color: #8d8d8d;">(${fileSize}K chars)</span>
+            `;
+        }
+        
+        // Check if all 3 files uploaded
+        const allUploaded = state.files.health.length > 0 && 
+                           state.files.food.length > 0 && 
+                           state.files.energy.length > 0;
+        
+        const continueBtn = document.getElementById("continue-btn");
+        continueBtn.disabled = !allUploaded;
+        
+        if (allUploaded) {
+            console.log("✅ All 3 datasets uploaded!");
+        }
+    };
+
+    reader.readAsText(file);
+}
+// ============================================================================
+// EXTRACTION - Merge 3 Files Before Sending
+// ============================================================================
+async function startExtraction() {
+    document.getElementById('extract-start').style.display = 'none';
+    document.getElementById('extract-processing').style.display = 'block';
+
+    const healthText = (state.files.health || []).join("\n\n");
+    const foodText = (state.files.food || []).join("\n\n");
+    const energyText = (state.files.energy || []).join("\n\n");
+
+    const combinedText = [
+        "=".repeat(70),
+        "DATASET: EIT HEALTH",
+        "=".repeat(70),
+        healthText,
+        "\n\n",
+        "=".repeat(70),
+        "DATASET: EIT FOOD",
+        "=".repeat(70),
+        foodText,
+        "\n\n",
+        "=".repeat(70),
+        "DATASET: EIT INNOENERGY",
+        "=".repeat(70),
+        energyText
+    ].join("\n");
+
+    console.log(`Dataset sizes:`);
+    console.log(`   - Health: ${healthText.length.toLocaleString()} chars`);
+    console.log(`   - Food: ${foodText.length.toLocaleString()} chars`);
+    console.log(`   - Energy: ${energyText.length.toLocaleString()} chars`);
+    console.log(`   - Combined: ${combinedText.length.toLocaleString()} chars`);
+
+    if (combinedText.length < 100) {
+        alert("No data! Please upload all 3 datasets first.");
+        document.getElementById('extract-start').style.display = 'block';
+        document.getElementById('extract-processing').style.display = 'none';
+        return;
+    }
+
+    const selectedModel = document.getElementById('backend-select').value;
+    const userPrompt = document.getElementById('prompt-template').value;
+    const maxTriplets = parseInt(document.getElementById('validate-count').value);
+
+    try {
+        const backendUrl = "https://nonfelicitous-reasonedly-cadence.ngrok-free.dev/extract_triplets";
+        
+        console.log(`Sending to backend: ${backendUrl}`);
+        console.log(`Model: ${selectedModel}`);
+        console.log(`Max triplets: ${maxTriplets}`);
+        console.log(`User prompt: ${userPrompt ? 'Yes' : 'No'}`);
+        
+        
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 600000); // 10 minutes timeout
+        
+        const response = await fetch(backendUrl, {
+            method: "POST",
+            headers: { 
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                text: combinedText,
+                model: selectedModel,
+                user_prompt: userPrompt,
+                max_triplets: maxTriplets
+            }),
+            signal: controller.signal  
+        });
+
+        clearTimeout(timeoutId); 
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`HTTP ${response.status}: ${errorText}`);
+        }
+
+        const result = await response.json();
+        console.log(`Backend response:`, result);
+
+        state.triplets = result.triplets || [];
+        
+        if (state.triplets.length === 0) {
+            alert("No triplets extracted. Check backend logs in Colab.");
+            document.getElementById('extract-start').style.display = 'block';
+            document.getElementById('extract-processing').style.display = 'none';
+            return;
+        }
+        
+        console.log(`Loaded ${state.triplets.length} triplets into UI`);
+        
+        showTab('validate');
+        updateValidationUI();
+
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            alert("Extraction timeout! Try reducing the number of triplets or use smaller datasets.");
+        } else {
+            alert("Extraction failed: " + error.message);
+        }
+        console.error("Full error:", error);
+        document.getElementById('extract-start').style.display = 'block';
+        document.getElementById('extract-processing').style.display = 'none';
+    }
+}
+
+    // ============================================================================
+    // VALIDATION
+    // ============================================================================
+        
+       function updateValidationUI() {
+    const current = state.triplets[state.currentTripletIndex];
+    const total = state.triplets.length;
+    const remaining = total - (state.stats.accepted + state.stats.corrected + state.stats.rejected);
+    
+    document.getElementById('current-index').textContent = state.currentTripletIndex + 1;
+    document.getElementById('total-triplets').textContent = total;
+    document.getElementById('progress-percent').textContent = Math.round(((state.currentTripletIndex + 1) / total) * 100);
+    document.getElementById('progress-fill').style.width = `${((state.currentTripletIndex + 1) / total) * 100}%`;
+    
+    document.getElementById('stat-accepted').textContent = state.stats.accepted;
+    document.getElementById('stat-corrected').textContent = state.stats.corrected;
+    document.getElementById('stat-rejected').textContent = state.stats.rejected;
+    document.getElementById('stat-remaining').textContent = remaining;
+    
+    document.getElementById('source-text').textContent = current.text;
+    document.getElementById('current-community').textContent = current.community;
+    
+    document.getElementById('role-display').textContent = current.extracted.role;
+    document.getElementById('practice-display').textContent = current.extracted.practice;
+    document.getElementById('counterrole-display').textContent = current.extracted.counterrole;
+    
+    document.getElementById('role-edit').value = current.extracted.role;
+    document.getElementById('practice-edit').value = current.extracted.practice;
+    document.getElementById('counterrole-edit').value = current.extracted.counterrole;
+    
+    const confidence = Math.round((current.confidence || 0.5) * 100);
+    document.getElementById('confidence-value').textContent = confidence + '%';
+    document.getElementById('confidence-fill').style.width = confidence + '%';
+    
+    if (document.getElementById('triplet-confidence-value')) {
+        document.getElementById('triplet-confidence-value').textContent = confidence + '%';
+        document.getElementById('triplet-confidence-fill').style.width = confidence + '%';
+    }
+    
+    document.getElementById('nav-current').textContent = state.currentTripletIndex + 1;
+    document.getElementById('nav-total').textContent = total;
+    document.getElementById('prev-btn').disabled = state.currentTripletIndex === 0;
+    document.getElementById('next-btn').disabled = state.currentTripletIndex === total - 1;
+    
+    if (state.stats.accepted + state.stats.corrected + state.stats.rejected === total) {
+        document.getElementById('validation-complete').style.display = 'block';
+    }
+}
+
+
+        function validateTriplet(action) {
+            const current = state.triplets[state.currentTripletIndex];
+            
+            if (action === 'accept') {
+                current.validated = 'accepted';
+                state.stats.accepted++;
+            } else if (action === 'correct') {
+                current.validated = 'corrected';
+                current.corrected = {
+                    role: document.getElementById('role-edit').value,
+                    practice: document.getElementById('practice-edit').value,
+                    counterrole: document.getElementById('counterrole-edit').value
+                };
+                state.stats.corrected++;
+                state.editMode = false;
+                document.getElementById('triplet-view').style.display = 'block';
+                document.getElementById('triplet-edit').style.display = 'none';
+                document.getElementById('action-buttons').style.display = 'block';
+                document.getElementById('edit-buttons').style.display = 'none';
+            } else if (action === 'reject') {
+                current.validated = 'rejected';
+                state.stats.rejected++;
+            }
+            
+            // Move to next triplet
+            if (state.currentTripletIndex < state.triplets.length - 1) {
+                state.currentTripletIndex++;
+            }
+            
+            updateValidationUI();
+        }
+
+        function startEdit() {
+            state.editMode = true;
+            document.getElementById('triplet-view').style.display = 'none';
+            document.getElementById('triplet-edit').style.display = 'block';
+            document.getElementById('action-buttons').style.display = 'none';
+            document.getElementById('edit-buttons').style.display = 'block';
+        }
+
+        function cancelEdit() {
+    state.editMode = false;
+    document.getElementById('triplet-view').style.display = 'block';
+    document.getElementById('triplet-edit').style.display = 'none';
+    document.getElementById('action-buttons').style.display = 'block';
+    document.getElementById('edit-buttons').style.display = 'none';
+}
+
+function previousTriplet() {
+    if (state.currentTripletIndex > 0) {
+        state.currentTripletIndex--;
+        updateValidationUI();
+    }
+}
+
+function nextTriplet() {
+    if (state.currentTripletIndex < state.triplets.length - 1) {
+        state.currentTripletIndex++;
+        updateValidationUI();
+    }
+}
+
+function generateNetwork() {
+    const validatedTriplets = state.triplets.filter(t => 
+        t.validated === 'accepted' || t.validated === 'corrected'
+    );
+    
+    if (validatedTriplets.length === 0) {
+        alert('Please validate at least one triplet first');
+        return;
+    }
+    
+    console.log('Generating network from', validatedTriplets.length, 'validated triplets');
+    
+    function getCluster(practice) {
+        const p = practice.toLowerCase();
+        
+        if (p.includes('support') || p.includes('enable') || p.includes('connect') || 
+            p.includes('help') || p.includes('assist') || p.includes('facilitate')) {
+            return 0;
+        }
+        
+        if (p.includes('fund') || p.includes('invest') || p.includes('financ') || 
+            p.includes('capital') || p.includes('money') || p.includes('grant')) {
+            return 1;
+        }
+        
+        if (p.includes('train') || p.includes('educat') || p.includes('teach') || 
+            p.includes('learn') || p.includes('mentor') || p.includes('coach')) {
+            return 2;
+        }
+        
+        if (p.includes('research') || p.includes('develop') || p.includes('innovat') || 
+            p.includes('create') || p.includes('build') || p.includes('design')) {
+            return 3;
+        }
+        
+        if (p.includes('partner') || p.includes('collaborat') || p.includes('cooperat') || 
+            p.includes('network') || p.includes('join') || p.includes('unite')) {
+            return 4;
+        }
+        
+        return 0;
+    }
+    
+    const nodesMap = new Map();
+    const links = [];
+    
+    validatedTriplets.forEach((triplet) => {
+        const data = triplet.validated === 'corrected' && triplet.corrected 
+            ? triplet.corrected 
+            : triplet.extracted;
+        
+        const roleId = data.role.toLowerCase().replace(/\s+/g, '_');
+        const counterroleId = data.counterrole.toLowerCase().replace(/\s+/g, '_');
+        const cluster = getCluster(data.practice);
+        
+        if (!nodesMap.has(roleId)) {
+            nodesMap.set(roleId, {
+                id: roleId,
+                label: data.role,
+                type: 'role',
+                cluster: cluster
+            });
+        }
+        
+        if (!nodesMap.has(counterroleId)) {
+            nodesMap.set(counterroleId, {
+                id: counterroleId,
+                label: data.counterrole,
+                type: 'counterrole',
+                cluster: cluster
+            });
+        }
+        
+        links.push({
+            source: roleId,
+            target: counterroleId,
+            value: 5,
+            practice: data.practice
+        });
+    });
+    
+    state.networkData = {
+        nodes: Array.from(nodesMap.values()),
+        links: links
+    };
+    
+    console.log('Network data:', state.networkData);
+    
+    showTab('analyze');
+    
+    setTimeout(() => {
+        drawNetwork(state.networkData);
+    }, 100);
+}    
+    
+    
+
+        function drawNetwork(data) {
+            const container = document.getElementById('network-container');
+            container.innerHTML = '';
+            
+            const width = container.clientWidth;
+            const height = 600;
+            
+            const colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd'];
+            
+            const svg = d3.select('#network-container')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+            
+            const g = svg.append('g');
+            
+            const zoom = d3.zoom()
+                .scaleExtent([0.1, 4])
+                .on('zoom', (event) => {
+                    g.attr('transform', event.transform);
+                });
+            
+            svg.call(zoom);
+            
+            const simulation = d3.forceSimulation(data.nodes)
+                .force('link', d3.forceLink(data.links)
+                    .id(d => d.id)
+                    .distance(150))
+                .force('charge', d3.forceManyBody().strength(-300))
+                .force('center', d3.forceCenter(width / 2, height / 2));
+            
+            const link = g.append('g')
+                .selectAll('line')
+                .data(data.links)
+                .join('line')
+                .attr('stroke', '#999')
+                .attr('stroke-width', d => Math.sqrt(d.value));
+            
+            const linkLabel = g.append('g')
+                .selectAll('text')
+                .data(data.links)
+                .join('text')
+                .attr('font-size', '10px')
+                .attr('fill', '#666')
+                .attr('text-anchor', 'middle')
+                .text(d => d.practice);
+            
+            const node = g.append('g')
+                .selectAll('g')
+                .data(data.nodes)
+                .join('g')
+                .call(d3.drag()
+                    .on('start', dragstarted)
+                    .on('drag', dragged)
+                    .on('end', dragended));
+            
+            node.append('circle')
+                .attr('r', d => d.type === 'role' ? 20 : 15)
+                .attr('fill', d => colors[d.cluster])
+                .attr('stroke', '#fff')
+                .attr('stroke-width', 2);
+            
+            node.append('text')
+                .attr('dy', 30)
+                .attr('text-anchor', 'middle')
+                .attr('font-size', '11px')
+                .attr('font-weight', d => d.type === 'role' ? 600 : 400)
+                .text(d => d.label);
+            
+            simulation.on('tick', () => {
+                link
+                    .attr('x1', d => d.source.x)
+                    .attr('y1', d => d.source.y)
+                    .attr('x2', d => d.target.x)
+                    .attr('y2', d => d.target.y);
+                
+                linkLabel
+                    .attr('x', d => (d.source.x + d.target.x) / 2)
+                    .attr('y', d => (d.source.y + d.target.y) / 2);
+                
+                node.attr('transform', d => `translate(${d.x},${d.y})`);
+            });
+            
+            function dragstarted(event) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                event.subject.fx = event.subject.x;
+                event.subject.fy = event.subject.y;
+            }
+            
+            function dragged(event) {
+                event.subject.fx = event.x;
+                event.subject.fy = event.y;
+            }
+            
+            function dragended(event) {
+                if (!event.active) simulation.alphaTarget(0);
+                event.subject.fx = null;
+                event.subject.fy = null;
+            }
+        }
+
+        function filterNetwork(clusterId) {
+    if (!state.networkData) {
+        alert('Generate network first');
+        return;
+    }
+    
+    state.selectedLogic = clusterId;
+    
+    document.querySelectorAll('#analyze .btn-secondary').forEach(btn => {
+        btn.style.borderColor = '';
+        btn.style.color = '';
+        btn.classList.remove('btn-primary');
+        btn.classList.add('btn-secondary');
+    });
+    
+    if (event && event.target) {
+        event.target.classList.remove('btn-secondary');
+        event.target.classList.add('btn-primary');
+    }
+    
+    if (clusterId === null) {
+        drawNetwork(state.networkData);
+        return;
+    }
+    
+    const relatedNodes = new Set();
+    state.networkData.nodes
+        .filter(n => n.cluster === clusterId)
+        .forEach(n => relatedNodes.add(n.id));
+    
+    const filteredLinks = state.networkData.links.filter(l => {
+        const sourceId = typeof l.source === 'object' ? l.source.id : l.source;
+        const targetId = typeof l.target === 'object' ? l.target.id : l.target;
+        if (relatedNodes.has(sourceId) || relatedNodes.has(targetId)) {
+            relatedNodes.add(sourceId);
+            relatedNodes.add(targetId);
+            return true;
+        }
+        return false;
+    });
+    
+    const filteredData = {
+        nodes: state.networkData.nodes.filter(n => relatedNodes.has(n.id)),
+        links: filteredLinks
+    };
+    
+    console.log(`Filtered to cluster ${clusterId}:`, filteredData.nodes.length, 'nodes');
+    drawNetwork(filteredData);
+}
+
+        function buildAndShowNetwork() {
+            const validatedCount = state.triplets.filter(t => 
+                t.validated === 'accepted' || t.validated === 'corrected'
+            ).length;
+            
+            if (validatedCount === 0) {
+                alert('⚠️ Please validate at least one triplet first!');
+                return;
+            }
+            
+            console.log(`Building network with ${validatedCount} validated triplets`);
+            showTab('analyze');
+        }
+        function updateResultsPage() {
+    if (!state.networkData) {
+        console.log('No network data available yet');
+        return;
+    }
+    
+    // ========================================
+    // UPDATE SUMMARY STATS
+    // ========================================
+    const validatedCount = state.triplets.filter(t => 
+        t.validated === 'accepted' || t.validated === 'corrected'
+    ).length;
+    
+    const uniqueRoles = new Set(
+        state.networkData.nodes.filter(n => n.type === 'role').map(n => n.id)
+    ).size;
+    
+    const uniqueCounterroles = new Set(
+        state.networkData.nodes.filter(n => n.type === 'counterrole').map(n => n.id)
+    ).size;
+    
+    // Update the 4 summary cards
+    const statValues = document.querySelectorAll('#results .grid-4 .stat-value');
+    if (statValues.length >= 4) {
+        statValues[0].textContent = validatedCount;
+        statValues[1].textContent = uniqueRoles;
+        statValues[2].textContent = uniqueCounterroles;
+        statValues[3].textContent = 5;
+    }
+    
+    // ========================================
+    // CALCULATE CLUSTER STATISTICS
+    // ========================================
+    const clusterStats = [
+        { nodes: 0, connections: 0 },
+        { nodes: 0, connections: 0 },
+        { nodes: 0, connections: 0 },
+        { nodes: 0, connections: 0 },
+        { nodes: 0, connections: 0 }
+    ];
+    
+    // Count nodes per cluster
+    state.networkData.nodes.forEach(node => {
+        clusterStats[node.cluster].nodes++;
+    });
+    
+    // Count connections per cluster
+    state.networkData.links.forEach(link => {
+        const sourceNode = state.networkData.nodes.find(n => 
+            n.id === (typeof link.source === 'object' ? link.source.id : link.source)
+        );
+        if (sourceNode) {
+            clusterStats[sourceNode.cluster].connections++;
+        }
+    });
+    
+    // Calculate density (connections per node ratio)
+    clusterStats.forEach(stat => {
+        stat.density = stat.nodes > 0 
+            ? Math.min(100, Math.round((stat.connections / stat.nodes) * 100))
+            : 0;
+    });
+    
+    const clusterNames = [
+        'Innovation & Support Logic',
+        'Funding & Investment Logic',
+        'Education & Training Logic',
+        'Research & Development Logic',
+        'Partnership & Collaboration Logic'
+    ];
+    
+    // ========================================
+    // GENERATE LOGIC CARDS HTML
+    // ========================================
+    const logicContainer = document.getElementById('logic-cards-container');
+    if (logicContainer) {
+        logicContainer.innerHTML = clusterStats.map((stat, idx) => `
+            <div style="padding: 16px; background: #f4f4f4; border: 1px solid #e0e0e0;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <div style="font-size: 15px; font-weight: 600;">${clusterNames[idx]}</div>
+                    <div style="font-size: 13px; color: #525252;">Density: ${stat.density}%</div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="flex: 1; height: 8px; background: #e0e0e0; position: relative;">
+                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: ${stat.density}%; background: black;"></div>
+                    </div>
+                    <div style="font-size: 13px; color: #525252; min-width: 120px;">${stat.nodes} nodes, ${stat.connections} links</div>
+                </div>
+            </div>
+        `).join('');
+    }
+    
+    // ========================================
+    // UPDATE NETWORK METRICS (in Analyze tab)
+    // ========================================
+    const metricsContainer = document.querySelector('#analyze .card:last-of-type .grid-4');
+    if (metricsContainer && state.networkData) {
+        const n = state.networkData.nodes.length;
+        const m = state.networkData.links.length;
+        const density = n > 1 ? (2 * m) / (n * (n - 1)) : 0;
+        
+        metricsContainer.innerHTML = `
+            <div>
+                <div style="font-size: 24px; font-weight: 600;">${n}</div>
+                <div style="font-size: 13px; color: #525252;">Total Nodes</div>
+            </div>
+            <div>
+                <div style="font-size: 24px; font-weight: 600;">${m}</div>
+                <div style="font-size: 13px; color: #525252;">Total Connections</div>
+            </div>
+            <div>
+                <div style="font-size: 24px; font-weight: 600;">${density.toFixed(3)}</div>
+                <div style="font-size: 13px; color: #525252;">Network Density</div>
+            </div>
+            <div>
+                <div style="font-size: 24px; font-weight: 600;">5</div>
+                <div style="font-size: 13px; color: #525252;">Identified Clusters</div>
+            </div>
+        `;
+    }
+    
+    console.log('Results page updated with real data');
+}
+
+        // ============================================================================
+        // EXPORT FUNCTIONS
+        // ============================================================================
+        
+        function exportNetworkData() {
+            const dataStr = JSON.stringify(state.networkData, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'eit-network-data.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function exportReport() {
+            alert('PDF export functionality would be implemented with a library like jsPDF');
+        }
+
+        function exportValidatedTriplets() {
+            const validatedData = state.triplets.filter(t => t.validated !== null);
+            const dataStr = JSON.stringify(validatedData, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'validated-triplets.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // ============================================================================
+        // INITIALIZATION
+        // ============================================================================
+        
+        // Initialize validation UI on load
+        window.addEventListener('load', () => {
+            updateValidationUI();
+        });
+    </script>
+</body>
+</html>
+                      <!-- <div style="width: 20px; height: 20px; border-radius: 50%; background: #666; border: 2px solid #fff;"></div>
+                        <span>Role Identity (larger)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div style="width: 15px; height: 15px; border-radius: 50%; background: #666; border: 2px solid #fff;"></div>
+                        <span>Counterrole (smaller)</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Institutional Logics</h3>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #1f77b4;"></div>
+                        <span>Innovation Ecosystem</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ff7f0e;"></div>
+                        <span>Market Creation</span>
+                    </div>
+                    <div class="legend-item"> -->
