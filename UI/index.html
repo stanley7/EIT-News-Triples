@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOCIOTYPER</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-title">
+                <svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="6"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+                <h1>SOCIOTYPER</h1>
+            </div>
+            <div class="header-subtitle">Institutional Relationship Extraction Tool</div>
+        </div>
+    </header>
+
+    <nav class="tabs">
+        <button class="tab active" data-tab="upload">1. Upload</button>
+        <button class="tab" data-tab="configure">2. Configure</button>
+        <button class="tab" data-tab="extract">3. Extract</button>
+        <button class="tab" data-tab="validate">4. Validate</button>
+        <button class="tab" data-tab="network">5. Network</button>
+        <button class="tab" data-tab="results">6. Results</button>
+    </nav>
+
+    <main>
+        <!-- Tab 1: Upload -->
+        <section id="upload" class="tab-content active">
+            <div class="card">
+                <h2>Data Input</h2>
+                <p>Upload text files or scrape from URLs to extract organizational relationships.</p>
+
+                <div class="input-section">
+                    <h3>Upload Files</h3>
+                    <input type="file" id="fileInput" accept=".txt" multiple>
+                    <div id="fileList" class="file-list"></div>
+                </div>
+
+                <div class="input-section">
+                    <h3>Or Scrape from URL</h3>
+                    <div class="url-input">
+                        <input type="text" id="urlInput" placeholder="https://eit.europa.eu/news/...">
+                        <button onclick="scrapeUrl()">Scrape</button>
+                    </div>
+                </div>
+
+                <div class="input-section">
+                    <h3>Text Preview</h3>
+                    <textarea id="textPreview" placeholder="Text will appear here..."></textarea>
+                    <div class="char-count">Characters: <span id="charCount">0</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 2: Configure -->
+        <section id="configure" class="tab-content">
+            <div class="card">
+                <h2>Extraction Settings</h2>
+
+                <div class="config-section">
+                    <h3>Select Model</h3>
+                    <select id="modelSelect">
+                        <option value="Mistral 7B">Mistral 7B (Recommended)</option>
+                        <option value="Gemma 7B">Gemma 7B</option>
+                        <option value="SpacyLLM">SpaCy-LLM Hybrid</option>
+                    </select>
+                </div>
+
+                <div class="config-section">
+                    <h3>Additional Instructions (Optional)</h3>
+                    <textarea id="userPrompt" placeholder="e.g., Focus on funding relationships..."></textarea>
+                </div>
+
+                <div class="config-section">
+                    <h3>Max Triplets</h3>
+                    <input type="number" id="maxTriplets" value="50" min="1" max="500">
+                </div>
+
+                <div class="config-section">
+                    <h3>API Endpoint</h3>
+                    <input type="text" id="apiUrl" placeholder="https://your-ngrok-url.ngrok.io">
+                    <button onclick="testConnection()">Test Connection</button>
+                    <span id="connectionStatus"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 3: Extract -->
+        <section id="extract" class="tab-content">
+            <div class="card">
+                <h2>Extract Triplets</h2>
+
+                <div class="extraction-controls">
+                    <button id="startExtraction" onclick="startExtraction()">Start Extraction</button>
+                    <button id="stopExtraction" onclick="stopExtraction()" disabled>Stop</button>
+                </div>
+
+                <div class="progress-section">
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <div id="progressText">Ready to extract</div>
+                </div>
+
+                <div id="extractionLog" class="log-area"></div>
+            </div>
+        </section>
+
+        <!-- Tab 4: Validate -->
+        <section id="validate" class="tab-content">
+            <div class="card">
+                <h2>Validate Triplets</h2>
+
+                <div class="validation-stats">
+                    <div class="stat">
+                        <span class="stat-value" id="totalTriplets">0</span>
+                        <span class="stat-label">Total</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="acceptedTriplets">0</span>
+                        <span class="stat-label">Accepted</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="rejectedTriplets">0</span>
+                        <span class="stat-label">Rejected</span>
+                    </div>
+                </div>
+
+                <div id="validationList" class="triplet-list"></div>
+            </div>
+        </section>
+
+        <!-- Tab 5: Network -->
+        <section id="network" class="tab-content">
+            <div class="card full-width">
+                <h2>Network Visualization</h2>
+                <div class="network-controls">
+                    <button onclick="filterNetwork('all')" class="filter-btn active">All</button>
+                    <button onclick="filterNetwork('fund')" class="filter-btn">Funding</button>
+                    <button onclick="filterNetwork('partner')" class="filter-btn">Partnership</button>
+                    <button onclick="filterNetwork('support')" class="filter-btn">Support</button>
+                </div>
+                <div id="networkContainer"></div>
+            </div>
+        </section>
+
+        <!-- Tab 6: Results -->
+        <section id="results" class="tab-content">
+            <div class="card">
+                <h2>Export Results</h2>
+
+                <div class="results-summary">
+                    <h3>Summary</h3>
+                    <div id="resultsSummary"></div>
+                </div>
+
+                <div class="export-buttons">
+                    <button onclick="exportJSON()">Export JSON</button>
+                    <button onclick="exportCSV()">Export CSV</button>
+                    <button onclick="exportNetwork()">Export Network Data</button>
+                </div>
+
+                <div class="triplets-preview">
+                    <h3>Extracted Triplets</h3>
+                    <div id="tripletsPreview"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>SOCIOTYPER - Institutional Relationship Extraction | <a href="https://github.com/stanley7/EIT-News-Triples">GitHub</a></p>
+    </footer>
+
+    <script src="static/js/app.js"></script>
+</body>
+</html>

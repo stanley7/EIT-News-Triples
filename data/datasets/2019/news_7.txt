@@ -1,0 +1,29 @@
+Integrated healthcare can improve care and reduce costs. Read the interview with the EIT Health Supervisory Board Member Ursula Redeker.
+Ursula Redeker
+is Spokeswoman for the Management of Roche Diagnostics GmbH. She is also a member of the EIT Health Supervisory Board, a member of the Board of Trustees of the German Cancer Research Center (DKFZ) in Heidelberg, Chair of the Scientific Advisory Board of the Rhine-Neckar Metropolitan Region and shareholder representative on the Supervisory Board of ABB AG.
+How can we improve healthcare and reduce its cost at the same time? It sounds as ambitious as 'squaring the circle', but if we look closely, we can see that it is in fact possible to provide better health at lower cost.
+EIT Community has a fairly segmented approach to the provision of healthcare today. As patients, EIT Community sees doctors, nurses, social workers, physiotherapists and many other healthcare professionals helping us to maintain or regain good health. They must plan together, treat patients together, and talk to one another, a dynamic that often needs to be continued in the long term, particularly for chronic diseases. This becomes a challenge when processes, regulation and mindset are not all focused on integration of care. The growth in medical knowledge necessitates increased specialisation, which is valuable but results in fragmentation that requires a challenging level of governing infrastructure and reimbursement principles.
+Integrating healthcare to provide seamless end-to-end care will reduce costs by optimising interfaces, reducing redundancies and avoiding communication breaks and information gaps. It will improve outcomes by making information easily available and providing constant feedback loops for all involved in care. It will enable truly personalised care. And it will help to shift the focus from treating disease to maintaining health, thereby promising both better healthcare and reduced costs.
+Ursula Redeker, EIT Health Supervisory Board Member
+Some of the main challenges that I believe EIT Community must address in order to develop, nurture and scale integrated care models across Europe include:
+Data: Enabling and facilitating data sharing across all stakeholders in healthcare is essential to ensure best outcomes for patients and increase operational efficiency. Beyond this, new technologies, such as smart wearables, offer additional opportunities to capture relevant data, very often strongly owned and driven by the patient.
+Reimbursement: We currently pay for health services based on the individual test, treatment or medicine provided to the patient. This doesn't necessarily focus on the impact achieved for individual patients or patient groups. In order for true reform to work, we need to think about moving towards a reimbursement model that focuses on outcomes – and puts the same emphasis on maintaining health as we put on regaining health.
+Policy: We see many healthcare professionals and healthcare provider groups optimising their processes and measures to improve outcomes for patients. Doing this requires optimisation along the whole care process from a patient or population perspective.
+Tackling all of these challenges is, of course, no small task. While
+EIT Community may still be some years away from total reform
+, EIT Community is seeing pilots testing integrated healthcare on a regional level or focused on a disease.
+Innovative integrated care system
+One example is the 'Gesundes Kinzigtal' model (GK) in Germany, where healthcare within a local community has been organised as an innovative integrated care system. The
+GK model focuses on three key principles
+: better population health, improved experience of care, and reduced per-capita costs. The results of the GK model clearly demonstrated that patient satisfaction and population health can be improved while decreasing the overuse of health services and medicines.
+In the EIT Health portfolio, the innovation project iPDM-GO is improving diabetes care by providing a personalised diabetes management platform.
+Ursula Redeker, EIT Health Supervisory Board Member
+In the EIT Health portfolio, the innovation project
+iPDM-GO
+is improving diabetes care by providing a personalised diabetes management platform that integrates diagnostic results with relevant medication and personal information – to help patients and their doctors achieve better short- and long-term outcomes. Controlling blood glucose levels is a highly complex process and a major task for patients. Although monitoring and treatment are readily available, staying within the required blood-sugar range remains a challenge. Providing individual feedback loops and continuous information for patients and doctors can help avoid long-term complications and associated pain and cost.
+Addressing epilepsy by innovating seizure detection
+Another EIT Health project, called
+SeizeIT
+, is addressing epilepsy by innovating seizure detection. Currently, seizures are being reported with a patient diary, or are measured during hospital stays. This provides a lot of room for seizures to be underreported, but accuracy is relevant to establishing optimal care. By providing a discreet device that patients can wear at home, SeizeIT is working towards a reality where all seizures can be detected. This will improve patient lives and help medical professionals understand more about the condition, and improve treatments available.
+The variety of healthcare systems across Europe share some common challenges. Integrated healthcare is one of those. EIT Health offers an opportunity to explore pilots and innovative approaches to achieve this vision. Let’s use these opportunities to create improvements that provide the best value for citizens and patients.
+Visit the EIT Health website

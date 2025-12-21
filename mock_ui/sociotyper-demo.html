@@ -1,0 +1,1903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOCIOTYPER - Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: white;
+            color: #000;
+        }
+
+        /* Header */
+        header {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 16px 32px;
+            background: white;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .header-subtitle {
+            font-size: 13px;
+            color: #525252;
+        }
+
+        /* Navigation Tabs */
+        nav {
+            border-bottom: 1px solid #e0e0e0;
+            background: #f4f4f4;
+            padding: 0 32px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 2px;
+        }
+
+        .tab {
+            padding: 12px 20px;
+            border: none;
+            background: transparent;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            font-size: 14px;
+            font-family: inherit;
+            color: #525252;
+            transition: all 0.2s;
+        }
+
+        .tab.active {
+            background: white;
+            border-bottom: 2px solid black;
+            font-weight: 600;
+            color: black;
+        }
+
+        /* Main Content */
+        main {
+            padding: 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: inherit;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+        }
+
+        .btn-primary {
+            background: black;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: black;
+            border: 1px solid black;
+        }
+
+        .btn-success {
+            background: #2ca02c;
+            color: white;
+        }
+
+        .btn-warning {
+            background: #ff9800;
+            color: white;
+        }
+
+        .btn-danger {
+            background: white;
+            color: #d32f2f;
+            border: 1px solid #d32f2f;
+        }
+
+        /* Cards */
+        .card {
+            border: 1px solid #e0e0e0;
+            padding: 24px;
+            background: white;
+            margin-bottom: 24px;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+        /* Upload Area */
+        .upload-area {
+            padding: 32px;
+            border: 2px dashed #d0d0d0;
+            text-align: center;
+            cursor: pointer;
+            background: #fafafa;
+            transition: background 0.2s;
+        }
+
+        .upload-area:hover {
+            background: #f4f4f4;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: black;
+            transition: width 0.3s;
+        }
+
+        /* Network Container */
+        #network-container {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #e0e0e0;
+            background: white;
+        }
+
+        /* Validation Interface */
+        .validation-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .triplet-field {
+            margin-bottom: 16px;
+        }
+
+        .triplet-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #525252;
+        }
+
+        .triplet-value {
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            border: 1px solid;
+        }
+
+        .role-value {
+            background: #e3f2fd;
+            border-color: #90caf9;
+        }
+
+        .practice-value {
+            background: #f3e5f5;
+            border-color: #ce93d8;
+        }
+
+        .counterrole-value {
+            background: #e8f5e9;
+            border-color: #81c784;
+        }
+
+        .triplet-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: inherit;
+        }
+
+        .role-input { border-color: #1976d2; }
+        .practice-input { border-color: #7b1fa2; }
+        .counterrole-input { border-color: #388e3c; }
+
+        /* Stats */
+        .stat-card {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #525252;
+        }
+
+        /* Legend */
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+        }
+
+        .confidence-bar {
+            flex: 1;
+            height: 8px;
+            background: #e0e0e0;
+            position: relative;
+        }
+
+        .confidence-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: #ff9800;
+        }
+
+        /* Hide file input */
+        input[type="file"] {
+            display: none;
+        }
+
+        /* Loading spinner */
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .spinner {
+            animation: spin 1s linear infinite;
+        }
+
+        /* Tooltips for network nodes */
+        .tooltip {
+            position: absolute;
+            padding: 8px 12px;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            font-size: 12px;
+            border-radius: 4px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        /* Annotation styles */
+        .annotation-item {
+            transition: all 0.2s;
+        }
+
+        .annotation-item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .validation-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="header-title">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="6"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+                <h1>SOCIOTYPER</h1>
+            </div>
+            <div class="header-subtitle">Institutional Pluralism Research Tool</div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('upload')">📤 Data Upload</button>
+            <button class="tab" onclick="showTab('preview')">👁️ Preview & Annotate</button>
+            <button class="tab" onclick="showTab('configure')">⚙️ Configure Analysis</button>
+            <button class="tab" onclick="showTab('extract')">🔍 Extract Triplets</button>
+            <button class="tab" onclick="showTab('validate')">✓ Validate & Train</button>
+            <button class="tab" onclick="showTab('analyze')">🔗 Network Analysis</button>
+            <button class="tab" onclick="showTab('results')">📊 Results</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Upload Tab -->
+        <div id="upload" class="tab-content active">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Upload Data Sources</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">
+                Upload website pages and news articles for each EIT community
+            </p>
+
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">EIT Health</h3>
+                    <label class="upload-area" onclick="document.getElementById('file-health').click()">
+                        <div style="font-size: 32px; margin-bottom: 12px;">📤</div>
+                        <div style="font-size: 14px; color: #525252; margin-bottom: 4px;">Drop files or click to upload</div>
+                        <div style="font-size: 12px; color: #8d8d8d;">.txt, .html, .pdf, .docx</div>
+                    </label>
+                    <input type="file" id="file-health" multiple accept=".txt,.html,.pdf,.docx" onchange="handleFileUpload('health', this.files)">
+                    <div style="margin-top: 12px; font-size: 13px; color: #525252;">
+                        <span id="count-health">0</span> files uploaded
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">EIT Food</h3>
+                    <label class="upload-area" onclick="document.getElementById('file-food').click()">
+                        <div style="font-size: 32px; margin-bottom: 12px;">📤</div>
+                        <div style="font-size: 14px; color: #525252; margin-bottom: 4px;">Drop files or click to upload</div>
+                        <div style="font-size: 12px; color: #8d8d8d;">.txt, .html, .pdf, .docx</div>
+                    </label>
+                    <input type="file" id="file-food" multiple accept=".txt,.html,.pdf,.docx" onchange="handleFileUpload('food', this.files)">
+                    <div style="margin-top: 12px; font-size: 13px; color: #525252;">
+                        <span id="count-food">0</span> files uploaded
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">EIT Energy</h3>
+                    <label class="upload-area" onclick="document.getElementById('file-energy').click()">
+                        <div style="font-size: 32px; margin-bottom: 12px;">📤</div>
+                        <div style="font-size: 14px; color: #525252; margin-bottom: 4px;">Drop files or click to upload</div>
+                        <div style="font-size: 12px; color: #8d8d8d;">.txt, .html, .pdf, .docx</div>
+                    </label>
+                    <input type="file" id="file-energy" multiple accept=".txt,.html,.pdf,.docx" onchange="handleFileUpload('energy', this.files)">
+                    <div style="margin-top: 12px; font-size: 13px; color: #525252;">
+                        <span id="count-energy">0</span> files uploaded
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" style="margin-top: 32px;" onclick="showTab('preview')" id="continue-btn" disabled>
+                Continue to Preview & Annotate →
+            </button>
+        </div>
+
+        <!-- Preview & Annotate Tab -->
+        <div id="preview" class="tab-content">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Preview & Annotate Documents</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">
+                Review documents, see spaCy NER analysis, and annotate role-practice-counterrole triplets
+            </p>
+
+            <!-- Corpus & Document Selector -->
+            <div class="card">
+                <div class="grid grid-2">
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Select Corpus</label>
+                        <select id="corpus-select" style="width: 100%; padding: 10px; border: 1px solid #8d8d8d; font-size: 14px;" onchange="loadCorpusDocuments()">
+                            <option value="">-- Select a corpus --</option>
+                            <option value="health">EIT Health</option>
+                            <option value="food">EIT Food</option>
+                            <option value="energy">EIT Energy</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Select Document</label>
+                        <select id="document-select" style="width: 100%; padding: 10px; border: 1px solid #8d8d8d; font-size: 14px;" onchange="loadDocument()" disabled>
+                            <option value="">-- Select a document --</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Document View -->
+            <div id="document-viewer" style="display: none;">
+                <!-- Document Info -->
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 4px;" id="doc-title">Document Title</h3>
+                            <div style="font-size: 13px; color: #525252;">
+                                <span id="doc-corpus">Corpus</span> • <span id="doc-length">0</span> words
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary" onclick="runSpacyAnalysis()">
+                            🔬 Run spaCy Analysis
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Main Content Area -->
+                <div class="grid grid-2" style="align-items: start;">
+                    <!-- Left: Document Text -->
+                    <div>
+                        <div class="card">
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">Document Text</h3>
+                            <div id="doc-text" style="padding: 16px; background: #fafafa; border: 1px solid #e0e0e0; min-height: 400px; max-height: 600px; overflow-y: auto; font-size: 14px; line-height: 1.8;">
+                                Select a document to view its content...
+                            </div>
+                        </div>
+
+                        <!-- Manual Annotation -->
+                        <div class="card" style="margin-top: 16px;">
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">Manual Annotation</h3>
+                            <p style="font-size: 13px; color: #525252; margin-bottom: 16px;">
+                                Annotate triplets found in this document to help train the model
+                            </p>
+                            
+                            <div class="triplet-field">
+                                <label class="triplet-label">ROLE IDENTITY</label>
+                                <input type="text" class="triplet-input role-input" id="manual-role" placeholder="e.g., supporter, connector, educator">
+                            </div>
+                            <div class="triplet-field">
+                                <label class="triplet-label">PRACTICE</label>
+                                <input type="text" class="triplet-input practice-input" id="manual-practice" placeholder="e.g., supports, connects, trains">
+                            </div>
+                            <div class="triplet-field">
+                                <label class="triplet-label">COUNTERROLE</label>
+                                <input type="text" class="triplet-input counterrole-input" id="manual-counterrole" placeholder="e.g., startups, entrepreneurs, students">
+                            </div>
+                            
+                            <button class="btn btn-primary" style="width: 100%; margin-top: 12px;" onclick="addManualAnnotation()">
+                                ➕ Add Annotation
+                            </button>
+
+                            <!-- Annotations List -->
+                            <div id="annotations-list" style="margin-top: 24px;">
+                                <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Annotations (<span id="annotation-count">0</span>)</h4>
+                                <div id="annotations-container" style="display: flex; flex-direction: column; gap: 8px;">
+                                    <!-- Annotations will appear here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: spaCy Analysis -->
+                    <div>
+                        <!-- NER Entities -->
+                        <div class="card">
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">
+                                Named Entity Recognition (NER)
+                            </h3>
+                            <div id="ner-analysis" style="padding: 16px; background: #fafafa; border: 1px solid #e0e0e0; min-height: 200px;">
+                                <div style="text-align: center; color: #8d8d8d; padding: 32px 0;">
+                                    Click "Run spaCy Analysis" to see NER results
+                                </div>
+                            </div>
+                            
+                            <!-- Entity Legend -->
+                            <div id="ner-legend" style="margin-top: 16px; display: none;">
+                                <h4 style="font-size: 13px; font-weight: 600; margin-bottom: 8px;">Entity Types</h4>
+                                <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 12px;">
+                                    <div style="display: flex; align-items: center; gap: 4px;">
+                                        <span style="background: #ddd; padding: 2px 6px; border-radius: 3px;">PERSON</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 4px;">
+                                        <span style="background: #7aecec; padding: 2px 6px; border-radius: 3px;">ORG</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 4px;">
+                                        <span style="background: #ff9561; padding: 2px 6px; border-radius: 3px;">GPE</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 4px;">
+                                        <span style="background: #bfe1d9; padding: 2px 6px; border-radius: 3px;">PRODUCT</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dependency Parsing (displaCy) -->
+                        <div class="card" style="margin-top: 16px;">
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">
+                                Dependency Parse (displaCy)
+                            </h3>
+                            <div style="margin-bottom: 12px;">
+                                <label style="display: block; font-size: 13px; color: #525252; margin-bottom: 8px;">
+                                    Select sentence to parse:
+                                </label>
+                                <select id="sentence-select" style="width: 100%; padding: 8px; border: 1px solid #8d8d8d; font-size: 13px;" onchange="parseSentence()" disabled>
+                                    <option value="">-- Select sentence --</option>
+                                </select>
+                            </div>
+                            <div id="displacy-analysis" style="padding: 16px; background: #fafafa; border: 1px solid #e0e0e0; min-height: 200px; overflow-x: auto;">
+                                <div style="text-align: center; color: #8d8d8d; padding: 32px 0;">
+                                    Select a sentence to visualize dependencies
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Entity Statistics -->
+                        <div class="card" style="margin-top: 16px;">
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">Entity Statistics</h3>
+                            <div id="entity-stats" style="display: none;">
+                                <div class="grid grid-2" style="gap: 12px;">
+                                    <div style="padding: 12px; background: #f4f4f4; border: 1px solid #e0e0e0;">
+                                        <div style="font-size: 20px; font-weight: 600;" id="stat-entities">0</div>
+                                        <div style="font-size: 12px; color: #525252;">Total Entities</div>
+                                    </div>
+                                    <div style="padding: 12px; background: #f4f4f4; border: 1px solid #e0e0e0;">
+                                        <div style="font-size: 20px; font-weight: 600;" id="stat-types">0</div>
+                                        <div style="font-size: 12px; color: #525252;">Entity Types</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" style="margin-top: 32px;" onclick="showTab('configure')">
+                Continue to Configuration →
+            </button>
+        </div>
+
+        <!-- Configure Tab -->
+        <div id="configure" class="tab-content">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Configure LLM Analysis</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">
+                Set parameters for extracting role identity—practice—counterrole triplets
+            </p>
+
+            <div class="card">
+                <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Extraction Backend</label>
+                <select id="backend-select" style="width: 100%; padding: 10px; border: 1px solid #8d8d8d; font-size: 14px; margin-bottom: 12px;">
+                    <option>SpacyLLM (Recommended for NER)</option>
+                    <option>GPT-4 with Few-Shot Prompting</option>
+                    <option>Claude 3.5 Sonnet with Examples</option>
+                </select>
+                <div style="font-size: 12px; color: #525252; padding: 12px; background: #f4f4f4; border: 1px solid #e0e0e0;">
+                    <strong>SpacyLLM</strong> uses spaCy's NLP pipeline with LLM integration for better entity recognition and relation extraction.
+                </div>
+            </div>
+
+            <div class="card">
+                <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Extraction Prompt Template</label>
+                <textarea id="prompt-template" style="width: 100%; min-height: 120px; padding: 12px; border: 1px solid #8d8d8d; font-size: 13px; font-family: 'IBM Plex Mono', monospace;">Extract semantic triplets from the text:
+- Role Identity: What organizational role does the EIT enact?
+- Practice: What action or activity is performed?
+- Counterrole: Who is the recipient or target?
+
+Example: [Enabler] → [supports] → [startups]</textarea>
+            </div>
+
+            <div class="card">
+                <label style="display: block; font-weight: 600; margin-bottom: 16px; font-size: 14px;">Analysis Parameters</label>
+                <div style="margin-bottom: 16px;">
+                    <label style="font-size: 13px; color: #525252; display: block; margin-bottom: 8px;">
+                        Minimum triplet frequency threshold
+                    </label>
+                    <input type="number" id="min-frequency" value="2" min="1" style="padding: 8px; border: 1px solid #8d8d8d; width: 100px; font-size: 14px;">
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <label style="font-size: 13px; color: #525252; display: block; margin-bottom: 8px;">
+                        Number of triplets to validate
+                    </label>
+                    <input type="number" id="validate-count" value="50" min="10" style="padding: 8px; border: 1px solid #8d8d8d; width: 100px; font-size: 14px;">
+                    <div style="font-size: 11px; color: #8d8d8d; margin-top: 4px;">
+                        Start with 50-100 for initial model training
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" onclick="showTab('extract')">Start Extraction →</button>
+        </div>
+
+        <!-- Extract Tab -->
+        <div id="extract" class="tab-content">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Extract Triplets</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">
+                LLM is processing documents to identify role identity—practice—counterrole structures
+            </p>
+
+            <div id="extract-start" style="text-align: center; padding: 64px 0;">
+                <button class="btn btn-primary" style="padding: 16px 32px; font-size: 16px;" onclick="startExtraction()">
+                    ▶️ Begin Processing
+                </button>
+            </div>
+
+            <div id="extract-processing" style="display: none; text-align: center; padding: 64px 0;">
+                <svg class="spinner" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+                </svg>
+                <div style="font-size: 16px; font-weight: 500; margin: 24px 0 8px;">Processing documents...</div>
+                <div style="font-size: 14px; color: #525252;">Extracting semantic triplets from files</div>
+            </div>
+        </div>
+
+        <!-- Validate Tab -->
+        <div id="validate" class="tab-content">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Validate & Train Model</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">
+                Review LLM-extracted triplets and provide corrections to improve the model
+            </p>
+
+            <!-- Progress -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                    <span style="font-size: 14px; font-weight: 600;">
+                        Progress: <span id="current-index">1</span> / <span id="total-triplets">5</span>
+                    </span>
+                    <span style="font-size: 14px; color: #525252;">
+                        <span id="progress-percent">20</span>% Complete
+                    </span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 20%"></div>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-4" style="margin-top: 24px;">
+                    <div class="stat-card">
+                        <div class="stat-value" style="color: #2ca02c;" id="stat-accepted">0</div>
+                        <div class="stat-label">Accepted</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" style="color: #ff9800;" id="stat-corrected">0</div>
+                        <div class="stat-label">Corrected</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" style="color: #d62728;" id="stat-rejected">0</div>
+                        <div class="stat-label">Rejected</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-remaining">5</div>
+                        <div class="stat-label">Remaining</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Validation Interface -->
+            <div class="validation-container">
+                <!-- Source Text -->
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <h3 style="font-size: 16px; font-weight: 600; margin: 0;">Source Text</h3>
+                        <div style="padding: 4px 12px; background: #f4f4f4; font-size: 12px; font-weight: 500;" id="current-community">
+                            EIT Health
+                        </div>
+                    </div>
+                    <div style="padding: 16px; background: #f4f4f4; font-size: 14px; line-height: 1.6; border: 1px solid #e0e0e0; min-height: 120px;" id="source-text">
+                        EIT Health supports startups in developing innovative healthcare solutions through mentoring programs and funding opportunities.
+                    </div>
+
+                    <div style="margin-top: 16px; padding: 12px; background: #fff5e6; border: 1px solid #ffe0b2;">
+                        <div style="font-size: 12px; font-weight: 600; margin-bottom: 4px; color: #8d6e00;">Model Confidence</div>
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="confidence-fill" style="width: 87%"></div>
+                            </div>
+                            <span style="font-size: 14px; font-weight: 600; min-width: 50px;" id="confidence-value">87%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Extracted Triplet -->
+                <div class="card">
+                    <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">Extracted Triplet</h3>
+
+                    <div id="triplet-view">
+                        <div class="triplet-field">
+                            <label class="triplet-label">ROLE IDENTITY</label>
+                            <div class="triplet-value role-value" id="role-display">supporter</div>
+                        </div>
+                        <div class="triplet-field">
+                            <label class="triplet-label">PRACTICE</label>
+                            <div class="triplet-value practice-value" id="practice-display">supports</div>
+                        </div>
+                        <div class="triplet-field">
+                            <label class="triplet-label">COUNTERROLE</label>
+                            <div class="triplet-value counterrole-value" id="counterrole-display">startups</div>
+                        </div>
+                    </div>
+
+                    <div id="triplet-edit" style="display: none;">
+                        <div class="triplet-field">
+                            <label class="triplet-label">ROLE IDENTITY</label>
+                            <input type="text" class="triplet-input role-input" id="role-edit" value="supporter">
+                        </div>
+                        <div class="triplet-field">
+                            <label class="triplet-label">PRACTICE</label>
+                            <input type="text" class="triplet-input practice-input" id="practice-edit" value="supports">
+                        </div>
+                        <div class="triplet-field">
+                            <label class="triplet-label">COUNTERROLE</label>
+                            <input type="text" class="triplet-input counterrole-input" id="counterrole-edit" value="startups">
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 12px;">
+                        <div id="action-buttons">
+                            <button class="btn btn-success" style="width: 100%; margin-bottom: 12px;" onclick="validateTriplet('accept')">
+                                ✓ Accept Triplet
+                            </button>
+                            <button class="btn btn-warning" style="width: 100%; margin-bottom: 12px;" onclick="startEdit()">
+                                ✏️ Correct Triplet
+                            </button>
+                            <button class="btn btn-danger" style="width: 100%;" onclick="validateTriplet('reject')">
+                                ✕ Reject Triplet
+                            </button>
+                        </div>
+                        <div id="edit-buttons" style="display: none;">
+                            <button class="btn btn-primary" style="width: 100%; margin-bottom: 12px;" onclick="validateTriplet('correct')">
+                                ✓ Save Correction
+                            </button>
+                            <button class="btn btn-secondary" style="width: 100%;" onclick="cancelEdit()">
+                                Cancel Edit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="card" style="display: flex; justify-content: space-between; align-items: center;">
+                <button class="btn btn-secondary" onclick="previousTriplet()" id="prev-btn">← Previous</button>
+                <div style="font-size: 14px; color: #525252;">
+                    Triplet <span id="nav-current">1</span> of <span id="nav-total">5</span>
+                </div>
+                <button class="btn btn-secondary" onclick="nextTriplet()" id="next-btn">Next →</button>
+            </div>
+
+            <!-- Completion Message -->
+            <div id="validation-complete" style="display: none;" class="card">
+                <div style="border: 1px solid #2ca02c; background: #f1f8f4; text-align: center; padding: 32px;">
+                    <div style="font-size: 48px; margin-bottom: 16px;">✓</div>
+                    <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Validation Complete!</h3>
+                    <p style="font-size: 14px; color: #525252; margin-bottom: 24px;">
+                        All triplets have been reviewed. The model will use your feedback to improve future extractions.
+                    </p>
+                    <button class="btn btn-primary" style="padding: 14px 32px; font-size: 16px;" onclick="showTab('analyze')">
+                        Build Network Analysis →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Network Analysis Tab -->
+        <div id="analyze" class="tab-content">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Network Analysis</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">
+                Semantic network showing role identity—practice—counterrole relationships
+            </p>
+
+            <!-- Filter Controls -->
+            <div style="display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; align-items: center;">
+                <span style="font-size: 14px; font-weight: 500;">Filter by Sociotype:</span>
+                <button class="btn btn-secondary" onclick="filterNetwork(null)" id="filter-all">All Sociotypes</button>
+                <button class="btn btn-secondary" onclick="filterNetwork(0)" style="border-color: #1f77b4; color: #1f77b4;">Innovation Ecosystem</button>
+                <button class="btn btn-secondary" onclick="filterNetwork(1)" style="border-color: #ff7f0e; color: #ff7f0e;">Market Creation</button>
+                <button class="btn btn-secondary" onclick="filterNetwork(2)" style="border-color: #2ca02c; color: #2ca02c;">Education</button>
+            </div>
+
+            <!-- Network Visualization -->
+            <div id="network-container"></div>
+
+            <!-- Legend -->
+            <div class="grid grid-3" style="margin-top: 24px;">
+                <div class="card">
+                    <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Node Types</h3>
+                    <div class="legend-item">
+                        <div style="width: 20px; height: 20px; border-radius: 50%; background: #666; border: 2px solid #fff;"></div>
+                        <span>Role Identity (larger)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div style="width: 15px; height: 15px; border-radius: 50%; background: #666; border: 2px solid #fff;"></div>
+                        <span>Counterrole (smaller)</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Sociotypes (Clusters)</h3>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #1f77b4;"></div>
+                        <span>Innovation Ecosystem</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ff7f0e;"></div>
+                        <span>Market Creation</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #2ca02c;"></div>
+                        <span>Education & Training</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Interactions</h3>
+                    <div class="legend-item">
+                        <div style="width: 30px; height: 2px; background: #999;"></div>
+                        <span>Practice (labeled edges)</span>
+                    </div>
+                    <div style="font-size: 12px; color: #666; margin-top: 8px;">
+                        Line thickness indicates relationship strength. Drag nodes to explore.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Network Metrics -->
+            <div class="card" style="margin-top: 24px;">
+                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 16px;">Network Metrics</h3>
+                <div class="grid grid-4">
+                    <div>
+                        <div style="font-size: 24px; font-weight: 600;">18</div>
+                        <div style="font-size: 13px; color: #525252;">Total Nodes</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 600;">23</div>
+                        <div style="font-size: 13px; color: #525252;">Total Connections</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 600;">0.68</div>
+                        <div style="font-size: 13px; color: #525252;">Network Modularity</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 600;">5</div>
+                        <div style="font-size: 13px; color: #525252;">Identified Clusters</div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" style="margin-top: 32px;" onclick="showTab('results')">
+                View Detailed Results →
+            </button>
+        </div>
+
+        <!-- Results Tab -->
+        <div id="results" class="tab-content">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Analysis Results</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">
+                Constellation of sociotypes across EIT communities
+            </p>
+
+            <!-- Summary Cards -->
+            <div class="grid grid-4">
+                <div class="stat-card">
+                    <div class="stat-value">342</div>
+                    <div class="stat-label">Triplets Extracted</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">24</div>
+                    <div class="stat-label">Role Identities</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">31</div>
+                    <div class="stat-label">Counterroles</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Identified Sociotypes</div>
+                </div>
+            </div>
+
+            <!-- Sociotype Clusters -->
+            <div class="card" style="margin-top: 32px;">
+                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 20px;">Identified Sociotypes</h3>
+                <p style="font-size: 13px; color: #525252; margin-bottom: 20px; padding: 12px; background: #f4f4f4; border: 1px solid #e0e0e0;">
+                    <strong>Note:</strong> Sociotypes are clusters of role triplets that emerge from the data. They can be interpreted as institutional logics or other meaningful patterns depending on your analytical framework.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 16px;">
+                    <div style="padding: 16px; background: #f4f4f4; border: 1px solid #e0e0e0;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <div style="font-size: 15px; font-weight: 600;">Innovation Ecosystem Sociotype</div>
+                            <div style="font-size: 13px; color: #525252;">Permeability: 72%</div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="flex: 1; height: 8px; background: #e0e0e0; position: relative;">
+                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 72%; background: black;"></div>
+                            </div>
+                            <div style="font-size: 13px; color: #525252; min-width: 100px;">45 role categories</div>
+                        </div>
+                    </div>
+
+                    <div style="padding: 16px; background: #f4f4f4; border: 1px solid #e0e0e0;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <div style="font-size: 15px; font-weight: 600;">Research Excellence Sociotype</div>
+                            <div style="font-size: 13px; color: #525252;">Permeability: 54%</div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="flex: 1; height: 8px; background: #e0e0e0; position: relative;">
+                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 54%; background: black;"></div>
+                            </div>
+                            <div style="font-size: 13px; color: #525252; min-width: 100px;">38 role categories</div>
+                        </div>
+                    </div>
+
+                    <div style="padding: 16px; background: #f4f4f4; border: 1px solid #e0e0e0;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <div style="font-size: 15px; font-weight: 600;">Market Creation Sociotype</div>
+                            <div style="font-size: 13px; color: #525252;">Permeability: 81%</div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="flex: 1; height: 8px; background: #e0e0e0; position: relative;">
+                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 81%; background: black;"></div>
+                            </div>
+                            <div style="font-size: 13px; color: #525252; min-width: 100px;">52 role categories</div>
+                        </div>
+                    </div>
+
+                    <div style="padding: 16px; background: #f4f4f4; border: 1px solid #e0e0e0;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <div style="font-size: 15px; font-weight: 600;">Education & Training Sociotype</div>
+                            <div style="font-size: 13px; color: #525252;">Permeability: 43%</div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="flex: 1; height: 8px; background: #e0e0e0; position: relative;">
+                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 43%; background: black;"></div>
+                            </div>
+                            <div style="font-size: 13px; color: #525252; min-width: 100px;">29 role categories</div>
+                        </div>
+                    </div>
+
+                    <div style="padding: 16px; background: #f4f4f4; border: 1px solid #e0e0e0;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <div style="font-size: 15px; font-weight: 600;">Policy Influence Sociotype</div>
+                            <div style="font-size: 13px; color: #525252;">Permeability: 65%</div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="flex: 1; height: 8px; background: #e0e0e0; position: relative;">
+                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 65%; background: black;"></div>
+                            </div>
+                            <div style="font-size: 13px; color: #525252; min-width: 100px;">36 role categories</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Triplet Extraction Preview -->
+            <div class="card" style="margin-top: 32px;">
+                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 16px;">Triplet Extraction Preview</h3>
+                <p style="font-size: 13px; color: #525252; margin-bottom: 20px;">
+                    Example of how role-practice-counterrole triplets are identified and extracted from text
+                </p>
+                
+                <!-- Sample Document with Annotations -->
+                <div style="padding: 20px; background: #fafafa; border: 1px solid #e0e0e0; position: relative;">
+                    <div style="font-size: 12px; font-weight: 600; color: #525252; margin-bottom: 12px;">
+                        SAMPLE: EIT Health Innovation Report 2024
+                    </div>
+                    
+                    <!-- Annotated Text with SVG Arcs -->
+                    <div id="triplet-preview" style="position: relative; padding: 40px 0;">
+                        <svg width="100%" height="180" style="position: absolute; top: 0; left: 0; pointer-events: none;">
+                            <!-- Arc 1: EIT Health → supports → startups -->
+                            <path d="M 85 140 Q 85 80 235 80 Q 385 80 385 140" 
+                                  stroke="#1976d2" 
+                                  stroke-width="2" 
+                                  fill="none" 
+                                  stroke-dasharray="5,5"/>
+                            <text x="235" y="65" 
+                                  text-anchor="middle" 
+                                  font-size="11px" 
+                                  font-weight="600" 
+                                  fill="#7b1fa2">supports</text>
+                            
+                            <!-- Arc 2: organization → connects → entrepreneurs -->
+                            <path d="M 95 170 Q 95 110 285 110 Q 475 110 475 170" 
+                                  stroke="#1976d2" 
+                                  stroke-width="2" 
+                                  fill="none" 
+                                  stroke-dasharray="5,5"/>
+                            <text x="285" y="95" 
+                                  text-anchor="middle" 
+                                  font-size="11px" 
+                                  font-weight="600" 
+                                  fill="#7b1fa2">connects</text>
+                        </svg>
+                        
+                        <div style="font-size: 15px; line-height: 2.8; position: relative; z-index: 1;">
+                            <span style="background: #e3f2fd; padding: 4px 8px; border-radius: 4px; font-weight: 600; border: 2px solid #1976d2;">EIT Health</span>
+                            <span style="background: #f3e5f5; padding: 4px 8px; border-radius: 4px; font-weight: 600; border: 2px solid #7b1fa2; margin: 0 4px;">supports</span>
+                            <span style="background: #e8f5e9; padding: 4px 8px; border-radius: 4px; font-weight: 600; border: 2px solid #388e3c;">startups</span>
+                            in developing innovative healthcare solutions through mentoring programs. The 
+                            <span style="background: #e3f2fd; padding: 4px 8px; border-radius: 4px; font-weight: 600; border: 2px solid #1976d2;">organization</span>
+                            <span style="background: #f3e5f5; padding: 4px 8px; border-radius: 4px; font-weight: 600; border: 2px solid #7b1fa2; margin: 0 4px;">connects</span>
+                            <span style="background: #e8f5e9; padding: 4px 8px; border-radius: 4px; font-weight: 600; border: 2px solid #388e3c;">entrepreneurs</span>
+                            with investors across Europe.
+                        </div>
+                    </div>
+                    
+                    <!-- Legend -->
+                    <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #e0e0e0;">
+                        <div style="display: flex; gap: 24px; flex-wrap: wrap; font-size: 12px;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 16px; height: 16px; background: #e3f2fd; border: 2px solid #1976d2; border-radius: 3px;"></div>
+                                <span><strong>Role Identity</strong> - organizational actor</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 16px; height: 16px; background: #f3e5f5; border: 2px solid #7b1fa2; border-radius: 3px;"></div>
+                                <span><strong>Practice</strong> - action/verb</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div style="width: 16px; height: 16px; background: #e8f5e9; border: 2px solid #388e3c; border-radius: 3px;"></div>
+                                <span><strong>Counterrole</strong> - recipient/target</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <svg width="30" height="2">
+                                    <line x1="0" y1="1" x2="30" y2="1" stroke="#7b1fa2" stroke-width="2" stroke-dasharray="5,5"/>
+                                </svg>
+                                <span><strong>Relationship arc</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Extracted Triplets List -->
+                <div style="margin-top: 20px;">
+                    <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Extracted Triplets:</h4>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <div style="padding: 10px; background: white; border: 1px solid #e0e0e0; font-size: 13px;">
+                            <span style="color: #1976d2; font-weight: 600;">EIT Health</span> 
+                            <span style="color: #7b1fa2; font-weight: 600;">→ supports →</span> 
+                            <span style="color: #388e3c; font-weight: 600;">startups</span>
+                            <span style="float: right; color: #8d8d8d; font-size: 11px;">Confidence: 92%</span>
+                        </div>
+                        <div style="padding: 10px; background: white; border: 1px solid #e0e0e0; font-size: 13px;">
+                            <span style="color: #1976d2; font-weight: 600;">organization</span> 
+                            <span style="color: #7b1fa2; font-weight: 600;">→ connects →</span> 
+                            <span style="color: #388e3c; font-weight: 600;">entrepreneurs</span>
+                            <span style="float: right; color: #8d8d8d; font-size: 11px;">Confidence: 89%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Export Options -->
+            <div class="card" style="margin-top: 32px;">
+                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 16px;">Export Results</h3>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button class="btn btn-primary" onclick="exportNetworkData()">
+                        📥 Export Network Data (JSON)
+                    </button>
+                    <button class="btn btn-secondary" onclick="exportReport()">
+                        📄 Export Report (PDF)
+                    </button>
+                    <button class="btn btn-secondary" onclick="exportValidatedTriplets()">
+                        💾 Export Validated Triplets
+                    </button>
+                    <button class="btn btn-secondary" onclick="exportAnnotations()">
+                        📝 Export Manual Annotations
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // ============================================================================
+        // STATE MANAGEMENT
+        // ============================================================================
+        
+        const state = {
+            files: {
+                health: [],
+                food: [],
+                energy: []
+            },
+            currentCorpus: null,
+            currentDocument: null,
+            documents: {
+                health: [
+                    {
+                        id: 'health_1',
+                        title: 'EIT Health Innovation Report 2024',
+                        text: `EIT Health supports startups in developing innovative healthcare solutions through mentoring programs and funding opportunities. The organization connects entrepreneurs with investors across Europe. EIT Health trains professionals in sustainable healthcare systems through specialized courses. We enable collaboration between universities and industry partners to accelerate medical innovation.`,
+                        sentences: []
+                    },
+                    {
+                        id: 'health_2', 
+                        title: 'Healthcare Startup Ecosystem Analysis',
+                        text: `The European Institute of Innovation and Technology Health community acts as a catalyst for healthcare innovation. Research institutions partner with clinical organizations to develop breakthrough therapies. EIT Health facilitates knowledge transfer between academic researchers and commercial entities.`,
+                        sentences: []
+                    }
+                ],
+                food: [
+                    {
+                        id: 'food_1',
+                        title: 'Sustainable Food Systems Initiative',
+                        text: `EIT Food empowers farmers through digital agriculture training programs. The network promotes sustainable practices among food producers across European markets. Innovation hubs connect agri-tech startups with multinational food corporations to scale novel solutions.`,
+                        sentences: []
+                    }
+                ],
+                energy: [
+                    {
+                        id: 'energy_1',
+                        title: 'Clean Energy Transition Strategy',
+                        text: `EIT InnoEnergy drives the energy transition by supporting cleantech ventures. The platform mobilizes capital from venture investors and corporate partners. Educational programs train the next generation of energy professionals in renewable technologies and sustainable business models.`,
+                        sentences: []
+                    }
+                ]
+            },
+            annotations: [],
+            spacyResults: null,
+            currentTripletIndex: 0,
+            triplets: [
+                {
+                    id: 1,
+                    text: "EIT Health supports startups in developing innovative healthcare solutions through mentoring programs.",
+                    community: "EIT Health",
+                    extracted: { role: "supporter", practice: "supports", counterrole: "startups" },
+                    confidence: 0.87,
+                    validated: null
+                },
+                {
+                    id: 2,
+                    text: "The organization connects entrepreneurs with investors across Europe.",
+                    community: "EIT Digital",
+                    extracted: { role: "connector", practice: "connects", counterrole: "entrepreneurs" },
+                    confidence: 0.92,
+                    validated: null
+                },
+                {
+                    id: 3,
+                    text: "EIT Food trains professionals in sustainable food systems through specialized courses.",
+                    community: "EIT Food",
+                    extracted: { role: "educator", practice: "trains", counterrole: "professionals" },
+                    confidence: 0.78,
+                    validated: null
+                },
+                {
+                    id: 4,
+                    text: "We fund research projects focused on renewable energy technologies.",
+                    community: "EIT InnoEnergy",
+                    extracted: { role: "funder", practice: "funds", counterrole: "research projects" },
+                    confidence: 0.81,
+                    validated: null
+                },
+                {
+                    id: 5,
+                    text: "The platform enables collaboration between universities and industry partners.",
+                    community: "EIT Manufacturing",
+                    extracted: { role: "enabler", practice: "enables", counterrole: "universities" },
+                    confidence: 0.69,
+                    validated: null
+                }
+            ],
+            stats: {
+                accepted: 0,
+                corrected: 0,
+                rejected: 0
+            },
+            editMode: false,
+            networkData: null,
+            selectedSociotype: null
+        };
+
+        // ============================================================================
+        // PREVIEW & ANNOTATION
+        // ============================================================================
+        
+        function loadCorpusDocuments() {
+            const corpus = document.getElementById('corpus-select').value;
+            const docSelect = document.getElementById('document-select');
+            
+            if (!corpus) {
+                docSelect.disabled = true;
+                docSelect.innerHTML = '<option value="">-- Select a document --</option>';
+                document.getElementById('document-viewer').style.display = 'none';
+                return;
+            }
+            
+            state.currentCorpus = corpus;
+            docSelect.disabled = false;
+            docSelect.innerHTML = '<option value="">-- Select a document --</option>';
+            
+            state.documents[corpus].forEach((doc, idx) => {
+                const option = document.createElement('option');
+                option.value = idx;
+                option.textContent = doc.title;
+                docSelect.appendChild(option);
+            });
+        }
+        
+        function loadDocument() {
+            const docIndex = document.getElementById('document-select').value;
+            if (docIndex === '') {
+                document.getElementById('document-viewer').style.display = 'none';
+                return;
+            }
+            
+            const doc = state.documents[state.currentCorpus][docIndex];
+            state.currentDocument = doc;
+            
+            // Split into sentences for displaCy
+            doc.sentences = doc.text.match(/[^\.!\?]+[\.!\?]+/g) || [doc.text];
+            
+            // Update UI
+            document.getElementById('doc-title').textContent = doc.title;
+            document.getElementById('doc-corpus').textContent = 'EIT ' + state.currentCorpus.charAt(0).toUpperCase() + state.currentCorpus.slice(1);
+            document.getElementById('doc-length').textContent = doc.text.split(/\s+/).length;
+            document.getElementById('doc-text').textContent = doc.text;
+            
+            // Reset analysis
+            document.getElementById('ner-analysis').innerHTML = '<div style="text-align: center; color: #8d8d8d; padding: 32px 0;">Click "Run spaCy Analysis" to see NER results</div>';
+            document.getElementById('ner-legend').style.display = 'none';
+            document.getElementById('entity-stats').style.display = 'none';
+            
+            // Load sentence selector
+            const sentenceSelect = document.getElementById('sentence-select');
+            sentenceSelect.innerHTML = '<option value="">-- Select sentence --</option>';
+            doc.sentences.forEach((sent, idx) => {
+                const option = document.createElement('option');
+                option.value = idx;
+                option.textContent = sent.substring(0, 60) + (sent.length > 60 ? '...' : '');
+                sentenceSelect.appendChild(option);
+            });
+            sentenceSelect.disabled = false;
+            
+            // Clear annotations for this document
+            updateAnnotationsList();
+            
+            document.getElementById('document-viewer').style.display = 'block';
+        }
+        
+        function runSpacyAnalysis() {
+            if (!state.currentDocument) return;
+            
+            // Simulate spaCy NER analysis
+            const text = state.currentDocument.text;
+            const mockEntities = [];
+            
+            // Simple entity extraction (mock)
+            const orgPattern = /EIT (Health|Food|Energy|InnoEnergy|Digital|Manufacturing)/g;
+            const gpePattern = /\b(Europe|European)\b/g;
+            const personPattern = /\b(entrepreneurs|startups|professionals|farmers|students|researchers)\b/gi;
+            
+            let match;
+            while ((match = orgPattern.exec(text)) !== null) {
+                mockEntities.push({
+                    text: match[0],
+                    label: 'ORG',
+                    start: match.index,
+                    end: match.index + match[0].length
+                });
+            }
+            
+            while ((match = gpePattern.exec(text)) !== null) {
+                mockEntities.push({
+                    text: match[0],
+                    label: 'GPE',
+                    start: match.index,
+                    end: match.index + match[0].length
+                });
+            }
+            
+            while ((match = personPattern.exec(text)) !== null) {
+                mockEntities.push({
+                    text: match[0],
+                    label: 'PERSON',
+                    start: match.index,
+                    end: match.index + match[0].length
+                });
+            }
+            
+            // Sort by position
+            mockEntities.sort((a, b) => a.start - b.start);
+            
+            state.spacyResults = {
+                entities: mockEntities,
+                text: text
+            };
+            
+            // Render NER visualization
+            renderNER(text, mockEntities);
+            
+            // Show legend and stats
+            document.getElementById('ner-legend').style.display = 'block';
+            document.getElementById('entity-stats').style.display = 'block';
+            
+            const uniqueTypes = [...new Set(mockEntities.map(e => e.label))];
+            document.getElementById('stat-entities').textContent = mockEntities.length;
+            document.getElementById('stat-types').textContent = uniqueTypes.length;
+        }
+        
+        function renderNER(text, entities) {
+            const container = document.getElementById('ner-analysis');
+            container.innerHTML = '';
+            
+            // Entity colors matching spaCy
+            const colors = {
+                'PERSON': '#ddd',
+                'ORG': '#7aecec',
+                'GPE': '#ff9561',
+                'PRODUCT': '#bfe1d9',
+                'DATE': '#bfe1d9',
+                'MONEY': '#e4e7d2'
+            };
+            
+            let html = '<div style="line-height: 2.5;">';
+            let lastIndex = 0;
+            
+            // Sort entities by start position
+            const sortedEntities = [...entities].sort((a, b) => a.start - b.start);
+            
+            sortedEntities.forEach(entity => {
+                // Add text before entity
+                html += escapeHtml(text.substring(lastIndex, entity.start));
+                
+                // Add entity span
+                const color = colors[entity.label] || '#ddd';
+                html += `<span style="background: ${color}; padding: 2px 6px; border-radius: 3px; margin: 0 2px; font-weight: 500;">${escapeHtml(entity.text)} <span style="font-size: 10px; font-weight: 600; vertical-align: super;">${entity.label}</span></span>`;
+                
+                lastIndex = entity.end;
+            });
+            
+            // Add remaining text
+            html += escapeHtml(text.substring(lastIndex));
+            html += '</div>';
+            
+            container.innerHTML = html;
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        function parseSentence() {
+            const sentIndex = document.getElementById('sentence-select').value;
+            if (sentIndex === '') {
+                document.getElementById('displacy-analysis').innerHTML = '<div style="text-align: center; color: #8d8d8d; padding: 32px 0;">Select a sentence to visualize dependencies</div>';
+                return;
+            }
+            
+            const sentence = state.currentDocument.sentences[sentIndex];
+            
+            // Mock dependency parse visualization (simplified SVG)
+            const container = document.getElementById('displacy-analysis');
+            container.innerHTML = `
+                <div style="font-family: monospace; font-size: 12px; padding: 20px;">
+                    <svg width="100%" height="150" style="overflow: visible;">
+                        <!-- Words -->
+                        <text x="50" y="120" style="font-size: 14px; font-weight: 500;">EIT</text>
+                        <text x="150" y="120" style="font-size: 14px; font-weight: 500;">Health</text>
+                        <text x="250" y="120" style="font-size: 14px; font-weight: 500;">supports</text>
+                        <text x="350" y="120" style="font-size: 14px; font-weight: 500;">startups</text>
+                        
+                        <!-- Arcs -->
+                        <path d="M 70 110 Q 110 60 150 110" stroke="#999" fill="none" stroke-width="1.5"/>
+                        <text x="95" y="65" style="font-size: 10px; fill: #666;">compound</text>
+                        
+                        <path d="M 170 110 Q 210 40 250 110" stroke="#999" fill="none" stroke-width="1.5"/>
+                        <text x="195" y="45" style="font-size: 10px; fill: #666;">nsubj</text>
+                        
+                        <path d="M 270 110 Q 310 60 350 110" stroke="#999" fill="none" stroke-width="1.5"/>
+                        <text x="295" y="65" style="font-size: 10px; fill: #666;">dobj</text>
+                        
+                        <!-- POS tags -->
+                        <text x="50" y="140" style="font-size: 10px; fill: #999;">PROPN</text>
+                        <text x="150" y="140" style="font-size: 10px; fill: #999;">PROPN</text>
+                        <text x="250" y="140" style="font-size: 10px; fill: #999;">VERB</text>
+                        <text x="350" y="140" style="font-size: 10px; fill: #999;">NOUN</text>
+                    </svg>
+                    <div style="margin-top: 20px; padding: 12px; background: #f4f4f4; border: 1px solid #e0e0e0;">
+                        <strong>Sentence:</strong> ${escapeHtml(sentence.substring(0, 100))}${sentence.length > 100 ? '...' : ''}
+                    </div>
+                </div>
+            `;
+        }
+        
+        function addManualAnnotation() {
+            const role = document.getElementById('manual-role').value.trim();
+            const practice = document.getElementById('manual-practice').value.trim();
+            const counterrole = document.getElementById('manual-counterrole').value.trim();
+            
+            if (!role || !practice || !counterrole) {
+                alert('Please fill in all three fields');
+                return;
+            }
+            
+            const annotation = {
+                id: Date.now(),
+                documentId: state.currentDocument.id,
+                corpus: state.currentCorpus,
+                role,
+                practice,
+                counterrole,
+                timestamp: new Date().toISOString()
+            };
+            
+            state.annotations.push(annotation);
+            
+            // Clear inputs
+            document.getElementById('manual-role').value = '';
+            document.getElementById('manual-practice').value = '';
+            document.getElementById('manual-counterrole').value = '';
+            
+            updateAnnotationsList();
+        }
+        
+        function updateAnnotationsList() {
+            const container = document.getElementById('annotations-container');
+            const docAnnotations = state.annotations.filter(a => 
+                state.currentDocument && a.documentId === state.currentDocument.id
+            );
+            
+            document.getElementById('annotation-count').textContent = docAnnotations.length;
+            
+            if (docAnnotations.length === 0) {
+                container.innerHTML = '<div style="text-align: center; color: #8d8d8d; padding: 16px; font-size: 13px;">No annotations yet</div>';
+                return;
+            }
+            
+            container.innerHTML = docAnnotations.map(ann => `
+                <div class="annotation-item" style="padding: 12px; border: 1px solid #e0e0e0; background: white; font-size: 13px;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+                        <div style="font-weight: 600; flex: 1;">
+                            <span style="color: #1976d2;">${escapeHtml(ann.role)}</span> →
+                            <span style="color: #7b1fa2;">${escapeHtml(ann.practice)}</span> →
+                            <span style="color: #388e3c;">${escapeHtml(ann.counterrole)}</span>
+                        </div>
+                        <button onclick="deleteAnnotation(${ann.id})" style="background: none; border: none; color: #d32f2f; cursor: pointer; font-size: 16px; padding: 0 4px;">×</button>
+                    </div>
+                    <div style="font-size: 11px; color: #8d8d8d;">
+                        ${new Date(ann.timestamp).toLocaleString()}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function deleteAnnotation(id) {
+            state.annotations = state.annotations.filter(a => a.id !== id);
+            updateAnnotationsList();
+        }
+
+        // ============================================================================
+        // TAB NAVIGATION
+        // ============================================================================
+        
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Find and activate the correct tab button
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                if (tab.textContent.toLowerCase().includes(tabName.replace('-', ' '))) {
+                    tab.classList.add('active');
+                }
+            });
+
+            // Initialize network if analyze tab
+            if (tabName === 'analyze' && !state.networkData) {
+                initializeNetwork();
+            }
+        }
+
+        // ============================================================================
+        // FILE UPLOAD
+        // ============================================================================
+        
+        function handleFileUpload(community, files) {
+            state.files[community] = Array.from(files);
+            document.getElementById(`count-${community}`).textContent = files.length;
+            
+            // Enable continue button if any files uploaded
+            const totalFiles = Object.values(state.files).reduce((sum, files) => sum + files.length, 0);
+            document.getElementById('continue-btn').disabled = totalFiles === 0;
+        }
+
+        // ============================================================================
+        // EXTRACTION
+        // ============================================================================
+        
+        function startExtraction() {
+            document.getElementById('extract-start').style.display = 'none';
+            document.getElementById('extract-processing').style.display = 'block';
+            
+            // Simulate extraction process
+            setTimeout(() => {
+                showTab('validate');
+                updateValidationUI();
+            }, 3000);
+        }
+
+        // ============================================================================
+        // VALIDATION
+        // ============================================================================
+        
+        function updateValidationUI() {
+            const current = state.triplets[state.currentTripletIndex];
+            const total = state.triplets.length;
+            const remaining = total - (state.stats.accepted + state.stats.corrected + state.stats.rejected);
+            
+            // Update progress
+            document.getElementById('current-index').textContent = state.currentTripletIndex + 1;
+            document.getElementById('total-triplets').textContent = total;
+            document.getElementById('progress-percent').textContent = Math.round(((state.currentTripletIndex + 1) / total) * 100);
+            document.getElementById('progress-fill').style.width = `${((state.currentTripletIndex + 1) / total) * 100}%`;
+            
+            // Update stats
+            document.getElementById('stat-accepted').textContent = state.stats.accepted;
+            document.getElementById('stat-corrected').textContent = state.stats.corrected;
+            document.getElementById('stat-rejected').textContent = state.stats.rejected;
+            document.getElementById('stat-remaining').textContent = remaining;
+            
+            // Update current triplet
+            document.getElementById('source-text').textContent = current.text;
+            document.getElementById('current-community').textContent = current.community;
+            document.getElementById('confidence-value').textContent = Math.round(current.confidence * 100) + '%';
+            document.getElementById('confidence-fill').style.width = (current.confidence * 100) + '%';
+            
+            document.getElementById('role-display').textContent = current.extracted.role;
+            document.getElementById('practice-display').textContent = current.extracted.practice;
+            document.getElementById('counterrole-display').textContent = current.extracted.counterrole;
+            
+            document.getElementById('role-edit').value = current.extracted.role;
+            document.getElementById('practice-edit').value = current.extracted.practice;
+            document.getElementById('counterrole-edit').value = current.extracted.counterrole;
+            
+            // Update navigation
+            document.getElementById('nav-current').textContent = state.currentTripletIndex + 1;
+            document.getElementById('nav-total').textContent = total;
+            document.getElementById('prev-btn').disabled = state.currentTripletIndex === 0;
+            document.getElementById('next-btn').disabled = state.currentTripletIndex === total - 1;
+            
+            // Check if validation complete
+            if (state.stats.accepted + state.stats.corrected + state.stats.rejected === total) {
+                document.getElementById('validation-complete').style.display = 'block';
+            }
+        }
+
+        function validateTriplet(action) {
+            const current = state.triplets[state.currentTripletIndex];
+            
+            if (action === 'accept') {
+                current.validated = 'accepted';
+                state.stats.accepted++;
+            } else if (action === 'correct') {
+                current.validated = 'corrected';
+                current.corrected = {
+                    role: document.getElementById('role-edit').value,
+                    practice: document.getElementById('practice-edit').value,
+                    counterrole: document.getElementById('counterrole-edit').value
+                };
+                state.stats.corrected++;
+                state.editMode = false;
+                document.getElementById('triplet-view').style.display = 'block';
+                document.getElementById('triplet-edit').style.display = 'none';
+                document.getElementById('action-buttons').style.display = 'block';
+                document.getElementById('edit-buttons').style.display = 'none';
+            } else if (action === 'reject') {
+                current.validated = 'rejected';
+                state.stats.rejected++;
+            }
+            
+            // Move to next triplet
+            if (state.currentTripletIndex < state.triplets.length - 1) {
+                state.currentTripletIndex++;
+            }
+            
+            updateValidationUI();
+        }
+
+        function startEdit() {
+            state.editMode = true;
+            document.getElementById('triplet-view').style.display = 'none';
+            document.getElementById('triplet-edit').style.display = 'block';
+            document.getElementById('action-buttons').style.display = 'none';
+            document.getElementById('edit-buttons').style.display = 'block';
+        }
+
+        function cancelEdit() {
+            state.editMode = false;
+            document.getElementById('triplet-view').style.display = 'block';
+            document.getElementById('triplet-edit').style.display = 'none';
+            document.getElementById('action-buttons').style.display = 'block';
+            document.getElementById('edit-buttons').style.display = 'none';
+        }
+
+        function previousTriplet() {
+            if (state.currentTripletIndex > 0) {
+                state.currentTripletIndex--;
+                updateValidationUI();
+            }
+        }
+
+        function nextTriplet() {
+            if (state.currentTripletIndex < state.triplets.length - 1) {
+                state.currentTripletIndex++;
+                updateValidationUI();
+            }
+        }
+
+        // ============================================================================
+        // NETWORK VISUALIZATION
+        // ============================================================================
+        
+        function initializeNetwork() {
+            const networkData = {
+                nodes: [
+                    { id: 'enabler', label: 'Enabling Org', type: 'role', cluster: 0 },
+                    { id: 'connector', label: 'Connecting Org', type: 'role', cluster: 0 },
+                    { id: 'investor', label: 'Investing Org', type: 'role', cluster: 1 },
+                    { id: 'educator', label: 'Educating Org', type: 'role', cluster: 2 },
+                    { id: 'startups', label: 'Startups', type: 'counterrole', cluster: 0 },
+                    { id: 'entrepreneurs', label: 'Entrepreneurs', type: 'counterrole', cluster: 0 },
+                    { id: 'investors', label: 'Investors', type: 'counterrole', cluster: 1 },
+                    { id: 'students', label: 'Students', type: 'counterrole', cluster: 2 }
+                ],
+                links: [
+                    { source: 'enabler', target: 'startups', value: 8, practice: 'supports' },
+                    { source: 'enabler', target: 'entrepreneurs', value: 7, practice: 'mentors' },
+                    { source: 'connector', target: 'startups', value: 6, practice: 'connects' },
+                    { source: 'investor', target: 'startups', value: 9, practice: 'funds' },
+                    { source: 'investor', target: 'investors', value: 7, practice: 'mobilizes' },
+                    { source: 'educator', target: 'students', value: 8, practice: 'trains' }
+                ]
+            };
+            
+            state.networkData = networkData;
+            drawNetwork(networkData);
+        }
+
+        function drawNetwork(data) {
+            const container = document.getElementById('network-container');
+            container.innerHTML = '';
+            
+            const width = container.clientWidth;
+            const height = 600;
+            
+            const colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd'];
+            
+            const svg = d3.select('#network-container')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+            
+            const g = svg.append('g');
+            
+            const zoom = d3.zoom()
+                .scaleExtent([0.1, 4])
+                .on('zoom', (event) => {
+                    g.attr('transform', event.transform);
+                });
+            
+            svg.call(zoom);
+            
+            const simulation = d3.forceSimulation(data.nodes)
+                .force('link', d3.forceLink(data.links)
+                    .id(d => d.id)
+                    .distance(150))
+                .force('charge', d3.forceManyBody().strength(-300))
+                .force('center', d3.forceCenter(width / 2, height / 2));
+            
+            const link = g.append('g')
+                .selectAll('line')
+                .data(data.links)
+                .join('line')
+                .attr('stroke', '#999')
+                .attr('stroke-width', d => Math.sqrt(d.value));
+            
+            const linkLabel = g.append('g')
+                .selectAll('text')
+                .data(data.links)
+                .join('text')
+                .attr('font-size', '10px')
+                .attr('fill', '#666')
+                .attr('text-anchor', 'middle')
+                .text(d => d.practice);
+            
+            const node = g.append('g')
+                .selectAll('g')
+                .data(data.nodes)
+                .join('g')
+                .call(d3.drag()
+                    .on('start', dragstarted)
+                    .on('drag', dragged)
+                    .on('end', dragended));
+            
+            node.append('circle')
+                .attr('r', d => d.type === 'role' ? 20 : 15)
+                .attr('fill', d => colors[d.cluster])
+                .attr('stroke', '#fff')
+                .attr('stroke-width', 2);
+            
+            node.append('text')
+                .attr('dy', 30)
+                .attr('text-anchor', 'middle')
+                .attr('font-size', '11px')
+                .attr('font-weight', d => d.type === 'role' ? 600 : 400)
+                .text(d => d.label);
+            
+            simulation.on('tick', () => {
+                link
+                    .attr('x1', d => d.source.x)
+                    .attr('y1', d => d.source.y)
+                    .attr('x2', d => d.target.x)
+                    .attr('y2', d => d.target.y);
+                
+                linkLabel
+                    .attr('x', d => (d.source.x + d.target.x) / 2)
+                    .attr('y', d => (d.source.y + d.target.y) / 2);
+                
+                node.attr('transform', d => `translate(${d.x},${d.y})`);
+            });
+            
+            function dragstarted(event) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                event.subject.fx = event.subject.x;
+                event.subject.fy = event.subject.y;
+            }
+            
+            function dragged(event) {
+                event.subject.fx = event.x;
+                event.subject.fy = event.y;
+            }
+            
+            function dragended(event) {
+                if (!event.active) simulation.alphaTarget(0);
+                event.subject.fx = null;
+                event.subject.fy = null;
+            }
+        }
+
+        function filterNetwork(clusterId) {
+            state.selectedSociotype = clusterId;
+            
+            // Update button states
+            const buttons = document.querySelectorAll('#analyze .btn-secondary');
+            buttons.forEach(btn => {
+                btn.classList.remove('btn-primary');
+                btn.classList.add('btn-secondary');
+            });
+            
+            if (event && event.target) {
+                event.target.classList.remove('btn-secondary');
+                event.target.classList.add('btn-primary');
+            }
+            
+            // Filter and redraw network
+            let filteredData = { ...state.networkData };
+            if (clusterId !== null) {
+                const relatedNodes = new Set();
+                state.networkData.nodes
+                    .filter(n => n.cluster === clusterId)
+                    .forEach(n => relatedNodes.add(n.id));
+                
+                filteredData.links = state.networkData.links.filter(l => {
+                    const sourceId = typeof l.source === 'object' ? l.source.id : l.source;
+                    const targetId = typeof l.target === 'object' ? l.target.id : l.target;
+                    if (relatedNodes.has(sourceId) || relatedNodes.has(targetId)) {
+                        relatedNodes.add(sourceId);
+                        relatedNodes.add(targetId);
+                        return true;
+                    }
+                    return false;
+                });
+                
+                filteredData.nodes = state.networkData.nodes.filter(n => relatedNodes.has(n.id));
+            }
+            
+            drawNetwork(filteredData);
+        }
+
+        // ============================================================================
+        // EXPORT FUNCTIONS
+        // ============================================================================
+        
+        function exportNetworkData() {
+            const dataStr = JSON.stringify(state.networkData, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'eit-network-data.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function exportReport() {
+            alert('PDF export functionality would be implemented with a library like jsPDF');
+        }
+
+        function exportValidatedTriplets() {
+            const validatedData = state.triplets.filter(t => t.validated !== null);
+            const dataStr = JSON.stringify(validatedData, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'validated-triplets.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+        
+        function exportAnnotations() {
+            const dataStr = JSON.stringify(state.annotations, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'manual-annotations.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // ============================================================================
+        // INITIALIZATION
+        // ============================================================================
+        
+        // Initialize validation UI on load
+        window.addEventListener('load', () => {
+            updateValidationUI();
+        });
+    </script>
+</body>
+</html>

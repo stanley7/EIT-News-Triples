@@ -1,0 +1,466 @@
+/* SOCIOTYPER Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f4f4f4;
+    color: #161616;
+    line-height: 1.5;
+}
+
+/* Header */
+header {
+    background: #161616;
+    color: white;
+    padding: 1.5rem 2rem;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+}
+
+.header-title h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.header-subtitle {
+    font-size: 0.875rem;
+    color: #8d8d8d;
+    margin-top: 0.25rem;
+}
+
+/* Navigation Tabs */
+.tabs {
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    gap: 0;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tab {
+    padding: 1rem 1.5rem;
+    background: none;
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #525252;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.tab:hover {
+    color: #161616;
+    background: #f4f4f4;
+}
+
+.tab.active {
+    color: #0f62fe;
+    border-bottom-color: #0f62fe;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 4px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card.full-width {
+    padding: 1.5rem;
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.card h3 {
+    font-size: 1rem;
+    margin: 1.5rem 0 0.75rem;
+    color: #525252;
+}
+
+.card p {
+    color: #525252;
+    margin-bottom: 1rem;
+}
+
+/* Input Sections */
+.input-section,
+.config-section {
+    margin-bottom: 1.5rem;
+}
+
+input[type="file"] {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.875rem;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0f62fe;
+}
+
+/* URL Input */
+.url-input {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.url-input input {
+    flex: 1;
+}
+
+/* Buttons */
+button {
+    padding: 0.75rem 1.5rem;
+    background: #0f62fe;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #0353e9;
+}
+
+button:disabled {
+    background: #c6c6c6;
+    cursor: not-allowed;
+}
+
+/* File List */
+.file-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: #e0e0e0;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+.file-item button {
+    padding: 0.25rem 0.5rem;
+    background: #da1e28;
+    font-size: 0.75rem;
+}
+
+/* Character Count */
+.char-count {
+    text-align: right;
+    font-size: 0.75rem;
+    color: #8d8d8d;
+    margin-top: 0.5rem;
+}
+
+/* Progress */
+.progress-section {
+    margin: 1.5rem 0;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #0f62fe;
+    width: 0%;
+    transition: width 0.3s;
+}
+
+#progressText {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #525252;
+}
+
+/* Extraction Controls */
+.extraction-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Log Area */
+.log-area {
+    background: #161616;
+    color: #42be65;
+    padding: 1rem;
+    border-radius: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.log-area .log-entry {
+    margin-bottom: 0.25rem;
+}
+
+.log-area .log-error {
+    color: #fa4d56;
+}
+
+.log-area .log-success {
+    color: #42be65;
+}
+
+/* Validation Stats */
+.validation-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #0f62fe;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #525252;
+}
+
+/* Triplet List */
+.triplet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.triplet-card {
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 4px;
+    border-left: 4px solid #0f62fe;
+}
+
+.triplet-card.accepted {
+    border-left-color: #42be65;
+}
+
+.triplet-card.rejected {
+    border-left-color: #da1e28;
+}
+
+.triplet-content {
+    margin-bottom: 0.75rem;
+}
+
+.triplet-role {
+    font-weight: 600;
+}
+
+.triplet-practice {
+    color: #0f62fe;
+    margin: 0 0.5rem;
+}
+
+.triplet-counterrole {
+    font-weight: 500;
+}
+
+.triplet-context {
+    font-size: 0.875rem;
+    color: #525252;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+.triplet-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.triplet-actions button {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+}
+
+.triplet-actions .accept-btn {
+    background: #42be65;
+}
+
+.triplet-actions .reject-btn {
+    background: #da1e28;
+}
+
+/* Network */
+.network-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    background: #e0e0e0;
+    color: #161616;
+}
+
+.filter-btn.active {
+    background: #0f62fe;
+    color: white;
+}
+
+#networkContainer {
+    width: 100%;
+    height: 500px;
+    background: #f4f4f4;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#networkContainer svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Results */
+.results-summary {
+    margin-bottom: 1.5rem;
+}
+
+.export-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.triplets-preview {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Connection Status */
+#connectionStatus {
+    margin-left: 1rem;
+    font-size: 0.875rem;
+}
+
+#connectionStatus.success {
+    color: #42be65;
+}
+
+#connectionStatus.error {
+    color: #da1e28;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #525252;
+    font-size: 0.875rem;
+}
+
+footer a {
+    color: #0f62fe;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tabs {
+        flex-wrap: wrap;
+    }
+
+    .tab {
+        flex: 1;
+        min-width: 100px;
+        text-align: center;
+    }
+
+    .validation-stats {
+        flex-wrap: wrap;
+    }
+
+    .export-buttons {
+        flex-direction: column;
+    }
+}

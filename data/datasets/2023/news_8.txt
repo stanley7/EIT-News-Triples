@@ -1,0 +1,19 @@
+During a launch session, the city of Braga unveiled three urban mobility solutions set to undergo testing as part of
+EIT Urban Mobility
+’s innovative initiative.
+The kick-off event was presented by Ricardo Rio, City of Braga’s Mayor, Olga Pereira, Councillor for Mobility of the Municipality of Braga and María Paula Caycedo, Head of EIT Urban Mobility Innovation Hub South, at the Town Hall premises.
+The project is financed with EUR 180 000 of European investment to the city for the three pilot projects that will be implemented for 6 months to tackle active mobility, cycling and parking spaces.
+Braga City Council will test three innovative solutions in the area of sustainable mobility in a stride towards sustainable and efficient urban living. The projects, presented in an event hosted at the city town hall, were selected by EIT Urban Mobility as part of one of the major innovation programmes. The RAPTOR project – previously called #ChallengeMyCity – aims to test innovative solutions from start-ups and SMEs with a six-month pilot project to evaluate its social, economic, and environmental impact in the city and estimate long-term integration into Braga’s mobility strategy.
+Bicycle safety and monitoring the flow of cyclists, promoting active mobility in the city centre and improving the monitoring and use of loading and unloading bays are the three projects.
+Based on the results achieved, we’ll be able to develop mobility policies better suited to our municipality
+Ricardo Rio, Mayor of Braga
+About the implemented solutions
+The first project (“
+Telraam
+”) for bicycle safety and cyclist flow monitoring will install 15 sensors in the city centre to count and categorise metrics, namely road user count, means of transport, and estimated speed.
+The “
+Walkflow
+” project is a solution for analysing pedestrian movement patterns in the city centre using anonymous mobile location data and application aggregator data. This initiative will make it possible to characterise the type of user, the origin/destination, the purpose of the activity or the frequency of journeys.
+Finally, “
+Parkunload
+” aims to test 25 smart parking zones for more efficient use of loading and unloading areas, reducing congestion in the city centre. Using a mobile application and Bluetooth sensors, this system will enable managing, regulating, and analysing car parks in loading and unloading zones.

@@ -1,0 +1,5 @@
+This project uses news articles published by the European Institute of Innovation & Technology (EIT) between 2008–2025.
+Articles were scraped directly from the EIT News Portal 
+Texts are organized by year and stored in plain .txt files
+
+

@@ -1,0 +1,28 @@
+ThingWave, a start-up supported by
+EIT RawMaterials
+, provides solutions for real-time and online rock bolt monitoring.
+The
+ThingWave
+smart rock bolt, developed by researchers Jens Eliasson and Pablo Punal Pereira at the Luleå University of Technology, is expected to contribute to an increase in mine safety. Mining companies around the world are now showing great interest in the product.
+Image
+'
+The market potential is huge. Only LKAB, which has about one percent of the market, puts 400,000 bolts in the mine every year. [tweetable alt="Mining companies in Australia, New Zealand and Sweden are very interested in testing our system and we can see a lot of interest in both lar"]Mining companies in Australia, New Zealand and Sweden are very interested in testing our system and we can see a lot of interest in both large and small companies[/tweetable]
+', said Jens Eliasson, Assistant Professor of Industrial Electronics and CEO of ThingWave.
+Mining bolts are long bars of iron that are mounted into mines to stabilize the rock. ThingWave’s monitoring system consists of a gateway with a small computer that keeps track of sensors mounted on the mining bolt. The sensors detect whether the bolt is tilted, breaks or vibrates and sends an alarm. What happens in the rock bolt can be observed by the mining worker on a mobile phone or by e-mail and by the bolt blinking with red, green or yellow lights. Gateway also creates its own wireless network that it communicates with.
+An important advantage of ThingWave is that it manages to find networks in challenging environments and “around corners”, such as in tunnels and mines. Parts of the networks can then take over if any part breaks and fails to communicate.
+ThingWave has been tested short-term in mines in Sweden. Now tests are extended to Finland and Chile.
+The smart rock bolt has won three prestigious pit competitions for new innovative products. A large part of the funding for developing the product comes in the form of booster funding from the EU’s major effort to develop the mining sector,
+EIT RawMaterials
+, where the Luleå University of Technology is a coordinator.
+Read more here
+Catch up with the latest news from the EIT Community in the Newsroom
+.
+Subscribe to the EIT Newsletter
+to get the best of the EIT Community's news in your inbox once each month.
+Do you use social media? Follow us and get updates in your news feed.
+Linked in
+Find us on Facebook
+Follow us on Twitter
+Subscribe to our YouTube Channel
+Follow us on Google+
+Follow the EIT on Instagram

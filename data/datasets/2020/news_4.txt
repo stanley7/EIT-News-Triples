@@ -1,0 +1,36 @@
+Launched within the
+EIT Digital
+Innovation Factory
+, the start-up
+Entremo
+is deploying their product, a wristband to remotely monitor the vital signs of patients, in hospitals and nursing homes in Hungary.
+In less than six months, a team of five
+EIT Digital Master School
+students went from successfully winning a high-profile European hackathon to incorporating their start-up,
+Entremo
+, where more than 20 people are currently contributing. Entremo is about to deploy their main product, a wristband to remotely monitor the vital signs of patients, in hospitals and nursing homes in Hungary.
+Entremo’s journey within EIT Digital is testimony to how teamwork, talent and entrepreneurial spirit can quickly generate results. It all started with a group of friends passionate about using technology to improve people’s health and wellbeing, all of them involved in different EIT Digital Master School programmes: Data Science graduate Peter Lakatos, the CEO of Entremo, teamed up with Márton Elodi (Human Computer Interaction and Design), Miklós Knebel (Autonomous Systems), Levente Mitnyik (Embedded Systems) and Peter Danos (Visual computing and communication).
+Together with another friend, motion graphic designer Kristóf Nagy, they formed Team Discover, a group of developers which successfully took part in several hackathons in the last two years. They received a special
+EIT Health
+award at the Hack the Crisis Hungary hackathon in early 2020. In April they went on to
+win
+the European Commission #EUvsVirus hackathon’s Healthcare category with a prototype of their 3D-printed remote monitoring device.
+The device originally came in the shape of ‘smart glasses’, worn by patients to check parameters such as body temperature, oxygen saturation, pulse and respiratory rates. The measured data is then made available to the medical staff via an online platform. As a result, instead of one patient, nurses are able to check on dozens of them at the same time.
+Then things started moving fast. In mid-2020, EIT Digital Innovation Factory launched the "DATA against COVID-19" initiative, with the objective of quickly developing digital tools to fight back the pandemic. The EUvsVirus award had given the team significant international exposure and put them on the radar of companies and institutions, so they quickly found four partners:
+ELTE-Soft
+,
+MOHAnet
+and
+Eötvös Lorand University
+from Hungary and
+InnoTractor
+from the Netherlands.
+The activity was
+selected
+by the Innovation Factory and received EUR 500 000 of support from EIT Digital. Later, the Entremo team decided to pivot their product, dropping the ‘smart glasses’ shape for a more convenient and practical wristband, with similar features but better usability.
+The glasses were more invasive, and they also might be in the way of oxygen masks for COVID patients. In addition, people are used to having watches on their hands 24/7, so that doctors can get analysis from night activities as well.
+Peter Lakatos, the CEO of Entremo
+All the other missing pieces ended up falling into place.
+We've been developing our product with the four partner companies for the past six months and it's been quite a hectic journey; there were so many new experiences that we went through. But I’m happy to say that now we have all the pipeline ready: from the measuring device to its communication with the data collection hubs, and then the communication of the data collection hubs with our servers, up to pushing the data from the servers to the display of the medical staff .
+Peter Lakatos, the CEO of Entremo.
+Right now, the team is 3D printing the first batches of 50 devices which will be used in the first two product deployments in Hungary, scheduled in December, with two other Hungarian pilots planned for January. Entremo is currently looking for investors to further scale the company.

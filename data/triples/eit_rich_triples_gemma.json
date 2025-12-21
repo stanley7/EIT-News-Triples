@@ -1,0 +1,3748 @@
+[
+  {
+    "role": "** EIT Governing Board\n**",
+    "practice": "** Present latest developments of the EIT to the Council of Ministers and at the European Parliament\n**",
+    "counterrole": "** Council of Ministers and European Parliament\n**",
+    "context": "** \"He was invited to meet Ministers at the Competitiveness Council, where he presented the vision and strategy of the EIT Governing Board, as well as an overview of latest developments.\"\n\n**2.",
+    "ner": [
+      {
+        "text": "the EIT Governing Board",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Governing Board\n**",
+    "practice": "** Start a dialogue with interested parties to establish a common vision for the KICs\n**",
+    "counterrole": "** Interested parties\n**",
+    "context": "** \"The EIT Governing Board is using this seminar to start a dialogue with interested parties to establish a common vision for the KICs.\"\n\n**3.",
+    "ner": []
+  },
+  {
+    "role": "** EIT Governing Board\n**",
+    "practice": "** Elect the four members of the Executive Committee\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"The Board also elected the four members of the Executive Committee (see below), which is presided by the Chairman of the Governing Board, Dr. Schuurmans, and will prepare meetings and facilitate the EIT's strategic decision-making.\"",
+    "ner": [
+      {
+        "text": "Board",
+        "label": "ORG"
+      },
+      {
+        "text": "the Executive Committee",
+        "label": "ORG"
+      },
+      {
+        "text": "the Governing Board",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Governing Board\n**",
+    "practice": "** Designated the first three KICs\n**",
+    "counterrole": "** Climate-KIC, KIC InnoEnergy, EIT ICT Labs\n**",
+    "context": "** \"The Governing Board designated the first three KICs: Climate change mitigation and adaptation: Climate-KIC Sustainable energy: KIC InnoEnergy Future information and communication society: EIT ICT Labs\"\n\n**2.",
+    "ner": [
+      {
+        "text": "KIC InnoEnergy Future",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Governing Board\n**",
+    "practice": "** Appointed Gérard de Nazelle as first EIT Director\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"The EIT Governing Board has appointed Gérard de Nazelle as first EIT Director\"\n\n**3.",
+    "ner": [
+      {
+        "text": "Gérard de Nazelle",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Board\n**",
+    "practice": "** Sent the first draft rolling Triennial Work Programme\n**",
+    "counterrole": "** European Parliament, Council, Commission\n**",
+    "context": "** \"The EIT Board is pleased to announce that its first draft rolling Triennial Work Programme has been sent to the European Parliament, the Council and the Commission\"\n\n**4.",
+    "ner": [
+      {
+        "text": "The EIT Board",
+        "label": "ORG"
+      },
+      {
+        "text": "Triennial Work Programme",
+        "label": "ORG"
+      },
+      {
+        "text": "the European Parliament",
+        "label": "ORG"
+      },
+      {
+        "text": "Council",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Entrepreneurship Seminar organizer\n**",
+    "practice": "** Confirmed key role of entrepreneurship in KICs\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"The EIT Entrepreneurship Seminar, held on 6-7 May in Wroclaw, Poland, focused on the central role entrepreneurship is going to play within the European Institute of Innovation and Technology (EIT)\"",
+    "ner": [
+      {
+        "text": "Wroclaw",
+        "label": "GPE"
+      },
+      {
+        "text": "Poland",
+        "label": "GPE"
+      },
+      {
+        "text": "the European Institute of Innovation and Technology",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Governing Board",
+    "practice": "(None, 0.2562040388584137)",
+    "counterrole": "President of the European Commission, José Manuel Barroso",
+    "context": "\"The EIT is today a promising reality\"\n\n**2.**",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT",
+    "practice": "('innovate', 0.3675674498081207)",
+    "counterrole": "N/A",
+    "context": "\"The call will be open until 27 August and the first two or three KICs selected by the end of 2009\"\n\n**3.**",
+    "ner": []
+  },
+  {
+    "role": "EIT Governing Board",
+    "practice": "('organize', 0.3731134831905365)",
+    "counterrole": "Potential KIC proposers",
+    "context": "\"The seminars not only generated fruitful discussions, but also provided interested parties with an opportunity for networking and partnering activities in view of the formation of future KICs\"",
+    "ner": []
+  },
+  {
+    "role": "** EIT Director, Gerard de Nazelle\n**",
+    "practice": "** Leave\n**",
+    "counterrole": "** N/A\n**",
+    "context": "** \"He wishes the EIT and the KICs success for the future.\"\n\n**2.",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Governing Board\n**",
+    "practice": "** Thank\n**",
+    "counterrole": "** Mr. de Nazelle\n**",
+    "context": "** \"The EIT Governing Board would like to thank Mr de Nazelle for his contribution to the EIT.\"\n\n**3.",
+    "ner": [
+      {
+        "text": "Mr de Nazelle",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Head of Unit for Operations, Strategy & Communication, Dr. Ronald de Bruin\n**",
+    "practice": "** Assume\n**",
+    "counterrole": "** Acting Director\n**",
+    "context": "** \"Dr. Ronald de Bruin (EIT Head of Unit for Operations, Strategy & Communication) will assume the position of acting Director until a successor is nominated.\"\n\n**4.",
+    "ner": [
+      {
+        "text": "Unit for Operations, Strategy & Communication",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Governing Board Chairman, Dr. Martin Schuurmans\n**",
+    "practice": "** Be invited, Participate\n**",
+    "counterrole": "** 8th European Business Summit (EBS)\n**",
+    "context": "** \"Dr. Martin Schuurmans, Chairman of the EIT Governing Board, was invited to take part in the 8th European Business Summit (EBS) as a panellist.\"\n\n**5.",
+    "ner": [
+      {
+        "text": "the EIT Governing Board",
+        "label": "ORG"
+      },
+      {
+        "text": "European Business Summit",
+        "label": "ORG"
+      },
+      {
+        "text": "EBS",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Governing Board Chairman, Dr. Martin Schuurmans\n**",
+    "practice": "** Highlight\n**",
+    "counterrole": "** KICs\n**",
+    "context": "** \"Dr Schuurmans highlighted that Europe is full of sparkling top quality R&D but that more output measures should be put in place.\"\n\n**6.",
+    "ner": []
+  },
+  {
+    "role": "** EIT Governing Board Chairman, Dr. Martin Schuurmans\n**",
+    "practice": "** Hope\n**",
+    "counterrole": "** KICs\n**",
+    "context": "** \"We believe they can be icebreakers in advancing new ways of thinking and working together for the benefit of a more innovative and entrepreneurial Europe,\" he said.\"",
+    "ner": []
+  },
+  {
+    "role": "** EIT ICT Labs Master School\n**",
+    "practice": "** Launch\n**",
+    "counterrole": "** Universities in Europe\n**",
+    "context": "** \"The KIC launched the Master School’s website where you can find all information about the various choices of our Master’s programmes in ICT Innovation that are offered in different combinations at almost 20 universities in Europe.\"\n\n**2.",
+    "ner": [
+      {
+        "text": "KIC",
+        "label": "ORG"
+      },
+      {
+        "text": "the Master School’s",
+        "label": "ORG"
+      },
+      {
+        "text": "ICT Innovation",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Governing Board\n**",
+    "practice": "** Present\n**",
+    "counterrole": "** Prime Ministers and high-level representatives from Eastern and Central European countries and the People’s Republic of China\n**",
+    "context": "** \"Dr. Schuurmans presented the EIT, its vision and achievements at the China – Eastern and Central European Countries Economic and Trade Forum.\"\n\n**3.",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "China",
+        "label": "GPE"
+      },
+      {
+        "text": "Eastern",
+        "label": "ORG"
+      },
+      {
+        "text": "Central European Countries Economic and Trade Forum",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT ICT Labs Eindhoven Node Director\n**",
+    "practice": "** Jury\n**",
+    "counterrole": "** Teams of participants\n**",
+    "context": "** \"The jury, including EIT ICT Labs Eindhoven Node Director Patrick Strating, selected team Fairy Tale as the winner.\"\n\n**4.",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT\n**",
+    "practice": "** Announce\n**",
+    "counterrole": "** KICs\n**",
+    "context": "** \"The EIT is pleased to announce its first EIT Entrepreneurship Award competition which it is organising in close collaboration with its three Knowledge and Innovation Communities (KICs).\"",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Headquarters",
+    "practice": "('host', 1.0)",
+    "counterrole": "Climate-KIC",
+    "context": "\"The EIT Headquarters based in Budapest has decided to host offices for the KICs.\"\n\n**Triple 2:**",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "Budapest",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "Naked Energy",
+    "practice": "('develop', 1.0)",
+    "counterrole": "None",
+    "context": "\"UK based Naked Energy is developing a series of onsite Renewable Energy Devices for the residential and commercial markets.\"\n\n**Triple 3:**",
+    "ner": [
+      {
+        "text": "UK",
+        "label": "GPE"
+      },
+      {
+        "text": "Naked Energy",
+        "label": "ORG"
+      },
+      {
+        "text": "Renewable Energy Devices",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Ennesys",
+    "practice": "('build', 0.4853035807609558)",
+    "counterrole": "None",
+    "context": "\"The French company Ennesys designs and supplies biomass and energy production systems based on highly efficient phytoplankton growth systems, fed with CO2 and nutriments contained in wastewater.\"",
+    "ner": [
+      {
+        "text": "Ennesys",
+        "label": "ORG"
+      },
+      {
+        "text": "fed",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "European Commission",
+    "practice": "('launch', 0.7573521137237549)",
+    "counterrole": "N/A",
+    "context": "\"The European Commission, “a high level of support to the EIT mission, objectives, and added value”, and the External Evaluation states that “There is a consensus amongst those interviewed for this study that the stated objectives of the EIT are all relevant.\"\n\n**2.**",
+    "ner": [
+      {
+        "text": "The European Commission",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT",
+    "practice": "('establish', 0.39762699604034424)",
+    "counterrole": "José Manuel Leceta",
+    "context": "\"On 18 May 2011, the EIT Governing Board appointed José Manuel Leceta as Director of the EIT.\"\n\n**3.**",
+    "ner": [
+      {
+        "text": "the EIT Governing Board",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Governing Board",
+    "practice": "('build', 0.6681826710700989)",
+    "counterrole": "N/A",
+    "context": "\"The EIT is very proud, not only to share its accomplishments, but equally importantly, to announce speedy developments since then in setting up the foundations for further progress.\"\n\n**4.**",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT",
+    "practice": "('work', 0.3178500235080719)",
+    "counterrole": "N/A",
+    "context": "\"This is very much being embraced by the EIT Governing Board as it is building upon the lessons learned to date, is focusing on consolidating the efforts undertaken so far to translate these into concrete outcomes, and on further delivering the results and messages needed to turn the EIT into a globally recognised Institute for innovation excellence.\"\n\n**5.**",
+    "ner": [
+      {
+        "text": "the EIT Governing Board",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT ICT Labs",
+    "practice": "('found', 0.40846025943756104)",
+    "counterrole": "Start-ups",
+    "context": "\"EIT ICT Labs brought 22 start-ups to SLUSH – the largest tech, design & start-up conference covering Northern Europe and Russia.\"",
+    "ner": [
+      {
+        "text": "Russia",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "** Catchbox\n**",
+    "practice": "** Advocate\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"Doggifit, a start-up from the VTT Technical Research Center of Finland, was viewed as to have an idea with good business potential and a large customer base.\"\n\n**2.",
+    "ner": [
+      {
+        "text": "VTT Technical Research Center",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** KIC InnoEnergy\n**",
+    "practice": "** Facilitate\n**",
+    "counterrole": "** EIT ICT Labs\n**",
+    "context": "** \"KIC InnoEnergy is the EIT Knowledge and Innovation Community that focuses on sustainable energies, and a European company fostering the integration of education, technology, business and entrepreneurship.\"\n\n**3.",
+    "ner": [
+      {
+        "text": "InnoEnergy",
+        "label": "ORG"
+      },
+      {
+        "text": "the EIT Knowledge and Innovation Community",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** KTH and Ericsson\n**",
+    "practice": "** Collaborate\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"Within the activities of CC Sweden, the node for Smart Grids and Storage within KIC InnoEnergy, the Swedish Royal Institute of Technology (KTH) and Ericsson have collaborated to increase the reliability of electricity grids through the use of wireless information technology.\"\n\n**4.",
+    "ner": [
+      {
+        "text": "CC Sweden",
+        "label": "ORG"
+      },
+      {
+        "text": "Smart Grids",
+        "label": "ORG"
+      },
+      {
+        "text": "KIC InnoEnergy",
+        "label": "ORG"
+      },
+      {
+        "text": "the Swedish",
+        "label": "ORG"
+      },
+      {
+        "text": "Royal Institute of Technology",
+        "label": "ORG"
+      },
+      {
+        "text": "KTH",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Power outages\n**",
+    "practice": "** Exist\n**",
+    "counterrole": "** Society\n**",
+    "context": "** \"Power outages are a real problem for society. In news reports, they are usually illustrated by pictures of workers struggling in meter-deep snow to cut down trees that have fallen over the power lines.\"\n\n**5.",
+    "ner": []
+  },
+  {
+    "role": "** Wireless technology\n**",
+    "practice": "** Enable\n**",
+    "counterrole": "** Substations\n**",
+    "context": "** \"As electricity travels from power plants to residential areas throughout Sweden, it passes through many thousands of substations and transformers. In rural areas, these are often remotely located. Therefore, the use of wireless of technology can save a great amount of time and resources.\"",
+    "ner": [
+      {
+        "text": "Sweden",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "European Commission",
+    "practice": "('implement', 0.3987952470779419)",
+    "counterrole": "N/A",
+    "context": "\"The European Commission has proposed a budget of €3.2 billion for the EIT, as part of the Horizon 2020 programme for research and innovation.\"\n\n**2.**",
+    "ner": [
+      {
+        "text": "The European Commission",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Climate-KIC",
+    "practice": "('join', 0.4885220229625702)",
+    "counterrole": "N/A",
+    "context": "\"Euronews' 'Generation y' meets a group of young people in Paris, taking part in Climate-KIC’s theJourney.\"\n\n**3.**",
+    "ner": [
+      {
+        "text": "Paris",
+        "label": "GPE"
+      },
+      {
+        "text": "Climate-KIC’s",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT",
+    "practice": "('award', 0.3294646739959717)",
+    "counterrole": "N/A",
+    "context": "\"The EIT’s publication on practices emerging from its three current Knowledge and Innovation Communities (KICs) is published.\"",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "Knowledge and Innovation Communities",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "European Investment Fund (EIF)",
+    "practice": "('advocate', 1.0)",
+    "counterrole": "None",
+    "context": "\"Richard Pelly, Chief Executive, European Investment Fund (EIF)...\"\n\n...",
+    "ner": [
+      {
+        "text": "European Investment Fund",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "European Institute of Innovation and Technology (EIT)",
+    "practice": "('partner', 1.0)",
+    "counterrole": "European Union (EU)",
+    "context": "\"EIT ICT Labs is one of the Institute's three 'knowledge and innovation communities', which bring together top universities and research institutes with leading businesses across Europe...\"\n\n...",
+    "ner": [
+      {
+        "text": "Institute",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "KIC InnoEnergy",
+    "practice": "('operate', 1.0)",
+    "counterrole": "None",
+    "context": "\"KIC InnoEnergy is one of the Institute's three 'knowledge and innovation communities', which bring together top universities and research institutes with leading businesses across Europe...\"",
+    "ner": [
+      {
+        "text": "KIC",
+        "label": "ORG"
+      },
+      {
+        "text": "InnoEnergy",
+        "label": "ORG"
+      },
+      {
+        "text": "Institute",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT KIC InnoEnergy\n**",
+    "practice": "** Implement\n**",
+    "counterrole": "** Clinton Global Initiative\n**",
+    "context": "** \"The Clinton Global Initiative will receive $1 million (approximately €800 000) to implement the best project.\"\n\n**2.",
+    "ner": []
+  },
+  {
+    "role": "** EIT KIC InnoEnergy\n**",
+    "practice": "** Create\n**",
+    "counterrole": "** Europe\n**",
+    "context": "** \"When creating the EIT, Europe wished to promote the innovation capacity of students like you so they can bring concrete answers to modern societal challenges.\"\n\n**3.",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT KIC InnoEnergy\n**",
+    "practice": "** Train\n**",
+    "counterrole": "** New talents\n**",
+    "context": "** \"By the end of 2012, KIC InnoEnergy will train 450 new talents all within the specific field of sustainable energy.\"",
+    "ner": [
+      {
+        "text": "KIC InnoEnergy",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Trifense\n**",
+    "practice": "** Provide\n**",
+    "counterrole": "** EIT ICT Labs\n**",
+    "context": "** \"They provide innovative security solutions.\"\n\n**2.",
+    "ner": []
+  },
+  {
+    "role": "** KIC\n**",
+    "practice": "** Have been proven useful\n**",
+    "counterrole": "** Trifense\n**",
+    "context": "** \"Working closely with the KIC has been proven useful to Trifense.\"\n\n**3.",
+    "ner": [
+      {
+        "text": "KIC",
+        "label": "ORG"
+      },
+      {
+        "text": "Trifense",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Governments, operators of critical infrastructures, companies in all sorts of sectors\n**",
+    "practice": "** Be able to detect such risks and protect themselves against them\n**",
+    "counterrole": "** Trifense\n**",
+    "context": "** \"It is crucial for governments, operators of critical infrastructures such as utilities, and companies in all sorts of sectors from financial services to healthcare to be able to detect such risks and protect themselves against them.\"\n\n**4.",
+    "ner": []
+  },
+  {
+    "role": "** Trifense Managing Director and Co-founder Patrick Duessel\n**",
+    "practice": "** Allow models of “normality” to be learnt\n**",
+    "counterrole": "** Network packet payloads\n**",
+    "context": "** \"Trifense Managing Director and Co-founder Patrick Duessel Trifense’s self-learning technology allows models of “normality” to be learnt through incoming data known as network packet payloads.\"\n\n**5.",
+    "ner": []
+  },
+  {
+    "role": "** German government\n**",
+    "practice": "** Trust\n**",
+    "counterrole": "** Duessel\n**",
+    "context": "** \"Duessel is also encouraged by the interest from the German government.\"",
+    "ner": []
+  },
+  {
+    "role": "EIT",
+    "practice": "('collaborate', 0.4649288058280945)",
+    "counterrole": "N/A",
+    "context": "\"The EIT will then publish the Framework of Guidance, the EIT Financial Rules and the EIT Principles for financing, monitoring and evaluating KIC activities in January 2014 followed by the launch of the Call on 14 February 2014.\"\n\n**2.**",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "the EIT Financial Rules",
+        "label": "ORG"
+      },
+      {
+        "text": "KIC",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT",
+    "practice": "('set up', 1.0)",
+    "counterrole": "New KICs",
+    "context": "\"The first step in the process leading up to the designation of the new KICs in December 2014 is the publication of the Selection Criteria.\"\n\n**3.**",
+    "ner": [
+      {
+        "text": "the Selection Criteria",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT",
+    "practice": "('partner', 1.0)",
+    "counterrole": "KIC InnoEnergy",
+    "context": "\"The EIT and its KICs will continue to share their novel approach to innovation through dissemination and outreach activities.\"",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Asset Manager, Pension Plan, Church Fund, Foundations\n**",
+    "practice": "** Receive awards\n**",
+    "counterrole": "** EIT Awards\n**",
+    "context": "** \"The variety among organisations receiving these awards... shows the opportunities for catalysing change throughout the investment community.\"\n\n**2.",
+    "ner": []
+  },
+  {
+    "role": "** EIT\n**",
+    "practice": "** Celebrate innovation and entrepreneurship\n**",
+    "counterrole": "** Europe\n**",
+    "context": "** \"The EIT Awards let us put the spotlight on new ideas that can become products and services...\"\n\n**3.",
+    "ner": []
+  },
+  {
+    "role": "** Climate-KIC, EIT ICT Labs, KIC InnoEnergy\n**",
+    "practice": "** Select nominees for Venture Award\n**",
+    "counterrole": "** EIT Awards\n**",
+    "context": "** \"Every year, each of the KICs selects three nominees for each award category.\"\n\n**4.",
+    "ner": []
+  },
+  {
+    "role": "** David Pribil, Dorottya Maksay, Eduardo Appleyard\n**",
+    "practice": "** Win CH.A.N.G.E. Award\n**",
+    "counterrole": "** EIT Awards\n**",
+    "context": "** \"Kate Hofman, Dorottya Maksay and Eduardo Appleyard win CH.A.N.G.E. Award.\"",
+    "ner": [
+      {
+        "text": "Eduardo Appleyard",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "GrowUp (London)",
+    "practice": "('develop', 1.0)",
+    "counterrole": "N/A",
+    "context": "\"The development of GrowUp, a London-based initiative...\"\n\n**2.**",
+    "ner": [
+      {
+        "text": "London",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "Homebuddy (N/A)",
+    "practice": "('provide', 1.0)",
+    "counterrole": "Elderly people",
+    "context": "\"Homebuddy provides social interaction and care for elderly people...\"\n\n**3.**",
+    "ner": []
+  },
+  {
+    "role": "Solar Lighting for Africa (N/A)",
+    "practice": "('develop', 1.0)",
+    "counterrole": "SolarAid (charity)",
+    "context": "\"Solar Lighting for Africa develops a solution for SolarAid...\"\n\n**4.**",
+    "ner": [
+      {
+        "text": "SolarAid",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT (European Institute of Innovation and Technology)",
+    "practice": "('organize', 1.0)",
+    "counterrole": "KICs (Climate-KIC, EIT ICT Labs, KIC InnoEnergy)",
+    "context": "\"The EIT organises an annual award competition...\"\n\n**5.**",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Climate-KIC (Bangalore)",
+    "practice": "('team', 0.33094149827957153)",
+    "counterrole": "European Business and Technology Centre (EBTC)",
+    "context": "\"Climate-KIC has signed a Memorandum of Understanding with the European Business and Technology Centre...\"",
+    "ner": [
+      {
+        "text": "the European Business and Technology Centre",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Spain\n**",
+    "practice": "** Create\n**",
+    "counterrole": "** Europe\n**",
+    "context": "** \"We will achieve this by delivering products, services and concepts that will improve quality of life and contribute to the sustainability of healthcare across Europe.\"\n\n**2.",
+    "ner": []
+  },
+  {
+    "role": "** RawMatTERS\n**",
+    "practice": "** Create\n**",
+    "counterrole": "** Europe\n**",
+    "context": "** \"By 2022, we are aiming to create, among others, 64 start-ups and 5 new primary/secondary sources of critical raw materials (CRM)\".\n\n**3.",
+    "ner": []
+  },
+  {
+    "role": "** EIT\n**",
+    "practice": "** Provide\n**",
+    "counterrole": "** Winners of EIT Health and EIT Raw Materials\n**",
+    "context": "** \"The EIT will provide each of the winners with a start-up grant of up to 4 million EUR.\"",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "EUR",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT\n**",
+    "practice": "** Provide\n**",
+    "counterrole": "** Winners\n**",
+    "context": "** \"The EIT will provide each of the winners with a start-up grant of up to 4 million EUR for the first year of operations.\"\n\n**2.",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "EUR",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Health\n**",
+    "practice": "** Become fully operational\n**",
+    "counterrole": "** N/A\n**",
+    "context": "** \"EIT Health (innovation for healthy living and active ageing) is expected to become fully operational shortly after having signed a seven-year Framework Partnership Agreement with the EIT in the second half of 2015.\"\n\n**3.",
+    "ner": [
+      {
+        "text": "EIT Health",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Raw Materials\n**",
+    "practice": "** Become fully operational\n**",
+    "counterrole": "** N/A\n**",
+    "context": "** \"EIT Raw Materials (sustainable exploration, extraction, processing, recycling and substitution) is expected to become fully operational shortly after having signed a seven-year Framework Partnership Agreement with the EIT in the second half of 2015.\"\n\n**4.",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT ICT Labs\n**",
+    "practice": "** Offer\n**",
+    "counterrole": "** Students\n**",
+    "context": "** \"The EIT ICT Labs in Budapest offer a unique approach to education that is focused on the development of entrepreneurship and innovation skills.\"\n\n**5.",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "Budapest",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Governing Board\n**",
+    "practice": "** Collaborate\n**",
+    "counterrole": "** EIT\n**",
+    "context": "** \"Together with Peter Olesen, Chairman of the EIT Governing Board, and Martin Kern, EIT Interim Director,",
+    "ner": [
+      {
+        "text": "the EIT Governing Board",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** CEPOL\n**",
+    "practice": "** Establish cooperation\n**",
+    "counterrole": "** EIT\n**",
+    "context": "** \"Understanding is to establish co-operation between CEPOL and the EIT...\"\n\n**2.",
+    "ner": [
+      {
+        "text": "CEPOL",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT\n**",
+    "practice": "** Create an environment for entrepreneurship and innovation\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"The EIT organises annual awards to recognise and reward the successful start-ups...\"\n\n**3.",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT\n**",
+    "practice": "** Celebrate graduates from EIT labelled education programmes\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"The EIT CHANGE Award celebrates graduates from EIT labelled education programmes...\"\n\n**4.",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT\n**",
+    "practice": "** Boost innovation in the European Union\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"The EIT was set up to boost innovation in the European Union...\"",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "the European Union",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Students",
+    "practice": "('organize', 0.30439823865890503)",
+    "counterrole": "Jury",
+    "context": "\"The students presented detailed business plans to a jury consisting of venture capitalists, start-up entrepreneurs and scientists.\"\n\n**2.**",
+    "ner": []
+  },
+  {
+    "role": "EU",
+    "practice": "('invest', 0.3830074071884155)",
+    "counterrole": "195 countries",
+    "context": "\"The European Union has played a key role in brokering today’s historic agreement in Paris.\"\n\n**3.**",
+    "ner": [
+      {
+        "text": "The European Union",
+        "label": "ORG"
+      },
+      {
+        "text": "Paris",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "Start-up teams",
+    "practice": "('organize', 0.30439823865890503)",
+    "counterrole": "Jury",
+    "context": "\"The first two groups – totalling 100 students – have now finished their fourth week, and will come together in Italy’s Emilia Romagna region for what will be the last week of their journey with pitching finals taking place in Bologna on 6 and 7 August.\"",
+    "ner": [
+      {
+        "text": "Italy",
+        "label": "GPE"
+      },
+      {
+        "text": "Bologna",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "** Climate-KIC\n**",
+    "practice": "** Spawn\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"Climate-KIC has already spawned a range of those cutting-edge innovations...\"\n\n**2.",
+    "ner": []
+  },
+  {
+    "role": "** EU Climate Action and Energy Commissioner Miguel Arias Cañete\n**",
+    "practice": "** Say\n**",
+    "counterrole": "** The global community\n**",
+    "context": "** \"This agreement is a major win for Europe. But more importantly, it is a major win for the global community...\"\n\n**3.",
+    "ner": []
+  },
+  {
+    "role": "** Governments\n**",
+    "practice": "** Agree\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"In Paris, governments agreed on ambition, commitment, and solidarity...\"",
+    "ner": [
+      {
+        "text": "Paris",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "EIT CHANGE Award winner",
+    "practice": "('deliver', 0.49536168575286865)",
+    "counterrole": "None",
+    "context": "\"EIT CHANGE Award winner will receive € 15 000.\"",
+    "ner": []
+  },
+  {
+    "role": "EIT Innovators Award winner",
+    "practice": "('deliver', 0.49536168575286865)",
+    "counterrole": "None",
+    "context": "\"EIT Innovators Award winner will receive € 50 000.\"",
+    "ner": []
+  },
+  {
+    "role": "EIT Venture Award winners",
+    "practice": "('deliver', 0.49536168575286865)",
+    "counterrole": "None",
+    "context": "\"EIT Venture Award winners will receive € 50 000.\"",
+    "ner": []
+  },
+  {
+    "role": "Climate-KIC’s chairman and director of Climate-KIC partner the Potsdam Institute for Climate Impact Research (PIK)",
+    "practice": "('introduce', 0.33949100971221924)",
+    "counterrole": "None",
+    "context": "\"Hans Joachim ‘John’ Schellnhuber, Climate-KIC’s chairman and director of Climate-KIC partner the Potsdam Institute for Climate Impact Research (PIK) says...\"",
+    "ner": [
+      {
+        "text": "Climate-KIC’s",
+        "label": "ORG"
+      },
+      {
+        "text": "Climate-KIC",
+        "label": "ORG"
+      },
+      {
+        "text": "the Potsdam Institute for Climate Impact Research",
+        "label": "ORG"
+      },
+      {
+        "text": "PIK",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "CEO of Climate-KIC",
+    "practice": "('introduce', 0.33949100971221924)",
+    "counterrole": "None",
+    "context": "\"Bertr a nd v a n Ee, CEO of Climate-KIC, the EU’s main climate innovation initiative, said last night...\"",
+    "ner": [
+      {
+        "text": "Climate-KIC",
+        "label": "ORG"
+      },
+      {
+        "text": "EU",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EU Climate Action and Energy Commissioner Miguel Arias Cañete",
+    "practice": "('introduce', 0.33949100971221924)",
+    "counterrole": "None",
+    "context": "\"EU Climate Action and Energy Commissioner Miguel Arias Cañete said...\"",
+    "ner": [
+      {
+        "text": "EU Climate Action and Energy",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Research & Development (R&D) departments",
+    "practice": "('innovate', 0.4159436821937561)",
+    "counterrole": "None",
+    "context": "\"R&D departments are the critical business function for identifying and responding to the needs of the changing marketplace.\"\n\n**2.**",
+    "ner": []
+  },
+  {
+    "role": "R&D departments",
+    "practice": "(None, 0.23912140727043152)",
+    "counterrole": "None",
+    "context": "\"Despite climate change appearing clearly on boardroom risk registers, R&D departments were found to lack the skills and resources to meet the challenges of a carbon constrained world.\"\n\n**3.**",
+    "ner": []
+  },
+  {
+    "role": "Accounting and finance teams",
+    "practice": "(None, 0.2917119264602661)",
+    "counterrole": "None",
+    "context": "\"Only 10% of accounting and finance teams, which are critical to forming corporate strategy, have climate change expertise.\"\n\n**4.**",
+    "ner": []
+  },
+  {
+    "role": "Human Resources departments",
+    "practice": "('educate', 0.32284316420555115)",
+    "counterrole": "None",
+    "context": "\"6% of Human Resources departments; i.e. those responsible for hiring personnel with skills to respond to climate change, understand it.\"\n\n**5.**",
+    "ner": [
+      {
+        "text": "Human Resources",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Industry",
+    "practice": "('collaborate', 0.36058610677719116)",
+    "counterrole": "None",
+    "context": "\"The willingness of business to collaborate is a clear opportunity to evolve policy to encourage greater diffusion of radical innovation to address climate change.\"",
+    "ner": []
+  },
+  {
+    "role": "European Institute of Innovation and Technology (EIT)",
+    "practice": "('support', 1.0)",
+    "counterrole": "Climate-KIC",
+    "context": "\"Climate-KIC is supported by the European Institute of Innovation and Technology (EIT).\"\n\n**Triple 2:**",
+    "ner": [
+      {
+        "text": "the European Institute of Innovation and Technology",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Climate-KIC",
+    "practice": "('launch', 1.0)",
+    "counterrole": "Australian government",
+    "context": "\"The Australian government is supporting the launch of initial activities later in the year.\"\n\n**Triple 3:**",
+    "ner": []
+  },
+  {
+    "role": "Climate-KIC",
+    "practice": "('incubate', 1.0)",
+    "counterrole": "University of Melbourne",
+    "context": "\"Climate-KIC is incubating a number of start-ups.\"\n\n**Triple 4:**",
+    "ner": []
+  },
+  {
+    "role": "University of Sydney",
+    "practice": "('partner', 1.0)",
+    "counterrole": "Climate-KIC",
+    "context": "\"The University of Sydney is partnering with Climate-KIC.\"\n\n**Triple 5:**",
+    "ner": [
+      {
+        "text": "Climate-KIC",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "City of Melbourne",
+    "practice": "('host', 1.0)",
+    "counterrole": "Climate-KIC",
+    "context": "\"The City of Melbourne is hosting an event set to be hosted by Climate-KIC during the UN climate change summit in Paris next month.\"",
+    "ner": [
+      {
+        "text": "Melbourne",
+        "label": "GPE"
+      },
+      {
+        "text": "UN",
+        "label": "ORG"
+      },
+      {
+        "text": "Paris",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "** Suncorp\n**",
+    "practice": "** Partner\n**",
+    "counterrole": "** Climate-KIC\n**",
+    "context": "** \"Suncorp, one of Australia’s largest financial services companies, is already a partner in Climate-KIC’s Open Access Catastrophe Model (OASIS) project.\"\n\n**2.",
+    "ner": [
+      {
+        "text": "Suncorp",
+        "label": "ORG"
+      },
+      {
+        "text": "Australia",
+        "label": "GPE"
+      },
+      {
+        "text": "Climate-KIC’s Open Access Catastrophe Model",
+        "label": "ORG"
+      },
+      {
+        "text": "OASIS",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Governing Board\n**",
+    "practice": "** Launch\n**",
+    "counterrole": "** New members of the EIT Governing Board\n**",
+    "context": "** \"The EIT Governing Board is entrusted with providing the strategic leadership of the Institute. It is independent and autonomous in its decision-making and is in particular responsible for the selection, designation and evaluation of the EIT’s Knowledge and Innovation Communities (KICs).\"",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Novo Nordisk A/S**",
+    "practice": "('establish', 0.5841967463493347)",
+    "counterrole": "NovoNordisk Group, Novozymes A/S\n\n**Role: Morana rtd**\nPractice: ('found', 0.4009660482406616)\nCounterrole: Slovenian Ministry of Higher Education, Science and Technology, Slovenian technology agency\n\n**Role: Academy of Finland**\nPractice: ('join', 0.31580644845962524)\nCounterrole: European Institute of Innovation and Technology EIT, EU’s Future and Emerging Technologies program FET\n\n**Role: LEDSafari**\nPractice: ('provide', 0.4591255784034729)\nCounterrole: Swiss schools\n\n**",
+    "context": "**\n\n\"The four new members of the Governing Board will then be nominated by a European Commission Decision expected in summer 2016.\"\n\n\"He was Chairman of the Board of Europolitan Vodafone AB until 2005.\"\n\n\"We started with basically just me as part of the KIC InnoEnergy, when I was doing my Master’s in Sustainable Energy Engineering in Stockholm and Eindhoven.\"",
+    "ner": [
+      {
+        "text": "the Governing Board",
+        "label": "ORG"
+      },
+      {
+        "text": "a European Commission Decision",
+        "label": "ORG"
+      },
+      {
+        "text": "the Board of Europolitan Vodafone AB",
+        "label": "ORG"
+      },
+      {
+        "text": "the KIC InnoEnergy",
+        "label": "ORG"
+      },
+      {
+        "text": "Stockholm",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "Student",
+    "practice": "('educate', 0.5911137461662292)",
+    "counterrole": "Organization",
+    "context": "\"Everyone appreciates a practical and interactive education, not just the theory. We want them to learn something practical...\"\n\n**2.**",
+    "ner": []
+  },
+  {
+    "role": "Organization",
+    "practice": "('train', 1.0000001192092896)",
+    "counterrole": "Trainer",
+    "context": "\"We train their trainers so that they can spread in their respective country. We sell both the lamps and the training...\"\n\n**3.**",
+    "ner": []
+  },
+  {
+    "role": "Organization",
+    "practice": "('introduce', 1.0)",
+    "counterrole": "Schools",
+    "context": "\"We will offer to train the trainers and then these trainers can implement the LEDSafari project in the schools...\"\n\n**4.**",
+    "ner": [
+      {
+        "text": "LEDSafari",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Organization",
+    "practice": "('build', 1.0)",
+    "counterrole": "App",
+    "context": "\"We are also building a LEDSafari app as an e-learning tool through which students can exchange design ideas...\"\n\n**5.**",
+    "ner": []
+  },
+  {
+    "role": "Organization",
+    "practice": "('invest', 1.0)",
+    "counterrole": "Company",
+    "context": "\"We would need 1-1.5 million euros as investment. We aim to be fully profitable by 2018...\"",
+    "ner": []
+  },
+  {
+    "role": "EIT Health Spain**",
+    "practice": "('establish', 0.30889394879341125)",
+    "counterrole": "Institutions related to the activity of the network",
+    "context": "\"EIT Health Spain celebrated its first year of activity with an event on 15 December in the Parc Científic of Barcelona.\"\n\n**",
+    "ner": [
+      {
+        "text": "the Parc Científic",
+        "label": "ORG"
+      },
+      {
+        "text": "Barcelona",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "EIT Health**",
+    "practice": "('establish', 0.42473357915878296)",
+    "counterrole": "Partners of the consortium",
+    "context": "\"Andy Browning and Ursula Mühle, respectively Directors of Innovation and Education of EIT Health and Marco Pugliese, Director of EIT Health Spain and Spanish Coordinator of the pillar of Business Creation, presented the actions of the three pillars of the association – Innovation, Campus and Accelerator – for the generation of activities to be included in the business plan 2018.\"\n\n**",
+    "ner": [
+      {
+        "text": "Ursula Mühle",
+        "label": "ORG"
+      },
+      {
+        "text": "Directors of Innovation and Education",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT Health",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "Spain",
+        "label": "GPE"
+      },
+      {
+        "text": "Business Creation",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Health Accelerator**",
+    "practice": "('innovate', 0.3489265441894531)",
+    "counterrole": "Participants in the calls",
+    "context": "\"The 'Proof of concept (PoC +)' awards reward projects and business ideas that are in stages prior to the creation of the company and projects that are participating in acceleration programs in health.\"",
+    "ner": []
+  },
+  {
+    "role": "IBEC 7",
+    "practice": "('advocate', 1.0)",
+    "counterrole": "NAPOLEON",
+    "context": "\"IBEC 7 advocates for personalized 3D-heart printing models for planning valve interventions.\"\n\n**2.**",
+    "ner": []
+  },
+  {
+    "role": "UPV Proof of Concept Plus projects",
+    "practice": "('fund', 1.0)",
+    "counterrole": "N/A",
+    "context": "\"UPV Proof of Concept Plus projects are funded with 12.500 € each.\"\n\n**3.**",
+    "ner": []
+  },
+  {
+    "role": "Eduard Torrents",
+    "practice": "('develop', 0.5611493587493896)",
+    "counterrole": "N/A",
+    "context": "\"Eduard Torrents improves the formulation and delivery of biopharmaceuticals by protein crystals in gels.\"\n\n**4.**",
+    "ner": []
+  },
+  {
+    "role": "Universidad de Granada",
+    "practice": "('host', 1.0)",
+    "counterrole": "N/A",
+    "context": "\"Luis Álvarez de Cienfuegos hosts the text.\"\n\n**5.**",
+    "ner": []
+  },
+  {
+    "role": "EIT Health",
+    "practice": "('organize', 0.9455033540725708)",
+    "counterrole": "N/A",
+    "context": "\"EIT Health organises the EIT Health Matchmaking event.\"",
+    "ner": [
+      {
+        "text": "EIT Health",
+        "label": "ORG"
+      },
+      {
+        "text": "the EIT Health Matchmaking",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Digital",
+    "practice": "('implement', 1.0000001192092896)",
+    "counterrole": "None",
+    "context": "\"The Energy Turbo FGR® is a state of the art solution that recovers both sensible and latent heat energy in the gas by the use of heat exchangers and active cooling.\"\n\n**2.**",
+    "ner": []
+  },
+  {
+    "role": "EIT Digital",
+    "practice": "('mobilize', 1.0000001192092896)",
+    "counterrole": "Partners from across Europe",
+    "context": "\"2016 saw EIT Digital and its network of over 130 partners from across Europe working together to foster and deliver innovation.\"\n\n**3.**",
+    "ner": [
+      {
+        "text": "EIT Digital",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Paragon Europe",
+    "practice": "('invest', 0.30543941259384155)",
+    "counterrole": "None",
+    "context": "\"Paragon Europe, with the support of EIT Climate-KIC, held a very well attended event...\"",
+    "ner": [
+      {
+        "text": "EIT Climate-KIC",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Climate-KIC\n**",
+    "practice": "** Showcase\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"Climate-KIC’s global network and showcased a number of successful projects supported by Climate-KIC.\"\n\n**2.",
+    "ner": [
+      {
+        "text": "Climate-KIC",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Paragon Europe\n**",
+    "practice": "** Lead\n**",
+    "counterrole": "** EIT Climate-KIC\n**",
+    "context": "** \"In summing up Mr. Ward said that Paragon Europe are proud to lead this initiative from the front as the the national contact point for EIT Climate-KIC.\"\n\n**3.",
+    "ner": [
+      {
+        "text": "Paragon Europe",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT Climate-KIC",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Eneco\n**",
+    "practice": "** Test\n**",
+    "counterrole": "** Nerdalize\n**",
+    "context": "** \"In 2016, Eneco and Nerdalize have tested the results of the eRadiator in households.\"\n\n**4.",
+    "ner": [
+      {
+        "text": "Eneco",
+        "label": "ORG"
+      },
+      {
+        "text": "Nerdalize",
+        "label": "ORG"
+      },
+      {
+        "text": "eRadiator",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Leiden University Medical Centre\n**",
+    "practice": "** Use\n**",
+    "counterrole": "** eRadiator\n**",
+    "context": "** \"The servers perform complex calculations for a variety of companies and knowledge institutes, such as new medicine-related research for Leiden University Medical Centre.\"\n\n**5.",
+    "ner": [
+      {
+        "text": "Leiden University Medical Centre",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Climate-KIC\n**",
+    "practice": "** Help\n**",
+    "counterrole": "** Start-ups\n**",
+    "context": "** \"EIT Climate-KIC helps the most promising start-ups connect with the best experts, to formulate your business plan, to develop your entrepreneurial skills and fund your business through the early stages with its Acceleration Programme.\"",
+    "ner": [
+      {
+        "text": "Acceleration Programme",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Europe",
+    "practice": "('build', 1.0)",
+    "counterrole": "None",
+    "context": "\"Building on these unique competencies and capabilities\"\n\n**2.**",
+    "ner": []
+  },
+  {
+    "role": "Entomics",
+    "practice": "('award', 0.4447207450866699)",
+    "counterrole": "London Waste And Recycling Board (LWARB)",
+    "context": "\"Entomics are using insect larvae to convert food waste into aquaculture feed and organic fertiliser\"\n\n**3.**",
+    "ner": []
+  },
+  {
+    "role": "Adaptavate",
+    "practice": "('award', 0.4447207450866699)",
+    "counterrole": "LWARB",
+    "context": "\"Adaptavate’s Breathaboard are an alternative to gypsum plasterboard\"",
+    "ner": []
+  },
+  {
+    "role": "EIT Health",
+    "practice": "('facilitate', 0.3320382535457611)",
+    "counterrole": "N/A",
+    "context": "\"Lead the EIT analysis of consultations and engagement with its stakeholders ensuring their needs are appropriately reflected in the EIT strategy and work programme.\"\n\n**Triple 2:**",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Climate-KIC",
+    "practice": "(None, 0.0947982668876648)",
+    "counterrole": "FAO",
+    "context": "\"Launched a new EIT Climate-KIC supported capacity-building tool for climate-smart agriculture (CSA)...\"",
+    "ner": [
+      {
+        "text": "EIT Climate-KIC",
+        "label": "ORG"
+      },
+      {
+        "text": "CSA",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** CSA Booster\n**",
+    "practice": "** Launched\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"To accelerate CSA and achieve agrifood system change, we must engage, map and connect many diverse actors across international agricultural value chains.\"\n\n**",
+    "ner": []
+  },
+  {
+    "role": "** Agrisource lead developer Marc Nougier of INRA\n**",
+    "practice": "** Described\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"Agrisource is a new capacity-building tool at the crossroads of knowledge and networks in CSA. It offers a new, systemic approach to climate change, combining a powerful search engine with community-created content, to drive innovation, communication, partnerships and knowledge-sharing.\"\n\n**",
+    "ner": [
+      {
+        "text": "CSA",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "** Co-developer and Agrisource technical lead Jean-Baptiste Laurent of CIRAD\n**",
+    "practice": "** Described\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"We designed this platform to serve the needs of entire agrifood value chains, from labs and research communities to retail brands and farmers and the field players of agriculture who together are the creators and guardians of climate-smart agriculture.\"",
+    "ner": []
+  },
+  {
+    "role": "Scottish Enterprise",
+    "practice": "('fund', 1.0)",
+    "counterrole": "PhysioMedics",
+    "context": "\"Scottish Enterprise, through the Scottish Investment Bank, is delighted to be co-investing with Archangels to allow the company to develop and commercialise PhysioWizard.\"\n\n**2.**",
+    "ner": [
+      {
+        "text": "the Scottish Investment Bank",
+        "label": "ORG"
+      },
+      {
+        "text": "Archangels",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "PhysioMedics",
+    "practice": "('launch', 1.0)",
+    "counterrole": "N/A",
+    "context": "\"The company is on track to launch the full body triage tool in 2018.\"\n\n**3.**",
+    "ner": []
+  },
+  {
+    "role": "Insurance and occupational health companies",
+    "practice": "('work', 0.590342104434967)",
+    "counterrole": "Healthcare professionals",
+    "context": "\"Currently, insurance and occupational health companies employ healthcare professionals to triage patients over the telephone.\"\n\n**4.**",
+    "ner": []
+  },
+  {
+    "role": "PhysioWizard",
+    "practice": "('provide', 1.0)",
+    "counterrole": "Patients",
+    "context": "\"PhysioWizard provides a consistent and convenient alternative, produces automated clinical reports and refers patients quickly and cost effectively to the recommended professional.\"",
+    "ner": [
+      {
+        "text": "PhysioWizard",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Capiche (ERICS)\n**",
+    "practice": "** Provide reliable translations\n**",
+    "counterrole": "** Refugees\n**",
+    "context": "** \"Capiche can help refugees with reliable translations, improving their integration and hospitality in our European cities.\"\n\n**2.",
+    "ner": [
+      {
+        "text": "Capiche",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT InnoEnergy\n**",
+    "practice": "** Sign a partnership agreement\n**",
+    "counterrole": "** MOL Group\n**",
+    "context": "** \"EIT InnoEnergy has signed a partnership agreement with MOL Group, under which both companies will carry out activities supporting the development of energy innovation.\"\n\n**3.",
+    "ner": [
+      {
+        "text": "EIT InnoEnergy",
+        "label": "ORG"
+      },
+      {
+        "text": "MOL Group",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** ThingWave\n**",
+    "practice": "** Provide solutions for real-time and online rock bolt monitoring\n**",
+    "counterrole": "** EIT RawMaterials\n**",
+    "context": "** \"ThingWave, a start-up supported by EIT RawMaterials, provides solutions for real-time and online rock bolt monitoring.\"",
+    "ner": [
+      {
+        "text": "EIT RawMaterials",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Mining companies around the world",
+    "practice": "('implement', 0.39268770813941956)",
+    "counterrole": "No organization specified",
+    "context": "\"Mining companies around the world are now showing great interest in the product...\"",
+    "ner": []
+  },
+  {
+    "role": "ThingWave",
+    "practice": "('manage', 0.5621576309204102)",
+    "counterrole": "No organization specified",
+    "context": "\"The sensors detect whether the bolt is tilted, breaks or vibrates and sends an alarm...\"",
+    "ner": []
+  },
+  {
+    "role": "EIT RawMaterials",
+    "practice": "('fund', 0.7031161785125732)",
+    "counterrole": "LKAB",
+    "context": "\"A large part of the funding for developing the product comes in the form of booster funding from the EU’s major effort to develop the mining sector...\"",
+    "ner": [
+      {
+        "text": "EU",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Digital Accelerator\n**",
+    "practice": "** Host\n**",
+    "counterrole": "** Five digital technology companies\n**",
+    "context": "** \"The EIT Digital Accelerator comprises a team of experienced business developers and fundraising experts. They operate from 13 cities across Europe as well as a hub in San Francisco.\"\n\n**2.",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "San Francisco",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "** EIT RawMaterials\n**",
+    "practice": "** Fund\n**",
+    "counterrole": "** DMT\n**",
+    "context": "** \"The German engineering and consulting firm, DMT, continues to lead the way in innovation in the raw materials sector and receives funding from EIT RawMaterials.\"\n\n**3.",
+    "ner": [
+      {
+        "text": "EIT RawMaterials",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Digital Accelerator\n**",
+    "practice": "** Advocate\n**",
+    "counterrole": "** Sentryo\n**",
+    "context": "** \"The EIT Digital Accelerator is proud to have its alumnus French scale-up, Sentryo, making a huge step forward with raising EUR 10 million in a Series A fundraising.\"",
+    "ner": []
+  },
+  {
+    "role": "** EIT Digital\n**",
+    "practice": "** Secured\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"When they joined our accelerator, they wanted to become a French-German scaleup. We helped them secure their first fundraising and scale Europe wide.\"\n\n**",
+    "ner": []
+  },
+  {
+    "role": "** Operational Technology (OT) cybersecurity\n**",
+    "practice": "** Connects\n**",
+    "counterrole": "** Control systems\n**",
+    "context": "** \"Operational Technology (OT) cybersecurity is a fast-growing market. Organisations are connecting their control systems to the world...\"\n\n**",
+    "ner": []
+  },
+  {
+    "role": "** Sentryo\n**",
+    "practice": "** Empowers\n**",
+    "counterrole": "** Operation engineers\n**",
+    "context": "** \"Sentryo's ICS CyberVision empowers operation engineers as the front line of defense...\"\n\n**",
+    "ner": [
+      {
+        "text": "ICS CyberVision",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Health\n**",
+    "practice": "** Identifies and accelerates\n**",
+    "counterrole": "** Promising European start-ups\n**",
+    "context": "** \"The European Health Catapult Business Plan Competition identifies and accelerates promising European start-ups...\"",
+    "ner": [
+      {
+        "text": "The European Health Catapult Business Plan Competition",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "WayToB",
+    "practice": "('provide', 1.0)",
+    "counterrole": "People with intellectual disabilities",
+    "context": "\"WayToB provides a solution to help people with intellectual disabilities travel independently.\"\n\n**2.**",
+    "ner": []
+  },
+  {
+    "role": "EIT Food",
+    "practice": "('found', 0.3915403485298157)",
+    "counterrole": "13 organizations",
+    "context": "\"EIT Food is looking for 13 organisations that would assume the role of EIT Food Hubs in 13 countries.\"\n\n**3.**",
+    "ner": [
+      {
+        "text": "EIT Food",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT Food Hubs",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Regional Innovation Scheme",
+    "practice": "('enable', 1.0)",
+    "counterrole": "Widening participation in EIT activities across Europe",
+    "context": "\"The EIT RIS was introduced in 2014 to share good practices and experience emerging from EIT Community activities and to widen participation in our activities across Europe.\"\n\n**4.**",
+    "ner": [
+      {
+        "text": "RIS",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT Community",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Fairphone",
+    "practice": "('create', 1.0)",
+    "counterrole": "The world’s first ethical smartphone",
+    "context": "\"Fairphone creates positive social and environmental impact from the beginning to the end of a phone’s life cycle.\"\n\n**5.**",
+    "ner": []
+  },
+  {
+    "role": "EIT InnoEnergy",
+    "practice": "('introduce', 0.6112282276153564)",
+    "counterrole": "Schneider Electric",
+    "context": "\"EIT InnoEnergy and Schneider Electric announced the completion of a two-year collaboration.\"",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "Schneider Electric",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT RawMaterials\n**",
+    "practice": "** Enable\n**",
+    "counterrole": "** European minerals, metals and materials sector\n**",
+    "context": "** 'Industry is a high political priority of the European Commission. As part of this plan, the Skills Agenda has been extended to new key industry sectors...'\n\n**2.",
+    "ner": [
+      {
+        "text": "the European Commission",
+        "label": "ORG"
+      },
+      {
+        "text": "the Skills Agenda",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Digital\n**",
+    "practice": "** Launch\n**",
+    "counterrole": "** Virtual Training Doctor\n**",
+    "context": "** 'The innovation project will improve communication between elderly patients and healthcare professionals. EIT Digital and its European partners launched a new care innovation...'\n\n**3.",
+    "ner": []
+  },
+  {
+    "role": "** ConnectedClusters\n**",
+    "practice": "** Accelerate\n**",
+    "counterrole": "** Innovation clusters\n**",
+    "context": "** 'We’re all familiar with the way in which clusters of complementary start-ups and skilled workers can drive commercial growth...'",
+    "ner": []
+  },
+  {
+    "role": "** EIT Climate-KIC’s Urban Transitions work\n**",
+    "practice": "** Ally\n**",
+    "counterrole": "** Cities and regions\n**",
+    "context": "** 'Cities are facing huge challenges—social, economic and democratic. But the threat of climate breakdown will affect and compound all of these.'\n\n**2.",
+    "ner": []
+  },
+  {
+    "role": "** EIT Health InnoStars\n**",
+    "practice": "** Select\n**",
+    "counterrole": "** Image University of Zagreb, Croatia DEX Innovation Centre, Czech Republic Rīga Stradiņš University, Latvia\n**",
+    "context": "** 'The new hubs will work alongside the existing network of ten regional hubs in implementing the EIT RIS programme.'\n\n**3.",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "RIS",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT InnoEnergy\n**",
+    "practice": "** Host\n**",
+    "counterrole": "** Céline Jullien, Industry Programme Management Officer at EIT InnoEnergy\n**",
+    "context": "** 'The session entitled “Electrification of mobility” was organised by EIT InnoEnergy and Eurelectric.'",
+    "ner": [
+      {
+        "text": "EIT InnoEnergy",
+        "label": "ORG"
+      },
+      {
+        "text": "Eurelectric",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Health and EIT Urban Mobility",
+    "practice": "('team', 0.41444748640060425)",
+    "counterrole": "EIT Community and its supported start-ups/scale-ups and Alumni",
+    "context": "\"The event emphasised the potential in collaboration for solving major challenges like tech transfer, climate change, gender inequality, and scaling-up of start-ups.\"\n\n**2.**",
+    "ner": []
+  },
+  {
+    "role": "EcoBean",
+    "practice": "('create', 0.7188368439674377)",
+    "counterrole": "Pan-European market for innovations",
+    "context": "\"Creating pan-European market for innovations Workshops and panel discussions were on topics such as...\"\n\n**3.**",
+    "ner": [
+      {
+        "text": "Workshops",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Food",
+    "practice": "(None, 0.2865298390388489)",
+    "counterrole": "Food for Good Challenge",
+    "context": "\"EIT Food will be part of the jury. EIT Food recently joined forces with FAMAE...\"\n\n**4.**",
+    "ner": [
+      {
+        "text": "EIT Food",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT Food",
+        "label": "ORG"
+      },
+      {
+        "text": "FAMAE",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Health Belgium-Netherlands and EIT Health Germany",
+    "practice": "('introduce', 0.4545272886753082)",
+    "counterrole": "Start-ups",
+    "context": "\"EIT Health Belgium-Netherlands and EIT Health Germany recently announced their second round of Headstart 2019 funding...\"",
+    "ner": [
+      {
+        "text": "EIT Health Germany",
+        "label": "ORG"
+      },
+      {
+        "text": "Headstart",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "** Headstart funding\n**",
+    "practice": "** Provide\n**",
+    "counterrole": "** Early-stage healthcare companies and SME's\n**",
+    "context": "** \"Headstart funding provides early-stage healthcare companies and SME's with non-dilutive funding...\"\n\n**2.",
+    "ner": [
+      {
+        "text": "SME",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Aspect Analytics\n**",
+    "practice": "** Build\n**",
+    "counterrole": "** Enterprise-grade software\n**",
+    "context": "** \"Aspect Analytics builds enterprise-grade software to boost the utility...\"\n\n**3.",
+    "ner": [
+      {
+        "text": "Aspect Analytics",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** CardiacBooster\n**",
+    "practice": "** Develop\n**",
+    "counterrole": "** An effective, minimally invasive cardiac assist device\n**",
+    "context": "** \"CardiacBooster wants to help physicians to mechanically support patients...\"\n\n**4.",
+    "ner": [
+      {
+        "text": "CardiacBooster",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Corporis Medical\n**",
+    "practice": "** Create\n**",
+    "counterrole": "** The first disposable automatic trocar closure device\n**",
+    "context": "** \"Corporis Medical will be the first disposable automatic trocar closure device...\"\n\n**5.",
+    "ner": [
+      {
+        "text": "Corporis Medical",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Crescent Tech\n**",
+    "practice": "** Develop\n**",
+    "counterrole": "** The world’s first purpose-designed dual-camera Headcam system\n**",
+    "context": "** \"Crescent Tech aims to disrupt the future of medical education...\"\n\n**6.",
+    "ner": [
+      {
+        "text": "Crescent Tech",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Cue2Walk International\n**",
+    "practice": "** Aim\n**",
+    "counterrole": "** Keep Parkinson's patients active\n**",
+    "context": "** \"Cue2Walk aims to keep Parkinson's patients active...\"\n\n**7.",
+    "ner": []
+  },
+  {
+    "role": "** I-Med Technology\n**",
+    "practice": "** Develop\n**",
+    "counterrole": "** A real-time 3D surgical augmented reality system\n**",
+    "context": "** \"I-Med Technology aims to develop a real-time 3D surgical augmented reality system...\"\n\n**8.",
+    "ner": []
+  },
+  {
+    "role": "** Kaminari Medical\n**",
+    "practice": "** Develop\n**",
+    "counterrole": "** An intravascular catheter\n**",
+    "context": "** \"Kaminari develops an intravascular catheter to image the coronary arteries...\"\n\n**9.",
+    "ner": []
+  },
+  {
+    "role": "** MLA Diagnostics BV\n**",
+    "practice": "** Develop\n**",
+    "counterrole": "** A prognostic test\n**",
+    "context": "** \"",
+    "ner": []
+  },
+  {
+    "role": "** EpiQMAx\n**",
+    "practice": "** Offer\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"EpiQMAx offers a service for the detection and quantification of histones and their epigenetic modifications using mass spectrometry.\"\n\n**2.",
+    "ner": []
+  },
+  {
+    "role": "** Living Brain\n**",
+    "practice": "** Accelerate\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"Living Brain uses virtual reality to accelerate cognitive rehabilitation in neurological patients.\"\n\n**3.",
+    "ner": []
+  },
+  {
+    "role": "** Menutech\n**",
+    "practice": "** Develop\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"Menutech is developing AI-powered meal-planning software to automate meal planning and menu creation.\"\n\n**4.",
+    "ner": [
+      {
+        "text": "Menutech",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** reFit Systems GmbH\n**",
+    "practice": "** Provide\n**",
+    "counterrole": "** Clinics, rehabilitation centres, doctors’ offices\n**",
+    "context": "** \"reFit Systems GmbH provides a video game platform for individualised therapy.\"\n\n**5.",
+    "ner": [
+      {
+        "text": "reFit Systems GmbH",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Mindable Health\n**",
+    "practice": "** Provide\n**",
+    "counterrole": "** Users\n**",
+    "context": "** \"Mindable Health provides a phone app that provides digital therapy for panic and agoraphobia.\"\n\n**6.",
+    "ner": []
+  },
+  {
+    "role": "** Vicron\n**",
+    "practice": "** Empower\n**",
+    "counterrole": "** Doctors\n**",
+    "context": "** \"Vicron is designed to empower doctors with expedient and fast data analytics to make better treatment decisions for patients in hospitals.\"\n\n**7.",
+    "ner": []
+  },
+  {
+    "role": "** EIT Urban Mobility Master School\n**",
+    "practice": "** Train\n**",
+    "counterrole": "** Students\n**",
+    "context": "** \"The EIT Urban Mobility Master School is now open for applications.\"",
+    "ner": []
+  },
+  {
+    "role": "** Assarel-Medet (SME)\n**",
+    "practice": "** Host\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"The testing takes place at Assarel-Medet (SME) plant site in Bulgaria.\"\n\n**2.** **",
+    "ner": [
+      {
+        "text": "Assarel-Medet",
+        "label": "ORG"
+      },
+      {
+        "text": "SME",
+        "label": "ORG"
+      },
+      {
+        "text": "Bulgaria",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "** Technische Universität Bergakademie Freiberg (TUBAF)\n**",
+    "practice": "** Lead Partner\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"RoStar project partnership: Technische Universität Bergakademie Freiberg (TUBAF), Germany (Lead Partner)\"\n\n**3.** **",
+    "ner": [
+      {
+        "text": "Germany",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "** Agencia Estatal Consejo Superior de Investigaciones Cientificas, CSIC\n**",
+    "practice": "** Partner\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"RoStar project partnership: Technische Universität Bergakademie Freiberg (TUBAF), Germany (Lead Partner) Agencia Estatal Consejo Superior de Investigaciones Cientificas, CSIC (Spanish National Research Council)\"\n\n**4.** **",
+    "ner": [
+      {
+        "text": "Germany",
+        "label": "GPE"
+      },
+      {
+        "text": "CSIC",
+        "label": "ORG"
+      },
+      {
+        "text": "Spanish National Research Council",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Roche Diagnostics GmbH\n**",
+    "practice": "** Spokeswoman\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"Ursula Redeker is Spokeswoman for the Management of Roche Diagnostics GmbH\"\n\n**5.** **",
+    "ner": [
+      {
+        "text": "the Management of Roche Diagnostics GmbH",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Rhine-Neckar Metropolitan Region\n**",
+    "practice": "** Chair of the Scientific Advisory Board\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"Ursula Redeker is a member of the Board of Trustees of the German Cancer Research Center (DKFZ) in Heidelberg, Chair of the Scientific Advisory Board of the Rhine-Neckar Metropolitan Region\"",
+    "ner": [
+      {
+        "text": "the Board of Trustees",
+        "label": "ORG"
+      },
+      {
+        "text": "the German Cancer Research Center",
+        "label": "ORG"
+      },
+      {
+        "text": "DKFZ",
+        "label": "ORG"
+      },
+      {
+        "text": "Heidelberg",
+        "label": "GPE"
+      },
+      {
+        "text": "the Scientific Advisory Board",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Health",
+    "practice": "('create', 1.0)",
+    "counterrole": "N/A",
+    "context": "\"EIT Health offers an opportunity to explore pilots and innovative approaches to achieve this vision. Let’s use these opportunities to create improvements that provide the best value for citizens and patients.\"\n\n**2.**",
+    "ner": [
+      {
+        "text": "EIT Health",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT InnoEnergy",
+    "practice": "('invest', 1.0)",
+    "counterrole": "Northvolt",
+    "context": "\"EIT InnoEnergy has announced its EUR 5.8 million investment into Northvolt’s 'Revolt' programme.\"",
+    "ner": [
+      {
+        "text": "EIT InnoEnergy",
+        "label": "ORG"
+      },
+      {
+        "text": "Northvolt’s 'Revolt'",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT InnoEnergy",
+    "practice": "('award', 0.5031810998916626)",
+    "counterrole": "None",
+    "context": "\"EIT InnoEnergy issued its first ever global call for start-ups across the entire sustainability value chain.\"\n\n**2.**",
+    "ner": [
+      {
+        "text": "EIT InnoEnergy",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT InnoEnergy",
+    "practice": "('develop', 1.0)",
+    "counterrole": "European battery market",
+    "context": "\"EIT InnoEnergy develops new partnership to support European battery market growth.\"\n\n**3.**",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Northvolt",
+    "practice": "('support', 0.7333661317825317)",
+    "counterrole": "EIT InnoEnergy",
+    "context": "\"Northvolt is just one of several battery supply chain start-ups EIT InnoEnergy supports.\"\n\n**4.**",
+    "ner": [
+      {
+        "text": "Northvolt",
+        "label": "GPE"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "InnoEnergy",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Climate-KIC",
+    "practice": "('support', 0.7333661317825317)",
+    "counterrole": "Lilium",
+    "context": "\"EIT Climate-KIC supported Lilium raises over €224 million.\"\n\n**5.**",
+    "ner": [
+      {
+        "text": "EIT Climate-KIC",
+        "label": "ORG"
+      },
+      {
+        "text": "Lilium",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT RawMaterials",
+    "practice": "('partner', 1.0)",
+    "counterrole": "VTT",
+    "context": "\"EIT RawMaterials partner VTT is developing a rapid test for coronavirus.\"",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT RawMaterials up-scaling project'CorTools '\n**",
+    "practice": "** Develop\n**",
+    "counterrole": "** Raw materials industry\n**",
+    "context": "** \"The EIT RawMaterials up-scaling project'CorTools'is developing corrosion on-line monitoring and prediction software tools to respond to the needs of the raw materials industry.\"\n\n**",
+    "ner": []
+  },
+  {
+    "role": "** Cortools consortium\n**",
+    "practice": "** Enable\n**",
+    "counterrole": "** Co-creation and industrial validation of the tools\n**",
+    "context": "** \"The unique Cortools consortium: Boliden Harjavalta Oy, DMS, Ferritico, Outokumpu Stainless AB, Metso:Outotec, Tecnalia, ZAG and VTT Technical Research Centre of Finland Ltd, enables the co-creation and industrial validation of the tools.\"\n\n**",
+    "ner": [
+      {
+        "text": "Boliden Harjavalta Oy",
+        "label": "ORG"
+      },
+      {
+        "text": "DMS",
+        "label": "ORG"
+      },
+      {
+        "text": "Ferritico, Outokumpu Stainless AB",
+        "label": "ORG"
+      },
+      {
+        "text": "Metso",
+        "label": "ORG"
+      },
+      {
+        "text": "ZAG",
+        "label": "ORG"
+      },
+      {
+        "text": "VTT Technical Research Centre of Finland Ltd",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Outokumpu Stainless AB\n**",
+    "practice": "** Enable\n**",
+    "counterrole": "** More than 1 M€ annual savings\n**",
+    "context": "** \"For the industrial project partners, the developed tools enable more than 1 M€ annual savings through the prevention of corrosion failures.\"\n\n**",
+    "ner": []
+  },
+  {
+    "role": "** European raw materials industry\n**",
+    "practice": "** Allow\n**",
+    "counterrole": "** Billions of euros in savings\n**",
+    "context": "** \"The project may allow billions of euros in savings for the European raw materials industry in whole.\"\n\n**",
+    "ner": []
+  },
+  {
+    "role": "** Project partners\n**",
+    "practice": "** Use\n**",
+    "counterrole": "** Software tool\n**",
+    "context": "** \"The software tool will make it easier to support our technical marketing and sales.\"",
+    "ner": []
+  },
+  {
+    "role": "** Entremo\n**",
+    "practice": "** Deploy\n**",
+    "counterrole": "** Hospitals and nursing homes in Hungary\n**",
+    "context": "** \"Entremo is deploying their product, a wristband to remotely monitor the vital signs of patients, in hospitals and nursing homes in Hungary.\"\n\n**2.",
+    "ner": [
+      {
+        "text": "Hungary",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "** Team Discover\n**",
+    "practice": "** Win\n**",
+    "counterrole": "** High-profile European hackathon\n**",
+    "context": "** \"In less than six months, a team of five EIT Digital Master School students went from successfully winning a high-profile European hackathon to incorporating their start-up, Entremo.\"\n\n**3.",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "Digital Master School",
+        "label": "ORG"
+      },
+      {
+        "text": "Entremo",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Digital Innovation Factory\n**",
+    "practice": "** Launch\n**",
+    "counterrole": "** \"DATA against COVID-19\" initiative\n**",
+    "context": "** \"EIT Digital Innovation Factory launched the 'DATA against COVID-19' initiative, with the objective of quickly developing digital tools to fight back the pandemic.\"\n\n**4.",
+    "ner": [
+      {
+        "text": "COVID-19",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Alumni Community\n**",
+    "practice": "** Connect\n**",
+    "counterrole": "** EIT Alumni members\n**",
+    "context": "** \"EIT Alumni CONNECT is the annual big event and opportunity for EIT Alumni members to meet, discuss and debate on social, environmental and technological challenges.\"",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** [organization taking action]\n**",
+    "practice": "** [main institutional action verb]\n**",
+    "counterrole": "** [partner or recipient organization]\n**",
+    "context": "** [short quote from the text supporting the relation]\n\n**Extracted triples:**\n\n- **EIT Manufacturing:** Connect, 'The second panel discussion focused the ‘Consumer Perspective’'\n- **Ellen MacArthur Foundation:** Advocate, 'The second panel discussion focused the ‘Consumer Perspective’'\n- **CollAction:** Partner, 'The second panel discussion focused the ‘Consumer Perspective’'\n- **Fab Lab Barcelona IAAC:** Partner, 'The second panel discussion focused the ‘Consumer Perspective’'\n- **EIT InnoEnergy:** Develop, 'National strategy for the Swedish battery industry Last week a proposal of the new battery regulation was adopted by the European Commission'\n- **Swedish Government:** Develop, 'National strategy for the Swedish battery industry Last week a proposal of the new battery regulation was adopted by the European Commission'\n- **European Commission:** Propose, 'The battery regulations proposed by the European Commission on 10 December highlights the need of minimising both the social and the carbon footprint of the battery industry'\n- **European Battery Alliance:** Support, 'The development of sustainable battery production is not only important for achieving climate goals, but also enables the emergence of a competitive industry that creates growth and jobs throughout the battery value chain'\n- **Fossil Free Sweden:** Develop, 'The national strategy for a sustainable battery value chain is developed by the government initiative Fossil Free Sweden'",
+    "ner": [
+      {
+        "text": "the ‘Consumer Perspective’'",
+        "label": "ORG"
+      },
+      {
+        "text": "MacArthur Foundation",
+        "label": "ORG"
+      },
+      {
+        "text": "the ‘Consumer Perspective’'",
+        "label": "ORG"
+      },
+      {
+        "text": "the ‘Consumer Perspective’'",
+        "label": "ORG"
+      },
+      {
+        "text": "Fab Lab Barcelona",
+        "label": "ORG"
+      },
+      {
+        "text": "the ‘Consumer Perspective’'",
+        "label": "ORG"
+      },
+      {
+        "text": "the European Commission'",
+        "label": "ORG"
+      },
+      {
+        "text": "the European Commission'",
+        "label": "ORG"
+      },
+      {
+        "text": "the European Commission",
+        "label": "ORG"
+      },
+      {
+        "text": "European Battery Alliance",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Digital Accelerator\n-",
+    "practice": "Congratulate\n-",
+    "counterrole": "KONUX\n-",
+    "context": "\"The EIT Digital Accelerator congratulates KONUX on reaching an important milestone in their mission to transform railway operations.\"\n\n**2.**\n\n-",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Recycleye\n-",
+    "practice": "Develop\n-",
+    "counterrole": "EIT RawMaterials Accelerator\n-",
+    "context": "\"Recycleye is developing a computer vision system to build the world’s first fully automated material recovery facility (MRF).\"",
+    "ner": [
+      {
+        "text": "MRF",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Recycleye",
+    "practice": "('enable', 1.0)",
+    "counterrole": "Facilities",
+    "context": "\"Using computer vision to make this distinction, is enabling facilities to provide higher value bales...\"\n\n**2.**",
+    "ner": []
+  },
+  {
+    "role": "LWARB",
+    "practice": "('invest', 1.0)",
+    "counterrole": "Recycleye",
+    "context": "\"At LWARB we’re excited to be able to invest in Recycleye...\"\n\n**3.**",
+    "ner": [
+      {
+        "text": "Recycleye",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "EIT Food",
+    "practice": "('innovate', 0.4207523763179779)",
+    "counterrole": "Talent",
+    "context": "\"EIT Food is attracting, developing and empowering talent...\"\n\n**4.**",
+    "ner": [
+      {
+        "text": "EIT Food",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT InnoEnergy",
+    "practice": "('offer', 1.0)",
+    "counterrole": "Graduates",
+    "context": "\"The EIT InnoEnergy Master School offers programmes which are directed at a completely new type of education...\"\n\n**5.**",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Manufacturing",
+    "practice": "('organize', 0.47530990839004517)",
+    "counterrole": "Manufacturing Innovators and Entrepreneurs",
+    "context": "\"The Master School programmes merge manufacturing technical and technological aspects...\"\n\n**6.**",
+    "ner": []
+  },
+  {
+    "role": "EIT RawMaterials",
+    "practice": "('enable', 1.0)",
+    "counterrole": "Collaboration",
+    "context": "\"Within the RawMaterials Master School students are offered industry-focused programmes...\"\n\n**7.**",
+    "ner": [
+      {
+        "text": "RawMaterials Master School",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Urban Mobility",
+    "practice": "('offer', 1.0)",
+    "counterrole": "Sustainable Urban Mobility Transitions",
+    "context": "\"EIT Urban Mobility offers a unique Master School...\"",
+    "ner": []
+  },
+  {
+    "role": "** EIT Label to two EIT Health Doctoral programmes\n**",
+    "practice": "** Offer\n**",
+    "counterrole": "** Ageing PhD School BEHealSy and EIT Manufacturing Doctoral School\n**",
+    "context": "** \"The EIT Label to two EIT Health Doctoral programmes... offers mobility, mentorship, networking, innovation, entrepreneurship, and business modules to PhD students.\"\n\n**2.",
+    "ner": [
+      {
+        "text": "EIT Health Doctoral",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT RawMaterials\n**",
+    "practice": "** Host\n**",
+    "counterrole": "** Final pitching of the Regional Innovation Competition 2021\n**",
+    "context": "** \"EIT RawMaterials hosted the final pitching of the Regional Innovation Competition 2021...\"\n\n**3.",
+    "ner": [
+      {
+        "text": "EIT RawMaterials",
+        "label": "ORG"
+      },
+      {
+        "text": "the Regional Innovation Competition",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Jumpstarter\n**",
+    "practice": "** Name\n**",
+    "counterrole": "** Seven highest-promising start-ups\n**",
+    "context": "** \"EIT Jumpstarter, the talent scout programme for high-potential early-stage teams has chosen these seven solutions to be the winners in 2021...\"",
+    "ner": []
+  },
+  {
+    "role": "** EIT RawMaterials\n**",
+    "practice": "** Fund\n**",
+    "counterrole": "** Start-ups\n**",
+    "context": "** \"The EIC and EIT are part of a wider ecosystem that the EU put in place under Horizon Europe to give Europe's entrepreneurs every opportunity to become world-leading companies.\"\n\n**2.",
+    "ner": [
+      {
+        "text": "EIC",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "EU",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** SusCritMOOC\n**",
+    "practice": "** Advocate\n**",
+    "counterrole": "** Businesses, governments, society\n**",
+    "context": "** \"The transition to a raw materials-intensive economy calls for a systems-thinking approach and the involvement of businesses, governments, and society at large.\"\n\n**3.",
+    "ner": []
+  },
+  {
+    "role": "** EIC\n**",
+    "practice": "** Accelerate\n**",
+    "counterrole": "** Start-ups\n**",
+    "context": "** \"The EIC Accelerator offers start-ups and SMEs grants of up to EUR 2.5 million combined with equity investments through the EIC Fund ranging from EUR 0.5 to EUR 15 million.\"",
+    "ner": [
+      {
+        "text": "EIC Accelerator",
+        "label": "ORG"
+      },
+      {
+        "text": "EIC Fund",
+        "label": "ORG"
+      },
+      {
+        "text": "EUR 0.5",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Community",
+    "practice": "('offer', 1.0)",
+    "counterrole": "Top business, research and education organisations across Europe",
+    "context": "\"The EIT Community offers a wide range of innovation and entrepreneurship activities\"\n\n**2.**",
+    "ner": [
+      {
+        "text": "The EIT Community",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EO4GEO Alliance",
+    "practice": "('work', 1.0)",
+    "counterrole": "EU’s workforce",
+    "context": "\"The EO4GEO Alliance has been working on upskilling and reskilling EU’s workforce\"\n\n**3.**",
+    "ner": [
+      {
+        "text": "EU",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "MEP Hildegard Bentele",
+    "practice": "('advocate', 1.0)",
+    "counterrole": "The EU",
+    "context": "\"We have now a consistent and ambitious package that tackles the urgency of stable and sustainable critical raw materials supply chains\"",
+    "ner": []
+  },
+  {
+    "role": "Member States",
+    "practice": "('create', 1.0)",
+    "counterrole": "IPCEI",
+    "context": "\"The IPCEI should cover all the relevant topics to reduce criticality and dependence...\"\n\n**2.**",
+    "ner": [
+      {
+        "text": "IPCEI",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "ERMA",
+    "practice": "('deliver', 0.4029247462749481)",
+    "counterrole": "Europe",
+    "context": "\"ERMA was established to address the challenge...\"\n\n**3.**",
+    "ner": []
+  },
+  {
+    "role": "ERMA",
+    "practice": "('support', 1.0)",
+    "counterrole": "Adoption of the report on Critical Raw Materials",
+    "context": "\"ERMA supports the adoption of the report...\"\n\n**4.**",
+    "ner": []
+  },
+  {
+    "role": "ERMA",
+    "practice": "('enable', 1.0)",
+    "counterrole": "Supply relationships",
+    "context": "\"ERMA’s current focus on the most Critical Raw Materials...\"\n\n**5.**",
+    "ner": [
+      {
+        "text": "Critical Raw Materials",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "ERMA",
+    "practice": "('establish', 1.0)",
+    "counterrole": "Raw materials investment fund",
+    "context": "\"ERMA has recently announced its plans to enable high standards...\"",
+    "ner": []
+  },
+  {
+    "role": "Healthcare organisations",
+    "practice": "('enable', 0.5513174533843994)",
+    "counterrole": "Patients",
+    "context": "\"Healthcare organisations must allow for fundamental shifts in how patients are cared for.\"\n\n**2.**",
+    "ner": []
+  },
+  {
+    "role": "EIT Health InnoStars",
+    "practice": "('support', 1.0)",
+    "counterrole": "Healthcare transformation in Central, Eastern and Southern Europe",
+    "context": "\"EIT Health InnoStars, we support healthcare transformation in Central, Eastern and Southern Europe, by accelerating the innovation of digitised healthcare solutions and the education of healthcare professionals.\"\n\n**3.**",
+    "ner": [
+      {
+        "text": "EIT Health InnoStars",
+        "label": "ORG"
+      },
+      {
+        "text": "Eastern",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Manufacturing",
+    "practice": "('select', 0.5093666315078735)",
+    "counterrole": "Small teams/entities",
+    "context": "\"EIT Manufacturing attracts, selects, and supports teams/entities coming from EIT RIS eligible countries, to help them develop their idea and gain market access.\"\n\n**4.**",
+    "ner": [
+      {
+        "text": "EIT Manufacturing",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "RIS",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Urban Mobility",
+    "practice": "('join', 0.6001781225204468)",
+    "counterrole": "URBANE project",
+    "context": "\"EIT Urban Mobility is excited to announce its participation in the newly launched URBANE project.\"",
+    "ner": [
+      {
+        "text": "URBANE",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** [organization taking action]\n**",
+    "practice": "** [main institutional action verb]\n**",
+    "counterrole": "** [partner or recipient organization]\n**",
+    "context": "** [short quote from the text supporting the relation]\n\n**Organizational Relationship Triples:**\n\n**1.** **UrbANE:** Build, **European Commission:** Support\n**Context:** \"UrbANE’s goals are part of the wider European Commission’s project of achieving ‘Zero Emission Last Mile Deliveries’”\n\n**2.** **UrbANE:** Facilitate, **Living Labs:** Demonstrate\n**Context:** \"These labs will demonstrate efficient, replicable, and socially acceptable innovative last-mile delivery solutions (Wave 1 solutions)\"\n\n**3.** **UrbANE:** Enable, **Transferability Platform:** Facilitate\n**Context:** \"The platform uses Digital Twinning Tools, open models, smart contracts governed by blockchain technology, and a data-driven Impact Assessment Radar\"\n\n**4.** **EIT Climate-KIC:** Join, **European Committee of the Regions (CoR), ICLEI, Under2Coalition, Climate Alliance, Climate Chance, Regions4, Convention of Scottish Local Authorities (COSLA):** Discuss, **Launch:** Declaration\n**Context:** \"At COP27 in Egypt, EIT Climate-KIC joined the European Committee of the Regions (CoR), ICLEI, Under2Coalition, Climate Alliance, Climate Chance, Regions4 and the Convention of Scottish Local Authorities (COSLA) to discuss a joint Roadmap for COP28\"\n\n**5.** **EIT Climate-KIC:** Cooperate, **Global Covenant of Mayors:** Set up a Common Reporting Framework\n**Context:** \"They will cooperate with city networks and partners through the Global Covenant of Mayors in a collective effort to set up a Common Reporting Framework\"",
+    "ner": [
+      {
+        "text": "European Commission’s",
+        "label": "ORG"
+      },
+      {
+        "text": "Digital Twinning Tools",
+        "label": "ORG"
+      },
+      {
+        "text": "European Committee",
+        "label": "ORG"
+      },
+      {
+        "text": "ICLEI",
+        "label": "ORG"
+      },
+      {
+        "text": "Under2Coalition",
+        "label": "ORG"
+      },
+      {
+        "text": "Climate Alliance",
+        "label": "ORG"
+      },
+      {
+        "text": "Convention of Scottish Local Authorities",
+        "label": "ORG"
+      },
+      {
+        "text": "COSLA",
+        "label": "ORG"
+      },
+      {
+        "text": "COP27",
+        "label": "GPE"
+      },
+      {
+        "text": "Egypt",
+        "label": "GPE"
+      },
+      {
+        "text": "EIT Climate-KIC",
+        "label": "ORG"
+      },
+      {
+        "text": "the European Committee of the Regions (CoR",
+        "label": "ORG"
+      },
+      {
+        "text": "ICLEI",
+        "label": "ORG"
+      },
+      {
+        "text": "Under2Coalition",
+        "label": "ORG"
+      },
+      {
+        "text": "Climate Alliance",
+        "label": "ORG"
+      },
+      {
+        "text": "the Convention of Scottish Local Authorities",
+        "label": "ORG"
+      },
+      {
+        "text": "COSLA",
+        "label": "ORG"
+      },
+      {
+        "text": "the Global Covenant of Mayors",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Urban Mobility",
+    "practice": "('join', 1.0000001192092896)",
+    "counterrole": "8200 Impact and CityZone",
+    "context": "\"EIT Urban Mobility announced today that it is joining forces with 8200 Impact and its partner CityZone to act as its ecosystem agent in Israel for 2023.\"\n\n**2.**",
+    "ner": [
+      {
+        "text": "CityZone",
+        "label": "ORG"
+      },
+      {
+        "text": "Israel",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "EIT Urban Mobility",
+    "practice": "('invest', 1.0)",
+    "counterrole": "Two early-stage Israeli start-ups",
+    "context": "\"EIT Urban Mobility will conduct strategic investments in two early-stage Israeli start-ups recommended by 8200 Impact and CityZone.\"\n\n**3.**",
+    "ner": [
+      {
+        "text": "CityZone",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Urban Mobility",
+    "practice": "('provide', 1.0)",
+    "counterrole": "Mobility start-ups in Israel’s vibrant ecosystem",
+    "context": "\"In EIT Urban Mobility, we welcome this new collaboration with 8200 Impact and CityZone, to provide services both to mobility start-ups in Israel’s vibrant ecosystem...\"",
+    "ner": [
+      {
+        "text": "CityZone",
+        "label": "ORG"
+      },
+      {
+        "text": "Israel",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "All countries in Europe",
+    "practice": "('provide', 1.0)",
+    "counterrole": "EIT Community",
+    "context": "\"The presence of physical EIT Community locations has given these bright minds access to resources and networks they need to turn ideas into inventions.\"\n\n**Triple 2:**",
+    "ner": [
+      {
+        "text": "EIT Community",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Skeleton Technologies",
+    "practice": "('develop', 1.0)",
+    "counterrole": "EIT Community",
+    "context": "\"The EIT has been there along the way, helping Biolive expand its network in its native Türkiye and beyond, as well as securing investment and the exposure the invention deserves.\"\n\n**Triple 3:**",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "Türkiye",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "ElevenEs",
+    "practice": "('develop', 1.0)",
+    "counterrole": "Serbia",
+    "context": "\"ElevenEs ’ development was a major milestone for its home country, Serbia. It directly created 2 000 jobs and is an incredible showcase of innovation talent, bringing the world Lithium-Iron-Phosphate (LFP) batteries that charge better, faster, and for a lower price.\"",
+    "ner": [
+      {
+        "text": "Serbia",
+        "label": "GPE"
+      },
+      {
+        "text": "Lithium-Iron-Phosphate",
+        "label": "ORG"
+      },
+      {
+        "text": "LFP",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Paint shop\n**",
+    "practice": "** Helped\n**",
+    "counterrole": "** Mejdrechová\n**",
+    "context": "** \"We consulted with the paint shop, which helped me a lot to focus on a user-friendly solution.\"\n\n**2.**\n**",
+    "ner": []
+  },
+  {
+    "role": "** Many industries\n**",
+    "practice": "** Have long developed and adopted automation techniques\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"Many industries have long developed and adopted automation techniques.\"\n\n**3.**\n**",
+    "ner": []
+  },
+  {
+    "role": "** RoboTwin\n**",
+    "practice": "** Provides\n**",
+    "counterrole": "** Paint shops\n**",
+    "context": "** \"RoboTwin provides an alternative approach to automation based on motion tracking and imitation.\"\n\n**4.**\n**",
+    "ner": []
+  },
+  {
+    "role": "** EIT Jumpstarter\n**",
+    "practice": "** Provided\n**",
+    "counterrole": "** RoboTwin\n**",
+    "context": "** \"They ended up winning the Grand Final with their technology's potential confirmed.\"\n\n**5.**\n**",
+    "ner": []
+  },
+  {
+    "role": "** EIT Manufacturing CLC East\n**",
+    "practice": "** Provided\n**",
+    "counterrole": "** RoboTwin\n**",
+    "context": "** \"EIT Manufacturing’s Co-Location Center (CLC) East, based in Vienna, is one of six innovation hubs.\"\n\n**6.**\n**",
+    "ner": [
+      {
+        "text": "Vienna",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "** BoostUp! East\n**",
+    "practice": "** Won\n**",
+    "counterrole": "** RoboTwin\n**",
+    "context": "** \"They took home first prize in the SwitchOn category.\"",
+    "ner": [
+      {
+        "text": "SwitchOn",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** [Organization taking action]\n**",
+    "practice": "** [Main institutional action verb]\n**",
+    "counterrole": "** [Partner or recipient organization]\n**",
+    "context": "** [Short quote from the text supporting the relation]\n\n**Extracted Organizational Relationship Triples:**\n\n- **EIT Manufacturing:** Provides funding to Restimo.\n- **Restimo:** Receives funding from EIT Manufacturing.\n- **EIT Digital:** Supports Restimo by providing funding, networking, and training.\n- **Glovo:** Headquarters in Barcelona.\n- **North Fish:** Restaurant chain served by Restimo.\n- **Makarun:** Restaurant chain served by Restimo.\n- **Charlotte:** Restaurant chain served by Restimo.\n- **EIT InnoEnergy:** Supports Bound4Blue and Aerones.\n- **Bound4Blue:** Works with leading European shipowners.\n- **Aerones:** First company to automate wind turbine maintenance with remote-controlled drones.\n- **UVera:** Developed a bacteria-derived UV protection compound.\n- **Enerbrain:** Optimizes building energy use and air quality.\n- **Biolive:** Uses olive-based bioplastics.\n- **EIT Food:** Provides financing, networking, and clients to Biolive.\n- **Ligence:** Uses deep learning and AI to increase the accuracy and speed of echocardiography.",
+    "ner": [
+      {
+        "text": "Restimo",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT Manufacturing",
+        "label": "ORG"
+      },
+      {
+        "text": "Barcelona",
+        "label": "GPE"
+      },
+      {
+        "text": "Restimo",
+        "label": "ORG"
+      },
+      {
+        "text": "Restimo",
+        "label": "ORG"
+      },
+      {
+        "text": "Restimo",
+        "label": "ORG"
+      },
+      {
+        "text": "Aerones",
+        "label": "GPE"
+      },
+      {
+        "text": "AI",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "EIT InnoEnergy**",
+    "practice": "(None, 0.21254613995552063)",
+    "counterrole": "Alliance",
+    "context": "\"As the Secretariat of the Alliance, EIT InnoEnergy will facilitate business and industrial cooperation across the solar PV value chain\"\n\n**",
+    "ner": [
+      {
+        "text": "EIT InnoEnergy",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "European Commission**",
+    "practice": "('invest', 0.3386368155479431)",
+    "counterrole": "European PV industry",
+    "context": "\"The European Commission and the European PV industry have committed to supporting investment across the solar PV value chain\"\n\n**",
+    "ner": [
+      {
+        "text": "The European Commission",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "SolarPower Europe**",
+    "practice": "('innovate', 0.3910159766674042)",
+    "counterrole": "Alliance",
+    "context": "\"SolarPower Europe and the European Solar Manufacturing Council will join EIT InnoEnergy on the Alliance’s steering committee\"\n\n**",
+    "ner": [
+      {
+        "text": "the European Solar Manufacturing Council",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT InnoEnergy",
+        "label": "ORG"
+      },
+      {
+        "text": "Alliance",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "European Solar Manufacturing Council**",
+    "practice": "('innovate', 0.3910159766674042)",
+    "counterrole": "Alliance",
+    "context": "\"SolarPower Europe and the European Solar Manufacturing Council will join EIT InnoEnergy on the Alliance’s steering committee\"",
+    "ner": [
+      {
+        "text": "the European Solar Manufacturing Council",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT InnoEnergy",
+        "label": "ORG"
+      },
+      {
+        "text": "Alliance",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Jumpstarter Jump-starting market success\n**",
+    "practice": "** Run\n**",
+    "counterrole": "** Selected start-ups\n**",
+    "context": "** \"The EIT Jumpstarter is a programme run by six EIT Knowledge & Innovation Communities (KICs)...\"\n\n**2.",
+    "ner": [
+      {
+        "text": "EIT Knowledge & Innovation Communities",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Community’s Regional Strategic Innovation Projects\n**",
+    "practice": "** Host\n**",
+    "counterrole": "** The Winners of the EIT Jumpstarter Grand Final 2022\n**",
+    "context": "** \"The Winners of the EIT Jumpstarter Grand Final 2022 EIT Health...\"\n\n**3.",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Alumni Nodes\n**",
+    "practice": "** Launch\n**",
+    "counterrole": "** EIT Alumni innovators and entrepreneurs\n**",
+    "context": "** \"The groundbreaking EIT Alumni Nodes initiative was launched at the EIT Urban Mobility CLC South offices (Torre Glòries).\"",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "the EIT Urban Mobility CLC South",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Digitalise and modernise the electricity grid\n-",
+    "practice": "Optimize grid operation and maintenance\n-",
+    "counterrole": "Grid operators\n-",
+    "context": "\"To address these challenges, Energiot aims to optimise grid operation and maintenance through the deployment of IoT devices...\"\n\n**Fondazione Cassa Depositi e Prestiti (CDP):**\n-",
+    "ner": [
+      {
+        "text": "IoT",
+        "label": "ORG"
+      },
+      {
+        "text": "Prestiti",
+        "label": "GPE"
+      },
+      {
+        "text": "CDP",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Boost the sponsor program of the EIT Digital Master School\n-",
+    "practice": "Dedicate EUR 300,000 to fund scholarships\n-",
+    "counterrole": "EIT Digital Master School\n-",
+    "context": "\"As part of Italy's commitment to future development, Fondazione CDP dedicated EUR 300,000 to fund around twenty scholarships...\"\n\n**EIT:**\n-",
+    "ner": [
+      {
+        "text": "Italy",
+        "label": "GPE"
+      },
+      {
+        "text": "Fondazione CDP",
+        "label": "ORG"
+      },
+      {
+        "text": "EUR",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Launch a new innovation hub in Ukraine\n-",
+    "practice": "Build on the strong efforts of the EIT Community\n-",
+    "counterrole": "Ukrainian innovators\n-",
+    "context": "\"The new regional hub, located in Kyiv, Ukraine, will connect regional actors, innovators, and partners...\"",
+    "ner": [
+      {
+        "text": "Kyiv",
+        "label": "GPE"
+      },
+      {
+        "text": "Ukraine",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "EIT Higher Education Institutions (HEI) Initiative",
+    "practice": "('support', 1.0)",
+    "counterrole": "Ukrainian universities and non-academic partners",
+    "context": "\"The EIT HEI Initiative call to support Ukrainian universities and their non-academic partners\"\n\n**2.**",
+    "ner": [
+      {
+        "text": "Ukrainian",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "EIT Jumpstarter",
+    "practice": "('accelerate', 1.0)",
+    "counterrole": "Ukrainian teams",
+    "context": "\"The EIT Jumpstarter also introduced a “Rebuild Ukraine” category that included a record participation of Ukrainian talents\"\n\n**3.**",
+    "ner": [
+      {
+        "text": "Ukrainian",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "Red Kalyna",
+    "practice": "('award', 0.3431444764137268)",
+    "counterrole": "Outstanding female entrepreneurs",
+    "context": "\"Red Kalyna, a new EIT Community initiative, aims to recognise outstanding female entrepreneurs who have developed innovative products or solutions\"\n\n**4.**",
+    "ner": [
+      {
+        "text": "EIT Community",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Food’s GoToBusiness",
+    "practice": "('support', 0.4264686107635498)",
+    "counterrole": "Participants",
+    "context": "\"EIT Food’s GoToBusiness that has helped close to 130 participants\"\n\n**5.**",
+    "ner": []
+  },
+  {
+    "role": "EIT Climate-KIC",
+    "practice": "('provide', 0.38403576612472534)",
+    "counterrole": "NetZeroCities Pilot Cities Programme",
+    "context": "\"EIT Climate-KIC leads the NetZeroCities Pilot Cities Programme\"",
+    "ner": [
+      {
+        "text": "EIT Climate-KIC",
+        "label": "ORG"
+      },
+      {
+        "text": "the NetZeroCities Pilot Cities Programme",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Galway\n**",
+    "practice": "** Map out potential solutions\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"Galway, for example, will focus on retrofitting private homes in a decarbonisation area.\"\n\n**2.",
+    "ner": []
+  },
+  {
+    "role": "** Liberec and Guimarães\n**",
+    "practice": "** Set up energy communities\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"Liberec and Guimarães are setting up energy communities to test out a range of solutions from transport and energy consumption in buildings to improved waste management.\"\n\n**3.",
+    "ner": [
+      {
+        "text": "Liberec",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "** Cities\n**",
+    "practice": "** Set up new services or entities, conceive of new tools to aid decarbonisation, set up local projects\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"Cities have already taken part in learning activities offered by the programme. From some of these early sessions, similarities have begun to emerge.\"\n\n**4.",
+    "ner": []
+  },
+  {
+    "role": "** EIT Urban Mobility\n**",
+    "practice": "** Host side-event featuring industry experts discussing start-ups and venture capitalists' perspectives\n**",
+    "counterrole": "** None\n**",
+    "context": "** \"EIT Urban Mobility hosted a side-event featuring industry experts discussing start-ups and venture capitalists' perspectives on current and future trends.\"",
+    "ner": []
+  },
+  {
+    "role": "City of Braga",
+    "practice": "('launch', 0.47897326946258545)",
+    "counterrole": "EIT Urban Mobility",
+    "context": "\"The city of Braga unveiled three urban mobility solutions...\"\n\n**2.**",
+    "ner": [
+      {
+        "text": "Braga",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Digital",
+    "practice": "(None, 0.269766628742218)",
+    "counterrole": "European scale-ups",
+    "context": "\"EIT Digital is going to supercharge European scale-ups...\"\n\n**3.**",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Culture & Creativity",
+    "practice": "('facilitate', 0.4268830418586731)",
+    "counterrole": "European Institute of Innovation and Technology (EIT)",
+    "context": "\"EIT Culture & Creativity is set to play a key role...\"",
+    "ner": [
+      {
+        "text": "EIT Culture & Creativity",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Culture & Creativity",
+    "practice": "('advocate', 0.3142945170402527)",
+    "counterrole": "Universities, companies, research organisations, cities, and cultural institutions",
+    "context": "\"The latest Knowledge and Innovation Community, EIT Culture & Creativity, provides and opportunity to welcome more creatives to Europe’s largest innovation ecosystem.\"\n\n**2.**",
+    "ner": [
+      {
+        "text": "Knowledge and Innovation Community",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT Culture & Creativity",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT Health Catapult",
+    "practice": "('support', 0.47413650155067444)",
+    "counterrole": "Luminate Medical",
+    "context": "\"We are delighted that Luminate has achieved such an impressive fundraising success, having supported them to build their pan-European visibility through EIT Health Catapult.\"\n\n**Please note:** This text does not contain any information about the second text excerpt, therefore I have not extracted any triples for that text.",
+    "ner": [
+      {
+        "text": "Luminate",
+        "label": "ORG"
+      },
+      {
+        "text": "EIT Health Catapult",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Partner\n-",
+    "practice": "Scale trials and production\n-",
+    "counterrole": "U.S. market\n-",
+    "context": "\"The funds raised will be used to advance first-in-patient clinical trials of Luminate’s technology and scale production, bringing the products to the U.S. market.\"\n\n**EIT Health:**\n-",
+    "ner": [
+      {
+        "text": "Luminate",
+        "label": "ORG"
+      },
+      {
+        "text": "U.S.",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "Host\n-",
+    "practice": "Train 100,000 learners\n-",
+    "counterrole": "Workforce\n-",
+    "context": "\"The EIT continues to address the skills gap in Europe, orchestrating its large ecosystem and expertise to offer upskilling services to thousands of workers, innovators, students and entrepreneurs.\"\n\n**EBA Academy:**\n-",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "EBA Academy:**\n-",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Provide training services\n-",
+    "practice": "Upskill and reskill workers\n-",
+    "counterrole": "Workforce\n-",
+    "context": "\"The EBA Academy provides tailored training services to equip new talent entering the evolving battery sector and enhance the technical expertise of experienced professionals.\"",
+    "ner": [
+      {
+        "text": "The EBA Academy",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** European Battery Alliance Academy\n**",
+    "practice": "** Expand upskilling services\n**",
+    "counterrole": "** Sourcing, hiring, onboarding, and retention\n**",
+    "context": "** \"The European Battery Alliance Academy and its partners will expand its upskilling services to sourcing, hiring, onboarding and retention in a holistic approach to meet industry needs beyond reskilling.\"\n\n**2.",
+    "ner": [
+      {
+        "text": "The European Battery Alliance Academy",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Food\n**",
+    "practice": "** Support over 350 companies, invest in business creation programmes\n**",
+    "counterrole": "** Companies, EUR 3 million\n**",
+    "context": "** \"Over the past seven years, EIT Food has supported over 350 companies and invested more than EUR 3 million in business creation programmes—helping position Europe as a global leader in food innovation.\"\n\n**3.",
+    "ner": [
+      {
+        "text": "EIT Food",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Water\n**",
+    "practice": "** Publish Innovation Model Paper, address water-related challenges\n**",
+    "counterrole": "** Organisations, stakeholders\n**",
+    "context": "** \"The new EIT Knowledge and Innovation Community (KIC) on water, marine, and maritime sectors will address critical water-related challenges by uniting stakeholders from academia, business, and research.\"\n\n**4.",
+    "ner": [
+      {
+        "text": "EIT Knowledge and Innovation Community",
+        "label": "ORG"
+      },
+      {
+        "text": "KIC",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Jumpstarter\n**",
+    "practice": "** Train and convert innovative ideas into budding businesses\n**",
+    "counterrole": "** Teams, start-ups\n**",
+    "context": "** \"The EIT Jumpstarter programme has trained 1 180 participants, leading to the creation of 124 start-ups and contributing to 2 100 new jobs in emerging regions of Europe.\"",
+    "ner": []
+  },
+  {
+    "role": "EIT Health",
+    "practice": "('accelerate', 1.0)",
+    "counterrole": "Food) BIOCHIP-PATHFINDER",
+    "context": "\"Food) BIOCHIP-PATHFINDER from Portugal (EIT Health) StoreNow from Portugal (EIT InnoEnergy)\"\n\n**2.**",
+    "ner": [
+      {
+        "text": "Portugal",
+        "label": "GPE"
+      },
+      {
+        "text": "EIT Health",
+        "label": "ORG"
+      },
+      {
+        "text": "Portugal",
+        "label": "GPE"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT RawMaterials",
+    "practice": "('establish', 1.0)",
+    "counterrole": "Total Energy",
+    "context": "\"Total Energy from Croatia (EIT RawMaterials)\"\n\n**3.**",
+    "ner": [
+      {
+        "text": "Croatia",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "Urbix Hub",
+    "practice": "('incubate', 1.0)",
+    "counterrole": "Urbix Hub",
+    "context": "\"Urbix Hub from Bulgaria (EIT Urban Mobility)\"\n\n**4.**",
+    "ner": [
+      {
+        "text": "Bulgaria",
+        "label": "GPE"
+      },
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "POWAR STEAM",
+    "practice": "('partner', 1.0)",
+    "counterrole": "Drone NonDestructiveTesting",
+    "context": "\"Drone NonDestructiveTesting from Ukraine (Rebuild Ukraine)\"\n\n**5.**",
+    "ner": [
+      {
+        "text": "Ukraine",
+        "label": "GPE"
+      }
+    ]
+  },
+  {
+    "role": "WellscanPro",
+    "practice": "('provide', 1.0)",
+    "counterrole": "Kosovo (Western Balkans Special Award)",
+    "context": "\"WellscanPro from Kosovo (Western Balkans Special Award)\"",
+    "ner": [
+      {
+        "text": "WellscanPro",
+        "label": "ORG"
+      },
+      {
+        "text": "Kosovo",
+        "label": "GPE"
+      },
+      {
+        "text": "Western Balkans Special Award",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT",
+    "practice": "('launch', 1.0)",
+    "counterrole": "Albania, Bosnia and Herzegovina, Poland, Romania, Slovakia, Serbia, France",
+    "context": "\"Further innovation hubs will be in launched in the following countries...\"\n\n**2.**",
+    "ner": []
+  },
+  {
+    "role": "Naked Energy",
+    "practice": "('deliver', 1.0000001192092896)",
+    "counterrole": "British Library",
+    "context": "\"This solar start-up will deliver a landmark installation boasting 950 solar collectors...\"\n\n**3.**",
+    "ner": []
+  },
+  {
+    "role": "EIT Climate-KIC",
+    "practice": "('accelerate', 1.0)",
+    "counterrole": "Naked Energy",
+    "context": "\"Naked Energy was one of the first start-ups to complete all three stages of the EIT Climate-KIC’s Accelerator...\"\n\n**4.**",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "EIT",
+    "practice": "('partner', 1.0)",
+    "counterrole": "British Library",
+    "context": "\"It’s an honour to partner with such an iconic British institution...\"",
+    "ner": []
+  },
+  {
+    "role": "** EIT and its Knowledge and Innovation Communities\n**",
+    "practice": "** Launched the Supernovas programme\n**",
+    "counterrole": "** Women in deep tech start-ups\n**",
+    "context": "** Bringing more women into entrepreneurship and investment, supporting women already in it, and igniting growth for women business angels and VC investors.\n\n**",
+    "ner": [
+      {
+        "text": "VC",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT and its Knowledge and Innovation Communities\n**",
+    "practice": "** Presented the Supernovas Data Room\n**",
+    "counterrole": "** Women-led start-ups in high and deep tech entrepreneurship\n**",
+    "context": "** Showcasing women-led start-ups and giving investors, corporates, journalists, publishers and other interested parties access to data about these start-ups.",
+    "ner": []
+  },
+  {
+    "role": "** EIT (European Institute of Innovation and Technology)\n**",
+    "practice": "** Opened a new Community Hub in Slovakia\n**",
+    "counterrole": "** Local innovators, entrepreneurs and partners\n**",
+    "context": "** \"The new hub will serve as a central platform for entrepreneurs, researchers, students and businesses to connect with the EIT’s wide range of programmes.\"\n\n**2.",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT\n**",
+    "practice": "** Strengthens links between business, education and research\n**",
+    "counterrole": "** Local talent\n**",
+    "context": "** \"For me, this hub is first and foremost about people. It means that a young founder in Košice, a researcher in Bratislava, or a student with a bold idea can now more easily find support and partners across Europe.\"\n\n**3.",
+    "ner": [
+      {
+        "text": "Košice",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT\n**",
+    "practice": "** Supports Slovakia’s Innovation Potential\n**",
+    "counterrole": "** Slovak partners\n**",
+    "context": "** \"The hub is part of the EIT Regional Innovation Scheme, which aims to bridge Europe’s innovation divide by boosting competitiveness and supporting sustainable economic growth in regions with high innovation potential.\"",
+    "ner": [
+      {
+        "text": "the EIT Regional Innovation Scheme",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Governing Board\n**",
+    "practice": "** Proposes\n**",
+    "counterrole": "** N/A\n**",
+    "context": "** \"The Governing Board proposes a set of reforms to strengthen the EIT’s role as a pan-European ecosystem facilitator and better guide innovators to the right EU support.\"\n\n**2.",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "EU",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT\n**",
+    "practice": "** Supports\n**",
+    "counterrole": "** Union of Skills\n**",
+    "context": "** \"The vision proposes to position the EIT – thanks to its unique mix of partnerships, expertise, and shared funding – as a key driver of EU competitiveness and a force for a more connected, inclusive, and results-focused European innovation landscape.\"\n\n**3.",
+    "ner": [
+      {
+        "text": "EIT",
+        "label": "ORG"
+      },
+      {
+        "text": "EU",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** EIT Deep Tech Talent Initiative\n**",
+    "practice": "** Achieves\n**",
+    "counterrole": "** N/A\n**",
+    "context": "** \"The EIT Deep Tech Talent Initiative has achieved its goal of training one million people in deep tech fields.\"\n\n**4.",
+    "ner": []
+  },
+  {
+    "role": "** InnoEnergy\n**",
+    "practice": "** Secures\n**",
+    "counterrole": "** Investors\n**",
+    "context": "** \"InnoEnergy, one of InnoEnergy’s portfolio companies, has successfully secured an €8 million in Series A funding.\"",
+    "ner": [
+      {
+        "text": "InnoEnergy",
+        "label": "ORG"
+      },
+      {
+        "text": "InnoEnergy",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "Described energy",
+    "practice": "('enable', 1.0)",
+    "counterrole": "Customers",
+    "context": "\"Their flexible software enables customers to develop storage projects quickly, efficiently and profitably\"\n\n**Triple 2:**",
+    "ner": []
+  },
+  {
+    "role": "Eneco Ventures",
+    "practice": "('finance', 0.36344844102859497)",
+    "counterrole": "Eneco’s extensive operational expertise and networks",
+    "context": "\"Eneco Ventures leverages Eneco’s extensive operational expertise and networks\"\n\n**Triple 3:**",
+    "ner": [
+      {
+        "text": "Eneco Ventures",
+        "label": "ORG"
+      },
+      {
+        "text": "Eneco",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "4impact capital",
+    "practice": "('join', 1.0000001192092896)",
+    "counterrole": "Investor consortium",
+    "context": "\"4impact capital joins the investor consortium as a software-specialised impact investor\"\n\n**Triple 4:**",
+    "ner": []
+  },
+  {
+    "role": "InnoEnergy AI-based optimisation for the energy transition",
+    "practice": "('enable', 1.0)",
+    "counterrole": "Fully automated, AI-driven trading of flexibilities",
+    "context": "\"Its proprietary Energy Trading Autopilot enables fully automated, AI-driven trading of flexibilities\"",
+    "ner": [
+      {
+        "text": "Energy Trading Autopilot",
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "role": "** Grenspark Kalmthoutse Heide\n**",
+    "practice": "** Adjust height data\n**",
+    "counterrole": "** Belgium and the Netherlands\n**",
+    "context": "** \"Due to poor formatting or lack of metadata, height data must be manually adjusted...\"\n\n**2.",
+    "ner": []
+  },
+  {
+    "role": "** Local actors\n**",
+    "practice": "** Cite disconnect between national strategies and local implementation\n**",
+    "counterrole": "** National strategies and local implementation\n**",
+    "context": "** \"Local actors frequently cited a disconnect between national strategies and local implementation...\"\n\n**3.",
+    "ner": []
+  },
+  {
+    "role": "** Natura 2000\n**",
+    "practice": "** Limit water management options\n**",
+    "counterrole": "** Infrastructure\n**",
+    "context": "** \"Natura 2000 protections limit water management options, even as subsidence and rising groundwater threaten infrastructure...\"\n\n**4.",
+    "ner": []
+  },
+  {
+    "role": "** Climate KIC\n**",
+    "practice": "** Guide innovations\n**",
+    "counterrole": "** Local communities\n**",
+    "context": "** \"Climate KIC is helping guide the innovations catalysed by PCP WISE towards community-led solutions...\"\n\n**5.",
+    "ner": []
+  },
+  {
+    "role": "**.Lumen\n**",
+    "practice": "** Provide intuitive navigation tools\n**",
+    "counterrole": "** Blind and visually impaired people\n**",
+    "context": "** \"The company’s success illustrates how European innovation can deliver solutions with both social and economic impact...\"",
+    "ner": []
+  },
+  {
+    "role": "EIT Digital",
+    "practice": "('launch', 1.0)",
+    "counterrole": "Hellenic Centre for Defence Innovation (HCDI)",
+    "context": "\"The initiative aligns with broader European goals of achieving greater technological independence and strategic autonomy.\"",
+    "ner": []
+  }
+]
