@@ -1,22 +1,54 @@
-# Web scraping
-requests
-beautifulsoup4
-urllib3
+# ===========================================
+# SOCIOTYPER - Dependencies
+# ===========================================
 
-# Text processing & NLP
-spacy
-regex
+# ----- Web Scraping -----
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+urllib3>=2.0.0
 
-# LLM integration
-openai
-transformers
-torch
+# ----- Text Processing & NLP -----
+spacy>=3.7.0
+regex>=2023.0.0
+sentence-transformers>=2.2.0
 
-# Data handling
-pandas
+# ----- LLM Integration -----
+openai>=1.0.0
+transformers>=4.35.0
+torch>=2.0.0
+accelerate>=0.24.0
 
-# UI
-gradio
+# ----- Data Handling -----
+pandas>=2.0.0
+numpy>=1.24.0
 
-# Utilities
-pathlib
+# ----- User Interface -----
+gradio>=4.0.0
+
+# ----- Jupyter Support -----
+jupyter>=1.0.0
+ipywidgets>=8.0.0
+
+# ----- Progress Bars -----
+tqdm>=4.65.0
+
+# ----- File Export -----
+openpyxl>=3.1.0
+
+# ===========================================
+# Installation Notes:
+# ===========================================
+#
+# 1. Install all dependencies:
+#    pip install -r requirements.txt
+#
+# 2. Download spaCy language model:
+#    python -m spacy download en_core_web_sm
+#
+# 3. For GPU support (recommended for local models):
+#    pip install torch --index-url https://download.pytorch.org/whl/cu118
+#
+# 4. For Google Colab users:
+#    Most dependencies are pre-installed. Just run:
+#    !pip install sentence-transformers gradio
+#
