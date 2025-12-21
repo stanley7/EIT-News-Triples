@@ -1,0 +1,28 @@
+Focus on the EIT ICT Labs winner of the 1st EIT Entrepreneurship Awards
+Protecting a company or organisation against known cyber-security threats is one thing; protecting them against unknown cyber-threats is quite another.
+But that is exactly the goal of
+Trifense
+, a Technical University of Berlin spin-out named as the
+EIT ICT Labs
+winner of the EIT Awards. Trifense is working together with EIT ICT Labs in one of their thematic action lines: “Future media and content delivery” and they provide innovative security solutions. Working closely with the KIC has been proven useful to Trifense and the venture is benefiting from connections with people from different backgrounds.
+A self-learning technology
+A modern society can be vulnerable to pretty huge threats. Our technology can address this appropriately. It is crucial for governments, operators of critical infrastructures such as utilities, and companies in all sorts of sectors from financial services to healthcare to be able to detect such risks and protect themselves against them.
+Trifense Managing Director and Co-founder Patrick Duessel
+Trifense’s self-learning technology allows models of “normality” to be learnt through incoming data known as network packet payloads. In this way, any deviation from the models can de detected and unknown cyber-threats entangled with the payloads can be recognised. The main difference between this and more traditional technology is that Trifense does not rely on any kind of pre-written description of the attack to spot the trouble coming.
+This is a significant advantage over traditional network security solutions such as firewalls or signature-based systems.
+Patrick Duessel
+Services trusted by the German government
+Duessel is also encouraged by the interest from the German government.
+IT security has a very high priority right now, and German politicians believe in the idea of Trifense. They take it seriously.
+Patrick Duessel
+Proof is in the awards that Trifense has picked up. For example, in 2010 it won a competition funded by the Federal Ministry for Economy and Technology for founders of innovative ICT companies, known as the ‘Gruenderwettbewerb IKT Innovativ’. In November 2011, the company was chosen for another ministry-supported initiative, the German Silicon Valley Accelerator programme. As a result of that selection, Duessel gets to spend a few months in early 2012 in Silicon Valley and seek out business opportunities there.
+All this means that Duessel’s efforts are very much concentrated on developing and marketing the business, while the ongoing technology research is left to his colleagues. “I’d love to spend more time on the technical side. After all I’m a computer scientist,” says Duessel. “But it’s really interesting to get a company up and running. I wouldn’t want to miss out on this experience.”
+The technology
+The TRIFENSE technology utilises sophisticated machine learning for the effective, signature-free detection of cyber attacks in multi-gigabit computer networks. Its self-learning anomaly detection engine extracts and compares features from complex network data streams against previously trained data models.
+Unlike current anomaly-based approaches that use only descriptive characteristics such as packet header information our approach monitors the actual payload of inbound network packets instead. Thus, the attacker is no longer able to hide attacks within the data stream.
+Trifense being one of the winners of the EIT Awards shows the growing importance of security solutions in the digital society. I hope that this European level recognition will give an additional boost to the further development of Trifense.
+Willem Jonker, EIT ICT Labs CEO
+So what makes Trifense different?
+More information:
+Trifense.de
+EIT ICT Labs

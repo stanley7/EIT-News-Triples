@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sociotyper"
+version = "0.1.0"
+description = "Extract organizational relationship triplets from text using AI"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "SOCIOTYPER Team"}
+]
+keywords = ["nlp", "triplet-extraction", "organizational-analysis", "llm"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.35.0",
+    "sentence-transformers>=2.2.0",
+    "spacy>=3.7.0",
+    "pydantic>=2.0.0",
+    "flask>=3.0.0",
+    "flask-cors>=4.0.0",
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.0",
+    "rapidfuzz>=3.0.0",
+    "pandas>=2.0.0",
+    "tqdm>=4.65.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+]
+colab = [
+    "pyngrok>=7.0.0",
+]
+
+[project.scripts]
+sociotyper = "sociotyper.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/stanley7/EIT-News-Triples"
+Repository = "https://github.com/stanley7/EIT-News-Triples"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sociotyper*"]
+
+[tool.black]
+line-length = 88
+target-version = ["py39", "py310", "py311"]
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I"]

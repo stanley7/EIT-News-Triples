@@ -1,0 +1,27 @@
+The Long Term Evolution 4G technology makes it fast and easy to remedy power outages
+KIC InnoEnergy is the EIT Knowledge and Innovation Community that focuses on sustainable energies, and a European company fostering the integration of education, technology, business and entrepreneurship. Within the activities of CC Sweden, the node for Smart Grids and Storage within KIC InnoEnergy, the Swedish Royal Institute of Technology (KTH) and Ericsson have collaborated to increase the reliability of electricity grids through the use of wireless information technology.
+An innovative remedy to power outages
+Power outages are a real problem for society. In news reports, they are usually illustrated by pictures of workers struggling in meter-deep snow to cut down trees that have fallen over the power lines.
+Electricity networks will become ‘self-healing’. When a power line fails, or there is a short circuit in a substation, information about the problem can be transmitted, analyzed, and corrected automatically. Communication takes place directly between substations but also to the operations control center.
+Professor Lars Nordström of KTH
+Information technology cannot of course remove fallen trees, but the technique can locate the problem and carry out automatic switching in substations, so that power returns to affected customers quickly.
+Problems that occur inside a substation can also be identified and rectified by means of wireless communication. As electricity travels from power plants to residential areas throughout Sweden, it passes through many thousands of substations and transformers. In rural areas, these are often remotely located. Therefore, the use of wireless of technology can save a great amount of time and resources.
+This type of cooperation between ICT and energy systems is very valuable for us. The progress within communication technology constantly opens new areas of application. The fact that 4G technology can be used to manage and control the grid is beneficial for all of society.
+Craig Donovan, Ericsson
+The benefits of smart grids
+A smart electricity grid will not only enable self-healing. Smart grids will also facilitate a constant exchange of information on supply and demand of electricity. Customers will be able, for example, to adjust their consumption according to the current price structure. With 4G, the transfer of information has reached the level required for operation and maintenance of critical infrastructure.
+The transfer must be fast, reliable, secure and high quality. It also has to be accessible, geographically independent and follow a uniform standard.
+Craig Donovan, Ericsson
+Donovan says that the developments within mobile networks mean that the frequency band is divided into small segments or sub-carriers. The data can then be sent out simultaneously on different channels, which reduces the time for data transfer and increases capacity.
+LTE offers a guarantee of quality and a future-proof uniform standard. With a clear roadmap for future improvements, such as LTE-Advanced, wireless broadband technology becomes applicable in areas with high demands on reliability and availability.
+One interesting issue is whether large users, in this case the electricity distributors, need to build their own private networks, or if they can use the existing telecom operator networks.
+Professor Lars Nordström of KTH
+One thing they need to consider is the level of safety. In principle, it must be impossible for a malicious hacker to break into the system and disrupt the transmission of electricity.
+Our tests show that existing mobile networks can be made secure against sabotage. Power companies could then use TeliaSonera or any other of the market’s mobile operators to provide wireless connectivity.
+However, in some cases, power companies are likely to choose to invest in their own networks. In Australia, the energy company Ausgrid has engaged Ericsson to build a private LTE network.
+The prototype
+During 2011, a proof-of-concept demonstrator, using LTE technology for substation automation, has been developed and tested in a lab at KTH.
+We have simulated a number of cases and found that the technology works. The information is transferred as predicted, and switching is done automatically in our substation models.
+Professor Lars Nordström
+The next step is to field-test the technology. This will be done at nine substations in Norra Djurgårdsstaden in Stockholm, located not far from KTH. Once that phase is completed, the technology may be mature enough for commercialization. The first potential customers are companies that own power grids and are responsible for the distribution of electricity between generators and consumers.
+KIC InnoEnergy is the key enabler in this type of project. The partnership has been built on the strengths of both the department of Industrial Information & Control Systems at KTH and Ericsson.

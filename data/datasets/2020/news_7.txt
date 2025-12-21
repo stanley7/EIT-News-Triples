@@ -1,0 +1,17 @@
+The
+EIT Digital
+Accelerator
+congratulates
+KONUX
+, the Munich-based Industrial Internet of Things (IIoT) scale-up , on reaching an important milestone in their mission to transform railway operations.
+KONUX combines Machine Learning and lloT to deliver Software-as-a-Service (SaaS) solutions for railway operation, monitoring, and maintenance process automation. The company joined the
+EIT Digital Accelerator
+as a start-up in 2014 after winning first prize in the Cyber-Physical Systems category of the
+EIT Digital Challenge
+. Since its foundation in 2014, KONUX has raised more than EUR 40 million from world-leading investors, and expanded to multiple countries in Europe and Asia.
+We are picking up the pace with our Digital Rail Germany strategy for increasing the rail network’s capacity. Smart technology makes switches more intelligent and rail transportation noticeably more reliable. It’s a real benefit for our customers and the entire sector. This new project sees us working with our partners from the industrial sector to grow transportation volumes for the climate-friendly rail system.
+Ronald Pofalla, Member of the Management Board for Infrastructure at DB
+As of now, KONUX is working together with Deutsche Bahn (DB) on the remote monitoring of railway switches. The scale-up won the underlying DB tender for the condition monitoring of switches as critical elements of the rail infrastructure. Both companies have concluded a long-term framework agreement. Initially, the condition monitoring technology will be used on 1 300 switches of the heavily congested lines. DB is investing EUR 15 million in this stage of the switches digitalisation project. KONUX already delivers predictive maintenance capabilities to DB’s DIANA asset management and diagnosis platform, which monitors the motors on 28 000 switches.
+The fact that Deutsche Bahn, as a technology pioneer in Europe, is working on its first ever cloud-based SaaS infrastructure project together with us, a start-up partner, makes us proud. For us, this is the biggest milestone yet in fulfilling our vision to transform railway operations for a sustainable future. We want to play our part in making railway systems worldwide more reliable so that more people and goods can be transported by this sustainable means of mobility
+Andreas Kunze, KONUX co-founder and CEO
+Learn more about EIT Digital Accelerator

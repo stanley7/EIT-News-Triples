@@ -1,0 +1,11 @@
+Energiot
+, a Spanish start-up at the forefront of developing self-powered Internet of Things (IoT) devices for smart grid management, has successfully concluded a seed funding round.
+The funding, led by a syndicate of climate technology-focused investors with EIT InnoEnergy together with Axon Partners Group and COREangels Climate underscores a shared commitment to innovation and the transition toward sustainable energy.
+Energiot mission
+In anticipation of a significant increase in global electricity demand and the creation or replacement of 80 million kilometers of power lines by 2040, Energiot’s mission is to digitalise and modernise the electricity grid. The increase in renewable energy production, coupled with increased electrification and the rise of electric vehicles, has resulted in grid congestion costing billions annually.
+To address these challenges, Energiot aims to optimise grid operation and maintenance through the deployment of IoT devices that are equipped with multiple sensors and contribute to real-time monitoring and predictive maintenance, enhancing the overall efficiency and sustainability of grid assets.
+This round will allow the development of new key pilots with other grid operators, the scaling up of the manufacture and commercialisation of our products and a gradual growth of our team in order to complement their competencies
+Gonzalo Murillo, President and founder of Energiot
+EIT InnoEnergy Support
+Energiot, a spin-off of the Institute of Microelectronics of Barcelona (IMB-CNM, CSIC), has been supported by EIT InnoEnergy since its inception. Having won the Cleantech Camp programme in 2017, Energiot is recognised for its leadership in smart grid technology development. The start-up collaborates with European grid operators and has conducted successful pilots with industry leaders such as Iberdrola (Spain), EDP (Portugal), and Enercal (France/New Caledonia).
+As Energiot continues to play a pivotal role in advancing smart grid solutions, backed by EIT InnoEnergy’s support, it stands poised to lead the charge in meeting the evolving challenges of a rapidly changing energy landscape.

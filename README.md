@@ -1,8 +1,8 @@
 # SOCIOTYPER
 
-**Analyze organizational relationships in European innovation news using AI**
+**Extract organizational relationship triplets from text using AI**
 
-This research tool extracts and visualizes how organizations describe their roles and relationships in news articles from the European Institute of Innovation & Technology (EIT). It identifies patterns like "EIT Health **supports** startups" or "The organization **connects** entrepreneurs with investors."
+SOCIOTYPER analyzes how organizations describe their roles and relationships in institutional texts. It identifies patterns like "EIT Health **supports** startups" or "The organization **connects** entrepreneurs with investors" and structures them as triplets.
 
 ![Actor List Viewer](Images/Gradio1.png)
 
@@ -11,199 +11,198 @@ This research tool extracts and visualizes how organizations describe their role
 ## What This Project Does
 
 ### The Problem
-Researchers studying institutional dynamics need to understand how organizations describe themselves and their relationships. Manually reading thousands of news articles is time-consuming and inconsistent.
+Researchers studying institutional dynamics need to understand organizational relationships at scale. Manually reading thousands of documents is time-consuming and inconsistent.
 
 ### The Solution
-This tool automatically:
-1. **Collects** news articles from EIT websites (2008-2025)
-2. **Extracts** relationship triplets using AI (e.g., *Role* → *Practice* → *Counterrole*)
-3. **Visualizes** the network of organizational relationships
-4. **Validates** results through human review
+SOCIOTYPER automatically:
+1. **Extracts** relationship triplets (Role → Practice → Counterrole)
+2. **Validates** results against a known actor catalog
+3. **Visualizes** networks of organizational relationships
+4. **Exports** structured data for analysis
 
-### Example Output
-From the text: *"EIT Health supports startups in developing innovative healthcare solutions"*
+### Example
+From: *"EIT Health supports startups in developing innovative healthcare solutions"*
 
-The tool extracts:
 | Role | Practice | Counterrole |
 |------|----------|-------------|
-| EIT Health | supports | startups |
+| EIT Health | support | startups |
 
 ---
 
 ## Project Structure
 
 ```
-EIT-News-Triples/
+SOCIOTYPER/
+├── sociotyper/              # Python package
+│   ├── core/                # Extraction, chunking, normalization
+│   ├── validation/          # Triplet validation, fuzzy matching
+│   ├── actors/              # Actor catalog (168 EIT organizations)
+│   ├── api/                 # Flask REST API
+│   └── utils/               # Config, prompts
 │
-├── Code/                    # Python notebooks for analysis
-│   ├── Actor_Catalog.ipynb  # Build actor database with dates/locations
-│   └── Spacy-LLM/           # AI extraction using Mistral & Gemma models
+├── ui/                      # Unified web interface
+│   ├── index.html
+│   └── static/
 │
-├── Datasets/                # Raw news articles (2008-2025)
-│   ├── 2024/                # Articles organized by year
-│   ├── 2025/
-│   └── ...
+├── notebooks/               # Jupyter notebooks
+│   ├── sociotyper_colab.ipynb  # Main Colab notebook
+│   └── legacy/              # Original notebooks (archived)
 │
-├── Triples/                 # Extracted relationships (JSON)
-│   ├── eit_rich_triples_mistral.json
-│   └── eit_rich_triples_gemma.json
+├── data/                    # Data files
+│   ├── datasets/            # Raw news articles (2008-2025)
+│   ├── triples/             # Extracted JSON triplets
+│   └── evaluation/          # Model comparison data
 │
-├── Triples_Evaluation/      # Quality assessment data
+├── Papers/                  # Academic references
+├── Images/                  # Screenshots
 │
-├── UI/                      # Web interface (backend + frontend)
-│
-├── mock_ui/                 # Interactive demo (no installation needed)
-│
-├── Papers/                  # Reference academic papers
-│
-└── Images/                  # Screenshots and diagrams
+├── pyproject.toml           # Package configuration
+├── requirements.txt         # Dependencies
+├── SETUP_GUIDE.md           # Installation guide
+└── README.md
 ```
 
 ---
 
 ## Quick Start
 
-### Option 1: Try the Interactive Demo (No Installation)
+### Option 1: Google Colab (Easiest)
 
-Open the standalone demo in your browser - no Python needed:
+1. Open [notebooks/sociotyper_colab.ipynb](notebooks/sociotyper_colab.ipynb) in Colab
+2. Run all cells to start the API server
+3. Copy the ngrok URL displayed
+4. Open `ui/index.html` locally and paste the URL
 
-1. Navigate to the `mock_ui` folder
-2. Double-click `sociotyper-demo.html`
-3. Explore the interface with sample data
-
-### Option 2: Run Full Analysis
-
-For detailed installation instructions, see the **[Setup Guide](SETUP_GUIDE.md)**.
-
-**Quick start for experienced users:**
+### Option 2: Local Installation
 
 ```bash
+# Clone repository
 git clone https://github.com/stanley7/EIT-News-Triples.git
 cd EIT-News-Triples
-pip install -r requirements.txt
+
+# Install package
+pip install -e .
+
+# Download spaCy model
 python -m spacy download en_core_web_sm
-jupyter notebook
+
+# Use the package
+python -c "from sociotyper import TripleExtractor; print('Ready!')"
 ```
 
-**New to Python?** The [Setup Guide](SETUP_GUIDE.md) has step-by-step instructions for beginners, including Google Colab options that require no installation
+### Option 3: Try the Demo
+
+Open `mock_ui/sociotyper-demo.html` in your browser - no installation needed.
 
 ---
 
-## How It Works
+## Using the Web Interface
 
-### Step 1: Data Collection
-News articles are scraped from the [EIT News Portal](https://www.eit.europa.eu/news-events/news) and stored as text files organized by year.
-
-### Step 2: AI Extraction
-Two AI models analyze the text:
-- **Mistral-7B**: Extracts 386 relationship triplets
-- **Gemma-7B**: Extracts 295 relationship triplets
-
-Each extraction includes:
-- The organizational **role** (who is acting)
-- The **practice** (what action is taken)
-- The **counterrole** (who receives the action)
-- Supporting **context** from the original text
-- **Named entities** (organizations, locations) detected
-
-### Step 3: Validation
-Human reviewers verify the AI's extractions using the validation interface, improving accuracy over time.
-
-### Step 4: Visualization
-A network graph shows how different organizational roles connect through their practices.
+1. **Upload** - Add text files or scrape from URLs
+2. **Configure** - Select AI model (Mistral, Gemma, SpaCy-LLM)
+3. **Extract** - Run triplet extraction
+4. **Validate** - Review and correct results
+5. **Network** - Visualize relationships
+6. **Results** - Export JSON/CSV data
 
 ---
 
-## The Web Interface
+## Using the Python Package
 
-The analyzer includes a 7-step workflow:
+```python
+from sociotyper import TripleExtractor, TripletValidator
+from sociotyper.actors import get_all_actors
 
-| Step | Tab | What You Do |
-|------|-----|-------------|
-| 1 | Data Upload | Upload or scrape news articles |
-| 2 | Preview & Annotate | Review documents, see AI-detected entities |
-| 3 | Configure Analysis | Choose AI model and settings |
-| 4 | Extract Triplets | Run the extraction process |
-| 5 | Validate & Train | Review and correct AI results |
-| 6 | Network Analysis | Explore relationship visualization |
-| 7 | Results | Export data and reports |
+# Load actors (168 EIT organizations)
+actors = get_all_actors()
+print(f"Loaded {len(actors)} actors")
+
+# Validate a triplet
+from sociotyper import validate_triplet
+triplet = {
+    "role": "EIT Health",
+    "practice": "support",
+    "counterrole": "startups",
+    "context": "EIT Health supports startups..."
+}
+result, reason = validate_triplet(triplet)
+print(f"Valid: {result is not None}, Reason: {reason}")
+```
 
 ---
 
 ## Key Concepts
 
-### What is a "Triplet"?
-A triplet captures a relationship in the form:
-> **[Actor/Role]** → **[Action/Practice]** → **[Target/Counterrole]**
+### Triplet
+A structured relationship: **[Role]** → **[Practice]** → **[Counterrole]**
 
 Example: **EIT Food** → **trains** → **farmers**
 
-### What is a "Sociotype"?
-A sociotype is a cluster of similar roles and practices that emerge from the data. For example:
-- **Innovation Ecosystem**: roles focused on supporting startups, connecting entrepreneurs
-- **Education & Training**: roles focused on training professionals, educating students
-- **Market Creation**: roles focused on funding ventures, mobilizing investors
+### Canonical Verbs
+53 institutional action verbs used for normalization:
+- Funding: fund, finance, invest, grant, sponsor
+- Partnership: partner, collaborate, work with, ally
+- Creation: create, launch, develop, establish
+- Support: support, enable, accelerate, mentor
 
-### What is NER?
-**Named Entity Recognition** (NER) automatically identifies organizations, people, and locations in text. For example:
-- "**EIT Health**" → Organization
-- "**Europe**" → Location
+### Actor Catalog
+168 known EIT ecosystem organizations including:
+- EIT Organizations (EIT Health, EIT Food, EIT Digital, etc.)
+- Universities (KU Leuven, Imperial College, etc.)
+- Companies (Siemens, Roche, IBM, etc.)
+- Startups, Government bodies, Networks
+
+---
+
+## API Endpoints
+
+When running the Flask server:
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/models` | GET | List available models |
+| `/extract_triplets` | POST | Extract triplets from text |
+| `/scrape_url` | POST | Scrape text from URL |
+| `/health` | GET | Health check |
 
 ---
 
 ## Datasets
 
-| Dataset | Description | Size |
-|---------|-------------|------|
-| Raw News Articles | Scraped from EIT website (2008-2025) | 171 files |
-| Combined Dataset | All articles merged | 472 KB |
-| Mistral Triples | Extracted by Mistral-7B model | 386 triplets |
-| Gemma Triples | Extracted by Gemma-7B model | 295 triplets |
-| Synthetic Dataset | Test data for evaluation | - |
-
----
-
-## Requirements
-
-This project uses:
-- **Python** for data processing and AI
-- **spaCy** for natural language processing
-- **Transformers** for AI model integration
-- **Gradio** for the user interface
-- **D3.js** for network visualization
-
-See [requirements.txt](requirements.txt) for the complete list.
+| Dataset | Description | Count |
+|---------|-------------|-------|
+| Raw Articles | EIT news (2008-2025) | 171 files |
+| Mistral Triples | Extracted by Mistral-7B | 386 triplets |
+| Gemma Triples | Extracted by Gemma-7B | 295 triplets |
 
 ---
 
 ## Academic Background
 
-This project is grounded in research on institutional pluralism and organizational identity:
-
 - **Jancsary et al. (2017)** - Structural model of institutional pluralism
-- **Haans & Mertens (2024)** - Web scraping methodology for organizational research
+- **Haans & Mertens (2024)** - Web scraping for organizational research
 - **Grimmer et al. (2021)** - Machine learning for social science
 
-Full papers are available in the `Papers/` folder.
+Full papers in `Papers/` folder.
 
 ---
 
 ## Contributing
 
-We welcome contributions! Areas where help is needed:
-- Improving extraction accuracy
-- Adding new data sources
-- Enhancing the UI
-- Documentation and tutorials
+Areas for contribution:
+- Improve extraction accuracy
+- Add new data sources
+- Enhance the UI
+- Write documentation
 
 ---
 
 ## License
 
-This project is for research and educational purposes.
+Research and educational use.
 
 ---
 
 ## Contact
 
-For questions or collaboration inquiries, please open an issue on GitHub.
+Open an issue on GitHub for questions or collaboration.

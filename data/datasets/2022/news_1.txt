@@ -1,0 +1,30 @@
+EIT Urban Mobility is excited to announce its participation in the newly launched URBANE project.
+URBANE (Upscaling Innovative Green Urban Logistics Solutions Through Multi-Actor Collaboration and Physical Internet (PI) – Inspired Last Mile Deliveries) is a 42-month project co-funded by the
+Horizon Europe Programme
+with a budget of around EUR 9 million.
+It aims to develop novel last-mile delivery solutions combining green automated vehicles and shared space utilisation models. Leading European cities, research experts and knowledge partners, connectivity and automation solution providers, and industry leaders in logistics services kicked off the project in September 2022. It will be implemented by a consortium of 39 partners and an external partner from 12 different EU Member States, led by
+INLECOM
+.
+EIT Urban Mobility
+will contribute to the business models and commercialisation of the Living Labs' tested solutions and will also contribute to communication and dissemination activities.
+Why do we need innovative last-mile delivery solutions?
+The e-commerce industry has seen continuous economic growth—a tendency significantly bolstered by the COVID-19 pandemic. This comes with a vast transformation of the e-commerce sector, presenting enormous issues in urban supply chains. In light of these facts, Europe urgently needs to identify and scale-up novel last-mile transportation solutions. And as e-commerce continues to expand, so will its impact on sustainability. The last mile of e-commerce deliveries is the portion that produces the highest emissions. Higher demand is a driving cause.
+URBANE will confront this issue head on. It will drive the quick adoption of zero-emission urban logistics solutions by 2030,  achieving improved road transport efficiency and logistics systems, in line with the objectives of the European Green Deal, the Paris Agreement, and the Green City Accord.
+How will URBANE contribute to solving the problem?
+URBANE’s goals are part of the wider European Commission’s project of achieving “Zero Emission Last Mile Deliveries” as components of the
+European Green Digital Coalition
+and the
+European Climate Pact
+goals. URBANE will support the transition by developing effective, resilient, safe, and sustainable last-mile transport through four Lighthouse Living Labs (LLs): Helsinki (FI), Bologna (IT), Valladolid (ES), and Thessaloniki (GR). These labs will demonstrate efficient, replicable, and socially acceptable innovative last-mile delivery solutions (Wave 1 solutions), building on existing assets.
+Hands-on learning at the European level will be facilitated by an Innovation Transferability Platform. The platform uses Digital Twinning Tools, open models, smart contracts governed by blockchain technology, and a data-driven Impact Assessment Radar. These will enable the adaptation and replication of Wave 1 solutions in two Twinning LLs in Barcelona and Karlsruhe (Wave 2 LLs).
+URBANE’s commitment to upscaling is further strengthened by the engagement of six early adopters, also known as the Follower Cities: Aarhus (DK), Antwerp (NL), La Rochelle (FR), Mechelen (BE), Prague (CZ), and Ravenna (IT). The cities are contributing to innovations’ adoption feasibility studies, stimulating the creation of new Living Lab communities across Europe.
+Who is part of the URBANE project?
+The consortium is made up of 39 partners and an external partner from 12 different EU Member States. It is led by INLECOM, a leading digital innovation provider, responsible for the twinning infrastructure and open models’ library of the project. The URBANE consortium includes:
+• City Stakeholders & Urban Planners: COBO, KARL, VALLAD, HELS (with their affiliated
+entity FVH), ITL, RCM, AMB, RAV, MECH, AAKS, PRAHA, ANTW, CDA
+• Last-mile Logistics Value Chain Operators: VAN, DBSCH, ACS, TYP, DTS
+• Physical Innovation Providers: SOBEN, LMAD, EUDRIVE, IFEVS
+• Sector Associations and Impact Strengthening Partners: ALICE, AENET, EITUM, POLIS
+• Business innovation consultancies: FIT, TRV
+• Research organisations: KLU, NORCE, TUD, UOC, CERTH, CIDAUT, SKEMA
+• Innovative ICT solution providers: KON, GEL, VLTN

@@ -1,0 +1,27 @@
+The European Commission has adopted a package of climate-related legislative and policy actions known as the
+Fit for 55
+. This package aims to reduce EU greenhouse gas emissions by at least 55% by 2030, compared to 1990 levels.
+Apart from emission reduction, the Fit for 55 includes concrete targets for energy storage and conversion, including electric mobility and renewable energy. An overall target of 40% for energy from renewable sources is also set in the package, indicating a significant increase in wind and solar power capacity.
+This inherently implies a significant increase in the demand for minerals and metals. Hence, a resilient European raw materials sector is the primary enabler of greenhouse gas emissions reduction. A transition away from a fossil fuel-based energy economy will, in the next decade, be based on energy conversion technologies such as solar, wind and fuel cells, as well as energy storage in various forms such as batteries and hydrogen.
+Sustainable battery value chains
+Today, the production of batteries and conversion technologies are not sustainable, and this is one of the important topics we need to address when moving forward: How do we ensure that the whole value chain, from the mine to the vehicle or the energy system, is sustainable?
+This question was highlighted at the EIT RawMaterials Baltic Sea Stakeholder Day in a panel discussion with Ulla Lassi, Professor and Head of the Unit at the University of Oulu, Piritta Salonen, Head of Process Technology at Finnish Minerals Group, and Darren Townsend, Chief Development Officer at NeoMetals.
+The next step for the raw material industry is to develop and implement traceability. The customers need to know whether the product they are buying is sustainably produced or not.
+Ulla Lassi, Professor and Head of Unit at the University of Oulu
+Specifically for batteries, there are a lot of different chemistries being used, and the challenge is to better plan how to reuse and recycle the different components.
+We need to be able to trace what is in the operating mass when recycling, avoid excess waste, collect waste in a smarter way, and use more effective processes. In the future, we can manage the need for raw materials if we develop, expand and ameliorate the recycling industry.
+Ulla Lassi, Professor and Head of Unit at the University of Oulu
+Traceability is key
+For mineral users in the battery value chain, traceability provides an opportunity to communicate about the origin and production impacts of materials at all points of the supply chain, from the mine to the consumer.
+Materials go through several stages of processing in the electric vehicle battery value chain, from the mine to the car and eventually into recycling. From a technology perspective, mapping and tracking activity across interconnected global supply chains is complex and requires a combination of tools like blockchain and machine learning.
+The traceability of mineral raw materials and the provision of information on their environmental and social impact and carbon footprint, for example, are key ways of improving the responsibility of the electric vehicle battery value chain. It also helps us promote the recycling of valuable metals and the competitiveness of raw material production in Europe.
+Piritta Salonen, Head of Process Technology at Finnish Minerals Group
+Finnish Minerals Group has partnered up with Circulor to begin a long-term collaboration that builds on its existing solution for tracing mineral raw materials along the electric vehicle battery value chain.
+Recycling for the future
+There are several ongoing projects related to the recovery of metals in Finland. For example, a recovery plant is planned in Raahe that would turn slag from the steel plant into ferrovanadium. In turn, Tracegrow, which was recently established in Kärsämäki, utilises alkaline mass made from crushed alkaline batteries.
+The simple process (battery crushing, grinding, leaching and solution purification) is now freely marketed by Tracegrow, supported by EIT RawMaterials, as is the zinc-manganese fertiliser product separated from the batteries. In the ideal case, this new recycling method for alkaline batteries will spread from Finland all over the world.
+The recycling of by-products in itself promotes sustainability: recycling saves raw materials as well as the energy needed for their primary production. This development area has untapped potential, e.g. old slags from European processing industries can offer a good source for materials in the future.
+One example is the vanadium-rich slag produced in the manufacturing of steel: the extracted vanadium can be recycled in the steel industry and in batteries. In the Vanadium Recovery Project in Finland led by Neometal, the company is working on the recovery of vanadium and sustainable production of vanadium chemicals from processing by-products (“slag”) from a leading Nordic steel maker SSAB. The Vanadium Recovery Project creates an option to secure critical materials without mining risk.
+We have developed a proprietary and sustainable process for the recovery of valuable constituents from scrap from other companies and end-of-life lithium-ion batteries.
+Darren Townsend, Chief Development Officer at NeoMetals
+Approximately 75% of global vanadium supply is produced in China and Russia, and there exists a significant opportunity to supply the European and American markets from the recycled SSAB’s Scandinavian feedstocks.

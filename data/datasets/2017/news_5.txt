@@ -1,0 +1,38 @@
+"Capiche" is a translation and search service that combines artificial intelligence (AI) with crowd knowledge.
+Modern language assistants and chat bots are only as smart as their database running in the background. They understand the common Western European languages and respond to things they have already learned. But what happens if someone asks his question in Arabic or Pashto or Tigrinya? Today's website and service providers are confronted with a multitude of requests in different languages that are not handled by the usual language assistants. This often leaves questions from refugees unanswered.
+Image
+Capiche is a translation and tracing service based on Artificial Intelligence (AI) and crowd knowledge that aims to improve communication with and from refugees in Europe. The application was developed in cooperation with the German refugee information portal
+www.HandbookGermany.de
+and presented in Berlin during the
+EIT Digital Germany Innovation Day.
+It is the first AI system on the market that integrates crowdsourcing and uses the resulting data for teaching the AI system. Capiche is a spin-off of EIT Digital's European Refugee Information and Communication Service (ERICS) Innovation Activity and was developed in cooperation with
+EIT Digital
+partners TU Berlin, T-Systems Multimedia Solutions GmbH, DFKI, Aalto University and Crowdee GmbH.
+As the number of refugees increases, so does the number of people in Europe that have to overcome major obstacles in everyday life due to a lack of language skills, e.g. in understanding websites and information brochures or in communicating with authorities. Direct demand from senders is rarely possible, as national operators of websites, online journals, and public administration institutions usually do not use direct communication, if they do not understand Arabic, for example. A lack of language skills leads to a loss of information, unanswered questions and slower integration.
+Capiche is a new solution for these information providers: it now enables small editorial offices to offer their users content in non-standard languages. Via an interface in the Content Management System, content is played via a cloud-based micro-service to the AI system and the crowd, with the help of which it is translated and returned in the desired language. In this way, Capiche helps to overcome language barriers and promote integration. In the next phase, Capiche will be available as multilingual real-time communication in all major EU and refugee languages, including an extremist and fake news filter. In the future, it will also be possible for a user to put his or her question directly to an information portal in his or her own language, and the combination of artificial intelligence and human crowd intelligence to find the answer quickly and easily in his or her own language.
+Among many other things, Capiche's decisive advantages and opportunities for deployment from which refugees might benefit are:
+Real-time translation service: German, English, Arabic, Persian and more languages from 2018 onwards;
+Fake news check and extremist filter;
+Legal review of documents on the crowd;
+Requests for location information and public facilities can be sent to the chatbot system in the foreign language.
+Stéphane Péan,
+Digital Cities Action
+Line Leader, confirms this: '
+Thanks to AI algorithms and collaborative crowdsourcing, Capiche can help refugees with reliable translations, improving their integration and hospitality in our European cities. Even outside this specific area of application, this technology-based translation and information service has great potential for both public sector operators and businesses.
+'
+Capiche can reduce integration costs and shorten the time to start working by reliably translating services offered by public and private organisations in the fields of transport, health care, education or legal advice and information on job offers or consumer goods for daily needs. In this way, Capiche helps to meet the needs of refugees with regard to companies or institutions - and vice versa.
+Ronald Schulz, Head of Data & Content Driven Services at T-Systems MMS explains: '
+[tweetable alt="With Capiche, we are filling the gaps in artificial intelligence with the help of human swarm intelligence."]With Capiche, we are filling the gaps in artificial intelligence with the help of human swarm intelligence. [/tweetable]This will revolutionize the way we deal with multilingual content. It will be much easier than it is today to deliver content to people who speak another language.
+'
+EIT Digital's innovation activities deliver new products or services and create startups and spin-offs to commercialize project results. They also support the transfer of technologies for market entry. Capiche (ERICS) is one of 11 innovation activities of the Digital Cities Action Line 2017, which brings digital transformation to cities. It promotes centralised, participatory and collaborative cooperation between the individual actors in a city: government, municipal service providers, industry and citizens.
+Catch up with the latest news from the EIT Community in the Newsroom
+.
+Subscribe to the EIT Newsletter
+to get the best of the EIT Community's news in your inbox once each month.
+Do you use social media? Follow us and get updates in your news feed.
+Linked in
+Find us on Facebook
+Follow us on Twitter
+Subscribe to our YouTube Channel
+Follow us on Google+
+Follow the EIT on Instagram

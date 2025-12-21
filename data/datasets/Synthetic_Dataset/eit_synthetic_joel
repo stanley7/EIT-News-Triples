@@ -1,0 +1,602 @@
+
+## 🔹 Synthetic Role Triples — EIT Health  
+
+| subject         | predicate       | object             | generic_role | specialized_role             | source       |
+|-----------------|----------------|-------------------|--------------|------------------------------|--------------|
+| EIT Health      | invested_in    | Startup A         | Anchor       | Clinical Trial Funder        | Funding DB   |
+| EIT Health      | approves       | Medical Pilot B   | Validator    | Regulatory Approver          | News Article |
+| EIT Health      | partner_with   | Hospital X        | Broker       | Hospital–Startup Connector   | Hyperlinks   |
+| EIT Health      | mentions       | EIT Food          | Amplifier    | Knowledge Promoter (Health)  | Twitter      |
+| EIT Health      | publishes      | White Paper Y     | Knowledge Hub| Health Knowledge Producer    | Report       |
+| NGO Z           | criticizes     | EIT Health        | Watchdog     | Patient Advocate             | News         |
+| EU Commission   | funds          | EIT Health Project| Anchor       | Policy Grant Allocator        | News         |
+| University A    | collaborates_with| EIT Health      | Broker       | Research Connector           | Funding Call |
+
+
+## 📑 Synthetic Role Triples for **EIT Health**  
+
+| subject           | predicate         | object                 | generic_role   | specialized_role              | source        |
+|-------------------|------------------|------------------------|----------------|-------------------------------|---------------|
+| EIT Health        | invested_in      | Startup A              | Anchor         | Clinical Trial Funder         | Funding DB    |
+| EIT Health        | invested_in      | Biotech B              | Anchor         | Clinical Trial Funder         | Funding DB    |
+| EIT Health        | funds            | HealthTech Project C   | Anchor         | Program Sponsor               | Annual Report |
+| EU Commission     | grants           | EIT Health             | Anchor         | Policy Grant Allocator        | Policy Docs   |
+| PharmaCorp X      | sponsors         | EIT Health Pilot D     | Anchor         | Industry Trial Sponsor         | Press Release |
+| EIT Health        | approves         | Pilot Trial E          | Validator      | Regulatory Approver           | News          |
+| EIT Health        | certifies        | Device Y               | Validator      | Clinical Safety Certifier     | Report        |
+| EMA               | regulates        | EIT Health Trials      | Validator      | Drug Regulator                | Policy Docs   |
+| EIT Health        | endorses         | Startup Z              | Validator      | Accelerator Endorser           | Accelerator   |
+| EIT Health        | partner_with     | Hospital Alpha         | Broker         | Hospital–Startup Connector    | Hyperlink     |
+| EIT Health        | collaborates_with| University Beta        | Broker         | Research Connector            | Funding Call  |
+| EIT Health        | connects         | SMEs                   | Broker         | SME Mediator                  | Conference    |
+| EIT Health        | hosts            | Hackathon 2024         | Broker         | Event Intermediary            | Website       |
+| EIT Health        | mentions         | EIT Food               | Amplifier      | Knowledge Promoter (Health)   | Twitter       |
+| EIT Health        | retweets         | WHO                    | Amplifier      | Public Health Amplifier       | Twitter       |
+| EIT Health        | replies_to       | Patient Group Z        | Amplifier      | Patient Engagement Amplifier  | Twitter       |
+| EIT Health        | quotes           | DG Research            | Amplifier      | Policy Amplifier              | Twitter       |
+| EIT Health        | publishes        | White Paper Y          | Knowledge Hub  | Health Knowledge Producer     | Report        |
+| EIT Health        | reports_on       | Cancer Care Study      | Knowledge Hub  | Evidence Synthesizer          | Report        |
+| EIT Health        | researches       | AI Diagnostics         | Knowledge Hub  | Innovation Knowledge Hub      | Journal       |
+| EIT Health        | sets_agenda      | Healthy Ageing         | Agenda Setter  | Theme Setter                  | Strategy Doc  |
+| EIT Health        | prioritizes      | Digital Health         | Agenda Setter  | Innovation Prioritizer        | Roadmap       |
+| NGO Z             | criticizes       | EIT Health             | Watchdog       | Patient Advocate              | News          |
+| Media X           | questions        | EIT Health Funding     | Watchdog       | Transparency Watchdog         | Media Report  |
+| Activist Group Y  | opposes          | Clinical Trial F       | Watchdog       | Ethical Challenger            | Petition      |
+| Startup G         | executes         | Pilot Trial H          | Implementer    | Trial Executor                | Funding Call  |
+| EIT Health        | develops         | Innovation Hub Berlin  | Implementer    | Innovation Hub Builder        | Report        |
+| EIT Health        | deploys          | AI Triage Tool         | Implementer    | Tech Deploy Leader            | News          |
+| EIT Health        | commercializes   | Digital Health App     | Market Shaper  | Health Market Shaper          | Market News   |
+| Startup H         | licenses         | EIT Health IP          | Market Shaper  | IP Transferor                 | Patent DB     |
+| PharmaCorp Y      | sells_to         | Hospitals via EIT H.   | Market Shaper  | Market Channel Provider       | Trade News    |
+| Patient Org A     | advocates        | Rare Disease Research  | Advocate       | Patient Advocacy Group        | NGO Report    |
+| EIT Health        | mobilizes        | Startups for COVID-19  | Advocate       | Emergency Mobilizer           | Press Release |
+| EIT Health        | campaigns_for    | Digital Literacy       | Advocate       | Awareness Campaigner          | Twitter       |
+
+
+## 📑 Synthetic Role Triples for **EIT Food**
+
+| subject           | predicate         | object                      | generic_role   | specialized_role              | source        |
+|-------------------|------------------|-----------------------------|----------------|-------------------------------|---------------|
+| EIT Food          | invested_in      | AgriTech Startup A          | Anchor         | Agri-Innovation Investor      | Funding DB    |
+| EIT Food          | invested_in      | FoodTech B                  | Anchor         | Value Chain Investor          | Funding DB    |
+| Retailer X        | sponsors         | EIT Food Challenge C        | Anchor         | Retail Sponsor                | Press Release |
+| EU Commission     | grants           | EIT Food                    | Anchor         | Policy Grant Allocator        | Policy Docs   |
+| Bank Y            | funds            | Farm Pilot D                | Anchor         | Rural Finance Provider        | News          |
+| EIT Food          | certifies        | Organic Label E             | Validator      | Food Safety Certifier         | Report        |
+| EFSA              | regulates        | Pesticide Use F             | Validator      | EU Food Regulator             | Policy Docs   |
+| EIT Food          | approves         | Nutrition Startup G         | Validator      | Accelerator Endorser           | Program Call  |
+| Coop H            | endorses         | Sustainable Product I       | Validator      | Market Endorser               | Coop News     |
+| EIT Food          | partner_with     | University J                | Broker         | Farm–Research Linker          | Hyperlinks    |
+| EIT Food          | collaborates_with| Farmer Cooperative K        | Broker         | Value Chain Connector         | Funding Call  |
+| EIT Food          | connects         | SMEs                        | Broker         | SME Mediator                  | Conference    |
+| EIT Food          | hosts            | Agri Hackathon 2025         | Broker         | Event Intermediary            | Website       |
+| EIT Food          | mentions         | EIT Climate-KIC             | Amplifier      | Sustainability Amplifier      | Twitter       |
+| EIT Food          | retweets         | FAO                         | Amplifier      | Global Food Amplifier         | Twitter       |
+| EIT Food          | replies_to       | Farmer Assoc. L             | Amplifier      | Community Engagement Amplifier| Twitter       |
+| EIT Food          | quotes           | DG AGRI                     | Amplifier      | Policy Amplifier              | Twitter       |
+| EIT Food          | publishes        | White Paper M               | Knowledge Hub  | Nutrition Knowledge Producer  | Report        |
+| EIT Food          | reports_on       | AgriTech Trends 2025        | Knowledge Hub  | Evidence Synthesizer          | Report        |
+| EIT Food          | researches       | Plant-Based Proteins        | Knowledge Hub  | Innovation Knowledge Hub      | Journal       |
+| EIT Food          | sets_agenda      | Circular Food Systems       | Agenda Setter  | Theme Setter                  | Strategy Doc  |
+| EIT Food          | prioritizes      | Regenerative Agriculture    | Agenda Setter  | Innovation Prioritizer        | Roadmap       |
+| NGO M             | criticizes       | EIT Food Project N          | Watchdog       | Animal Rights Advocate        | News          |
+| Media N           | questions        | EIT Food Partnerships       | Watchdog       | Transparency Watchdog         | Media Report  |
+| Activist Group O  | opposes          | GM Crop Pilot P             | Watchdog       | Ethical Challenger            | Petition      |
+| Startup Q         | executes         | Farm-to-Fork Project R      | Implementer    | Project Executor              | Funding Call  |
+| EIT Food          | develops         | Innovation Hub Warsaw       | Implementer    | Innovation Hub Builder        | Report        |
+| EIT Food          | deploys          | Digital Traceability Tool   | Implementer    | Tech Deploy Leader            | News          |
+| Retailer Z        | commercializes   | EIT Food Tech S             | Market Shaper  | Supply Chain Shaper           | Market News   |
+| Startup T         | licenses         | EIT Food IP                 | Market Shaper  | IP Transferor                 | Patent DB     |
+| Distributor U     | sells_to         | Supermarkets                | Market Shaper  | Market Channel Provider       | Trade News    |
+| Farmer Org V      | advocates        | Organic Certification       | Advocate       | Organic Farming Advocate      | NGO Report    |
+| EIT Food          | mobilizes        | Startups for Food Waste     | Advocate       | Waste Reduction Mobilizer     | Press Release |
+| EIT Food          | campaigns_for    | Sustainable Diets           | Advocate       | Awareness Campaigner          | Twitter       |
+
+
+## 📑 Synthetic Role Triples for **EIT Climate-KIC**
+
+| subject             | predicate         | object                        | generic_role   | specialized_role                 | source        |
+|---------------------|------------------|-------------------------------|----------------|----------------------------------|---------------|
+| EIT Climate-KIC     | invested_in      | GreenTech Startup A           | Anchor         | Green Tech Investor              | Funding DB    |
+| EIT Climate-KIC     | invested_in      | Carbon Analytics B            | Anchor         | Climate Startup Backer           | Funding DB    |
+| EU Commission       | grants           | EIT Climate-KIC Program C     | Anchor         | Policy Grant Allocator           | Policy Docs   |
+| Development Bank X  | funds            | Climate Adaptation Project D  | Anchor         | Infrastructure Investor          | News          |
+| Utility Y           | sponsors         | Renewable Pilot E             | Anchor         | Corporate Climate Sponsor        | Press Release |
+| EIT Climate-KIC     | approves         | City Innovation Lab F         | Validator      | Local Innovation Approver        | Report        |
+| National Gov Z      | regulates        | Carbon Market G               | Validator      | Climate Policy Gatekeeper        | Policy Docs   |
+| EIT Climate-KIC     | certifies        | Net-Zero Project H            | Validator      | Sustainability Certifier         | Report        |
+| UNFCCC Secretariat  | endorses         | Climate-KIC Pilot I           | Validator      | International Validator          | UN Report     |
+| EIT Climate-KIC     | partner_with     | Municipality J                | Broker         | City–Startup Mediator            | Hyperlinks    |
+| EIT Climate-KIC     | collaborates_with| University K                  | Broker         | Research Connector               | Funding Call  |
+| EIT Climate-KIC     | connects         | Regional Clusters             | Broker         | Regional Hub Connector           | Conference    |
+| EIT Climate-KIC     | hosts            | Climate Summit 2025           | Broker         | Event Intermediary               | Website       |
+| EIT Climate-KIC     | mentions         | IPCC                          | Amplifier      | Science Amplifier                | Twitter       |
+| EIT Climate-KIC     | retweets         | Fridays for Future            | Amplifier      | Youth Movement Amplifier         | Twitter       |
+| EIT Climate-KIC     | replies_to       | NGO L                         | Amplifier      | Climate Justice Amplifier        | Twitter       |
+| EIT Climate-KIC     | quotes           | DG CLIMA                      | Amplifier      | Policy Amplifier                 | Twitter       |
+| EIT Climate-KIC     | publishes        | White Paper M                 | Knowledge Hub  | Climate Knowledge Producer       | Report        |
+| EIT Climate-KIC     | reports_on       | Net-Zero Cities Report        | Knowledge Hub  | Evidence Synthesizer             | Report        |
+| EIT Climate-KIC     | researches       | Carbon Capture Tech           | Knowledge Hub  | Innovation Knowledge Hub         | Journal       |
+| EIT Climate-KIC     | sets_agenda      | Climate Neutral Europe        | Agenda Setter  | Theme Setter                     | Strategy Doc  |
+| EIT Climate-KIC     | prioritizes      | Climate Adaptation            | Agenda Setter  | Innovation Prioritizer           | Roadmap       |
+| NGO M               | criticizes       | Climate-KIC Pilot N           | Watchdog       | Climate Justice Advocate         | News          |
+| Media O             | questions        | Carbon Credit Schemes         | Watchdog       | Transparency Watchdog            | Media Report  |
+| Activist Group P    | opposes          | CCS Pilot Q                   | Watchdog       | Anti-CCS Campaigner              | Petition      |
+| Startup R           | executes         | Urban Transition Project S    | Implementer    | Project Executor                 | Funding Call  |
+| EIT Climate-KIC     | develops         | Regional Innovation Hub T     | Implementer    | Hub Builder                      | Report        |
+| EIT Climate-KIC     | deploys          | Smart Energy District U       | Implementer    | Tech Deploy Leader               | News          |
+| Carbon Exchange V   | commercializes   | Offsets from Project W        | Market Shaper  | Carbon Credit Market Actor       | Market News   |
+| Startup X           | licenses         | Climate IP from KIC           | Market Shaper  | IP Transferor                    | Patent DB     |
+| Utility Y           | sells_to         | Municipalities                | Market Shaper  | Energy Market Provider           | Trade News    |
+| Youth Org Z         | advocates        | Climate Justice               | Advocate       | Youth Climate Advocate           | NGO Report    |
+| EIT Climate-KIC     | mobilizes        | Startups for Adaptation       | Advocate       | Emergency Mobilizer              | Press Release |
+| EIT Climate-KIC     | campaigns_for    | Climate Literacy              | Advocate       | Awareness Campaigner             | Twitter       |
+
+
+
+## 📑 Synthetic Role Triples for **EIT Digital**
+
+| subject             | predicate         | object                         | generic_role   | specialized_role                   | source        |
+|---------------------|------------------|--------------------------------|----------------|------------------------------------|---------------|
+| EIT Digital         | invested_in      | AI Startup A                   | Anchor         | Venture Co-Investor                | Funding DB    |
+| EIT Digital         | invested_in      | Blockchain Startup B           | Anchor         | Digital Startup Funder             | Funding DB    |
+| EU Commission       | grants           | EIT Digital Accelerator C      | Anchor         | Policy Grant Allocator             | Policy Docs   |
+| VC Firm X           | co_funds         | EIT Digital Scaleup D          | Anchor         | Private Co-Investor                | Press Release |
+| Telecom Y           | sponsors         | Digital Hackathon E            | Anchor         | Industry Sponsor                   | Event Site    |
+| EIT Digital         | certifies        | Cybersecurity Standard F       | Validator      | Cybersecurity Certifier            | Report        |
+| Data Authority Z    | regulates        | GDPR Compliance G              | Validator      | Data Privacy Regulator             | Policy Docs   |
+| EIT Digital         | approves         | Startup H for Acceleration     | Validator      | Accelerator Endorser               | Program Call  |
+| Standards Org W     | endorses         | AI Ethics Framework I          | Validator      | International Standards Body       | Standards Doc |
+| EIT Digital         | partner_with     | University J                   | Broker         | Tech Transfer Broker               | Hyperlinks    |
+| EIT Digital         | collaborates_with| Startup K                      | Broker         | SME–Innovation Connector           | Funding Call  |
+| EIT Digital         | connects         | SMEs in Europe                 | Broker         | SME Mediator                       | Conference    |
+| EIT Digital         | hosts            | AI Policy Forum 2025           | Broker         | Event Intermediary                 | Website       |
+| EIT Digital         | mentions         | EIT Health                     | Amplifier      | Cross-KIC Amplifier                | Twitter       |
+| EIT Digital         | retweets         | OpenAI Europe                  | Amplifier      | Tech Amplifier                     | Twitter       |
+| EIT Digital         | replies_to       | Digital Rights Org L           | Amplifier      | Advocacy Amplifier                 | Twitter       |
+| EIT Digital         | quotes           | DG CONNECT                     | Amplifier      | Policy Amplifier                   | Twitter       |
+| EIT Digital         | publishes        | AI Strategy Report M           | Knowledge Hub  | Digital Knowledge Producer         | Report        |
+| EIT Digital         | reports_on       | Blockchain Adoption 2025       | Knowledge Hub  | Evidence Synthesizer               | Report        |
+| EIT Digital         | researches       | Quantum Computing              | Knowledge Hub  | Innovation Knowledge Hub           | Journal       |
+| EIT Digital         | sets_agenda      | AI Regulation                  | Agenda Setter  | Theme Setter                       | Strategy Doc  |
+| EIT Digital         | prioritizes      | Cybersecurity                  | Agenda Setter  | Innovation Prioritizer             | Roadmap       |
+| NGO M               | criticizes       | EIT Digital Project N          | Watchdog       | Digital Rights Watchdog            | News          |
+| Media O             | questions        | AI Ethics Implementation       | Watchdog       | Transparency Watchdog              | Media Report  |
+| Activist Group P    | opposes          | Surveillance Tech Q            | Watchdog       | Privacy Advocate                   | Petition      |
+| Startup R           | executes         | AI Deployment in Education     | Implementer    | Project Executor                   | Funding Call  |
+| EIT Digital         | develops         | Innovation Hub Tallinn         | Implementer    | Innovation Hub Builder             | Report        |
+| EIT Digital         | deploys          | Digital Identity Solution S    | Implementer    | Tech Deploy Leader                 | News          |
+| Cloud Provider T    | commercializes   | AI Services                    | Market Shaper  | Cloud Service Provider             | Market News   |
+| Startup U           | licenses         | EIT Digital IP                 | Market Shaper  | IP Transferor                      | Patent DB     |
+| Platform V          | restricts        | App Developers                 | Market Shaper  | Platform Gatekeeper                | Trade News    |
+| NGO W               | advocates        | Open Source Commons            | Advocate       | Digital Commons Advocate           | NGO Report    |
+| EIT Digital         | mobilizes        | Startups for Digital Inclusion | Advocate       | Inclusion Mobilizer                | Press Release |
+| EIT Digital         | campaigns_for    | AI Literacy                    | Advocate       | Awareness Campaigner               | Twitter       |
+
+
+## 📑 Synthetic Role Triples for **EIT InnoEnergy**
+
+| subject             | predicate         | object                           | generic_role   | specialized_role                     | source        |
+|---------------------|------------------|----------------------------------|----------------|--------------------------------------|---------------|
+| EIT InnoEnergy      | invested_in      | Battery Startup A                | Anchor         | Clean Tech Investor                  | Funding DB    |
+| EIT InnoEnergy      | invested_in      | Hydrogen Startup B               | Anchor         | Hydrogen Investor                    | Funding DB    |
+| EU Commission       | grants           | EIT InnoEnergy Program C         | Anchor         | Policy Grant Allocator               | Policy Docs   |
+| Utility X           | co_funds         | Renewable Project D              | Anchor         | Infrastructure Co-Investor           | Press Release |
+| Energy Company Y    | sponsors         | Smart Grid Pilot E               | Anchor         | Industry Sponsor                     | Event Site    |
+| EIT InnoEnergy      | certifies        | Wind Farm Standard F             | Validator      | Grid Compliance Certifier            | Report        |
+| National Regulator Z| regulates        | Nuclear Safety G                 | Validator      | Safety Regulator                     | Policy Docs   |
+| EIT InnoEnergy      | approves         | Pilot Project H                  | Validator      | Accelerator Endorser                 | Program Call  |
+| Standards Org W     | endorses         | Battery Recycling Protocol I     | Validator      | International Standards Body         | Standards Doc |
+| EIT InnoEnergy      | partner_with     | University J                     | Broker         | Research Connector                   | Hyperlinks    |
+| EIT InnoEnergy      | collaborates_with| Startup K                        | Broker         | SME–Utility Broker                   | Funding Call  |
+| EIT InnoEnergy      | connects         | Regional Energy Clusters         | Broker         | Regional Hub Connector               | Conference    |
+| EIT InnoEnergy      | hosts            | Hydrogen Summit 2025             | Broker         | Event Intermediary                   | Website       |
+| EIT InnoEnergy      | mentions         | IRENA                            | Amplifier      | Global Energy Amplifier              | Twitter       |
+| EIT InnoEnergy      | retweets         | European Battery Alliance        | Amplifier      | Policy Amplifier                     | Twitter       |
+| EIT InnoEnergy      | replies_to       | NGO L                            | Amplifier      | Renewable Advocacy Amplifier         | Twitter       |
+| EIT InnoEnergy      | quotes           | DG ENER                          | Amplifier      | Policy Amplifier                     | Twitter       |
+| EIT InnoEnergy      | publishes        | White Paper M                    | Knowledge Hub  | Energy Knowledge Producer            | Report        |
+| EIT InnoEnergy      | reports_on       | Energy Transition 2025           | Knowledge Hub  | Evidence Synthesizer                 | Report        |
+| EIT InnoEnergy      | researches       | Smart Grid Tech                  | Knowledge Hub  | Innovation Knowledge Hub             | Journal       |
+| EIT InnoEnergy      | sets_agenda      | Hydrogen Valley                  | Agenda Setter  | Theme Setter                         | Strategy Doc  |
+| EIT InnoEnergy      | prioritizes      | Battery Innovation               | Agenda Setter  | Innovation Prioritizer               | Roadmap       |
+| NGO M               | criticizes       | InnoEnergy Project N             | Watchdog       | Anti-Nuclear Advocate                | News          |
+| Media O             | questions        | Hydrogen Hubs                    | Watchdog       | Transparency Watchdog                | Media Report  |
+| Activist Group P    | opposes          | Biomass Plant Q                  | Watchdog       | Anti-Biomass Campaigner              | Petition      |
+| Startup R           | executes         | Solar Pilot Project S            | Implementer    | Project Executor                     | Funding Call  |
+| EIT InnoEnergy      | develops         | Innovation Hub Barcelona         | Implementer    | Hub Builder                          | Report        |
+| EIT InnoEnergy      | deploys          | Offshore Wind Farm U             | Implementer    | Tech Deploy Leader                   | News          |
+| Battery Producer V  | commercializes   | Lithium Tech                     | Market Shaper  | Battery Market Player                | Market News   |
+| Startup W           | licenses         | EIT InnoEnergy IP                | Market Shaper  | IP Transferor                        | Patent DB     |
+| Hydrogen Alliance X | sells_to         | Industrial Clients               | Market Shaper  | Hydrogen Ecosystem Shaper            | Trade News    |
+| NGO Y               | advocates        | Decentralized Energy             | Advocate       | Decentralized Energy Advocate        | NGO Report    |
+| EIT InnoEnergy      | mobilizes        | Startups for Energy Poverty      | Advocate       | Social Impact Mobilizer              | Press Release |
+| EIT InnoEnergy      | campaigns_for    | Clean Energy Literacy            | Advocate       | Awareness Campaigner                 | Twitter       |
+
+
+## 📑 Synthetic Role Triples for **EIT RawMaterials**
+
+| subject               | predicate         | object                            | generic_role   | specialized_role                    | source        |
+|-----------------------|------------------|-----------------------------------|----------------|-------------------------------------|---------------|
+| EIT RawMaterials      | invested_in      | Recycling Startup A               | Anchor         | Circular Economy Investor           | Funding DB    |
+| EIT RawMaterials      | invested_in      | Lithium Mining Firm B             | Anchor         | Mineral Extraction Investor         | Funding DB    |
+| EU Commission         | grants           | EIT RawMaterials Project C        | Anchor         | Policy Grant Allocator              | Policy Docs   |
+| Mining Corp X         | co_funds         | Urban Mining Pilot D              | Anchor         | Industry Co-Investor                | Press Release |
+| Manufacturing Firm Y  | sponsors         | Recycling Challenge E             | Anchor         | Industry Sponsor                    | Event Site    |
+| EIT RawMaterials      | certifies        | Responsible Mining Label F        | Validator      | EU Raw Materials Certifier          | Report        |
+| National Regulator Z  | regulates        | Rare Earths Extraction G          | Validator      | Resource Governance Regulator       | Policy Docs   |
+| EIT RawMaterials      | approves         | Startup H for Accelerator         | Validator      | Accelerator Endorser                | Program Call  |
+| Standards Org W       | endorses         | Circularity Protocol I            | Validator      | Standards Body                      | Standards Doc |
+| EIT RawMaterials      | partner_with     | University J                      | Broker         | Research Connector                  | Hyperlinks    |
+| EIT RawMaterials      | collaborates_with| Mining SME K                      | Broker         | SME Connector                       | Funding Call  |
+| EIT RawMaterials      | connects         | Supply Chain Actors               | Broker         | Value Chain Connector               | Conference    |
+| EIT RawMaterials      | hosts            | Raw Materials Week 2025           | Broker         | Event Intermediary                  | Website       |
+| EIT RawMaterials      | mentions         | European Battery Alliance         | Amplifier      | Strategic Alliance Amplifier        | Twitter       |
+| EIT RawMaterials      | retweets         | Global Mining Initiative          | Amplifier      | Global Industry Amplifier           | Twitter       |
+| EIT RawMaterials      | replies_to       | NGO L                             | Amplifier      | Advocacy Amplifier                  | Twitter       |
+| EIT RawMaterials      | quotes           | DG GROW                           | Amplifier      | Policy Amplifier                    | Twitter       |
+| EIT RawMaterials      | publishes        | White Paper M                     | Knowledge Hub  | Resource Knowledge Producer         | Report        |
+| EIT RawMaterials      | reports_on       | CRM Trends 2025                   | Knowledge Hub  | Evidence Synthesizer                | Report        |
+| EIT RawMaterials      | researches       | Recycling Technologies            | Knowledge Hub  | Innovation Knowledge Hub            | Journal       |
+| EIT RawMaterials      | sets_agenda      | Critical Raw Materials Strategy   | Agenda Setter  | Theme Setter                        | Strategy Doc  |
+| EIT RawMaterials      | prioritizes      | Circular Economy Pathways         | Agenda Setter  | Innovation Prioritizer              | Roadmap       |
+| NGO M                 | criticizes       | EIT RawMaterials Project N        | Watchdog       | Environmental Justice Advocate      | News          |
+| Media O               | questions        | Mining Impacts                    | Watchdog       | Transparency Watchdog                | Media Report  |
+| Indigenous Org P      | opposes          | Lithium Mine Q                    | Watchdog       | Indigenous Rights Advocate           | Petition      |
+| Startup R             | executes         | Recycling Pilot Project S         | Implementer    | Project Executor                     | Funding Call  |
+| EIT RawMaterials      | develops         | Innovation Hub Berlin             | Implementer    | Hub Builder                          | Report        |
+| EIT RawMaterials      | deploys          | Urban Mining Facility U           | Implementer    | Tech Deploy Leader                   | News          |
+| Consortium V          | commercializes   | Lithium Tech                      | Market Shaper  | Supply Chain Actor                   | Market News   |
+| Startup W             | licenses         | RawMaterials IP                   | Market Shaper  | IP Transferor                        | Patent DB     |
+| Producer X            | sells_to         | Battery Manufacturers             | Market Shaper  | Lithium Supply Chain Actor           | Trade News    |
+| NGO Y                 | advocates        | Responsible Mining Practices      | Advocate       | Responsible Mining Advocate          | NGO Report    |
+| EIT RawMaterials      | mobilizes        | SMEs for Recycling                | Advocate       | Recycling Mobilizer                  | Press Release |
+| EIT RawMaterials      | campaigns_for    | Circular Economy Awareness        | Advocate       | Awareness Campaigner                  | Twitter       |
+
+
+
+## 🔹 Example: Critical Synthetic Triples (EIT InnoEnergy)
+| subject             | predicate       | object                       | generic_role   | critical_issue                        | specialized_role        | source        |
+|---------------------|----------------|------------------------------|----------------|---------------------------------------|-------------------------|---------------|
+| EIT InnoEnergy      | invested_in    | Carbon Capture Startup A     | Anchor         | Locks in fossil fuel dependency        | Fossil Lock-In Investor | Funding DB    |
+| Utility B           | co_funds       | Biomass Plant C              | Anchor         | Contributes to deforestation           | Unsustainable Investor  | Press Release |
+| EIT InnoEnergy      | certifies      | Hydrogen Pilot D             | Validator      | Endorses “blue hydrogen” (fossil-based)| Questionable Certifier  | Report        |
+| EU Commission       | prioritizes    | Nuclear Expansion            | Agenda Setter  | Politically contested sustainability   | Contested Agenda Setter | Policy Docs   |
+| Media Outlet X      | amplifies      | Industry Narrative E         | Amplifier      | Greenwashing amplification             | Biased Amplifier        | News          |
+| Startup Y           | executes       | EV Battery Gigafactory F     | Implementer    | Creates e-waste problem                | Problematic Implementer | Funding Call  |
+| Consortium Z        | commercializes | Lithium Tech G               | Market Shaper  | Extractive supply chains               | Unequal Market Actor    | Market News   |
+| NGO L               | partners_with  | Corporate Donor M            | Watchdog       | Risk of co-optation                    | Compromised Watchdog    | NGO Report    |
+| EIT InnoEnergy      | campaigns_for  | Smart Cities Narrative       | Advocate       | Ignores rural energy poverty           | Narrow Advocate         | Twitter       |
+
+---
+
+## 🔹 Why this matters
+- Adds **ambivalence**: shows that the same roles can both enable and constrain sustainability transitions.  
+- Makes training data more realistic: models learn that roles are **not normatively neutral**.  
+- Supports a **reflexive “sociotyping” approach**: highlighting not just *what roles exist*, but *how they are contested*.  
+
+
+
+## 🔹 Critical Synthetic Triples — **EIT Health**
+
+| subject             | predicate        | object                  | generic_role   | critical_issue                      | specialized_role             | source        |
+|---------------------|-----------------|-------------------------|----------------|-------------------------------------|------------------------------|---------------|
+| EIT Health          | invested_in     | Telemedicine Startup A  | Anchor         | Risks deepening digital health divide| Inequality-Reinforcing Investor | Funding DB |
+| Pharma Corp X       | co_funds        | Clinical Trial B        | Anchor         | Prioritizes profit over accessibility| Biased Investor             | Press Release |
+| EIT Health          | certifies       | Device C                | Validator      | Weak oversight on patient safety     | Lax Validator               | Report        |
+| EU Commission       | prioritizes     | AI Diagnostics          | Agenda Setter  | Overemphasis on tech, underfunds care | Tech-Centric Agenda Setter   | Policy Docs  |
+| Media Outlet Y      | amplifies       | Pharma Narrative        | Amplifier      | Promotes corporate agenda            | Industry Biased Amplifier    | News         |
+| Startup Z           | deploys         | Wearable Monitoring D   | Implementer    | Raises privacy concerns              | Surveillance Implementer     | Funding Call |
+| Hospital L          | commercializes  | Patient Data            | Market Shaper  | Commodifies sensitive health info    | Data Exploiter              | Market News  |
+| NGO M               | partners_with   | Pharma Corp N           | Watchdog       | Risk of co-optation                  | Compromised Watchdog         | NGO Report   |
+| EIT Health          | campaigns_for   | Personalized Medicine   | Advocate       | May ignore collective health equity  | Narrow Advocate              | Twitter      |
+
+---
+
+## 🔹 Critical Synthetic Triples — **EIT Food**
+
+| subject             | predicate        | object                  | generic_role   | critical_issue                      | specialized_role             | source        |
+|---------------------|-----------------|-------------------------|----------------|-------------------------------------|------------------------------|---------------|
+| EIT Food            | invested_in     | Alt-Protein Startup A   | Anchor         | High energy footprint, not local    | Techno-Food Investor         | Funding DB    |
+| Agribusiness B      | co_funds        | Precision Ag Pilot C    | Anchor         | Reinforces corporate seed control   | Biased Investor              | Press Release |
+| EIT Food            | certifies       | Label D                 | Validator      | Greenwashing risk                   | Weak Validator               | Report        |
+| EU Commission       | prioritizes     | Biotech Crops           | Agenda Setter  | Marginalizes agroecology            | Biotech-Centric Agenda Setter| Policy Docs  |
+| Media E             | amplifies       | Corporate Sustainability| Amplifier      | Masks industrial farming impacts    | Biased Amplifier             | News         |
+| Startup F           | deploys         | Blockchain Traceability | Implementer    | Tech solutionism, ignores smallholders | Techno-Fix Implementer   | Funding Call |
+| Consortium G        | commercializes  | Monoculture Crops       | Market Shaper  | Threatens biodiversity              | Market Concentrator          | Market News  |
+| NGO H               | partners_with   | FoodCorp I              | Watchdog       | Risks co-optation                   | Compromised Watchdog         | NGO Report   |
+| EIT Food            | campaigns_for   | Consumer Awareness      | Advocate       | Focus on consumers, not producers   | Narrow Advocate              | Twitter      |
+
+---
+
+## 🔹 Critical Synthetic Triples — **EIT Climate-KIC**
+
+| subject             | predicate        | object                  | generic_role   | critical_issue                      | specialized_role             | source        |
+|---------------------|-----------------|-------------------------|----------------|-------------------------------------|------------------------------|---------------|
+| EIT Climate-KIC     | invested_in     | Carbon Offset Startup A | Anchor         | Enables offsetting over reductions  | Greenwashing Investor        | Funding DB    |
+| Utility B           | co_funds        | CCS Pilot C             | Anchor         | Fossil lock-in risk                 | Fossil Protector             | Press Release |
+| EIT Climate-KIC     | certifies       | Net-Zero Label D        | Validator      | Permits creative accounting         | Weak Validator               | Report        |
+| EU Commission       | prioritizes     | Hydrogen from Natural Gas | Agenda Setter| Overlooks renewables                | Fossil-Friendly Agenda Setter| Policy Docs  |
+| Media F             | amplifies       | Corporate Climate Plans | Amplifier      | Downplays adaptation needs          | Biased Amplifier             | News         |
+| Startup G           | deploys         | Smart Grids             | Implementer    | Creates rebound effects             | Problematic Implementer      | Funding Call |
+| Carbon Market H     | commercializes  | Offsets                 | Market Shaper  | Unequal distribution of benefits    | Elite Market Shaper          | Market News  |
+| NGO I               | partners_with   | OilCorp J               | Watchdog       | Greenwashing collaboration          | Compromised Watchdog         | NGO Report   |
+| EIT Climate-KIC     | campaigns_for   | Green Growth Narrative  | Advocate       | Neglects sufficiency pathways       | Growth-Optimist Advocate     | Twitter      |
+
+---
+
+## 🔹 Critical Synthetic Triples — **EIT Digital**
+
+| subject             | predicate        | object                  | generic_role   | critical_issue                      | specialized_role             | source        |
+|---------------------|-----------------|-------------------------|----------------|-------------------------------------|------------------------------|---------------|
+| EIT Digital         | invested_in     | Surveillance Startup A  | Anchor         | Supports surveillance capitalism    | Privacy-Risk Investor        | Funding DB    |
+| BigTech B           | co_funds        | AI Pilot C              | Anchor         | Reinforces market concentration     | Monopoly Protector           | Press Release |
+| EIT Digital         | certifies       | AI Ethics Label D       | Validator      | Weak, industry-dominated standards  | Toothless Validator          | Report        |
+| EU Commission       | prioritizes     | Smart Cities            | Agenda Setter  | Ignores rural-urban divides         | Biased Agenda Setter         | Policy Docs  |
+| Media G             | amplifies       | AI Hype                 | Amplifier      | Overpromises, fuels disillusionment | Hype Amplifier               | News         |
+| Startup H           | deploys         | EdTech Platform I       | Implementer    | Exacerbates digital inequalities    | Problematic Implementer      | Funding Call |
+| Platform J          | commercializes  | User Data               | Market Shaper  | Exploits personal information       | Data Extractor               | Market News  |
+| NGO K               | partners_with   | BigTech L               | Watchdog       | Risk of capture                     | Compromised Watchdog         | NGO Report   |
+| EIT Digital         | campaigns_for   | AI Literacy             | Advocate       | Narrow focus, excludes ethics       | Narrow Advocate              | Twitter      |
+
+---
+
+## 🔹 Critical Synthetic Triples — **EIT InnoEnergy**
+
+| subject             | predicate        | object                  | generic_role   | critical_issue                      | specialized_role             | source        |
+|---------------------|-----------------|-------------------------|----------------|-------------------------------------|------------------------------|---------------|
+| EIT InnoEnergy      | invested_in     | Blue Hydrogen Startup A | Anchor         | Fossil dependency disguised as green| Fossil Lock-In Investor      | Funding DB    |
+| Utility B           | co_funds        | Biomass Plant C         | Anchor         | Deforestation, food vs fuel tradeoff| Unsustainable Investor       | Press Release |
+| EIT InnoEnergy      | certifies       | Nuclear Tech D          | Validator      | Safety and waste risks ignored      | Contested Validator          | Report        |
+| EU Commission       | prioritizes     | Mega Grids              | Agenda Setter  | Centralizes power, marginalizes locals | Techno-Centric Agenda Setter| Policy Docs  |
+| Media H             | amplifies       | “Green Growth” Claims   | Amplifier      | Greenwashing risk                   | Biased Amplifier             | News         |
+| Startup E           | deploys         | EV Batteries            | Implementer    | Creates e-waste streams             | Problematic Implementer      | Funding Call |
+| Consortium F        | commercializes  | Rare Earth Minerals     | Market Shaper  | Extractive and unequal trade         | Unequal Market Shaper        | Market News  |
+| NGO G               | partners_with   | Utility H               | Watchdog       | Risks being co-opted                | Compromised Watchdog         | NGO Report   |
+| EIT InnoEnergy      | campaigns_for   | Smart Cities            | Advocate       | Excludes rural communities          | Narrow Advocate              | Twitter      |
+
+---
+
+## 🔹 Critical Synthetic Triples — **EIT RawMaterials**
+
+| subject             | predicate        | object                  | generic_role   | critical_issue                      | specialized_role             | source        |
+|---------------------|-----------------|-------------------------|----------------|-------------------------------------|------------------------------|---------------|
+| EIT RawMaterials    | invested_in     | Lithium Mine A          | Anchor         | Environmental degradation           | Extractivist Investor        | Funding DB    |
+| Mining Corp B       | co_funds        | Rare Earth Project C    | Anchor         | Risk of land grabs, human rights    | Contested Investor           | Press Release |
+| EIT RawMaterials    | certifies       | Mining Label D          | Validator      | Greenwashing of extractive practices| Weak Validator               | Report        |
+| EU Commission       | prioritizes     | CRM Supply Security     | Agenda Setter  | Geopolitical bias, ignores justice  | Security-Centric Agenda Setter| Policy Docs  |
+| Media I             | amplifies       | “Sustainable Mining”    | Amplifier      | Downplays local community harms     | Biased Amplifier             | News         |
+| Startup J           | deploys         | Urban Mining Tech       | Implementer    | Energy-intensive, not truly circular| Problematic Implementer      | Funding Call |
+| Consortium K        | commercializes  | Nickel Supply           | Market Shaper  | Reinforces global inequalities      | Unequal Market Shaper        | Market News  |
+| NGO L               | partners_with   | MiningCorp M            | Watchdog       | Risks legitimizing harmful practices| Compromised Watchdog         | NGO Report   |
+| Indigenous Org N    | opposes         | Lithium Mine O          | Watchdog       | Marginalized in decision-making     | Silenced Watchdog            | Petition      |
+| EIT RawMaterials    | campaigns_for   | Recycling Awareness     | Advocate       | Focuses on consumers, not producers | Narrow Advocate              | Twitter      |
+
+
+
+## 🔹 Synthetic Critical Triples — *Digital Era Actors (Cross-Cutting)*
+
+| subject              | predicate        | object                    | generic_role   | critical_issue                         | specialized_role            | source       |
+|----------------------|-----------------|---------------------------|----------------|----------------------------------------|-----------------------------|--------------|
+| BigTech A            | provides        | Cloud Infrastructure      | Anchor         | Centralizes control, lock-in            | Infrastructure Gatekeeper   | Report       |
+| Platform B           | sells           | User Data                 | Market Shaper  | Exploits personal data                  | Data Extractor              | Market News  |
+| Data Broker C        | licenses        | Mobility Data             | Broker         | Undermines data sovereignty             | Data Middleman              | Policy Docs  |
+| AI Lab D             | open_sources    | ML Model X                | Knowledge Hub  | Lacks safeguards against misuse         | Open-Source Producer        | GitHub       |
+| Gig Workers E        | labels          | Training Data             | Implementer    | Exploited digital labor                 | Invisible Implementer       | NGO Report   |
+| Influencer F         | promotes        | Startup Campaign G        | Amplifier      | Spreads hype, misinformation            | Digital Amplifier           | Twitter      |
+| Bot Network H        | amplifies       | Green Tech Narrative      | Amplifier      | Artificially inflates discourse         | Coordinated Inauthentic Actor | Research Paper|
+| Consortium I         | certifies       | AI Ethics Label J         | Validator      | Industry-dominated, lacks accountability| Toothless Validator         | Standards Doc|
+| Platform J           | deplatforms     | Activist Group K          | Validator      | Silences dissent                        | Contested Validator         | News         |
+| Standards Body L     | sets            | Data Protocols            | Agenda Setter  | Excludes Global South actors            | Exclusive Standard Setter   | Policy Docs  |
+| Foundation M         | prioritizes     | Open-Source Roadmap       | Agenda Setter  | Skews innovation toward elite agendas   | Biased Agenda Setter        | GitHub       |
+| NGO N                | campaigns_for   | Digital Literacy          | Advocate       | Focuses on consumers, not labor rights  | Narrow Advocate             | Press Release |
+
+
+
+## 📑 Synthetic Role Triples — **Digital Era Actors (Positive Layer)**
+
+| subject             | predicate        | object                        | generic_role   | specialized_role                     | source        |
+|---------------------|-----------------|-------------------------------|----------------|--------------------------------------|---------------|
+| BigTech A           | provides        | Cloud Infrastructure          | Anchor         | Cloud Service Provider                | Report        |
+| Platform B          | offers          | Collaboration Tools           | Anchor         | Digital Enabler                       | Market News   |
+| Startup C           | develops        | Open-Source AI Library        | Anchor         | Innovation Investor                   | GitHub        |
+| Standards Org D     | certifies       | Encryption Protocol E         | Validator      | Cybersecurity Certifier               | Standards Doc |
+| Regulator F         | regulates       | Data Privacy Rules            | Validator      | GDPR Regulator                        | Policy Docs   |
+| Platform G          | approves        | Developer App H               | Validator      | App Gatekeeper                        | Platform Site |
+| NGO H               | endorses        | Fair Data Principles          | Validator      | Digital Ethics Validator              | NGO Report    |
+| Platform I          | connects        | Users and Creators            | Broker         | Content Mediator                      | News          |
+| Cloud Provider J    | collaborates_with| Universities                 | Broker         | Research Infrastructure Partner       | Press Release |
+| Consortium K        | links           | AI Labs and Startups          | Broker         | Ecosystem Connector                   | Conference    |
+| Foundation L        | hosts           | Open-Source Summit            | Broker         | Event Organizer                       | Website       |
+| Platform M          | mentions        | Sustainability Projects       | Amplifier      | CSR Amplifier                         | Twitter       |
+| Platform N          | retweets        | Activist Campaign O           | Amplifier      | Digital Ally Amplifier                | Twitter       |
+| Startup P           | promotes        | AI for Good Project           | Amplifier      | Social Impact Amplifier               | Twitter       |
+| Platform Q          | publishes       | Transparency Report           | Knowledge Hub  | Data Governance Producer              | Report        |
+| Think Tank R        | researches      | Algorithmic Fairness          | Knowledge Hub  | Research Hub                          | Journal       |
+| Foundation S        | shares          | Digital Commons Tools         | Knowledge Hub  | Open Knowledge Hub                    | GitHub        |
+| EU Commission       | sets_agenda     | Digital Decade Strategy       | Agenda Setter  | Policy Agenda Setter                  | Policy Docs   |
+| IEEE                | prioritizes     | AI Standards                  | Agenda Setter  | Tech Standard Setter                  | Standards Doc |
+| Platform T          | initiates       | Green Data Centers            | Agenda Setter  | Sustainable Innovation Driver         | Press Release |
+| Watchdog Group U    | criticizes      | Biased Algorithm              | Watchdog       | AI Watchdog                           | NGO Report    |
+| Media V             | questions       | Social Media Policies         | Watchdog       | Tech Accountability Journalist        | Media Report  |
+| Civil Society W     | opposes         | Surveillance Tech             | Watchdog       | Privacy Advocate                      | Petition      |
+| Developer X         | implements      | AI API Integration            | Implementer    | Code Implementer                      | GitHub        |
+| Platform Y          | deploys         | Digital IDs                   | Implementer    | Digital Identity Implementer          | Policy Docs   |
+| Startup Z           | executes        | Edge Computing Project        | Implementer    | Tech Executor                         | Funding Call  |
+| Platform AA         | commercializes  | Cloud Storage                 | Market Shaper  | Data Market Actor                     | Market News   |
+| Startup BB          | licenses        | Open-Source AI Tool           | Market Shaper  | License Distributor                   | GitHub        |
+| Platform CC         | sells_to        | SMEs                          | Market Shaper  | SME Enabler                           | Market News   |
+| NGO DD              | advocates       | Digital Rights                | Advocate       | Privacy Advocate                      | NGO Report    |
+| Platform EE         | mobilizes       | Volunteers for Crisis Mapping | Advocate       | Digital Mobilizer                     | Press Release |
+| Foundation FF       | campaigns_for   | Digital Literacy              | Advocate       | Digital Literacy Advocate             | Twitter       |
+| Platform GG         | funds           | Developer Training            | Anchor         | Workforce Investor                    | Funding DB    |
+| Consortium HH       | coordinates     | Global Open Data Day          | Broker         | Civic Tech Organizer                  | Event Site    |
+
+---
+
+## 🔹 Critical Synthetic Triples — **Digital Era Actors (Critical Layer)**
+
+| subject             | predicate        | object                        | generic_role   | critical_issue                          | specialized_role            | source       |
+|---------------------|-----------------|-------------------------------|----------------|-----------------------------------------|-----------------------------|---------------|
+| BigTech A           | provides        | Cloud Infrastructure          | Anchor         | Centralizes power, creates lock-in       | Infrastructure Gatekeeper   | Report        |
+| Platform B          | sells           | User Data                     | Market Shaper  | Exploits personal data                   | Data Extractor              | Market News   |
+| Data Broker C       | licenses        | Mobility Data                 | Broker         | Undermines sovereignty, surveillance risk| Data Middleman              | Policy Docs   |
+| AI Lab D            | open_sources    | ML Model X                    | Knowledge Hub  | No safeguards against misuse             | Open-Source Producer        | GitHub        |
+| Gig Workers E       | labels          | Training Data                 | Implementer    | Exploited invisible labor                | Invisible Implementer       | NGO Report    |
+| Influencer F        | promotes        | Startup Campaign G            | Amplifier      | Fuels hype, spreads misinformation       | Digital Amplifier           | Twitter       |
+| Bot Network H       | amplifies       | Green Tech Narrative          | Amplifier      | Artificially inflates discourse          | Coordinated Actor           | Research Paper|
+| Consortium I        | certifies       | AI Ethics Label J             | Validator      | Industry-dominated, lacks accountability | Toothless Validator         | Standards Doc |
+| Platform J          | deplatforms     | Activist Group K              | Validator      | Silences dissent                         | Contested Validator         | News          |
+| Standards Body L    | sets            | Data Protocols                | Agenda Setter  | Excludes Global South actors             | Exclusive Standard Setter   | Policy Docs   |
+| Foundation M        | prioritizes     | Open-Source Roadmap           | Agenda Setter  | Skews toward elite innovation agendas    | Biased Agenda Setter        | GitHub        |
+| NGO N               | campaigns_for   | Digital Literacy              | Advocate       | Focuses on consumers, not labor rights   | Narrow Advocate             | Press Release |
+
+---
+
+
+## 📑 Synthetic Role Triples — **EIT Manufacturing (Positive Layer)** (~35)
+
+| subject            | predicate        | object                          | generic_role   | specialized_role                  | source        |
+|--------------------|-----------------|---------------------------------|----------------|-----------------------------------|---------------|
+| EIT Manufacturing | funds           | SME Startup A                   | Anchor         | SME Investor                      | Funding DB    |
+| Factory B          | adopts          | Robotics Assembly Line C        | Anchor         | Automation Anchor                  | Market News   |
+| OEM D              | deploys         | 3D Printing Pilot E             | Anchor         | Additive Manufacturing Anchor      | Press Release |
+| EU Commission      | supports        | Circular Manufacturing Project F| Anchor         | Policy Anchor                     | Funding Call  |
+| Standards Org G    | certifies       | ISO Sustainability Standard H   | Validator      | Sustainability Validator           | Standards Doc |
+| Regulator I        | approves        | Worker Safety Protocols J       | Validator      | Safety Validator                   | Policy Docs   |
+| NGO K              | endorses        | Fair Labor Practices L          | Validator      | Labor Validator                    | NGO Report    |
+| EITM               | connects        | SMEs and Supply Chains M        | Broker         | Supply Chain Connector             | Website       |
+| Platform N         | matches         | Manufacturers and Customers O   | Broker         | Digital Marketplace Broker         | GitHub        |
+| Consortium P       | facilitates     | Industry 4.0 Hackathon Q        | Broker         | Innovation Broker                  | Event Site    |
+| Media Outlet R     | highlights      | Factory Decarbonization S       | Amplifier      | Sustainability Amplifier           | News          |
+| Influencer T       | promotes        | Robotics Fair U                 | Amplifier      | Tech Influencer                    | Twitter       |
+| EITM               | publishes       | Industry Report V               | Knowledge Hub  | Knowledge Producer                 | Report        |
+| University W       | researches      | Smart Manufacturing Algorithms  | Knowledge Hub  | Technical Knowledge Hub            | Journal       |
+| Open Data Portal X | shares          | Factory Emissions Data          | Knowledge Hub  | Data Hub                           | GitHub        |
+| EU Parliament      | sets_agenda     | Industrial Strategy Directive   | Agenda Setter  | Legislative Agenda Setter          | Policy Docs   |
+| Industry Coalition Y| prioritizes    | Circular Economy Roadmap        | Agenda Setter  | Industry Agenda Setter             | Press Release |
+| Tech Firm Z        | develops        | AI for Predictive Maintenance   | Implementer    | AI Implementer                     | GitHub        |
+| Factory AA         | modernizes      | Energy-Efficient Production     | Implementer    | Efficiency Implementer             | Market News   |
+| SME BB             | executes        | Pilot Robotics Project CC       | Implementer    | Pilot Executor                     | Funding Call  |
+| OEM DD             | commercializes  | Recycled Materials Products     | Market Shaper  | Circular Market Actor              | Market News   |
+| Platform EE        | licenses        | Manufacturing ERP Software      | Market Shaper  | Digital Market Actor               | GitHub        |
+| Factory FF         | subsidizes      | Worker Reskilling Programs      | Market Shaper  | Inclusive Market Actor             | Policy Docs   |
+| NGO GG             | campaigns_for   | Just Transition in Industry     | Advocate       | Labor Advocate                     | NGO Report    |
+| Foundation HH      | mobilizes       | Youth in Manufacturing          | Advocate       | Youth Advocate                     | Press Release |
+| Worker Union II    | demands         | Fair Wages                      | Advocate       | Worker Advocate                    | Petition      |
+| Research Lab JJ    | tests           | Green Manufacturing Pilot       | Validator      | Tech Validator                     | Lab Report    |
+| Consortium KK      | co-develops     | Robotics Safety Standards       | Broker         | Standardization Broker             | Conference    |
+| Factory LL         | scales          | Circular Plastics Facility      | Anchor         | Scaling Innovator                  | Market News   |
+| Startup MM         | launches        | AI-based Robotics Platform      | Anchor         | Tech Startup Anchor                | Press Release |
+| Regional Gov NN    | supports        | SME Clusters                    | Anchor         | Regional Anchor Institution        | Policy Docs   |
+| EITM               | accelerates     | Startup Cohort OO               | Anchor         | Ecosystem Anchor                   | Website       |
+| Media PP           | investigates    | Best Practices in Automation    | Amplifier      | Knowledge Amplifier                | News          |
+| Think Tank QQ      | advises         | Policy on Resilient Supply Chains| Knowledge Hub | Policy Knowledge Hub               | Report        |
+
+---
+
+## 🔹 Critical Synthetic Triples — **EIT Manufacturing (Critical Layer)** (~12)
+
+| subject            | predicate        | object                        | generic_role   | critical_issue                         | specialized_role          | source        |
+|--------------------|-----------------|-------------------------------|----------------|----------------------------------------|---------------------------|---------------|
+| Factory B          | replaces        | Workers with Robots           | Anchor         | Job displacement, social inequality     | Automation Anchor         | NGO Report    |
+| OEM D              | expands         | Coal-Based Steel Plant        | Anchor         | High emissions, fossil lock-in          | Fossil Anchor             | Market News   |
+| Platform N         | sells           | Factory Data                  | Broker         | Privacy & surveillance capitalism       | Data Broker               | News          |
+| SME BB             | exploits        | Migrant Workers               | Implementer    | Poor labor conditions                   | Exploitative Implementer  | Policy Docs   |
+| OEM DD             | greenwashes     | Plastics Recycling Claims     | Market Shaper  | Misleading sustainability claims        | Greenwasher               | Press Release |
+| Foundation HH      | neglects        | Worker Voice                  | Advocate       | Focuses on PR, ignores unions           | Biased Advocate           | NGO Report    |
+| Factory AA         | outsources      | Toxic Waste to Global South   | Anchor         | Environmental injustice                 | Harmful Anchor            | Report        |
+| Tech Firm Z        | deploys         | Unsafe AI Robotics            | Implementer    | Safety risks in workplace               | Risky Implementer         | Media Report  |
+| Consortium KK      | excludes        | SMEs from Standards           | Broker         | Standard-setting dominated by large firms| Exclusive Broker          | Policy Docs   |
+| Regional Gov NN    | subsidizes      | Polluting Factories           | Market Shaper  | Perverse incentives                     | Misaligned Actor          | Policy Docs   |
+| Worker Union II    | silenced_by     | Industry Lobbyists            | Watchdog       | Weakening labor representation          | Compromised Watchdog      | NGO Report    |
+| EITM               | overlooks       | Global South Supply Chains    | Knowledge Hub  | Eurocentric innovation bias             | Biased Knowledge Actor    | Report        |
+
+
+📌 So now we should have syntheitc **9 EIT Communities + Digital Era Actors** = **10 role constellations**:  
+1. Health  
+2. Food  
+3. Climate-KIC  
+4. Digital  
+5. RawMaterials  
+6. Urban Mobility  
+7. InnoEnergy (Energy)  
+8. Manufacturing  
+9. Digital Era (cross-cutting)  
+10. (Optionally) Regional/Overarching EIT cross-links
+
+
+
+## 📑 Catalog of Actor Types in **EIT Europe Communities**
+
+### 1. Cross-Cutting Categories
+- **Policy & Governance**  
+  - EU Commission, EU Parliament, national ministries, regional governments, city councils, regulatory agencies, standards bodies, certification agencies.  
+
+- **Research & Education**  
+  - Universities, technical institutes, research labs, think tanks, training providers.  
+
+- **Industry & Firms**  
+  - Large corporations (OEMs, utilities, multinationals), SMEs, startups, spin-offs, corporate consortia.  
+
+- **Finance & Investment**  
+  - Venture capital, corporate VC, angel investors, foundations, EU and national funding agencies, banks, development banks.  
+
+- **Civil Society & NGOs**  
+  - Environmental NGOs, consumer associations, labor unions, advocacy groups, protest movements, patient groups.  
+
+- **Media & Amplifiers**  
+  - News outlets, investigative journalists, influencers, science communicators, corporate PR, NGOs as amplifiers.  
+
+- **Infrastructure & Platforms**  
+  - Data platforms, digital marketplaces, blockchain/AI infrastructures, interoperability hubs, testbeds, cloud providers.  
+
+- **Citizens & Communities**  
+  - End-users, patient groups, local communities, grassroots collectives, citizen science groups, cooperatives.  
+
+---
+
+### 2. Community-Specific Actors
+
+#### **Health (EIT Health)**  
+- Hospitals, clinics, patient organizations, pharmaceutical companies, biotech startups, medical device manufacturers, insurers, regulatory bodies (EMA).  
+
+#### **Food (EIT Food)**  
+- Farmers, cooperatives, food processors, supermarkets, consumer watchdogs, nutrition NGOs, certification bodies, startups in alternative proteins, food delivery platforms.  
+
+#### **Climate (EIT Climate-KIC)**  
+- Climate NGOs, city climate offices, renewable developers, adaptation projects, policy labs, carbon market actors, offset certifiers.  
+
+#### **Digital (EIT Digital)**  
+- AI startups, platform providers, open-source communities, cybersecurity actors, cloud providers, ICT consortia, big tech companies.  
+
+#### **Raw Materials (EIT RawMaterials)**  
+- Mining companies, recycling firms, metallurgy plants, certification bodies (responsible mining), indigenous communities, environmental watchdogs.  
+
+#### **Energy (EIT InnoEnergy)**  
+- Utilities, grid operators, renewable developers, battery startups, nuclear institutions, hydrogen consortia, storage tech companies, energy cooperatives.  
+
+#### **Mobility (EIT Urban Mobility)**  
+- Municipal transport authorities, public transport operators, automotive OEMs, shared mobility startups, micromobility providers, logistics companies, cycling NGOs, citizen protest groups.  
+
+#### **Manufacturing (EIT Manufacturing)**  
+- Factories, robotics firms, additive manufacturing startups, Industry 4.0 platforms, labor unions, standards bodies (ISO/IEC), SME clusters, automation alliances.  
+
+---
+
+### 3. Digital-Era & Infrastructural Actors
+- **Big Tech Oligopolies**: AWS, Microsoft Azure, Google Cloud, Apple, Meta.  
+- **Data & Analytics Providers**: Palantir, EU AI startups, data brokers.  
+- **Infrastructure Consortia**: GAIA-X, FIWARE, mobility data spaces, EU cloud sovereignty projects.  
+- **Hidden Actors**: content moderators, annotation firms, outsourcing agencies, algorithm auditors.  
+- **Open Platforms**: GitHub, open-source AI communities, distributed ledgers.  
+
+---
+
+### 4. Marginalized / Contested Actors
+- Gig workers, migrant labor, platform-dependent workers (Uber, Deliveroo, ghost kitchens).  
+- Indigenous communities in raw materials extraction zones.  
+- Informal transport providers, street vendors, repair/reuse communities.  
+- Patients/citizens excluded from digital health (digital divide).  
+- Global South partners in supply chains (e.g., cobalt mining in Congo, lithium extraction in Chile).  
+- Activists and protest movements (Fridays for Future, Extinction Rebellion). 

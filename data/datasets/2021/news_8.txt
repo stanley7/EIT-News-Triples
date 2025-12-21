@@ -1,0 +1,25 @@
+This year,
+EIT Health
+introduced two unique programmes to improve medical students’ and healthcare experts’ understanding of Artificial Intelligence (AI):
+HelloAI RIS
+and
+HelloAI Professional
+.
+The programme series bridges the gap between healthcare experts’ education and practical knowledge in operating and implementing AI. Expanded from a summer school to a complete education programme on AI in healthcare, HelloAI has impacted over 1,750 participants in the last four years.
+This summer, 530 young talents and university students completed the HelloAI RIS series. HelloAI RIS targets participants from the countries included in the EIT Health
+Regional Innovation Scheme (RIS)
+, to close the gap between the most advanced regions and the regions that are achieving innovation at a more moderate pace.
+HelloAI Profressional, the most comprehensive course available on AI application in healthcare, is tailored for experienced healthcare professionals, looking to implement AI in their roles. Close to 350 healthcare experts from all over Europe and beyond recently graduated from HelloAI Professional which EIT Health has recognised as a ‘High Quality Project’ following an evaluation by an international panel of independent experts.
+Healthcare is generating an enormous volume of data annually with ever-increasing numbers. Thanks to the revolution of AI, countless applications are already available to support routine clinical practice. The potential is vast, the global market for AI in healthcare, which was valued USD 6.7 billion (approximately EUR 5.9 billion) in 2020, will grow at a growth rate of 41.8% to USD 120.2 billion (approximately EUR 106.05 billion) by 2028.
+According to the EIT Health and McKinsey & Company report, ‘
+Transforming healthcare with AI
+’, AI has the potential to enrich and refocus the work of healthcare professionals towards their main motivation for realising their career – direct patient care.
+The technology will facilitate the automation of mundane tasks for healthcare professionals who currently spend up to 70% of their time on administration.
+Healthcare organisations must allow for fundamental shifts in how patients are cared for, and healthcare workers must leverage increasingly comprehensive pools of AI-mediated medical data to deliver better care.
+Yet the explosion of data, in addition to the shortage of professionals, increasing costs, access and quality concerns are raising significant major issues in healthcare.
+“AI has a huge potential to transform how healthcare is delivered. However, there is a tremendous gap in healthcare experts’ practical knowledge and education on operating and implementing innovative technologies. At EIT Health InnoStars, we support healthcare transformation in Central, Eastern and Southern Europe, by accelerating the innovation of digitised healthcare solutions and the education of healthcare professionals, empowering them to use new generation tools.”
+Balázs Zoltán Fürjes, InnoStars Director, EIT Health InnoStars
+Education is indicated as the most important factor for fast adoption of healthcare innovations. To address the highlighted issues and narrow the skills gap in medical IT education and multidisciplinary collaboration, EIT Health and GE Healthcare, in collaboration with KTH Institute, LEITAT Technology Center and University of Maastricht tailored an extensive educational and practical programme on AI application in the medical field: the HelloAI programmes.
+Around 350 medical experts worldwide, from 37 different countries completed the HelloAI Professional course consisting of six live sessions, four self-learning modules, and 18+ hours of valuable content provided by the top speakers in their field. All covering various aspects of AI implementation in healthcare.
+“Artificial intelligence is broadly expected to drive significant benefits across healthcare systems by increasing efficiency though decreasing the operational cost to improve patient outcomes. With such exponential acceleration on AI in daily clinical work – medical professionals must educate themselves and be prepared for future disruption in the industry. AI can make healthcare data-driven, value-based, and patient-centric. I’m confident that the HelloAI initiative can equip medical professionals with the right skillset to operationalise AI for faster, more accurate patient diagnoses and reduced administrative clinical burdens in the future”
+Professor Mathias Goyen, Chief Medical Officer, GE Healthcare EMEA

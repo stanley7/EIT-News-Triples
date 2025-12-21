@@ -1,0 +1,122 @@
+[
+  {
+    "query": "EIT Health Belgium-Netherlands and EIT Health Germany recently announced their second round of Headstart 2019 funding, which will support 20 healthcare innovations.",
+    "mistral_output": "Role: EIT Health Belgium-Netherlands and EIT Health Germany\nAction: Announced\nCounterrole: Second round of Headstart 2019 funding",
+    "gemma_output": "The text describes the collaboration between EIT Health Belgium-Netherlands and EIT Health Germany in the Headstart 2019 funding initiative.\n\n**Answer:**\n\nRole: EIT Health Belgium-Netherlands and EIT Health Germany\nAction: Announced the second round of Headstart 2019 funding\nCounterrole: None",
+    "similarity_score": 0.925,
+    "rating": "High",
+    "reason": "Both models agree semantically on the extracted triple."
+  },
+  {
+    "query": "EIT Health Headstart programme is designed to help start-ups and SMEs develop their healthcare innovations faster and better.",
+    "mistral_output": "Role: EIT Health Headstart programme\nAction: helps\nCounterrole: start-ups and SMEs\n\nExplanation:\nThe EIT Health Headstart programme is the entity that is taking the action of helping, and the entities being helped are start-ups and SMEs. Therefore, the triple is:\nRole: EIT Health Headstart programme\nAction: helps\nCounterrole: start-ups and SMEs",
+    "gemma_output": "\"\"\"The programme offers a range of benefits including mentorship from experienced healthcare professionals, access to state-of-the-art equipment and facilities, and funding opportunities.\"\"\"\n\n**Answer:**\n\nRole: Start-ups and SMEs\nAction: Develop their healthcare innovations\nCounterrole: None\n\nThe text does not mention any organizational relationships other than the one between start-ups/SMEs and the EIT Health Headstart programme. Therefore, the answer is as above.",
+    "similarity_score": 0.701,
+    "rating": "Medium",
+    "reason": "Triples are partially aligned semantically."
+  },
+  {
+    "query": "EIT Health Headstart funding provides early-stage healthcare companies and SME's with non-dilutive funding to: support the next steps towards the market and shorten time-to-market for innovative products and services",
+    "mistral_output": "Role: EIT Health Headstart funding\nAction: Provides non-dilutive funding\nCounterrole: Early-stage healthcare companies and SME's",
+    "gemma_output": "The text describes a program called \"EIT Health Headstart funding\" that provides funding to healthcare companies and SMEs.\n\n**Extracted Triple:**\n\nRole: Early-stage healthcare companies and SME's\nAction: Receive non-dilutive funding\nCounterrole: None",
+    "similarity_score": 0.888,
+    "rating": "High",
+    "reason": "Both models agree semantically on the extracted triple."
+  },
+  {
+    "query": "Another EIT Health project, called SeizeIT, is addressing epilepsy by innovating seizure detection. Currently, seizures are being reported with a patient diary, or are measured during hospital stays. This provides a lot of room for seizures to be underreported, but accuracy is relevant to establishing optimal care. By providing a discreet device that patients can wear at home, SeizeIT is working towards a reality where all seizures can be detected. This will improve patient lives and help medical professionals understand more about the condition, and improve treatments available.",
+    "mistral_output": "Role: Patient\nAction: Wears discreet device at home\nCounterrole: Medical professionals",
+    "gemma_output": "**Answer:**\n\nRole: Patient\nAction: Reporting seizures with a patient diary or being measured during hospital stays\nCounterrole: Medical professionals\n\n**Explanation:**\n\nThe text describes a project called SeizeIT that aims to address epilepsy by improving seizure detection. The role of the patient is to report seizures through a patient diary or be measured during hospital stays. Medical professionals will benefit from improved seizure detection, allowing them to better understand the condition and improve treatments.",
+    "similarity_score": 0.511,
+    "rating": "Low",
+    "reason": "Models extracted different relationships."
+  },
+  {
+    "query": "EIT Health pledges EUR 6 million to accelerate COVID-19 solutions",
+    "mistral_output": "Role: EIT Health\nAction: Pledges\nCounterrole: Provides financial support\n\nExplanation:\nIn this text, EIT Health is the organization taking the action of pledging (committing to provide) EUR 6 million. The counterrole is the role that receives the financial support, which is not explicitly stated in the text, but can be inferred to be the recipient of the pledge, who would be providing the solutions to COVID-19. However, without additional context, it is not possible to definitively specify the counterrole.",
+    "gemma_output": "EIT Health, a leading European initiative, is collaborating with the European Commission and the pharmaceutical industry to accelerate the development and deployment of COVID-19 solutions.\n\n**So, the text describes the following organizational relationship:**\n\nEIT Health: Collaborates with the European Commission and the pharmaceutical industry.\n\n**Therefore, the extracted triple is:**\n\nRole: EIT Health\nAction: Collaborates with\nCounterrole: European Commission and the pharmaceutical industry\n\"\"\"\n\n**The extracted triple is:**\n\nRole: EIT Health\nAction: Collaborates with\nCounterrole: European Commission and the pharmaceutical industry",
+    "similarity_score": 0.633,
+    "rating": "Medium",
+    "reason": "Triples are partially aligned semantically."
+  },
+  {
+    "query": "In mid-2020, EIT Digital Innovation Factory launched the \"DATA against COVID-19\" initiative, with the objective of quickly developing digital tools to fight back the pandemic.",
+    "mistral_output": "Role: EIT Digital Innovation Factory\nAction: launched\nCounterrole: \"DATA against COVID-19\" initiative\n\nExplanation: The text states that EIT Digital Innovation Factory took the action of launching the \"DATA against COVID-19\" initiative. Therefore, the triple is: Role: EIT Digital Innovation Factory, Action: launched, Counterrole: \"DATA against COVID-19\" initiative.",
+    "gemma_output": "EIT Digital Innovation Factory is a non-profit organization based in Berlin, Germany.\n\n**Answer:**\n\nRole: EIT Digital Innovation Factory\nAction: Launched the \"DATA against COVID-19\" initiative\nCounterrole: None\n```\n\n**Answer:**\n\nSure, here is the extracted information:\n\n**Role:** EIT Digital Innovation Factory\n**Action:** Launched the \"DATA against COVID-19\" initiative\n**Counterrole:** None",
+    "similarity_score": 0.792,
+    "rating": "Medium",
+    "reason": "Triples are partially aligned semantically."
+  },
+  {
+    "query": "The company joined the EIT Digital Accelerator as a start-up in 2014 after winning first prize in the Cyber-Physical Systems category of the EIT Digital Challenge",
+    "mistral_output": "Role: Start-up\nAction: Joined\nCounterrole: Participant in EIT Digital Accelerator program\n\nExplanation:\nIn the given text, the company is the 'Start-up' that took the 'Action' of 'Joining' the EIT Digital Accelerator. The EIT Digital Accelerator is the 'Counterrole' as it is the program that the start-up joined.",
+    "gemma_output": "**Answer:**\n\nRole: Company\nAction: Joined\nCounterrole: Start-up\n\n**Explanation:**\n\nThe text describes a company joining the EIT Digital Accelerator as a start-up. Therefore, the role of the company is \"Company,\" the action is \"Joined,\" and the counterrole is \"Start-up.\"",
+    "similarity_score": 0.943,
+    "rating": "High",
+    "reason": "Both models agree semantically on the extracted triple."
+  },
+  {
+    "query": "At the same time, the robot is also collecting data on the challenges and opportunities of autonomous deliveries. Testing the delivery robot in a real urban environment provides valuable information on the problems and opportunities of autonomous deliveries. Especially interesting is to see how autonomously moving logistics robots can solve last-mile delivery challenges. The robot pilot is part of EIT Digital ’s Last Mile Autonomous Delivery innovation activity. It aims to develop and bring to market a software platform for controlling and optimising autonomously moving delivery robots. The practical operations are handled by the LMAD start-up.",
+    "mistral_output": "Role: Developer\nAction: Developing\nCounterrole: EIT Digital's Last Mile Autonomous Delivery innovation activity\n\nExplanation: The text mentions that the robot pilot is part of EIT Digital's Last Mile Autonomous Delivery innovation activity, which is developing a software platform for controlling and optimizing autonomously moving delivery robots. Therefore, the role of the robot is to develop, the action it is taking is developing, and the counterrole is EIT Digital's Last Mile Autonomous Delivery innovation activity.",
+    "gemma_output": "**Answer:**\n\nRole: Robot pilot\nAction: Be part of EIT Digital ’s Last Mile Autonomous Delivery innovation activity\nCounterrole: N/A",
+    "similarity_score": 0.89,
+    "rating": "High",
+    "reason": "Both models agree semantically on the extracted triple."
+  },
+  {
+    "query": "EIT Digital Innovation Factory , the start-up Entremo is deploying their product, a wristband to remotely monitor the vital signs of patients, in hospitals and nursing homes in Hungary.",
+    "mistral_output": "Role: EIT Digital Innovation Factory\nAction: Deploying\nCounterrole: Entremo (Deploying their product)",
+    "gemma_output": "**Answer:**\n\nRole: Entremo\nAction: Deploying their product\nCounterrole: Hospitals and nursing homes in Hungary",
+    "similarity_score": 0.551,
+    "rating": "Low",
+    "reason": "Models extracted different relationships."
+  },
+  {
+    "query": "Eötvös Lorand University from Hungary and InnoTractor from the Netherlands.The activity was selected by the Innovation Factory and received EUR 500 000 of support from EIT Digital.",
+    "mistral_output": "Role: University\nAction: Received support\nCounterrole: Funding organization (EIT Digital)",
+    "gemma_output": "**Answer:**\n\nRole: Eötvös Lorand University, InnoTractor\nAction: Selected\nCounterrole: Innovation Factory",
+    "similarity_score": 0.581,
+    "rating": "Low",
+    "reason": "Models extracted different relationships."
+  },
+  {
+    "query": "The EIT Manufacturing Master School offers a unique and excellent high education programme, with international and inclusion mindset, to graduate the next generation of Manufacturing Innovators and Entrepreneurs.",
+    "mistral_output": "Role: Educational Institution\nAction: Offers\nCounterrole: Students (Graduate Manufacturing Innovators and Entrepreneurs)",
+    "gemma_output": "\"\"\"\n\nSure, here is the extracted triple:\n\n**Role:** Manufacturing Innovators and Entrepreneurs\n**Action:** Graduate\n**Counterrole:** None\n\nIs this extraction accurate?\n\n**Please provide feedback.**\n\n**Additional notes:**\n\n* The text does not mention any other organizations or individuals, therefore I have extracted \"None\" for the counterrole.\n* The text describes a program offered by the EIT Manufacturing Master School, therefore I have extracted \"Manufacturing Innovators and Entrepreneurs\" as the role.\n* The text states that the program is to graduate the next generation of Manufacturing Innovators and Entrepreneurs, therefore I have extracted \"Graduate\" as the action.",
+    "similarity_score": 0.645,
+    "rating": "Medium",
+    "reason": "Triples are partially aligned semantically."
+  },
+  {
+    "query": "The EIT Manufacturing Doctoral School offers mobility, mentorship, networking, innovation, entrepreneurship, and business modules to PhD students. Graduated EIT Manufacturing PhD students will be prepared to generate start-ups or to be leaders of innovation within manufacturing companies and ecosystem, contributing to European competitiveness and environmental sustainability.",
+    "mistral_output": "Role: Graduated EIT Manufacturing PhD students\nAction: Contribute\nCounterrole: European competitiveness and environmental sustainability",
+    "gemma_output": "**Answer:**\n\nRole: PhD student\nAction: Generate start-ups or be leaders of innovation\nCounterrole: Leaders of innovation within manufacturing companies and ecosystem",
+    "similarity_score": 0.706,
+    "rating": "Medium",
+    "reason": "Triples are partially aligned semantically."
+  },
+  {
+    "query": "EIT RawMaterials hosted the final pitching of the Regional Innovation Competition 2021 among innovative start-ups and raw materials changemakers from countries of the EIT Regional Innovation Scheme (RIS).",
+    "mistral_output": "Role: Host\nAction: Hosted the final pitching\nCounterrole: Innovative start-ups and raw materials changemakers from countries of the EIT Regional Innovation Scheme (RIS)",
+    "gemma_output": "**Answer:**\n\nRole: EIT RawMaterials\nAction: Hosted\nCounterrole: None",
+    "similarity_score": 0.42,
+    "rating": "Low",
+    "reason": "Models extracted different relationships."
+  },
+  {
+    "query": "The simple process (battery crushing, grinding, leaching and solution purification) is now freely marketed by Tracegrow, supported by EIT RawMaterials, as is the zinc-manganese fertiliser product separated from the batteries.",
+    "mistral_output": "Role: Manufacturer\nAction: Markets\nCounterrole: Supports\n\nExplanation:\nIn the given text, Tracegrow is the organization that is taking the action of marketing (manufacturing and selling) a product (battery crushing, grinding, leaching and solution purification process, and zinc-manganese fertiliser product). EIT RawMaterials is the organization that is providing support to Tracegrow in this process.",
+    "gemma_output": "**Answer:**\n\nRole: Tracegrow\nAction: Markets\nCounterrole: EIT RawMaterials\n\nThis text describes a relationship between Tracegrow, EIT RawMaterials, and the process of battery crushing, grinding, leaching, and solution purification. Tracegrow is the marketer of the process, supported by EIT RawMaterials.",
+    "similarity_score": 0.86,
+    "rating": "High",
+    "reason": "Both models agree semantically on the extracted triple."
+  },
+  {
+    "query": "The EIT Jumpstarter is a programme run by six EIT Knowledge & Innovation Communities (KICs): EIT Health, EIT RawMaterials, EIT Food, EIT InnoEnergy, EIT Manufacturing, and EIT Urban Mobility. The goal is to help early-stage innovators from emerging European regions turn their scientific ideas and innovations into successful businesses.",
+    "mistral_output": "Role: EIT Jumpstarter is a programme run by\nAction: is run by\nCounterrole: EIT Knowledge & Innovation Communities (KICs)\n\nRole: EIT Knowledge & Innovation Communities (KICs)\nAction: run\nCounterrole: EIT Jumpstarter",
+    "gemma_output": "**Answer:**\n\nRole: EIT Knowledge & Innovation Communities (KICs)\nAction: Run\nCounterrole: None",
+    "similarity_score": 0.798,
+    "rating": "Medium",
+    "reason": "Triples are partially aligned semantically."
+  }
+]
