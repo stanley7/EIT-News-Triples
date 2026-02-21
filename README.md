@@ -14,7 +14,7 @@ This project collects and processes news articles from the European Institute of
 **Raw News Articles**  
 Scraped from the official [EIT website](https://www.eit.europa.eu/news-events/news) for the years 2008–2025. Stored year-wise in plain text files.
 
-Google Drive CSV File: https://drive.google.com/file/d/1eZOIWNxpoFrS4crx7xzmsurGFj7qa2OE/view?usp=sharing
+Google Drive Json Files: https://drive.google.com/drive/folders/13jtQnkVQGAGcduk_-ZbBWVaAsQfKkyGC?usp=sharing
 
 ### Required Files
 1. `EIT_Backend.ipynb` - Backend code (in UI folder)
