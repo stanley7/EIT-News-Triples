@@ -6,7 +6,7 @@ This project collects and processes news articles from the European Institute of
 
 1. **Extract Triplets** - AI models extract organizational relationships (role → practice → counterrole) from text
 2. **Validate Triplets** - Manually review, accept, reject, or correct extracted triplets
-3. **Analyze Network** - Generate interactive network visualization from CSV embeddings using similarity clustering
+3. **Analyze Network** - Generate interactive network visualization from Datasets
 4. **Export Results** - Download validated triplets, network data, and annotations as JSON   
 
 ## Datasets
@@ -61,21 +61,19 @@ Google Drive Json Files: https://drive.google.com/drive/folders/13jtQnkVQGAGcduk
 #### Step 1.4: Download & Upload CSV File
 
 **A. Download from Google Drive:**
-1. Go to https://drive.google.com/file/d/1eZOIWNxpoFrS4crx7xzmsurGFj7qa2OE/view?usp=sharing
+1. Go to https://drive.google.com/drive/folders/13jtQnkVQGAGcduk_-ZbBWVaAsQfKkyGC?usp=sharing
 2. Click the **Download** button (top right, looks like ⬇️)
-3. Save `gt_graph_embedded.csv` to your computer
-4. **File size**: ~31 MB
+3. Save datasets to your computer
+
 
 **B. Upload to Colab:**
 1. In Colab, look at the **left sidebar**
 2. Click the **📁 folder icon** (Files)
 3. You'll see `/content/` directory
 4. Click the **📤 upload icon** (upload to session storage)
-5. Select `gt_graph_embedded.csv` from your downloads
-6. Wait for upload progress bar to complete (~30 seconds)
-7. **VERIFY**: Check that `/content/gt_graph_embedded.csv` appears in the file list
+5. Select datasets from your downloads
+6. Wait for upload progress bar to complete
 
-**⚠️ CRITICAL**: The CSV file MUST be at `/content/gt_graph_embedded.csv` or network visualization will fail!
 
 #### Step 1.5: Run the Backend
 
