@@ -142,6 +142,10 @@ const BACKEND_BASE = 'https://abc123-def456.ngrok-free.app';
 2. Select `Open with` → **Web Browser** (Chrome, Firefox, Edge, Safari)
 3. The application should load!
 
+## Recent Updates
+
+Replaced the CSV embedding network with 9 pre-built semantic JSON files (`synthetic_networks/`), one per EIT community. 
+Added a community selector in the Network Analysis tab and a new **All Communities** view that merges all 9 networks into one graph with shared actors deduplicated.
 
 ## References
 
