@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EIT Logic Constellation Analyzer</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: white; color: #000; }
+        header { border-bottom: 1px solid #e0e0e0; padding: 16px 32px; background: white; }
+        .header-content { display: flex; align-items: center; justify-content: space-between; }
+        .header-title { display: flex; align-items: center; gap: 12px; }
+        h1 { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+        .header-subtitle { font-size: 13px; color: #525252; }
+        nav { border-bottom: 1px solid #e0e0e0; background: #f4f4f4; padding: 0 32px; }
+        .tabs { display: flex; gap: 2px; }
+        .tab { padding: 12px 20px; border: none; background: transparent; border-bottom: 2px solid transparent; cursor: pointer; font-size: 14px; font-family: inherit; color: #525252; transition: all 0.2s; }
+        .tab.active { background: white; border-bottom: 2px solid black; font-weight: 600; color: black; }
+        main { padding: 32px; max-width: 1400px; margin: 0 auto; }
+        main .tab-content { display: none; }
+        main .tab-content.active { display: block; }
+        .annotation-item:hover { background: #e9e9e9; }
+        .entity { padding: 2px 4px; border-radius: 3px; margin-right: 2px; position: relative; }
+        .entity .label { font-size: 10px; font-weight: bold; margin-left: 6px; opacity: 0.8; }
+        .btn { padding: 12px 24px; border: none; cursor: pointer; font-size: 14px; font-weight: 500; font-family: inherit; transition: opacity 0.2s; }
+        .btn:hover { opacity: 0.85; }
+        .btn-primary { background: black; color: white; }
+        .btn-secondary { background: white; color: black; border: 1px solid black; }
+        .btn-success { background: #2ca02c; color: white; }
+        .btn-warning { background: #ff9800; color: white; }
+        .btn-danger { background: white; color: #d32f2f; border: 1px solid #d32f2f; }
+        .card { border: 1px solid #e0e0e0; padding: 24px; background: white; margin-bottom: 24px; }
+        .grid { display: grid; gap: 16px; }
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+        .upload-area { padding: 32px; border: 1px solid #e0e0e0; border-radius: 4px; text-align: center; cursor: pointer; background: #fafafa; transition: background 0.2s; }
+        .upload-area:hover { background: #f4f4f4; border-color: #000; }
+        .progress-bar { width: 100%; height: 8px; background: #e0e0e0; position: relative; overflow: hidden; }
+        .progress-fill { position: absolute; left: 0; top: 0; height: 100%; background: black; transition: width 0.3s; }
+        #network-container { width: 100%; height: 620px; border: 1px solid #e0e0e0; background: white; }
+        .validation-container { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .triplet-field { margin-bottom: 16px; }
+        .triplet-label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 8px; color: #525252; }
+        .triplet-value { padding: 12px; font-size: 14px; font-weight: 500; border: 1px solid; }
+        .role-value { background: #e3f2fd; border-color: #90caf9; }
+        .practice-value { background: #f3e5f5; border-color: #ce93d8; }
+        .counterrole-value { background: #e8f5e9; border-color: #81c784; }
+        .triplet-input { width: 100%; padding: 12px; border: 2px solid; font-size: 14px; font-weight: 500; font-family: inherit; }
+        .role-input { border-color: #1976d2; }
+        .practice-input { border-color: #7b1fa2; }
+        .counterrole-input { border-color: #388e3c; }
+        .stat-card { text-align: center; padding: 20px; border: 1px solid #e0e0e0; }
+        .stat-value { font-size: 32px; font-weight: 600; margin-bottom: 4px; }
+        .stat-label { font-size: 13px; color: #525252; }
+        .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 13px; }
+        .legend-color { width: 16px; height: 16px; border-radius: 50%; }
+        .confidence-bar { flex: 1; height: 8px; background: #e0e0e0; position: relative; }
+        .confidence-fill { position: absolute; left: 0; top: 0; height: 100%; background: #ff9800; }
+        input[type="file"] { display: none; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .spinner { animation: spin 1s linear infinite; }
+        .scraper-section { margin-top: 32px; padding: 24px; margin-left: auto; max-width: 450px; width: 100%; background: #f9f9f9; border: 1px solid #e0e0e0; border-radius: 4px; }
+        .url-input-group { display: flex; gap: 12px; margin-bottom: 12px; }
+        .url-input { flex: 1; padding: 12px; border: 1px solid #d0d0d0; border-radius: 4px; font-size: 14px; font-family: inherit; }
+        .url-input:focus { outline: none; border-color: #000; }
+        .scrape-status { padding: 12px; margin-top: 12px; border-radius: 4px; font-size: 13px; display: none; }
+        .scrape-status.success { background: #e8f5e9; border: 1px solid #81c784; color: #2e7d32; }
+        .scrape-status.error { background: #ffebee; border: 1px solid #e57373; color: #c62828; }
+        .scrape-status.loading { background: #e3f2fd; border: 1px solid #90caf9; color: #1565c0; }
+
+        /* Network community selector */
+        .community-selector { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; align-items: center; }
+        .community-btn { padding: 8px 16px; border: 1px solid #e0e0e0; background: white; cursor: pointer; font-size: 13px; font-family: inherit; border-radius: 2px; transition: all 0.15s; color: #525252; }
+        .community-btn:hover { border-color: #000; color: #000; }
+        .community-btn.active { background: black; color: white; border-color: black; font-weight: 600; }
+
+        /* Network stats bar */
+        .network-stats-bar { display: flex; gap: 24px; padding: 14px 20px; background: #f4f4f4; border: 1px solid #e0e0e0; margin-bottom: 16px; font-size: 13px; }
+        .network-stat { display: flex; flex-direction: column; gap: 2px; }
+        .network-stat-value { font-size: 20px; font-weight: 600; }
+        .network-stat-label { color: #525252; font-size: 12px; }
+
+        /* Layer legend */
+        .layer-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+
+        @media (max-width: 768px) {
+            .validation-container { grid-template-columns: 1fr; }
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+        }
+</style>
+
+    <script type="module">
+        import Graph from "https://unpkg.com/graphology@0.25.4/dist/graphology.min.js";
+        import Sigma from "https://unpkg.com/sigma@2.4.0/dist/sigma.min.js";
+        import FA2 from "https://unpkg.com/graphology-layout-forceatlas2@0.10.1/build/graphology-layout-forceatlas2.min.js";
+        window.Graph = Graph; window.Sigma = Sigma; window.FA2 = FA2;
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-title">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="6"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+                <h1>EIT Logic Constellation Analyzer</h1>
+            </div>
+            <div class="header-subtitle">Institutional Pluralism Research Tool</div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('upload')">📤 Data Upload</button>
+            <button class="tab" onclick="showTab('preview')">👁️ Preview &amp; Annotate</button>
+            <button class="tab" onclick="showTab('configure')">⚙️ Configure Analysis</button>
+            <button class="tab" onclick="showTab('extract')">📝 Extract Triplets</button>
+            <button class="tab" onclick="showTab('validate')">✓ Validate &amp; Train</button>
+            <button class="tab" onclick="showTab('analyze')">🔗 Network Analysis</button>
+            <button class="tab" onclick="showTab('results')">📊 Results</button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ================================================================ -->
+        <!-- TAB 1: DATA UPLOAD                                               -->
+        <!-- ================================================================ -->
+        <div id="upload" class="tab-content active">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Upload Data Sources</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">
+                Upload one .txt file for each EIT community to begin analysis
+            </p>
+
+            <div style="display: grid; grid-template-columns: 1fr 400px; gap: 32px; align-items: start;">
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">EIT Health</h3>
+                        <a href="https://eithealth.eu" target="_blank" style="font-size: 12px; color: #0066cc; text-decoration: none;">↗ Visit website</a>
+                        <div class="upload-area" onclick="document.getElementById('file-health').click()">
+                            <div style="font-size: 32px; margin-bottom: 12px;">📤</div>
+                            <div style="font-size: 14px; color: #525252; margin-bottom: 4px;">Click to upload</div>
+                            <div style="font-size: 12px; color: #8d8d8d;">.txt files only</div>
+                        </div>
+                        <input type="file" id="file-health" accept=".txt" onchange="handleFileUpload('health', this.files)">
+                        <div id="health-preview" style="margin-top: 16px; font-size: 13px; min-height: 20px;"></div>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">EIT Food</h3>
+                        <a href="https://www.eitfood.eu" target="_blank" style="font-size: 12px; color: #0066cc; text-decoration: none;">↗ Visit website</a>
+                        <div class="upload-area" onclick="document.getElementById('file-food').click()">
+                            <div style="font-size: 32px; margin-bottom: 12px;">📤</div>
+                            <div style="font-size: 14px; color: #525252; margin-bottom: 4px;">Click to upload</div>
+                            <div style="font-size: 12px; color: #8d8d8d;">.txt files only</div>
+                        </div>
+                        <input type="file" id="file-food" accept=".txt" onchange="handleFileUpload('food', this.files)">
+                        <div id="food-preview" style="margin-top: 16px; font-size: 13px; min-height: 20px;"></div>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">EIT InnoEnergy</h3>
+                        <a href="https://www.innoenergy.com" target="_blank" style="font-size: 12px; color: #0066cc; text-decoration: none;">↗ Visit website</a>
+                        <div class="upload-area" onclick="document.getElementById('file-energy').click()">
+                            <div style="font-size: 32px; margin-bottom: 12px;">📤</div>
+                            <div style="font-size: 14px; color: #525252; margin-bottom: 4px;">Click to upload</div>
+                            <div style="font-size: 12px; color: #8d8d8d;">.txt files only</div>
+                        </div>
+                        <input type="file" id="file-energy" accept=".txt" onchange="handleFileUpload('energy', this.files)">
+                        <div id="energy-preview" style="margin-top: 16px; font-size: 13px; min-height: 20px;"></div>
+                    </div>
+                </div>
+
+                <div class="scraper-section" style="margin-top: 0;">
+                    <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">📥 Don't have data? Download from URL</h3>
+                    <p style="font-size: 13px; color: #525252; margin-bottom: 16px;">
+                        Enter a URL to scrape text content and download as .txt file
+                    </p>
+                    <div class="url-input-group">
+                        <input type="text" id="scrape-url" class="url-input" placeholder="https://example.com/eit-health-overview">
+                        <button class="btn btn-primary" onclick="scrapeAndDownload()" id="scrape-btn">🔍 Scrape &amp; Download</button>
+                    </div>
+                    <div id="scrape-status" class="scrape-status"></div>
+                    <div style="font-size: 12px; color: #8d8d8d; margin-top: 12px;">
+                        💡 Tip: Scrape data from EIT community websites, then upload the downloaded .txt files above
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" style="margin-top: 32px;" onclick="showTab('preview')" id="continue-btn" disabled>
+                Continue to Preview &amp; Annotate →
+            </button>
+        </div>
+
+        <!-- ================================================================ -->
+        <!-- TAB 2: PREVIEW & ANNOTATE                                        -->
+        <!-- ================================================================ -->
+        <div id="preview" class="tab-content">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Preview &amp; Annotate Documents</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">
+                Review documents, see spaCy NER analysis, and annotate role-practice-counterrole triplets
+            </p>
+
+            <div class="card">
+                <div class="grid grid-2">
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Select Corpus</label>
+                        <select id="corpus-select" style="width: 100%; padding: 10px; border: 1px solid #8d8d8d; font-size: 14px;" onchange="loadCorpusDocuments()">
+                            <option value="">-- Select a corpus --</option>
+                            <option value="health">EIT Health</option>
+                            <option value="food">EIT Food</option>
+                            <option value="energy">EIT Energy</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Select Document</label>
+                        <select id="document-select" style="width: 100%; padding: 10px; border: 1px solid #8d8d8d; font-size: 14px;" onchange="loadDocument()" disabled>
+                            <option value="">-- Select a document --</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="document-viewer" style="display: none;">
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 4px;" id="doc-title">Document Title</h3>
+                            <div style="font-size: 13px; color: #525252;">
+                                <span id="doc-corpus">Corpus</span> • <span id="doc-length">0</span> words
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary" onclick="runSpacyAnalysis()">🔬 Run spaCy Analysis</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-2" style="align-items: start;">
+                    <div>
+                        <div class="card">
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">Document Text</h3>
+                            <div id="doc-text" style="padding: 16px; background: #fafafa; border: 1px solid #e0e0e0; min-height: 400px; max-height: 600px; overflow-y: auto; font-size: 14px; line-height: 1.8;">
+                                Select a document to view its content...
+                            </div>
+                        </div>
+
+                        <div class="card" style="margin-top: 16px;">
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">Manual Annotation</h3>
+                            <p style="font-size: 13px; color: #525252; margin-bottom: 16px;">Annotate triplets found in this document to help train the model</p>
+                            <div class="triplet-field">
+                                <label class="triplet-label">ROLE IDENTITY</label>
+                                <input type="text" class="triplet-input role-input" id="manual-role" placeholder="e.g., supporter, connector, educator">
+                            </div>
+                            <div class="triplet-field">
+                                <label class="triplet-label">PRACTICE</label>
+                                <input type="text" class="triplet-input practice-input" id="manual-practice" placeholder="e.g., supports, connects, trains">
+                            </div>
+                            <div class="triplet-field">
+                                <label class="triplet-label">COUNTERROLE</label>
+                                <input type="text" class="triplet-input counterrole-input" id="manual-counterrole" placeholder="e.g., startups, entrepreneurs, students">
+                            </div>
+                            <button class="btn btn-primary" style="width: 100%; margin-top: 12px;" onclick="addManualAnnotation()">➕ Add Annotation</button>
+                            <div id="annotations-list" style="margin-top: 24px;">
+                                <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Annotations (<span id="annotation-count">0</span>)</h4>
+                                <div id="annotations-container" style="display: flex; flex-direction: column; gap: 8px;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="card">
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">Named Entity Recognition (NER)</h3>
+                            <div id="ner-analysis" style="padding: 16px; background: #fafafa; border: 1px solid #e0e0e0; min-height: 200px;">
+                                <div style="text-align: center; color: #8d8d8d; padding: 32px 0;">Click "Run spaCy Analysis" to see NER results</div>
+                            </div>
+                            <div id="ner-legend" style="margin-top: 16px; display: none;">
+                                <h4 style="font-size: 13px; font-weight: 600; margin-bottom: 8px;">Entity Types</h4>
+                                <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 12px;">
+                                    <span style="background: #ddd; padding: 2px 6px; border-radius: 3px;">PERSON</span>
+                                    <span style="background: #7aecec; padding: 2px 6px; border-radius: 3px;">ORG</span>
+                                    <span style="background: #ff9561; padding: 2px 6px; border-radius: 3px;">GPE</span>
+                                    <span style="background: #bfe1d9; padding: 2px 6px; border-radius: 3px;">PRODUCT</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" style="margin-top: 16px;">
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">Dependency Parse (displaCy)</h3>
+                            <div style="margin-bottom: 12px;">
+                                <label style="display: block; font-size: 13px; color: #525252; margin-bottom: 8px;">Select sentence to parse:</label>
+                                <select id="sentence-select" style="width: 100%; padding: 8px; border: 1px solid #8d8d8d; font-size: 13px;" onchange="parseSentence()" disabled>
+                                    <option value="">-- Select sentence --</option>
+                                </select>
+                            </div>
+                            <div id="displacy-analysis" style="padding: 16px; background: #fafafa; border: 1px solid #e0e0e0; min-height: 200px; overflow-x: auto;">
+                                <div style="text-align: center; color: #8d8d8d; padding: 32px 0;">Select a sentence to visualize dependencies</div>
+                            </div>
+                        </div>
+
+                        <div class="card" style="margin-top: 16px;">
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">Entity Statistics</h3>
+                            <div id="entity-stats" style="display: none;">
+                                <div class="grid grid-2" style="gap: 12px;">
+                                    <div style="padding: 12px; background: #f4f4f4; border: 1px solid #e0e0e0;">
+                                        <div style="font-size: 20px; font-weight: 600;" id="stat-entities">0</div>
+                                        <div style="font-size: 12px; color: #525252;">Total Entities</div>
+                                    </div>
+                                    <div style="padding: 12px; background: #f4f4f4; border: 1px solid #e0e0e0;">
+                                        <div style="font-size: 20px; font-weight: 600;" id="stat-types">0</div>
+                                        <div style="font-size: 12px; color: #525252;">Entity Types</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" style="margin-top: 32px;" onclick="showTab('configure')">Continue to Configuration →</button>
+        </div>
+
+        <!-- ================================================================ -->
+        <!-- TAB 3: CONFIGURE                                                 -->
+        <!-- ================================================================ -->
+        <div id="configure" class="tab-content">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Configure LLM Analysis</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">Set parameters for extracting role identity–practice–counterrole triplets</p>
+
+            <div class="card">
+                <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Extraction Backend</label>
+                <select id="backend-select" style="width: 100%; padding: 10px; border: 1px solid #8d8d8d; font-size: 14px; margin-bottom: 12px;">
+                    <option>SpacyLLM</option>
+                    <option>Mistral 7B</option>
+                </select>
+            </div>
+
+            <div class="card">
+                <label style="display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Extraction Prompt Template</label>
+                <textarea id="prompt-template" style="width: 100%; min-height: 120px; padding: 12px; border: 1px solid #8d8d8d; font-size: 13px; font-family: 'IBM Plex Mono', monospace;">Extract semantic triplets from the text:
+- Role Identity: What organizational role does the EIT enact?
+- Practice: What action or activity is performed?
+- Counterrole: Who is the recipient or target?
+
+Example: [Enabler] → [supports] → [startups]</textarea>
+            </div>
+
+            <div class="card">
+                <label style="display: block; font-weight: 600; margin-bottom: 16px; font-size: 14px;">Analysis Parameters</label>
+                <div style="margin-bottom: 16px;">
+                    <label style="font-size: 13px; color: #525252; display: block; margin-bottom: 8px;">Minimum triplet frequency threshold</label>
+                    <input type="number" id="min-frequency" value="2" min="1" style="padding: 8px; border: 1px solid #8d8d8d; width: 100px; font-size: 14px;">
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <label style="font-size: 13px; color: #525252; display: block; margin-bottom: 8px;">Number of triplets to validate</label>
+                    <input type="number" id="validate-count" value="50" min="10" style="padding: 8px; border: 1px solid #8d8d8d; width: 100px; font-size: 14px;">
+                    <div style="font-size: 11px; color: #8d8d8d; margin-top: 4px;">Start with 50-100 for initial model training</div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" onclick="showTab('extract')">Start Extraction →</button>
+        </div>
+
+        <!-- ================================================================ -->
+        <!-- TAB 4: EXTRACT                                                   -->
+        <!-- ================================================================ -->
+        <div id="extract" class="tab-content">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Extract Triplets</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">LLM is processing documents to identify role identity–practice–counterrole structures</p>
+
+            <div id="extract-start" style="text-align: center; padding: 64px 0;">
+                <button class="btn btn-primary" style="padding: 16px 32px; font-size: 16px;" onclick="startExtraction()">▶️ Begin Processing</button>
+            </div>
+
+            <div id="extract-processing" style="display: none; padding: 32px 0;">
+                <div class="card" style="max-width: 700px; margin: 0 auto;">
+                    <div style="text-align: center; margin-bottom: 24px;">
+                        <svg class="spinner" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+                        </svg>
+                        <div style="font-size: 18px; font-weight: 600; margin: 16px 0 8px;">Processing Documents</div>
+                        <div style="font-size: 14px; color: #525252;" id="extraction-status">Initializing extraction...</div>
+                    </div>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 4px; border: 1px solid #e0e0e0;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                            <div>
+                                <div style="font-size: 12px; color: #525252; margin-bottom: 4px;">Model</div>
+                                <div style="font-size: 14px; font-weight: 600;" id="processing-model">-</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 12px; color: #525252; margin-bottom: 4px;">Time Elapsed</div>
+                                <div style="font-size: 14px; font-weight: 600;" id="processing-time">0s</div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 12px;">
+                            <div style="font-size: 12px; color: #525252; margin-bottom: 8px;">Estimated Progress</div>
+                            <div class="progress-bar" style="height: 12px;">
+                                <div class="progress-fill" id="extraction-progress" style="width: 0%; transition: width 1s;"></div>
+                            </div>
+                            <div style="font-size: 12px; color: #525252; margin-top: 4px; text-align: right;" id="progress-text">0%</div>
+                        </div>
+                        <div style="font-size: 12px; color: #525252; line-height: 1.5;">
+                            <div id="extraction-step">
+                                ⏳ Sending data to backend...<br>
+                                📊 Text chunks: <span id="chunk-info">Calculating...</span><br>
+                                ⚡ This may take several minutes depending on document size
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================================================ -->
+        <!-- TAB 5: VALIDATE                                                  -->
+        <!-- ================================================================ -->
+        <div id="validate" class="tab-content">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Validate &amp; Train Model</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">Review LLM-extracted triplets and provide corrections to improve the model</p>
+
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                    <span style="font-size: 14px; font-weight: 600;">Progress: <span id="current-index">1</span> / <span id="total-triplets">5</span></span>
+                    <span style="font-size: 14px; color: #525252;"><span id="progress-percent">20</span>% Complete</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 20%"></div>
+                </div>
+                <div class="grid grid-4" style="margin-top: 24px;">
+                    <div class="stat-card"><div class="stat-value" style="color: #2ca02c;" id="stat-accepted">0</div><div class="stat-label">Accepted</div></div>
+                    <div class="stat-card"><div class="stat-value" style="color: #ff9800;" id="stat-corrected">0</div><div class="stat-label">Corrected</div></div>
+                    <div class="stat-card"><div class="stat-value" style="color: #d62728;" id="stat-rejected">0</div><div class="stat-label">Rejected</div></div>
+                    <div class="stat-card"><div class="stat-value" id="stat-remaining">5</div><div class="stat-label">Remaining</div></div>
+                </div>
+            </div>
+
+            <div class="validation-container">
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <h3 style="font-size: 16px; font-weight: 600; margin: 0;">Source Text</h3>
+                        <div style="padding: 4px 12px; background: #f4f4f4; font-size: 12px; font-weight: 500;" id="current-community">EIT Health</div>
+                    </div>
+                    <div style="padding: 16px; background: #f4f4f4; font-size: 14px; line-height: 1.6; border: 1px solid #e0e0e0; min-height: 120px;" id="source-text">
+                        EIT Health supports startups in developing innovative healthcare solutions through mentoring programs and funding opportunities.
+                    </div>
+                    <div style="margin-top: 16px; padding: 12px; background: #fff5e6; border: 1px solid #ffe0b2;">
+                        <div style="font-size: 12px; font-weight: 600; margin-bottom: 4px; color: #8d6e00;">Model Confidence</div>
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div class="confidence-bar"><div class="confidence-fill" id="confidence-fill" style="width: 87%"></div></div>
+                            <span style="font-size: 14px; font-weight: 600; min-width: 50px;" id="confidence-value">87%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">Extracted Triplet</h3>
+                    <div id="triplet-view">
+                        <div class="triplet-field">
+                            <label class="triplet-label">ROLE IDENTITY</label>
+                            <div class="triplet-value role-value" id="role-display">—</div>
+                        </div>
+                        <div class="triplet-field">
+                            <label class="triplet-label">PRACTICE</label>
+                            <div class="triplet-value practice-value" id="practice-display">—</div>
+                        </div>
+                        <div class="triplet-field">
+                            <label class="triplet-label">COUNTERROLE</label>
+                            <div class="triplet-value counterrole-value" id="counterrole-display">—</div>
+                        </div>
+                    </div>
+                    <div id="triplet-edit" style="display: none;">
+                        <div class="triplet-field">
+                            <label class="triplet-label">ROLE IDENTITY</label>
+                            <input type="text" class="triplet-input role-input" id="role-edit" value="supporter">
+                        </div>
+                        <div class="triplet-field">
+                            <label class="triplet-label">PRACTICE</label>
+                            <input type="text" class="triplet-input practice-input" id="practice-edit" value="supports">
+                        </div>
+                        <div class="triplet-field">
+                            <label class="triplet-label">COUNTERROLE</label>
+                            <input type="text" class="triplet-input counterrole-input" id="counterrole-edit" value="startups">
+                        </div>
+                        <div class="triplet-field" style="margin-top: 16px;">
+                            <label class="triplet-label">MODEL CONFIDENCE</label>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div class="confidence-bar" style="flex: 1; height: 8px; background: #e0e0e0; position: relative; overflow: hidden;">
+                                    <div id="triplet-confidence-fill" style="position: absolute; left: 0; top: 0; height: 100%; background: #2ca02c; transition: width 0.3s; width: 87%;"></div>
+                                </div>
+                                <span style="font-size: 14px; font-weight: 600; min-width: 50px;" id="triplet-confidence-value">87%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 12px;">
+                        <div id="action-buttons">
+                            <button class="btn btn-success" style="width: 100%; margin-bottom: 12px;" onclick="validateTriplet('accept')">✓ Accept Triplet</button>
+                            <button class="btn btn-warning" style="width: 100%; margin-bottom: 12px;" onclick="startEdit()">✏️ Correct Triplet</button>
+                            <button class="btn btn-danger" style="width: 100%;" onclick="validateTriplet('reject')">✕ Reject Triplet</button>
+                        </div>
+                        <div id="edit-buttons" style="display: none;">
+                            <button class="btn btn-primary" style="width: 100%; margin-bottom: 12px;" onclick="validateTriplet('correct')">✓ Save Correction</button>
+                            <button class="btn btn-secondary" style="width: 100%;" onclick="cancelEdit()">Cancel Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="display: flex; justify-content: space-between; align-items: center;">
+                <button class="btn btn-secondary" onclick="previousTriplet()" id="prev-btn">← Previous</button>
+                <div style="font-size: 14px; color: #525252;">Triplet <span id="nav-current">1</span> of <span id="nav-total">5</span></div>
+                <button class="btn btn-secondary" onclick="nextTriplet()" id="next-btn">Next →</button>
+            </div>
+
+            <div id="validation-complete" style="display: none;" class="card">
+                <div style="font-size: 48px; margin-bottom: 16px;">✓</div>
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Validation Complete!</h3>
+                <p style="font-size: 14px; color: #525252; margin-bottom: 24px;">All triplets have been reviewed. You can now explore the network analysis.</p>
+                <button class="btn btn-primary" style="padding: 14px 32px; font-size: 16px;" onclick="showTab('analyze')">Go to Network Analysis →</button>
+            </div>
+        </div>
+
+        <!-- ================================================================ -->
+        <!-- TAB 6: NETWORK ANALYSIS — driven by synthetic JSON files         -->
+        <!-- ================================================================ -->
+        <div id="analyze" class="tab-content">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Network Analysis</h2>
+            <p style="color: #525252; margin-bottom: 24px; font-size: 14px;">
+                Role constellation networks for each EIT community — loaded from pre-built synthetic JSON files
+            </p>
+
+            <!-- Community selector -->
+            <div class="card" style="margin-bottom: 20px;">
+                <div style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Select EIT Community</div>
+                <div class="community-selector">
+                    <button class="community-btn" onclick="selectCommunity('all', this)">🌐 All Communities</button>
+                    <button class="community-btn active" onclick="selectCommunity('eit_health', this)">🏥 EIT Health</button>
+                    <button class="community-btn" onclick="selectCommunity('eit_food', this)">🌾 EIT Food</button>
+                    <button class="community-btn" onclick="selectCommunity('eit_innoenergy', this)">⚡ EIT InnoEnergy</button>
+                    <button class="community-btn" onclick="selectCommunity('eit_digital', this)">💻 EIT Digital</button>
+                    <button class="community-btn" onclick="selectCommunity('eit_climate_kic', this)">🌍 EIT Climate-KIC</button>
+                    <button class="community-btn" onclick="selectCommunity('eit_manufacturing', this)">🏭 EIT Manufacturing</button>
+                    <button class="community-btn" onclick="selectCommunity('eit_rawmaterials', this)">⛏️ EIT RawMaterials</button>
+                    <button class="community-btn" onclick="selectCommunity('eit_urban_mobility', this)">🚌 EIT Urban Mobility</button>
+                    <button class="community-btn" onclick="selectCommunity('digital_era_actors', this)">🖥️ Digital Era Actors</button>
+                </div>
+                <button class="btn btn-primary" style="margin-top: 12px;" onclick="loadSelectedNetwork()">🔄 Load Network</button>
+            </div>
+
+            <!-- Network stats -->
+            <div class="network-stats-bar" id="network-stats-bar" style="display: none;">
+                <div class="network-stat">
+                    <div class="network-stat-value" id="net-stat-name">—</div>
+                    <div class="network-stat-label">Network</div>
+                </div>
+                <div class="network-stat">
+                    <div class="network-stat-value" id="net-stat-nodes">—</div>
+                    <div class="network-stat-label">Nodes</div>
+                </div>
+                <div class="network-stat">
+                    <div class="network-stat-value" id="net-stat-edges">—</div>
+                    <div class="network-stat-label">Total Edges</div>
+                </div>
+                <div class="network-stat">
+                    <div class="network-stat-value" style="color: #4e79a7;" id="net-stat-positive">—</div>
+                    <div class="network-stat-label">Positive Edges</div>
+                </div>
+                <div class="network-stat">
+                    <div class="network-stat-value" style="color: #e15759;" id="net-stat-critical">—</div>
+                    <div class="network-stat-label">Critical Edges</div>
+                </div>
+            </div>
+
+            <!-- Network iframe -->
+            <div id="network-container"></div>
+
+            <!-- Legend -->
+            <div class="grid grid-3" style="margin-top: 24px;">
+                <div class="card">
+                    <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Node Colors (Generic Roles)</h3>
+                    <div class="legend-item"><div class="legend-color" style="background: #edc948;"></div><span>EIT Community (Anchor)</span></div>
+                    <div class="legend-item"><div class="legend-color" style="background: #4e79a7;"></div><span>University / Research</span></div>
+                    <div class="legend-item"><div class="legend-color" style="background: #59a14f;"></div><span>Industry / Corporate</span></div>
+                    <div class="legend-item"><div class="legend-color" style="background: #e15759;"></div><span>Government / Policy</span></div>
+                    <div class="legend-item"><div class="legend-color" style="background: #b07aa1;"></div><span>Startup / SME</span></div>
+                    <div class="legend-item"><div class="legend-color" style="background: #999999;"></div><span>Other / Peripheral</span></div>
+                </div>
+
+                <div class="card">
+                    <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Edge Types (Layers)</h3>
+                    <div class="legend-item">
+                        <span class="layer-dot" style="background: #4e79a7;"></span>
+                        <span><strong>Positive</strong> — build-up relationships (funds, supports, partners)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="layer-dot" style="background: #e15759;"></span>
+                        <span><strong>Critical</strong> — breakdown relationships (criticizes, restricts, opposes)</span>
+                    </div>
+                    <div style="font-size: 12px; color: #666; margin-top: 12px;">
+                        Arrows indicate direction of the practice. Click edges to see specialized role labels.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Generic Roles</h3>
+                    <div style="font-size: 12px; line-height: 1.9; color: #333;">
+                        <div><strong>Anchor</strong> — core funding / sponsoring actor</div>
+                        <div><strong>Broker</strong> — connects different actors</div>
+                        <div><strong>Validator</strong> — certifies, approves, endorses</div>
+                        <div><strong>Implementer</strong> — executes programmes</div>
+                        <div><strong>Advocate</strong> — promotes, campaigns for</div>
+                        <div><strong>Knowledge Hub</strong> — researches, publishes</div>
+                        <div><strong>Market Shaper</strong> — sets agenda, commercializes</div>
+                        <div><strong>Amplifier</strong> — shares, retweets, highlights</div>
+                        <div><strong>Agenda Setter</strong> — initiates, prioritizes</div>
+                        <div><strong>Watchdog</strong> — investigates, questions</div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" style="margin-top: 32px;" onclick="showTab('results')">View Results →</button>
+        </div>
+
+        <!-- ================================================================ -->
+        <!-- TAB 7: RESULTS                                                   -->
+        <!-- ================================================================ -->
+        <div id="results" class="tab-content">
+            <h2 style="font-size: 28px; font-weight: 600; margin-bottom: 8px;">Analysis Results</h2>
+            <p style="color: #525252; margin-bottom: 32px; font-size: 14px;">Constellation of institutional logics across EIT communities</p>
+
+            <div class="grid grid-4">
+                <div class="stat-card"><div class="stat-value" id="res-triplets">—</div><div class="stat-label">Triplets Extracted</div></div>
+                <div class="stat-card"><div class="stat-value" id="res-accepted">—</div><div class="stat-label">Validated Triplets</div></div>
+                <div class="stat-card"><div class="stat-value" id="res-annotations">—</div><div class="stat-label">Manual Annotations</div></div>
+                <div class="stat-card"><div class="stat-value" id="res-network">—</div><div class="stat-label">Network Loaded</div></div>
+            </div>
+
+            <div class="card" style="margin-top: 32px;">
+                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 16px;">Triplet Extraction Preview</h3>
+                <p style="font-size: 13px; color: #525252; margin-bottom: 20px;">Example of how role-practice-counterrole triplets are identified and extracted from text</p>
+                <div style="padding: 20px; background: #fafafa; border: 1px solid #e0e0e0; position: relative;">
+                    <div style="font-size: 12px; font-weight: 600; color: #525252; margin-bottom: 12px;">SAMPLE: EIT Health Innovation Report 2024</div>
+                    <div id="triplet-preview" style="position: relative; padding: 60px 0 20px 0;">
+                        <div style="font-size: 16px; line-height: 3.5; position: relative;">
+                            <div style="position: relative; margin-bottom: 50px;">
+                                <span style="background: #e3f2fd; padding: 6px 12px; border-radius: 4px; font-weight: 600; border: 2px solid #1976d2;">EIT Health</span>
+                                <span style="background: #f3e5f5; padding: 6px 12px; border-radius: 4px; font-weight: 600; border: 2px solid #7b1fa2; margin: 0 8px;">supports</span>
+                                <span style="background: #e8f5e9; padding: 6px 12px; border-radius: 4px; font-weight: 600; border: 2px solid #388e3c;">startups</span>
+                                <span style="color: #525252;"> in developing innovative healthcare solutions through mentoring programs.</span>
+                                <svg width="370" height="70" style="position: absolute; top: -50px; left: 0; pointer-events: none;">
+                                    <defs><marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#7b1fa2" /></marker></defs>
+                                    <path d="M 60 65 Q 185 15 310 65" stroke="#7b1fa2" stroke-width="3" fill="none" stroke-dasharray="6,4" marker-end="url(#arrowhead)"></path>
+                                    <text x="185" y="18" text-anchor="middle" font-size="12px" font-weight="700" fill="#7b1fa2">supports</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #e0e0e0;">
+                        <div style="display: flex; gap: 24px; flex-wrap: wrap; font-size: 12px;">
+                            <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 16px; height: 16px; background: #e3f2fd; border: 2px solid #1976d2; border-radius: 3px;"></div><span><strong>Role Identity</strong></span></div>
+                            <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 16px; height: 16px; background: #f3e5f5; border: 2px solid #7b1fa2; border-radius: 3px;"></div><span><strong>Practice</strong></span></div>
+                            <div style="display: flex; align-items: center; gap: 8px;"><div style="width: 16px; height: 16px; background: #e8f5e9; border: 2px solid #388e3c; border-radius: 3px;"></div><span><strong>Counterrole</strong></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 32px;">
+                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Export Data</h3>
+                <p style="font-size: 13px; color: #525252; margin-bottom: 20px;">Download triplets and annotations as JSON</p>
+                <div class="grid grid-2" style="gap: 16px;">
+                    <div style="padding: 20px; border: 1px solid #e0e0e0; border-radius: 4px; background: #fafafa;">
+                        <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 8px;">✓ Validated Triplets</h4>
+                        <p style="font-size: 12px; color: #525252; margin-bottom: 16px;">Triplets you accepted/corrected during validation</p>
+                        <button class="btn btn-primary" onclick="exportValidatedTriplets()" style="width: 100%;">📥 Export Validated (JSON)</button>
+                    </div>
+                    <div style="padding: 20px; border: 1px solid #e0e0e0; border-radius: 4px; background: #fafafa;">
+                        <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 8px;">🤖 Raw Model Triplets</h4>
+                        <p style="font-size: 12px; color: #525252; margin-bottom: 16px;">All triplets extracted by LLM (unvalidated)</p>
+                        <button class="btn btn-primary" onclick="exportRawTriplets()" style="width: 100%;">📥 Export Raw Triplets (JSON)</button>
+                    </div>
+                    <div style="padding: 20px; border: 1px solid #e0e0e0; border-radius: 4px; background: #fafafa;">
+                        <h4 style="font-size: 14px; font-weight: 600; margin-bottom: 8px;">✍️ Manual Annotations</h4>
+                        <p style="font-size: 12px; color: #525252; margin-bottom: 16px;">User-annotated triplets from Preview tab</p>
+                        <button class="btn btn-primary" onclick="exportAnnotations()" style="width: 100%;">📥 Export Annotations (JSON)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // BACKEND CONFIGURATION — update this URL each time Colab restarts
+        const BACKEND_BASE = ' https://nonfelicitous-reasonedly-cadence.ngrok-free.dev';
+
+        // ============================================================================
+        // STATE
+        // ============================================================================
+        const state = {
+            files: { health: [], food: [], energy: [] },
+            currentCorpus: null,
+            currentDocument: null,
+            documents: {
+                health: [
+                    { id: 'health_1', title: 'EIT Health Innovation Report 2024', text: `EIT Health supports startups in developing innovative healthcare solutions through mentoring programs and funding opportunities. The organization connects entrepreneurs with investors across Europe. EIT Health trains professionals in sustainable healthcare systems through specialized courses. We enable collaboration between universities and industry partners to accelerate medical innovation.`, sentences: [] },
+                    { id: 'health_2', title: 'Healthcare Startup Ecosystem Analysis', text: `The European Institute of Innovation and Technology Health community acts as a catalyst for healthcare innovation. Research institutions partner with clinical organizations to develop breakthrough therapies. EIT Health facilitates knowledge transfer between academic researchers and commercial entities.`, sentences: [] }
+                ],
+                food: [
+                    { id: 'food_1', title: 'Sustainable Food Systems Initiative', text: `EIT Food empowers farmers through digital agriculture training programs. The network promotes sustainable practices among food producers across European markets. Innovation hubs connect agri-tech startups with multinational food corporations to scale novel solutions.`, sentences: [] }
+                ],
+                energy: [
+                    { id: 'energy_1', title: 'Clean Energy Transition Strategy', text: `EIT InnoEnergy drives the energy transition by supporting cleantech ventures. The platform mobilizes capital from venture investors and corporate partners. Educational programs train the next generation of energy professionals in renewable technologies and sustainable business models.`, sentences: [] }
+                ]
+            },
+            annotations: [],
+            spacyResults: null,
+            triplets: [],
+            currentTripletIndex: 0,
+            stats: { accepted: 0, corrected: 0, rejected: 0 },
+            selectedCommunity: 'eit_health',
+            lastNetworkData: null,
+            ui: { selectedTab: 'upload' }
+        };
+
+        // ============================================================================
+        // TAB NAVIGATION
+        // ============================================================================
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            const target = document.getElementById(tabName);
+            if (target) target.classList.add('active');
+            // Highlight correct nav tab
+            document.querySelectorAll('.tab').forEach(btn => {
+                if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`'${tabName}'`)) {
+                    btn.classList.add('active');
+                }
+            });
+            if (tabName === 'results') updateResultsPage();
+        }
+
+        // ============================================================================
+        // PREVIEW & ANNOTATE
+        // ============================================================================
+        function loadCorpusDocuments() {
+            const corpus = document.getElementById('corpus-select').value;
+            const docSelect = document.getElementById('document-select');
+            if (!corpus) { docSelect.disabled = true; docSelect.innerHTML = '<option value="">-- Select a document --</option>'; document.getElementById('document-viewer').style.display = 'none'; return; }
+            state.currentCorpus = corpus;
+            docSelect.disabled = false;
+            docSelect.innerHTML = '<option value="">-- Select a document --</option>';
+            state.documents[corpus].forEach((doc, idx) => {
+                const option = document.createElement('option');
+                option.value = idx; option.textContent = doc.title;
+                docSelect.appendChild(option);
+            });
+        }
+
+        function loadDocument() {
+            const docIndex = document.getElementById('document-select').value;
+            if (docIndex === '') { document.getElementById('document-viewer').style.display = 'none'; return; }
+            const doc = state.documents[state.currentCorpus][docIndex];
+            state.currentDocument = doc;
+            doc.sentences = doc.text.match(/[^\.!\?]+[\.!\?]+/g) || [doc.text];
+            document.getElementById('doc-title').textContent = doc.title;
+            document.getElementById('doc-corpus').textContent = 'EIT ' + state.currentCorpus.charAt(0).toUpperCase() + state.currentCorpus.slice(1);
+            document.getElementById('doc-length').textContent = doc.text.split(/\s+/).length;
+            document.getElementById('doc-text').textContent = doc.text;
+            document.getElementById('ner-analysis').innerHTML = '<div style="text-align: center; color: #8d8d8d; padding: 32px 0;">Click "Run spaCy Analysis" to see NER results</div>';
+            document.getElementById('ner-legend').style.display = 'none';
+            document.getElementById('entity-stats').style.display = 'none';
+            const sentenceSelect = document.getElementById('sentence-select');
+            sentenceSelect.innerHTML = '<option value="">-- Select sentence --</option>';
+            doc.sentences.forEach((sent, idx) => {
+                const option = document.createElement('option');
+                option.value = idx; option.textContent = sent.substring(0, 60) + (sent.length > 60 ? '...' : '');
+                sentenceSelect.appendChild(option);
+            });
+            sentenceSelect.disabled = false;
+            updateAnnotationsList();
+            document.getElementById('document-viewer').style.display = 'block';
+        }
+
+        function runSpacyAnalysis() {
+            if (!state.currentDocument) return;
+            const text = state.currentDocument.text;
+            const mockEntities = [];
+            const orgPattern = /EIT (Health|Food|Energy|InnoEnergy|Digital|Manufacturing)/g;
+            const gpePattern = /\b(Europe|European)\b/g;
+            const personPattern = /\b(entrepreneurs|startups|professionals|farmers|students|researchers)\b/gi;
+            let match;
+            while ((match = orgPattern.exec(text)) !== null) mockEntities.push({ text: match[0], label: 'ORG', start: match.index, end: match.index + match[0].length });
+            while ((match = gpePattern.exec(text)) !== null) mockEntities.push({ text: match[0], label: 'GPE', start: match.index, end: match.index + match[0].length });
+            while ((match = personPattern.exec(text)) !== null) mockEntities.push({ text: match[0], label: 'PERSON', start: match.index, end: match.index + match[0].length });
+            mockEntities.sort((a, b) => a.start - b.start);
+            state.spacyResults = { entities: mockEntities, text };
+            renderNER(text, mockEntities);
+            document.getElementById('ner-legend').style.display = 'block';
+            document.getElementById('entity-stats').style.display = 'block';
+            const uniqueTypes = [...new Set(mockEntities.map(e => e.label))];
+            document.getElementById('stat-entities').textContent = mockEntities.length;
+            document.getElementById('stat-types').textContent = uniqueTypes.length;
+        }
+
+        function renderNER(text, entities) {
+            const container = document.getElementById('ner-analysis');
+            const colors = { 'PERSON': '#ddd', 'ORG': '#7aecec', 'GPE': '#ff9561', 'PRODUCT': '#bfe1d9', 'DATE': '#bfe1d9', 'MONEY': '#e4e7d2' };
+            let html = '<div style="line-height: 2.5;">';
+            let lastIndex = 0;
+            [...entities].sort((a, b) => a.start - b.start).forEach(entity => {
+                html += escapeHtml(text.substring(lastIndex, entity.start));
+                const color = colors[entity.label] || '#ddd';
+                html += `<span style="background: ${color}; padding: 2px 6px; border-radius: 3px; margin: 0 2px; font-weight: 500;">${escapeHtml(entity.text)} <span style="font-size: 10px; font-weight: 600; vertical-align: super;">${entity.label}</span></span>`;
+                lastIndex = entity.end;
+            });
+            html += escapeHtml(text.substring(lastIndex)) + '</div>';
+            container.innerHTML = html;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function parseSentence() {
+            const sentIndex = document.getElementById('sentence-select').value;
+            const container = document.getElementById('displacy-analysis');
+            if (sentIndex === '') { container.innerHTML = '<div style="text-align: center; color: #8d8d8d; padding: 32px 0;">Select a sentence to visualize dependencies</div>'; return; }
+            const sentence = state.currentDocument.sentences[sentIndex];
+            const tokens = sentence.split(/\s+/).filter(t => t.length > 0);
+            const spacing = 130, width = Math.max(800, tokens.length * spacing + 100), height = 250, baseY = 180;
+            let svg = `<svg width="${width}" height="${height}" style="font-family: 'IBM Plex Mono', monospace; overflow: visible; background: white;">`;
+            const getPOS = (word) => {
+                const w = word.toLowerCase().replace(/[.,]/g, '');
+                if (['we', 'our', 'eit', 'europe', 'alliance', 'community', 'innoenergy', 'health', 'food'].includes(w) || /^[A-Z]/.test(word)) return { tag: 'PROPN', color: '#1f77b4' };
+                if (['bring', 'connect', 'enable', 'building', 'growing', 'accelerates', 'invest', 'scale', 'supports', 'trains', 'empowers', 'promotes', 'drives', 'mobilizes'].some(v => w.startsWith(v))) return { tag: 'VERB', color: '#2ca02c' };
+                return { tag: 'NOUN/OTHER', color: '#000' };
+            };
+            tokens.forEach((token, i) => {
+                const x = 50 + i * spacing, info = getPOS(token);
+                svg += `<text x="${x}" y="${baseY}" text-anchor="middle" font-size="14px" font-weight="600" fill="#000">${token}</text>`;
+                svg += `<text x="${x}" y="${baseY + 20}" text-anchor="middle" font-size="10px" fill="${info.color}">${info.tag}</text>`;
+            });
+            let rootIdx = tokens.findIndex(t => getPOS(t).tag === 'VERB');
+            if (rootIdx === -1) rootIdx = Math.floor(tokens.length / 2);
+            const labels = ["nsubj", "dobj", "compound", "det", "pobj", "amod", "prep"];
+            tokens.forEach((token, i) => {
+                if (i !== rootIdx) {
+                    const x = 50 + i * spacing, endX = 50 + rootIdx * spacing, dist = Math.abs(rootIdx - i), arcHeight = 40 + dist * 15, controlY = baseY - 30 - arcHeight;
+                    svg += `<path d="M ${x} ${baseY - 30} C ${x} ${controlY}, ${endX} ${controlY}, ${endX} ${baseY - 30}" stroke="#b0bec5" stroke-width="2" fill="none" />`;
+                    svg += `<polygon points="${endX},${baseY-26} ${endX-5},${baseY-34} ${endX+5},${baseY-34}" fill="#b0bec5" />`;
+                    const label = labels[i % labels.length], midX = (x + endX) / 2, midY = controlY + 10;
+                    svg += `<rect x="${midX - 15}" y="${midY - 8}" width="30" height="14" fill="#fff" />`;
+                    svg += `<text x="${midX}" y="${midY + 2}" text-anchor="middle" font-size="10px" fill="#546e7a">${label}</text>`;
+                }
+            });
+            svg += `</svg>`;
+            container.innerHTML = `<div style="overflow-x: auto; padding: 20px; background: #fff; border: 1px solid #eee; border-radius: 4px;">${svg}</div><div style="margin-top: 12px; font-size: 11px; color: #8d8d8d; text-align: center;">Visualization for: <em>"${sentence.substring(0, 40)}..."</em></div>`;
+        }
+
+        function addManualAnnotation() {
+            const role = document.getElementById('manual-role').value.trim();
+            const practice = document.getElementById('manual-practice').value.trim();
+            const counterrole = document.getElementById('manual-counterrole').value.trim();
+            if (!role || !practice || !counterrole) { alert('Please fill in all three fields'); return; }
+            state.annotations.push({ id: Date.now(), documentId: state.currentDocument ? state.currentDocument.id : 'unknown', corpus: state.currentCorpus, role, practice, counterrole, timestamp: new Date().toISOString() });
+            document.getElementById('manual-role').value = '';
+            document.getElementById('manual-practice').value = '';
+            document.getElementById('manual-counterrole').value = '';
+            updateAnnotationsList();
+        }
+
+        function updateAnnotationsList() {
+            const container = document.getElementById('annotations-container');
+            const count = document.getElementById('annotation-count');
+            const docAnnotations = state.annotations.filter(a => state.currentDocument && a.documentId === state.currentDocument.id);
+            count.textContent = docAnnotations.length;
+            if (docAnnotations.length === 0) { container.innerHTML = '<div style="text-align: center; color: #8d8d8d; padding: 16px; font-size: 13px;">No annotations yet</div>'; return; }
+            container.innerHTML = docAnnotations.map(ann => `
+                <div class="annotation-item" style="padding: 12px; border: 1px solid #e0e0e0; background: white; font-size: 13px;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+                        <div style="font-weight: 600; flex: 1;">
+                            <span style="color: #1976d2;">${escapeHtml(ann.role)}</span> →
+                            <span style="color: #7b1fa2;">${escapeHtml(ann.practice)}</span> →
+                            <span style="color: #388e3c;">${escapeHtml(ann.counterrole)}</span>
+                        </div>
+                        <button onclick="deleteAnnotation(${ann.id})" style="background: none; border: none; color: #d32f2f; cursor: pointer; font-size: 16px; padding: 0 4px;">×</button>
+                    </div>
+                    <div style="font-size: 11px; color: #8d8d8d;">${new Date(ann.timestamp).toLocaleString()}</div>
+                </div>`).join('');
+        }
+
+        function deleteAnnotation(id) {
+            state.annotations = state.annotations.filter(a => a.id !== id);
+            updateAnnotationsList();
+        }
+
+        // ============================================================================
+        // FILE UPLOAD
+        // ============================================================================
+        function handleFileUpload(source, files) {
+            const file = files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function () {
+                const text = reader.result || '';
+                state.files[source] = [text];
+                const previewDiv = document.getElementById(`${source}-preview`);
+                if (previewDiv) {
+                    previewDiv.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ca02c" stroke-width="3" style="vertical-align: middle; margin-right: 4px;"><polyline points="20 6 9 17 4 12"></polyline></svg><strong>${file.name}</strong> <span style="color: #8d8d8d;">(${(text.length / 1000).toFixed(1)}K chars)</span>`;
+                }
+                const allUploaded = state.files.health.length > 0 && state.files.food.length > 0 && state.files.energy.length > 0;
+                document.getElementById('continue-btn').disabled = !allUploaded;
+            };
+            reader.readAsText(file);
+        }
+
+        // ============================================================================
+        // EXTRACTION
+        // ============================================================================
+        async function startExtraction() {
+            document.getElementById('extract-start').style.display = 'none';
+            document.getElementById('extract-processing').style.display = 'block';
+
+            const healthText = (state.files.health || []).join('\n\n');
+            const foodText = (state.files.food || []).join('\n\n');
+            const energyText = (state.files.energy || []).join('\n\n');
+            const combinedText = ['='.repeat(70), 'DATASET: EIT HEALTH', '='.repeat(70), healthText, '\n\n', '='.repeat(70), 'DATASET: EIT FOOD', '='.repeat(70), foodText, '\n\n', '='.repeat(70), 'DATASET: EIT INNOENERGY', '='.repeat(70), energyText].join('\n');
+
+            if (combinedText.length < 100) {
+                alert('No data! Please upload all 3 datasets first.');
+                document.getElementById('extract-start').style.display = 'block';
+                document.getElementById('extract-processing').style.display = 'none';
+                return;
+            }
+
+            const selectedModel = document.getElementById('backend-select').value;
+            const userPrompt = document.getElementById('prompt-template').value;
+            const maxTriplets = parseInt(document.getElementById('validate-count').value);
+            const estimatedChunks = Math.ceil(combinedText.length / 1500);
+            const estimatedTime = estimatedChunks * 2;
+
+            document.getElementById('processing-model').textContent = selectedModel;
+            document.getElementById('chunk-info').textContent = `~${estimatedChunks} chunks`;
+
+            let startTime = Date.now();
+            let progressInterval = setInterval(() => {
+                const elapsed = Math.floor((Date.now() - startTime) / 1000);
+                document.getElementById('processing-time').textContent = `${elapsed}s`;
+                const estimatedProgress = Math.min(95, (elapsed / estimatedTime) * 100);
+                document.getElementById('extraction-progress').style.width = `${estimatedProgress}%`;
+                document.getElementById('progress-text').textContent = `${Math.floor(estimatedProgress)}%`;
+                if (elapsed < 5) document.getElementById('extraction-status').textContent = 'Sending data to backend...';
+                else if (elapsed < 15) document.getElementById('extraction-status').textContent = 'Model is loading...';
+                else if (elapsed < 30) document.getElementById('extraction-status').textContent = 'Processing first chunks...';
+                else document.getElementById('extraction-status').textContent = `Processing chunk ${Math.floor(elapsed / 2)} of ~${estimatedChunks}...`;
+            }, 1000);
+
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 900000);
+                const response = await fetch(`${BACKEND_BASE}/extract_triplets`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: combinedText, model: selectedModel, user_prompt: userPrompt, max_triplets: maxTriplets }),
+                    signal: controller.signal
+                });
+                clearTimeout(timeoutId);
+                clearInterval(progressInterval);
+
+                if (!response.ok) { const errorText = await response.text(); throw new Error(`HTTP ${response.status}: ${errorText}`); }
+                const result = await response.json();
+                state.triplets = result.triplets || [];
+
+                if (state.triplets.length === 0) {
+                    alert('No triplets extracted. Check backend logs in Colab.');
+                    document.getElementById('extract-start').style.display = 'block';
+                    document.getElementById('extract-processing').style.display = 'none';
+                    return;
+                }
+
+                document.getElementById('extraction-progress').style.width = '100%';
+                document.getElementById('progress-text').textContent = '100%';
+                document.getElementById('extraction-status').textContent = '✓ Extraction complete!';
+                showTab('validate');
+                updateValidationUI();
+            } catch (error) {
+                clearInterval(progressInterval);
+                if (error.name === 'AbortError') alert('Extraction timeout! Try reducing the number of triplets or using a faster model.');
+                else alert('Extraction failed: ' + error.message);
+                document.getElementById('extract-start').style.display = 'block';
+                document.getElementById('extract-processing').style.display = 'none';
+            }
+        }
+
+        // ============================================================================
+        // VALIDATION
+        // ============================================================================
+        function updateValidationUI() {
+            const current = state.triplets[state.currentTripletIndex];
+            const total = state.triplets.length;
+            if (!current) return;
+            const remaining = total - (state.stats.accepted + state.stats.corrected + state.stats.rejected);
+            document.getElementById('current-index').textContent = state.currentTripletIndex + 1;
+            document.getElementById('total-triplets').textContent = total;
+            document.getElementById('progress-percent').textContent = Math.round(((state.currentTripletIndex + 1) / total) * 100);
+            document.getElementById('progress-fill').style.width = `${((state.currentTripletIndex + 1) / total) * 100}%`;
+            document.getElementById('stat-accepted').textContent = state.stats.accepted;
+            document.getElementById('stat-corrected').textContent = state.stats.corrected;
+            document.getElementById('stat-rejected').textContent = state.stats.rejected;
+            document.getElementById('stat-remaining').textContent = remaining;
+            document.getElementById('source-text').textContent = current.text;
+            document.getElementById('current-community').textContent = current.community;
+            document.getElementById('role-display').textContent = current.extracted.role;
+            document.getElementById('practice-display').textContent = current.extracted.practice;
+            document.getElementById('counterrole-display').textContent = current.extracted.counterrole;
+            document.getElementById('role-edit').value = current.extracted.role;
+            document.getElementById('practice-edit').value = current.extracted.practice;
+            document.getElementById('counterrole-edit').value = current.extracted.counterrole;
+            const confidence = Math.round((current.confidence || 0.5) * 100);
+            document.getElementById('confidence-value').textContent = confidence + '%';
+            document.getElementById('confidence-fill').style.width = confidence + '%';
+            document.getElementById('triplet-confidence-value').textContent = confidence + '%';
+            document.getElementById('triplet-confidence-fill').style.width = confidence + '%';
+            document.getElementById('nav-current').textContent = state.currentTripletIndex + 1;
+            document.getElementById('nav-total').textContent = total;
+            document.getElementById('prev-btn').disabled = state.currentTripletIndex === 0;
+            document.getElementById('next-btn').disabled = state.currentTripletIndex === total - 1;
+            if (state.stats.accepted + state.stats.corrected + state.stats.rejected === total) {
+                document.getElementById('validation-complete').style.display = 'block';
+            }
+        }
+
+        function validateTriplet(action) {
+            const current = state.triplets[state.currentTripletIndex];
+            if (action === 'accept') { current.validated = 'accepted'; state.stats.accepted++; }
+            else if (action === 'correct') {
+                current.validated = 'corrected';
+                current.corrected = { role: document.getElementById('role-edit').value, practice: document.getElementById('practice-edit').value, counterrole: document.getElementById('counterrole-edit').value };
+                state.stats.corrected++;
+                cancelEdit();
+            }
+            else if (action === 'reject') { current.validated = 'rejected'; state.stats.rejected++; }
+            if (state.currentTripletIndex < state.triplets.length - 1) state.currentTripletIndex++;
+            updateValidationUI();
+        }
+
+        function startEdit() {
+            document.getElementById('triplet-view').style.display = 'none';
+            document.getElementById('triplet-edit').style.display = 'block';
+            document.getElementById('action-buttons').style.display = 'none';
+            document.getElementById('edit-buttons').style.display = 'block';
+        }
+
+        function cancelEdit() {
+            document.getElementById('triplet-view').style.display = 'block';
+            document.getElementById('triplet-edit').style.display = 'none';
+            document.getElementById('action-buttons').style.display = 'block';
+            document.getElementById('edit-buttons').style.display = 'none';
+        }
+
+        function previousTriplet() { if (state.currentTripletIndex > 0) { state.currentTripletIndex--; updateValidationUI(); } }
+        function nextTriplet() { if (state.currentTripletIndex < state.triplets.length - 1) { state.currentTripletIndex++; updateValidationUI(); } }
+
+        // ============================================================================
+        // NETWORK — community-based, loads from JSON files via backend
+        // ============================================================================
+        function selectCommunity(communityKey, btn) {
+            state.selectedCommunity = communityKey;
+            document.querySelectorAll('.community-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+        }
+
+        async function loadSelectedNetwork() {
+            const container = document.getElementById('network-container');
+            container.innerHTML = '';
+            container.style.height = '620px';
+
+            const iframe = document.createElement('iframe');
+            iframe.style.width = '100%';
+            iframe.style.height = '620px';
+            iframe.style.border = 'none';
+            iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin');
+            container.appendChild(iframe);
+
+            const isAll = state.selectedCommunity === 'all';
+            const communityLabel = isAll ? 'All Communities (merged)' : state.selectedCommunity.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+            const loadingNote = isAll ? 'Merging all 9 community networks — this may take a moment...' : 'Fetching from backend';
+            iframe.srcdoc = `<div style="font-family: 'IBM Plex Sans', sans-serif; padding: 32px; color: #525252; display: flex; align-items: center; gap: 16px;"><svg style="animation: spin 1s linear infinite;" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#525252" stroke-width="2"><style>@keyframes spin{to{transform:rotate(360deg)}}</style><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg><div><div style="font-weight: 600; font-size: 15px; margin-bottom: 4px;">Loading ${communityLabel} network...</div><div style="font-size: 13px;">${loadingNote}</div></div></div>`;
+
+            try {
+                const response = await fetch(`${BACKEND_BASE}/render_network`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ community: state.selectedCommunity })
+                });
+
+                if (!response.ok) {
+                    const err = await response.json();
+                    throw new Error(err.error || `HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
+                state.lastNetworkData = data;
+
+                // Update stats bar
+                document.getElementById('network-stats-bar').style.display = 'flex';
+                document.getElementById('net-stat-name').textContent = data.network_name || communityLabel;
+                document.getElementById('net-stat-nodes').textContent = data.num_nodes;
+                document.getElementById('net-stat-edges').textContent = data.num_edges;
+                document.getElementById('net-stat-positive').textContent = data.positive_edges;
+                document.getElementById('net-stat-critical').textContent = data.critical_edges;
+
+                iframe.srcdoc = data.html;
+
+            } catch (err) {
+                iframe.srcdoc = `
+                    <div style="font-family: 'IBM Plex Sans', sans-serif; padding: 24px; color: #c62828;">
+                        <div style="font-weight: 700; font-size: 15px; margin-bottom: 8px;">Network load failed</div>
+                        <div style="font-size: 13px; white-space: pre-wrap; margin-bottom: 12px;">${String(err)}</div>
+                        <div style="font-size: 12px; color: #525252;">
+                            Check that:<br>
+                            1. Colab backend is running<br>
+                            2. BACKEND_BASE in this HTML matches the ngrok URL<br>
+                            3. All 9 JSON files are uploaded to /content/ in Colab<br>
+                            <br>Current BACKEND_BASE: <code style="background:#f5f5f5; padding:2px 6px;">${BACKEND_BASE}</code>
+                        </div>
+                    </div>`;
+            }
+        }
+
+        // ============================================================================
+        // URL SCRAPING
+        // ============================================================================
+        async function scrapeAndDownload() {
+            const urlInput = document.getElementById('scrape-url');
+            const scrapeBtn = document.getElementById('scrape-btn');
+            const url = urlInput.value.trim();
+            if (!url) { showScrapeStatus('Please enter a URL', 'error'); return; }
+            try { new URL(url); } catch (e) { showScrapeStatus('Invalid URL format', 'error'); return; }
+            scrapeBtn.disabled = true;
+            scrapeBtn.textContent = '⏳ Scraping...';
+            showScrapeStatus('Fetching content from URL...', 'loading');
+            try {
+                const response = await fetch(`${BACKEND_BASE}/scrape_url`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url }) });
+                if (!response.ok) { const errorData = await response.json(); throw new Error(errorData.error || 'Scraping failed'); }
+                const data = await response.json();
+                if (!data.text || data.text.trim().length === 0) throw new Error('No text content found on the page');
+                const urlObj = new URL(data.source);
+                const filename = `scraped_${urlObj.hostname.replace('www.', '')}_${new Date().toISOString().slice(0, 10)}.txt`;
+                const blob = new Blob([data.text], { type: 'text/plain' });
+                const downloadUrl = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = downloadUrl; a.download = filename;
+                document.body.appendChild(a); a.click(); document.body.removeChild(a);
+                window.URL.revokeObjectURL(downloadUrl);
+                showScrapeStatus(`✓ Downloaded ${filename} (${data.text.split(/\s+/).length.toLocaleString()} words). Now upload it above!`, 'success');
+                urlInput.value = '';
+            } catch (error) {
+                showScrapeStatus(`Error: ${error.message}`, 'error');
+            } finally {
+                scrapeBtn.disabled = false;
+                scrapeBtn.textContent = '🔍 Scrape & Download';
+            }
+        }
+
+        function showScrapeStatus(message, type) {
+            const statusDiv = document.getElementById('scrape-status');
+            statusDiv.textContent = message;
+            statusDiv.className = `scrape-status ${type}`;
+            statusDiv.style.display = 'block';
+            if (type === 'success' || type === 'error') setTimeout(() => { statusDiv.style.display = 'none'; }, 5000);
+        }
+
+        // ============================================================================
+        // RESULTS PAGE
+        // ============================================================================
+        function updateResultsPage() {
+            document.getElementById('res-triplets').textContent = state.triplets.length || '—';
+            document.getElementById('res-accepted').textContent = state.stats.accepted + state.stats.corrected || '—';
+            document.getElementById('res-annotations').textContent = state.annotations.length || '—';
+            document.getElementById('res-network').textContent = state.lastNetworkData ? (state.lastNetworkData.network_name || state.selectedCommunity) : '—';
+        }
+
+        // ============================================================================
+        // EXPORTS
+        // ============================================================================
+        function exportValidatedTriplets() {
+            const validatedData = state.triplets.filter(t => t.validated !== null);
+            if (!validatedData.length) { alert('No validated triplets yet.'); return; }
+            downloadJSON(validatedData, 'validated-triplets.json');
+        }
+
+        function exportRawTriplets() {
+            if (!state.triplets.length) { alert('⚠️ No triplets extracted yet! Please run extraction first.'); return; }
+            downloadJSON(state.triplets, `raw-model-triplets-${new Date().toISOString().slice(0,10)}.json`);
+        }
+
+        function exportAnnotations() {
+            if (!state.annotations.length) { alert('⚠️ No manual annotations yet!'); return; }
+            downloadJSON(state.annotations, `manual-annotations-${new Date().toISOString().slice(0,10)}.json`);
+        }
+
+        function downloadJSON(data, filename) {
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url; a.download = filename; a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // ============================================================================
+        // INIT
+        // ============================================================================
+        window.addEventListener('load', () => {
+            updateValidationUI();
+            document.getElementById('scrape-url').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') scrapeAndDownload();
+            });
+        });
+    </script>
+</body>
+</html>
